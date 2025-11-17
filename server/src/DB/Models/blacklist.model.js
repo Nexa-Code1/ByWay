@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { TOKEN_TYPES } from "../Constants/constants.js";
+import { TOKEN_TYPES } from "../../Constants/constants.js";
 
 const blacklistTokenSchema = new mongoose.Schema(
   {

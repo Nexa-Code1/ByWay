@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { COURSE_STATUS } from "../Constants/constants.js";
+import { COURSE_STATUS } from "../../Constants/constants.js";
 
 const courseSchema = new mongoose.Schema(
   {

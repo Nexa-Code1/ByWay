@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { USER_ROLES, LANGUAGE_TYPES } from "../Constants/constants.js";
+import { USER_ROLES, LANGUAGE_TYPES } from "../../Constants/constants.js";
 
 const userSchema = new mongoose.Schema(
   {
@@ -30,7 +30,6 @@ const userSchema = new mongoose.Schema(
 
     isPrivate: { type: Boolean, default: false },
     isVerified: { type: Boolean, default: false },
-    verificationOtpExpiry: Date,
   },
   { timestamps: true }
 );

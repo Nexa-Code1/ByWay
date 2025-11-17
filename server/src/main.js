@@ -2,6 +2,7 @@ import express from "express";
 import { config } from "dotenv";
 import routerHandler from "./Utils/router.handler.js";
 import connection from "./DB/connection.js";
+import { globalErrorHandler } from "./Middlewares/error.handler.middleware.js";
 config();
 
 const app = express();
@@ -13,6 +14,7 @@ const bootstrap = () => {
 
   routerHandler(app);
 
+  app.use(globalErrorHandler);
   app.listen(port, () => {
     console.log(`Server is running successfully on port ${port}`);
   });

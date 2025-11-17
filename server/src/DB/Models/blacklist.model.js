@@ -11,12 +11,12 @@ const blacklistTokenSchema = new mongoose.Schema(
       default: TOKEN_TYPES.ACCESS,
     },
 
-    expiresAt: { type: Date, required: true },
+    expiredAt: { type: Date, required: true },
   },
   { timestamps: true }
 );
 
-blacklistTokenSchema.index({ expiresAt: 1 }, { expireAfterSeconds: 0 });
+blacklistTokenSchema.index({ expiredAt: 1 }, { expireAfterSeconds: 0 });
 
 export default mongoose.models.BlacklistToken ||
   mongoose.model("BlacklistToken", blacklistTokenSchema);

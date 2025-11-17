@@ -1,10 +1,14 @@
 import usersModel from "../../../DB/Models/users.model.js";
+import blacklisttokensModel from "../../../DB/Models/blacklist.model.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { verifyEmailTemplate } from "../../../Utils/verify.email.template.js";
 import emitter from "../../../Services/send.email.service.js";
 import cryptoJS from "crypto-js";
 import { verifyOTPTemplate } from "../../../Utils/verify.otp.template.js";
+import { v4 as uuidv4 } from "uuid";
+import { TOKEN_TYPES } from "../../../Constants/constants.js";
+uuidv4();
 
 export const register = async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
@@ -116,13 +120,13 @@ export const login = async (req, res) => {
   const token = jwt.sign(
     { id: user._id, email },
     process.env.JWT_SECRET_LOGIN,
-    { expiresIn: "1h" }
+    { expiresIn: "1h", jwtid: uuidv4() }
   );
 
   const refreshToken = jwt.sign(
     { id: user._id, email },
     process.env.JWT_REFRESH_SECRET,
-    { expiresIn: "7d" }
+    { expiresIn: "7d", jwtid: uuidv4() }
   );
 
   return res.status(200).json({
@@ -132,7 +136,7 @@ export const login = async (req, res) => {
   });
 };
 
-export const sentOTP = async (req, res) => {
+export const sendOTP = async (req, res) => {
   const { email } = req.body;
 
   if (!email) {
@@ -257,4 +261,36 @@ export const refreshToken = async (req, res) => {
   );
 
   return res.status(200).json({ token });
+};
+
+export const logout = async (req, res) => {
+  const { token, refreshToken } = req.body;
+
+  if (!token || !refreshToken) {
+    return res
+      .status(400)
+      .json({ message: "Token and refresh token are required" });
+  }
+
+  const decoded = jwt.verify(token, process.env.JWT_SECRET_LOGIN);
+
+  const decodedRefresh = jwt.verify(
+    refreshToken,
+    process.env.JWT_REFRESH_SECRET
+  );
+
+  await blacklisttokensModel.insertMany([
+    {
+      tokenId: decoded.jti,
+      type: TOKEN_TYPES.ACCESS,
+      expiredAt: new Date(decoded.exp * 1000),
+    },
+    {
+      tokenId: decodedRefresh.jti,
+      type: TOKEN_TYPES.REFRESH,
+      expiredAt: new Date(decodedRefresh.exp * 1000),
+    },
+  ]);
+
+  return res.status(200).json({ message: "Logout successful" });
 };

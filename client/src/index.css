@@ -174,3 +174,13 @@
         @apply bg-background text-foreground;
     }
 }
+
+.ant-dropdown-menu .ant-dropdown-menu-item {
+    color: var(--gray-800) !important;
+}
+
+/* Remove hover background for all dropdown menu items */
+.ant-dropdown-menu .ant-dropdown-menu-item:hover {
+    background-color: transparent !important;
+    color: var(--orange-100) !important;
+}

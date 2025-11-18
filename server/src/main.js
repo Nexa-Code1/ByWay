@@ -10,6 +10,7 @@ const port = process.env.PORT || 4000;
 
 const bootstrap = () => {
   app.use(express.json());
+  app.use("/Media", express.static("Media"));
   connection();
 
   routerHandler(app);

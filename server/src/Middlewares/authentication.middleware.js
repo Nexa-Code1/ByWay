@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
-import User from "../DB/Models/user.model.js";
 import BlacklistToken from "../DB/Models/blacklist.model.js";
+import usersModel from "../DB/Models/users.model.js";
 
 export const authenticationMiddleware = async (req, res, next) => {
   try {
@@ -23,7 +23,7 @@ export const authenticationMiddleware = async (req, res, next) => {
       return res.status(401).json({ message: "Unauthorized, please login!" });
     }
 
-    const user = await User.findById(data.id);
+    const user = await usersModel.findById(data.id);
     if (!user) {
       return res.status(401).json({ message: "Unauthorized, please login!" });
     }

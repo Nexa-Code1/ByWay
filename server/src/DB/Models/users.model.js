@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema(
       default: LANGUAGE_TYPES.EN,
     },
 
-    links: { type: [String], default: [] },
+    links: { type: [Object], default: [] },
 
     role: {
       type: String,

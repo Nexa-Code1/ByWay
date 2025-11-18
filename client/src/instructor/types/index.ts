@@ -1,1 +1,1 @@
-// students types
+// instructor types

@@ -28,6 +28,23 @@ import {
     Wishlist,
 } from "./students/pages";
 
+import {
+    CreateBlog,
+    CreateCourse,
+    CreateCourseAdvancedInfo,
+    CreateCourseBasicInfo,
+    CreateCourseCurriculum,
+    CreateCoursePublish,
+    Earning,
+    InstructorDashboard,
+    InstructorSettings,
+    MyBlogDetails,
+    MyBlogs,
+    MyCourseDetails,
+    MyCourses,
+    InstructorLayout,
+} from "./instructor/pages";
+
 import AppLayout from "./components/layout/AppLayout";
 
 export const router = createBrowserRouter([
@@ -146,6 +163,70 @@ export const router = createBrowserRouter([
                         Component: StudentSettings,
                     },
                 ],
+            },
+        ],
+    },
+    // INSTRUCTOR
+    // PRIVATE INSTRUCTORS ONLY
+    {
+        path: "/instructor",
+        element: (
+            <ProtectedRoute role="instructor">
+                <InstructorLayout />
+            </ProtectedRoute>
+        ),
+        children: [
+            {
+                path: "dashboard",
+                Component: InstructorDashboard,
+            },
+            {
+                path: "create-course",
+                Component: CreateCourse,
+                children: [
+                    {
+                        path: "basic-information",
+                        Component: CreateCourseBasicInfo,
+                    },
+                    {
+                        path: "advanced-information",
+                        Component: CreateCourseAdvancedInfo,
+                    },
+                    {
+                        path: "curriculum",
+                        Component: CreateCourseCurriculum,
+                    },
+                    {
+                        path: "publish",
+                        Component: CreateCoursePublish,
+                    },
+                ],
+            },
+            {
+                path: "create-blog",
+                Component: CreateBlog,
+            },
+            {
+                path: "my-blogs",
+                children: [
+                    { index: true, Component: MyBlogs },
+                    { path: ":blogId", Component: MyBlogDetails },
+                ],
+            },
+            {
+                path: "my-courses",
+                children: [
+                    { index: true, Component: MyCourses },
+                    { path: ":courseId", Component: MyCourseDetails },
+                ],
+            },
+            {
+                path: "earning",
+                Component: Earning,
+            },
+            {
+                path: "settings",
+                Component: InstructorSettings,
             },
         ],
     },

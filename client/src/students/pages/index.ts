@@ -1,1 +1,11 @@
-export { default as Home } from "./home/Home";
+export { default as Cart } from "./cart/Cart";
+export { default as Checkout } from "./checkout/Checkout";
+export { default as Success } from "./success/Success";
+export { default as Profile } from "./profile/Profile";
+export { default as StudentCourses } from "./student-courses/StudentCourses";
+export { default as StudentCourseDetails } from "./student-course-details/StudentCourseDetails";
+export { default as CourseLesson } from "./course-lesson/CourseLesson";
+export { default as Wishlist } from "./wishlist/Wishlist";
+export { default as PurchaseHistory } from "./purchase-history/PurchaseHistory";
+export { default as PaymentMethods } from "./payment-methods/PaymentMethods";
+export { default as StudentSettings } from "./settings/Settings";

@@ -4,6 +4,8 @@ export const USER_ROLES = {
   ADMIN: "admin",
 };
 
+export const USER_TYPES = [USER_ROLES.STUDENT, USER_ROLES.INSTRUCTOR];
+
 export const LANGUAGE_TYPES = {
   EN: "en",
   AR: "ar",
@@ -31,3 +33,6 @@ export const TOKEN_TYPES = {
   ACCESS: "access",
   REFRESH: "refresh",
 };
+
+export const IMAGE_TYPES = ["image/jpeg", "image/png", "image/jpg"];
+export const VIDEO_TYPES = ["video/mp4"];

@@ -12,6 +12,8 @@ import {
     InstructorProfile,
     StudentProfile,
     ProtectedRoute,
+    ContactUs,
+    FAQ,
 } from "./pages";
 
 import {
@@ -91,6 +93,14 @@ export const router = createBrowserRouter([
             {
                 path: "students/:studentId",
                 Component: StudentProfile,
+            },
+            {
+                path: "contact-us",
+                Component: ContactUs,
+            },
+            {
+                path: "faq",
+                Component: FAQ,
             },
             // CART
             {

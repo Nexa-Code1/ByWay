@@ -21,18 +21,22 @@ export const contacts = {
 
 export const links = [
     {
+        key: "facebook",
         href: "",
         icon: <FacebookOutlined />,
     },
     {
+        key: "x",
         href: "",
         icon: <XOutlined />,
     },
     {
+        key: "instagram",
         href: "",
         icon: <InstagramOutlined />,
     },
     {
+        key: "tiktok",
         href: "",
         icon: <TikTokOutlined />,
     },

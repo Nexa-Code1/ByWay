@@ -1,6 +1,5 @@
 import { Link } from "react-router";
-import { Layout } from "antd";
-const { Header } = Layout;
+import { Header } from "antd/es/layout/layout";
 
 import NavLinks from "./NavLinks";
 import Logo from "../../shared/Logo";
@@ -15,7 +14,9 @@ function Navbar() {
                     <Logo />
                 </Link>
                 <NavLinks />
-                <RegisterBtns />
+                <div className="hidden md:flex items-center gap-2">
+                    <RegisterBtns />
+                </div>
                 <NavLinksMobile />
             </div>
         </Header>

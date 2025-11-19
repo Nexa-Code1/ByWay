@@ -10,4 +10,5 @@ export { default as InstructorProfile } from "./instructor-profile/InstructorPro
 export { default as StudentProfile } from "./student-profile/StudentProfile";
 export { default as FAQ } from "./faq/FAQ";
 export { default as ContactUs } from "./contact-us/ContactUs";
+export { default as AuthVerification } from "./auth-verification/AuthVerification";
 export { default as ProtectedRoute } from "./ProtectedRoute";

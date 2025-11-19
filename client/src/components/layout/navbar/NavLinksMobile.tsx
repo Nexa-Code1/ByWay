@@ -1,14 +1,10 @@
 import { useState, type MouseEvent } from "react";
 import { Link } from "react-router";
-import {
-    LoginOutlined,
-    MenuFoldOutlined,
-    MenuUnfoldOutlined,
-    UserAddOutlined,
-} from "@ant-design/icons";
-import { Dropdown } from "antd";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import Dropdown from "antd/es/dropdown/dropdown";
 
 import { navLinks } from "../../../utils/navLinks";
+import RegisterBtns from "./RegisterBtns";
 
 const items = [
     ...navLinks.map((link) => ({
@@ -17,14 +13,12 @@ const items = [
         label: <Link to={link.path}>{link.label}</Link>,
     })),
     {
-        key: "login",
-        label: <a>Login</a>,
-        icon: <LoginOutlined />,
-    },
-    {
-        key: "signup",
-        label: <a>Signup</a>,
-        icon: <UserAddOutlined />,
+        key: "register",
+        label: (
+            <div className="flex items-center gap-2">
+                <RegisterBtns />
+            </div>
+        ),
     },
 ];
 

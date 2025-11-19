@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+
 import { getHelp } from "../../../utils/footerData";
 
 function GetHelp() {
@@ -7,7 +8,7 @@ function GetHelp() {
             <h2 className="font-medium text-xl mb-2">Get Help</h2>
             <ul className="flex flex-col gap-1">
                 {getHelp.map((ele) => (
-                    <li className="text-sm">
+                    <li className="text-sm" key={ele.label}>
                         <Link
                             to={ele.path}
                             className="hover:text-orange-100 cursor-pointer transition-all"

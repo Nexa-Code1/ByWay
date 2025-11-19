@@ -14,6 +14,7 @@ import {
     ProtectedRoute,
     ContactUs,
     FAQ,
+    AuthVerification,
 } from "./pages";
 
 import {
@@ -58,6 +59,10 @@ export const router = createBrowserRouter([
         children: [
             // PUBLIC (GUESTS, STUDENTS, INSTRUCTORS)
             { index: true, Component: Home },
+            {
+                path: "auth/verification/:verifyEmailToken",
+                Component: AuthVerification,
+            },
             {
                 path: "courses",
                 children: [

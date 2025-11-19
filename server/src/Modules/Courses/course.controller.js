@@ -60,7 +60,7 @@ coursesRouter.patch(
 coursesRouter.get(
   "/get-instructor-courses/:instructorId",
   authenticationMiddleware,
-  authorizationMiddleware(USER_ROLES.INSTRUCTOR),
+  authorizationMiddleware(USER_TYPES),
   errorHandlerMiddleware(getInstructorCourses)
 );
 

@@ -42,7 +42,7 @@ export const register = async (req, res) => {
   newUser.verificationTokenExpiry = new Date(Date.now() + 60 * 60 * 1000);
   await newUser.save();
 
-  const verificationLink = `${req.protocol}://${req.headers.host}/api/auth/verify/${verifyEmailToken}`;
+  const verificationLink = `${req.protocol}://${req.headers.host}/auth/verification/${verifyEmailToken}`;
 
   emitter.emit("sendEmail", {
     to: email,

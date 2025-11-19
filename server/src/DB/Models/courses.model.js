@@ -5,15 +5,15 @@ const courseSchema = new mongoose.Schema(
   {
     image: String,
     title: { type: String, required: true },
-    subTitle: String,
+    subTitle: { type: String, required: true },
     instructor: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
 
     rate: { type: Number, default: 0 },
 
     students: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
 
-    description: String,
-    requirements: [String],
+    description: { type: String, required: true },
+    requirements: { type: [String], required: true },
 
     content: [
       {
@@ -28,12 +28,16 @@ const courseSchema = new mongoose.Schema(
       default: COURSE_STATUS.DRAFT,
     },
 
-    price: Number,
-    discount: Number,
+    price: { type: Number, required: true },
+    discount: { type: Number, default: 0 },
 
     reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: "Review" }],
 
-    category: { type: mongoose.Schema.Types.ObjectId, ref: "Category" },
+    category: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Category",
+      required: true,
+    },
 
     isFavourite: { type: Boolean, default: false },
     progress: { type: Number, default: 0 },

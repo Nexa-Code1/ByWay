@@ -100,6 +100,10 @@ export const getCourseDetails = async (req, res) => {
       path: "instructor",
       select: "firstName lastName email image",
     },
+    {
+      path: "content.lessons",
+      select: "section_ID title description link duration isCompleted",
+    },
   ]);
 
   if (!course) {
@@ -156,6 +160,10 @@ export const getAllCourses = async (req, res) => {
       {
         path: "instructor",
         select: "firstName lastName email image",
+      },
+      {
+        path: "content.lessons",
+        select: "section_ID title description link duration isCompleted",
       },
     ])
     .select(

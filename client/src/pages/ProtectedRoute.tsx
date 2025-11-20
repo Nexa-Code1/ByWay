@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import { Navigate } from "react-router";
+
 import { useUserContext } from "../context/user-context";
+import { useCookies } from "react-cookie";
 
 type ProtectedRouteProps = {
     children: ReactNode;
@@ -8,7 +10,9 @@ type ProtectedRouteProps = {
 };
 
 function ProtectedRoute({ children, role }: ProtectedRouteProps) {
-    const token = localStorage.getItem("token");
+    const [cookies] = useCookies(["token"]);
+    const token = cookies.token;
+
     const { user } = useUserContext();
 
     return !token || user?.role !== role ? (

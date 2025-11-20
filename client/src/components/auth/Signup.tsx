@@ -4,16 +4,16 @@ import GoogleBtn from "./GoogleBtn";
 import TextWithLink from "../shared/TextWithLink";
 
 type SignupProps = {
-    handleOk: () => void;
+    handleClose: () => void;
 };
 
-function Signup({ handleOk }: SignupProps) {
+function Signup({ handleClose }: SignupProps) {
     return (
         <>
             <ModalHeader />
             <GoogleBtn />
             <p className="text-center">or you can</p>
-            <SignupForm handleOk={handleOk} />
+            <SignupForm handleClose={handleClose} />
             <TextWithLink
                 text="Already have an Account?"
                 auth="login"

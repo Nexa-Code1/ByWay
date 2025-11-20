@@ -16,7 +16,7 @@ const items = [
         key: "register",
         label: (
             <div className="flex items-center gap-2">
-                <RegisterBtns />
+                <RegisterBtns shape="round" />
             </div>
         ),
     },

@@ -1,6 +1,10 @@
 import { useState, type MouseEvent } from "react";
 import { Link } from "react-router";
-import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import {
+    LogoutOutlined,
+    MenuFoldOutlined,
+    MenuUnfoldOutlined,
+} from "@ant-design/icons";
 import Dropdown from "antd/es/dropdown/dropdown";
 
 import { navLinks } from "../../../utils/navLinks";
@@ -8,6 +12,7 @@ import RegisterBtns from "./RegisterBtns";
 import { useUserProfile } from "../../../hooks/user/useUserProfile";
 import type { MenuItemType } from "../../../types";
 import UserProfileLink from "./UserProfileLink";
+import LogoutBtn from "./LogoutBtn";
 
 const baseItems: MenuItemType[] = [
     ...navLinks.map((link) => ({
@@ -17,7 +22,7 @@ const baseItems: MenuItemType[] = [
     })),
 ];
 
-function App() {
+function NavLinksMobile() {
     const [collapse, setCollapse] = useState(true);
     const { userProfile, isLoading } = useUserProfile();
 
@@ -29,6 +34,11 @@ function App() {
                       label: <UserProfileLink userProfile={userProfile} />,
                   },
                   ...baseItems,
+                  {
+                      key: "logout",
+                      icon: <LogoutOutlined />,
+                      label: <LogoutBtn />,
+                  },
               ]
             : [
                   ...baseItems,
@@ -61,4 +71,4 @@ function App() {
     );
 }
 
-export default App;
+export default NavLinksMobile;

@@ -1,10 +1,11 @@
 import { Button } from "antd";
 import Dropdown from "antd/es/dropdown/dropdown";
-import { DownOutlined } from "@ant-design/icons";
+import { DownOutlined, LogoutOutlined } from "@ant-design/icons";
 
 import type { IUser } from "../../../types";
 import UserAvatar from "./UserAvatar";
 import { profileLinks } from "../../../utils/profileLinks";
+import LogoutBtn from "./LogoutBtn";
 
 type UserMenuProps = {
     user: IUser;
@@ -13,9 +14,19 @@ type UserMenuProps = {
 function UserMenu({ user }: UserMenuProps) {
     return (
         <Dropdown
-            menu={{ items: profileLinks }}
+            menu={{
+                items: [
+                    ...profileLinks,
+                    {
+                        key: "logout",
+                        icon: <LogoutOutlined />,
+                        label: <LogoutBtn />,
+                    },
+                ],
+            }}
             trigger={["click"]}
             className="md:hidden"
+            placement="topRight"
         >
             <Button
                 type="text"

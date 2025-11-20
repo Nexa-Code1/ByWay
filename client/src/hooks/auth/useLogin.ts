@@ -8,12 +8,13 @@ import { handleLogin } from "../../api/auth/auth";
 export function useLogin() {
     const [messageApi, contextHolder] = message.useMessage();
     const navigate = useNavigate();
-    const [, setCookie] = useCookies(["token"]);
+    const [, setCookie] = useCookies(["token", "refreshToken"]);
 
     const { mutate: login, isPending: isLoggingin } = useMutation({
         mutationFn: handleLogin,
         onSuccess: (data) => {
-            setCookie("token", data.token);
+            setCookie("token", data.token, { path: "/" });
+            setCookie("refreshToken", data.refreshToken, { path: "/" });
             navigate("/", { replace: true });
         },
         onError: (error) => messageApi.error(error.message),

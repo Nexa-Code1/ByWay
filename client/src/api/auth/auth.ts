@@ -50,3 +50,20 @@ export async function handleLogin(formValues: ILogin) {
         throw new Error(message);
     }
 }
+
+export async function handleLogout(token: string, refreshToken: string) {
+    try {
+        const res = await axios.post(`${BASE_URL}auth/logout`, {
+            token,
+            refreshToken,
+        });
+        return res.data;
+    } catch (err) {
+        const error = err as AxiosError<{ message?: string }>;
+        const message =
+            error.response?.data?.message ||
+            error.message ||
+            "Something went wrong. Please try again.";
+        throw new Error(message);
+    }
+}

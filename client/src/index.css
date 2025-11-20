@@ -94,7 +94,7 @@
     --primary-600: #2563eb;
     --secondary-main: #587dbd;
     --warning-500: #eab308;
-    --orange-100: #e26e02;
+    --orange-100: #f48c06;
     --error-800: #e03030;
     /* COLOR THEME */
 
@@ -183,4 +183,9 @@
 .ant-dropdown-menu .ant-dropdown-menu-item:hover {
     background-color: transparent !important;
     color: var(--orange-100) !important;
+}
+
+.ant-dropdown-menu-item:has(.logout):hover {
+    background-color: var(--orange-100) !important;
+    color: var(--gray-100) !important;
 }

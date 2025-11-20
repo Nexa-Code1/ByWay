@@ -4,7 +4,6 @@ import {
     FileTextOutlined,
     HistoryOutlined,
     LikeOutlined,
-    LogoutOutlined,
     SettingOutlined,
     UserOutlined,
 } from "@ant-design/icons";
@@ -41,10 +40,5 @@ export const profileLinks: MenuItemType[] = [
         key: "settings",
         icon: <SettingOutlined />,
         label: <Link to="/profile/settings">settings</Link>,
-    },
-    {
-        key: "logout",
-        icon: <LogoutOutlined />,
-        label: <a>logout</a>,
     },
 ];

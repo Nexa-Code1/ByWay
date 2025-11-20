@@ -1,6 +1,6 @@
 export enum QUERY_KEYS {
     // AUTH KEYS
-    USER = "user",
+    USER_PROFILE = "userProfile",
 
     // USER KEYS
     GET_CURRENT_USER = "getCurrentUser",

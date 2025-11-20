@@ -4,7 +4,6 @@ import { RouterProvider } from "react-router/dom";
 import { CookiesProvider } from "react-cookie";
 
 import { router } from "./routes";
-import UserContextProvider from "./context/user-context";
 
 function App() {
     const queryClient = new QueryClient();
@@ -12,10 +11,8 @@ function App() {
     return (
         <CookiesProvider>
             <QueryClientProvider client={queryClient}>
-                <UserContextProvider>
-                    <RouterProvider router={router} />
-                    <ReactQueryDevtools initialIsOpen={false} />
-                </UserContextProvider>
+                <RouterProvider router={router} />
+                <ReactQueryDevtools initialIsOpen={false} />
             </QueryClientProvider>
         </CookiesProvider>
     );

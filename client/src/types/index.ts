@@ -1,5 +1,18 @@
+import type { ReactNode } from "react";
+
 export interface IUser {
-    role: "student" | "instructor";
+    _id: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    language: "ar" | "en";
+    links: string[];
+    role: RoleType;
+    isPrivate: boolean;
+    isVerified: boolean;
+    avatar: string;
+    createdAt: Date;
+    updatedAt: Date;
 }
 
 export interface INewAccount {
@@ -18,3 +31,5 @@ export interface ILogin {
 export type RoleType = "student" | "instructor";
 
 export type AuthType = "login" | "signup" | "forget-password";
+
+export type MenuItemType = { key: string; icon?: ReactNode; label: ReactNode };

@@ -1,5 +1,5 @@
 import { type Dispatch, type ReactNode, type SetStateAction } from "react";
-import { useSearchParams } from "react-router";
+import { useLocation, useNavigate, useSearchParams } from "react-router";
 import { Modal } from "antd";
 
 import loginImg from "../../assets/images/login-img.jpg";
@@ -19,10 +19,16 @@ function AuthContainer({
     isModalOpen,
     onModalOpen,
 }: AuthContainerProps) {
-    const handleOk = () => onModalOpen(false);
-    const handleCancel = () => onModalOpen(false);
     const [searchParams] = useSearchParams();
     const auth = searchParams.get("auth");
+    const navigate = useNavigate();
+    const { pathname } = useLocation();
+
+    const handleClose = () => {
+        onModalOpen(false);
+        searchParams.delete("auth");
+        navigate(`${pathname}?${searchParams.toString()}`, { replace: true });
+    };
 
     return (
         <>
@@ -31,7 +37,7 @@ function AuthContainer({
                 centered
                 closable={{ "aria-label": "Custom Close Button" }}
                 open={isModalOpen}
-                onCancel={handleCancel}
+                onCancel={handleClose}
                 footer={null}
                 styles={{
                     body: {
@@ -62,8 +68,8 @@ function AuthContainer({
                     />
                 </div>
                 <div className="w-full sm:w-1/2 h-full p-4 flex flex-col gap-4 overflow-y-auto">
-                    {auth === "login" && <Login />}
-                    {auth === "signup" && <Signup handleOk={handleOk} />}
+                    {auth === "login" && <Login handleClose={handleClose} />}
+                    {auth === "signup" && <Signup handleClose={handleClose} />}
                     {auth === "forget-password" && <ForgetPassword />}
                 </div>
             </Modal>

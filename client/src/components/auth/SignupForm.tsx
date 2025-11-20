@@ -1,32 +1,43 @@
-import { Button, Form, Input, Spin, type FormProps } from "antd";
+import { Form, Input, type FormProps } from "antd";
 import Checkbox from "antd/es/checkbox/Checkbox";
-import { LoadingOutlined } from "@ant-design/icons";
 
 import { useSignup } from "../../hooks/auth/useSignup";
 import type { INewAccount } from "../../types";
 import PasswordInput from "../shared/PasswordInput";
 import EmailInput from "../shared/EmailInput";
+import AppSubmitBtn from "../shared/AppSubmitBtn";
 
-type SignupFormProps = {
-    handleOk: () => void;
+const initialValues: INewAccount = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    role: false,
 };
 
-function SignupForm({ handleOk }: SignupFormProps) {
+type SignupFormProps = {
+    handleClose: () => void;
+};
+
+function SignupForm({ handleClose }: SignupFormProps) {
+    const [form] = Form.useForm();
     const { signup, isCreatingAccount, contextHolder } = useSignup();
 
     const onFinish: FormProps<INewAccount>["onFinish"] = (values) => {
-        const formValues: INewAccount = {
-            ...values,
-            role: values.role ? "instructor" : "student",
-        };
-        signup(formValues);
-        handleOk();
+        signup(values);
+        handleClose();
+        form.resetFields();
     };
 
     return (
         <>
             {contextHolder}
-            <Form name="signupForm" onFinish={onFinish} autoComplete="off">
+            <Form
+                name="signupForm"
+                onFinish={onFinish}
+                autoComplete="off"
+                initialValues={initialValues}
+            >
                 <div className="w-full flex gap-4">
                     <Form.Item<INewAccount>
                         name="firstName"
@@ -74,22 +85,9 @@ function SignupForm({ handleOk }: SignupFormProps) {
                     </Checkbox>
                 </Form.Item>
 
-                <Button
-                    type="primary"
-                    htmlType="submit"
-                    className="w-full bg-primary-600! hover:bg-primary-500! disabled:cursor-not-allowed disabled:text-white! capitalize"
-                    disabled={isCreatingAccount}
-                >
-                    {isCreatingAccount ? (
-                        <Spin
-                            indicator={<LoadingOutlined spin />}
-                            size="small"
-                            className="text-white!"
-                        />
-                    ) : (
-                        "create account"
-                    )}
-                </Button>
+                <AppSubmitBtn isLoading={isCreatingAccount}>
+                    create account
+                </AppSubmitBtn>
             </Form>
         </>
     );

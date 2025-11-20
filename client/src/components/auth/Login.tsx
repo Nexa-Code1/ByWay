@@ -3,11 +3,15 @@ import GoogleBtn from "./GoogleBtn";
 import TextWithLink from "../shared/TextWithLink";
 import LoginForm from "./LoginForm";
 
-function Login() {
+type LoginProps = {
+    handleClose: () => void;
+};
+
+function Login({ handleClose }: LoginProps) {
     return (
         <>
             <ModalHeader />
-            <LoginForm />
+            <LoginForm handleClose={handleClose} />
             <p className="text-center">or you can</p>
             <GoogleBtn />
             <TextWithLink

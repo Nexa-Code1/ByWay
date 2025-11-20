@@ -15,7 +15,7 @@ function Navbar() {
                 </Link>
                 <NavLinks />
                 <div className="hidden md:flex items-center gap-2">
-                    <RegisterBtns />
+                    <RegisterBtns shape="round" />
                 </div>
                 <NavLinksMobile />
             </div>

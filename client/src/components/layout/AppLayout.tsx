@@ -5,11 +5,13 @@ import Footer from "./footer/Footer";
 
 function AppLayout() {
     return (
-        <div className="min-h-screen flex flex-col">
-            <Navbar />
-            <main className="container mx-auto flex-1 px-2">
-                <Outlet />
-            </main>
+        <div className="flex flex-col">
+            <div className="min-h-screen flex flex-col">
+                <Navbar />
+                <main className="min-h-[calc(100vh-80px)] flex justify-center flex-1 container mx-auto p-2">
+                    <Outlet />
+                </main>
+            </div>
             <Footer />
         </div>
     );

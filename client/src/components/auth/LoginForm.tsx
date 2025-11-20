@@ -1,51 +1,57 @@
 import { useSearchParams } from "react-router";
 import { Button, Form, type FormProps } from "antd";
+
 import PasswordInput from "../shared/PasswordInput";
 import EmailInput from "../shared/EmailInput";
+import { useLogin } from "../../hooks/auth/useLogin";
+import AppSubmitBtn from "../shared/AppSubmitBtn";
+import type { ILogin } from "../../types";
 
-type FieldType = {
-    email: string;
-    password: string;
+const initialValues: ILogin = {
+    email: "",
+    password: "",
 };
 
-function LoginForm() {
+type LoginFormProps = {
+    handleClose: () => void;
+};
+
+function LoginForm({ handleClose }: LoginFormProps) {
+    const [form] = Form.useForm();
     const [, setSearchParams] = useSearchParams();
+    const { login, isLoggingin, contextHolder } = useLogin();
 
-    const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
-        console.log(values);
-    };
-
-    const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (
-        errorInfo
-    ) => {
-        console.log("Failed:", errorInfo);
+    const onFinish: FormProps<ILogin>["onFinish"] = (values) => {
+        login(values);
+        handleClose();
+        form.resetFields();
     };
 
     return (
-        <Form
-            name="loginForm"
-            onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
-            autoComplete="off"
-        >
-            <EmailInput />
-            <PasswordInput />
-
-            <Button
-                className="capitalize hover:bg-transparent! p-0! -mt-4! w-full justify-end! text-gray-900! hover:text-error-800! text-sm!"
-                type="text"
-                onClick={() => setSearchParams({ auth: "forget-password" })}
+        <>
+            {contextHolder}
+            <Form
+                name="loginForm"
+                form={form}
+                onFinish={onFinish}
+                autoComplete="off"
+                initialValues={initialValues}
             >
-                forget password
-            </Button>
+                <EmailInput />
+                <PasswordInput />
 
-            <Button
-                type="primary"
-                className="w-full bg-primary-600! hover:bg-primary-500! capitalize"
-            >
-                log in
-            </Button>
-        </Form>
+                <Button
+                    className="capitalize hover:bg-transparent! p-0! -mt-4! w-full justify-end! text-gray-900! hover:text-error-800! text-sm!"
+                    type="text"
+                    onClick={() => setSearchParams({ auth: "forget-password" })}
+                    disabled={isLoggingin}
+                >
+                    forget password
+                </Button>
+
+                <AppSubmitBtn isLoading={isLoggingin}>log in</AppSubmitBtn>
+            </Form>
+        </>
     );
 }
 

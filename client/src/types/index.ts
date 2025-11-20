@@ -7,7 +7,12 @@ export interface INewAccount {
     lastName: string;
     email: string;
     password: string;
-    role: RoleType;
+    role: boolean;
+}
+
+export interface ILogin {
+    email: string;
+    password: string;
 }
 
 export type RoleType = "student" | "instructor";

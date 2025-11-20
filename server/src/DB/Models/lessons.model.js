@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const lessonSchema = new mongoose.Schema(
   {
+    course_Id: { type: String, require: true },
     section_ID: mongoose.Schema.Types.ObjectId,
 
     title: { type: String, required: true },

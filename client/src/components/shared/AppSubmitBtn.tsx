@@ -1,5 +1,5 @@
-import { Button, Spin } from "antd";
-import { LoadingOutlined } from "@ant-design/icons";
+import { Button } from "antd";
+import Spinner from "./Spinner";
 
 type AppSubmitBtnProps = {
     isLoading: boolean;
@@ -14,15 +14,7 @@ function AppSubmitBtn({ isLoading, children }: AppSubmitBtnProps) {
             className="w-full bg-primary-600! hover:bg-primary-500! disabled:cursor-not-allowed disabled:text-white! capitalize"
             disabled={isLoading}
         >
-            {isLoading ? (
-                <Spin
-                    indicator={<LoadingOutlined spin />}
-                    size="small"
-                    className="text-white!"
-                />
-            ) : (
-                children
-            )}
+            {isLoading ? <Spinner size="small" /> : children}
         </Button>
     );
 }

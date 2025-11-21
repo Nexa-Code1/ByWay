@@ -1,7 +1,6 @@
-import ModalHeader from "./ModalHeader";
 import GoogleBtn from "./GoogleBtn";
 import TextWithLink from "../shared/TextWithLink";
-import LoginForm from "./LoginForm";
+import LoginForm from "./forms/LoginForm";
 
 type LoginProps = {
     handleClose: () => void;
@@ -10,7 +9,6 @@ type LoginProps = {
 function Login({ handleClose }: LoginProps) {
     return (
         <>
-            <ModalHeader />
             <LoginForm handleClose={handleClose} />
             <p className="text-center">or you can</p>
             <GoogleBtn />

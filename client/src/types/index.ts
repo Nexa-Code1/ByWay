@@ -28,8 +28,28 @@ export interface ILogin {
     password: string;
 }
 
+export interface ISendOTP {
+    email: string;
+}
+
+export interface IVerifyOTP {
+    email: string;
+    otp: string;
+}
+
+export interface IResetPassword {
+    email: string;
+    newPassword: string;
+    confirmNewPassword: string;
+}
+
 export type RoleType = "student" | "instructor";
 
-export type AuthType = "login" | "signup" | "forget-password";
+export type AuthType =
+    | "login"
+    | "signup"
+    | "send-otp"
+    | "verify-otp"
+    | "reset-password";
 
 export type MenuItemType = { key: string; icon?: ReactNode; label: ReactNode };

@@ -1,5 +1,4 @@
-import ModalHeader from "./ModalHeader";
-import SignupForm from "./SignupForm";
+import SignupForm from "./forms/SignupForm";
 import GoogleBtn from "./GoogleBtn";
 import TextWithLink from "../shared/TextWithLink";
 
@@ -10,7 +9,6 @@ type SignupProps = {
 function Signup({ handleClose }: SignupProps) {
     return (
         <>
-            <ModalHeader />
             <GoogleBtn />
             <p className="text-center">or you can</p>
             <SignupForm handleClose={handleClose} />

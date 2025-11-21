@@ -1,11 +1,11 @@
 import { Form, Input, type FormProps } from "antd";
 import Checkbox from "antd/es/checkbox/Checkbox";
 
-import { useSignup } from "../../hooks/auth/useSignup";
-import type { INewAccount } from "../../types";
-import PasswordInput from "../shared/PasswordInput";
-import EmailInput from "../shared/EmailInput";
-import AppSubmitBtn from "../shared/AppSubmitBtn";
+import { useSignup } from "../../../hooks/auth/useSignup";
+import type { INewAccount } from "../../../types";
+import PasswordInput from "../../shared/PasswordInput";
+import EmailInput from "../../shared/EmailInput";
+import AppSubmitBtn from "../../shared/AppSubmitBtn";
 
 const initialValues: INewAccount = {
     firstName: "",
@@ -23,8 +23,8 @@ function SignupForm({ handleClose }: SignupFormProps) {
     const [form] = Form.useForm();
     const { signup, isCreatingAccount, contextHolder } = useSignup();
 
-    const onFinish: FormProps<INewAccount>["onFinish"] = (values) => {
-        signup(values);
+    const onFinish: FormProps<INewAccount>["onFinish"] = async (values) => {
+        await signup(values);
         handleClose();
         form.resetFields();
     };
@@ -33,6 +33,7 @@ function SignupForm({ handleClose }: SignupFormProps) {
         <>
             {contextHolder}
             <Form
+                form={form}
                 name="signupForm"
                 onFinish={onFinish}
                 autoComplete="off"

@@ -10,7 +10,7 @@ export function useLogin() {
     const navigate = useNavigate();
     const [, setCookie] = useCookies(["token", "refreshToken"]);
 
-    const { mutate: login, isPending: isLoggingin } = useMutation({
+    const { mutateAsync: login, isPending: isLoggingin } = useMutation({
         mutationFn: handleLogin,
         onSuccess: (data) => {
             setCookie("token", data.token, { path: "/" });

@@ -1,9 +1,17 @@
 import { Form, Input } from "antd";
 
-function PasswordInput() {
+type PasswordInputProps = {
+    name?: string;
+    placeholder?: string;
+};
+
+function PasswordInput({
+    name = "password",
+    placeholder = "Password",
+}: PasswordInputProps) {
     return (
         <Form.Item
-            name="password"
+            name={name}
             rules={[
                 { required: true, message: "Please input your password!" },
                 {
@@ -14,7 +22,7 @@ function PasswordInput() {
             className="mb-4!"
         >
             <Input.Password
-                placeholder="Password"
+                placeholder={placeholder}
                 className="bg-gray-100! border-0!"
             />
         </Form.Item>

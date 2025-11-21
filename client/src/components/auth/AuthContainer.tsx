@@ -6,7 +6,10 @@ import loginImg from "../../assets/images/login-img.jpg";
 import defaultAuthImg from "../../assets/images/default-auth-img.jpg";
 import Login from "./Login";
 import Signup from "./Signup";
-import ForgetPassword from "./ForgetPassword";
+import SendOTP from "./SendOTP";
+import VerifyOTP from "./VerifyOTP";
+import ResetPassword from "./ResetPassword";
+import ModalHeader from "./ModalHeader";
 
 type AuthContainerProps = {
     children: ReactNode;
@@ -68,9 +71,12 @@ function AuthContainer({
                     />
                 </div>
                 <div className="w-full sm:w-1/2 h-full p-4 flex flex-col gap-4 overflow-y-auto">
+                    <ModalHeader />
                     {auth === "login" && <Login handleClose={handleClose} />}
                     {auth === "signup" && <Signup handleClose={handleClose} />}
-                    {auth === "forget-password" && <ForgetPassword />}
+                    {auth === "send-otp" && <SendOTP />}
+                    {auth === "verify-otp" && <VerifyOTP />}
+                    {auth === "reset-password" && <ResetPassword />}
                 </div>
             </Modal>
         </>

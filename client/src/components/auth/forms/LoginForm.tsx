@@ -1,11 +1,11 @@
 import { useSearchParams } from "react-router";
 import { Button, Form, type FormProps } from "antd";
 
-import PasswordInput from "../shared/PasswordInput";
-import EmailInput from "../shared/EmailInput";
-import { useLogin } from "../../hooks/auth/useLogin";
-import AppSubmitBtn from "../shared/AppSubmitBtn";
-import type { ILogin } from "../../types";
+import PasswordInput from "../../shared/PasswordInput";
+import EmailInput from "../../shared/EmailInput";
+import { useLogin } from "../../../hooks/auth/useLogin";
+import AppSubmitBtn from "../../shared/AppSubmitBtn";
+import type { ILogin } from "../../../types";
 
 const initialValues: ILogin = {
     email: "",
@@ -21,8 +21,8 @@ function LoginForm({ handleClose }: LoginFormProps) {
     const [, setSearchParams] = useSearchParams();
     const { login, isLoggingin, contextHolder } = useLogin();
 
-    const onFinish: FormProps<ILogin>["onFinish"] = (values) => {
-        login(values);
+    const onFinish: FormProps<ILogin>["onFinish"] = async (values) => {
+        await login(values);
         handleClose();
         form.resetFields();
     };
@@ -43,7 +43,7 @@ function LoginForm({ handleClose }: LoginFormProps) {
                 <Button
                     className="capitalize hover:bg-transparent! p-0! -mt-4! w-full justify-end! text-gray-900! hover:text-error-800! text-sm!"
                     type="text"
-                    onClick={() => setSearchParams({ auth: "forget-password" })}
+                    onClick={() => setSearchParams({ auth: "send-otp" })}
                     disabled={isLoggingin}
                 >
                     forget password

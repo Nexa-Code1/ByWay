@@ -1,6 +1,7 @@
 import coursesModel from "../../../DB/Models/courses.model.js";
 import categoryModel from "../../../DB/Models/categories.model.js";
-import { COURSE_STATUS, USER_ROLES } from "../../../Constants/constants.js";
+import { COURSE_STATUS } from "../../../Constants/constants.js";
+import cartModel from "../../../DB/Models/cart.model.js";
 
 export const createCourse = async (req, res) => {
   const { id } = req.user;
@@ -110,9 +111,19 @@ export const getCourseDetails = async (req, res) => {
     return res.status(404).json({ message: "Course not found" });
   }
 
-  res
-    .status(200)
-    .json({ message: "Course details fetched successfully", course });
+  const cart = await cartModel.findOne({ student_ID: req.user.id });
+
+  const isInCart = cart
+    ? cart.courses.some((c) => c.course.toString() === id)
+    : false;
+
+  res.status(200).json({
+    message: "Course details fetched successfully",
+    course: {
+      ...course.toObject(),
+      isInCart,
+    },
+  });
 };
 
 export const getAllCourses = async (req, res) => {
@@ -188,9 +199,21 @@ export const getAllCourses = async (req, res) => {
   const totalCourses = courses.length;
   const paginatedCourses = courses.slice(skip, skip + limitNumber);
 
+  // 🔥 Get user cart once
+  const cart = await cartModel.findOne({ student_ID: req.user.id });
+
+  const cartCoursesIds = cart
+    ? cart.courses.map((c) => c.course.toString())
+    : [];
+
+  const paginatedCoursesWithCartFlag = paginatedCourses.map((c) => ({
+    ...c.toObject(),
+    isInCart: cartCoursesIds.includes(c._id.toString()),
+  }));
+
   res.status(200).json({
     message: "Courses fetched successfully",
-    courses: paginatedCourses,
+    courses: paginatedCoursesWithCartFlag,
     pagination: {
       totalCourses,
       totalPages: Math.ceil(totalCourses / limitNumber),

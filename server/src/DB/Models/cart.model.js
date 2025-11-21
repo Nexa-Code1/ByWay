@@ -3,7 +3,14 @@ import mongoose from "mongoose";
 const cartSchema = new mongoose.Schema(
   {
     student_ID: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-    course_ID: { type: mongoose.Schema.Types.ObjectId, ref: "Course" },
+
+    courses: [
+      {
+        course: { type: mongoose.Schema.Types.ObjectId, ref: "Course" },
+        quantity: { type: Number, default: 1 },
+        totalPrice: { type: Number, default: 0 },
+      },
+    ],
   },
   { timestamps: true }
 );

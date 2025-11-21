@@ -4,6 +4,7 @@ import categoriesRouter from "../Modules/Categories/categories.controller.js";
 import coursesRouter from "../Modules/Courses/course.controller.js";
 import sectionsRouter from "../Modules/Sections/section.controller.js";
 import lessonsRouter from "../Modules/Sections/Lessons/lesson.controller.js";
+import cartRouter from "../Modules/Cart/cart.controller.js";
 
 const routerHandler = (app) => {
   app.get("/", (req, res) => {
@@ -16,6 +17,7 @@ const routerHandler = (app) => {
   app.use("/api/courses", coursesRouter);
   app.use("/api/sections", sectionsRouter);
   app.use("/api/lessons", lessonsRouter);
+  app.use("/api/cart", cartRouter);
 
   app.all(/.*/, (req, res) => {
     res.status(404).json({ message: "Route not found" });

@@ -8,7 +8,7 @@ function AppLayout() {
         <div className="flex flex-col">
             <div className="min-h-screen flex flex-col">
                 <Navbar />
-                <main className="min-h-[calc(100vh-80px)] flex justify-center flex-1 container mx-auto p-2">
+                <main className="min-h-[calc(100vh-80px)] w-full flex-1">
                     <Outlet />
                 </main>
             </div>

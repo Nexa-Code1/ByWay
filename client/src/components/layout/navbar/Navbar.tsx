@@ -8,13 +8,14 @@ import RegisterBtns from "./RegisterBtns";
 import UserMenu from "./UserMenu";
 import Spinner from "../../shared/Spinner";
 import { useUserProfile } from "../../../hooks/user/useUserProfile";
+import SectionContainer from "../../shared/SectionContainer";
 
 function Navbar() {
     const { userProfile, isLoading } = useUserProfile();
 
     return (
         <Header className="bg-gray-900! h-auto! flex items-center justify-center px-0!">
-            <div className="container flex items-center justify-between gap-2 p-2">
+            <SectionContainer className="flex items-center justify-between gap-2 my-0!">
                 <Link to="/">
                     <Logo />
                 </Link>
@@ -29,7 +30,7 @@ function Navbar() {
                     )}
                 </div>
                 <NavLinksMobile />
-            </div>
+            </SectionContainer>
         </Header>
     );
 }

@@ -11,37 +11,37 @@ export const navLinks = [
     {
         key: "home",
         path: "/",
-        label: "Home",
+        label: { en: "Home", ar: "الرئيسية" },
         icon: <HomeOutlined />,
     },
     {
         key: "courses",
         path: "/courses",
-        label: "Courses",
+        label: { en: "Courses", ar: "الدورات التدريبية" },
         icon: <FileTextOutlined />,
     },
     {
         key: "search",
         path: "/courses/search",
-        label: "Search",
+        label: { en: "Search", ar: "بحث" },
         icon: <FileSearchOutlined />,
     },
     {
         key: "blog",
         path: "/blogs",
-        label: "Blog",
+        label: { en: "Blog", ar: "مقالات" },
         icon: <FileOutlined />,
     },
     {
         key: "cart",
         path: "/cart",
-        label: "Cart",
+        label: { en: "Cart", ar: "عربة التسوق" },
         icon: <ShoppingCartOutlined />,
     },
     {
         key: "become-instructor",
         path: "/become-instructor",
-        label: "Become Instructor",
+        label: { en: "Become Instructor", ar: "أصبح مدربا" },
         icon: <AudioOutlined />,
     },
 ];

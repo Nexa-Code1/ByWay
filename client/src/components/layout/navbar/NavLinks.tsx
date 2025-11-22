@@ -3,6 +3,8 @@ import { NavLink } from "react-router";
 import { navLinks } from "../../../utils/navLinks";
 
 function NavLinks() {
+    const lang = "en";
+
     return (
         <ul className="items-center justify-between gap-2 flex-1 max-w-xl hidden md:flex">
             {navLinks.map((link) => (
@@ -15,7 +17,7 @@ function NavLinks() {
                             } px-2 text-sm focus-within:text-orange-100! hover:text-orange-100! transition-all block`
                         }
                     >
-                        {link.label}
+                        {link.label[lang]}
                     </NavLink>
                 </li>
             ))}

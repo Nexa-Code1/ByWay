@@ -14,17 +14,18 @@ import type { MenuItemType } from "../../../types";
 import UserProfileLink from "./UserProfileLink";
 import LogoutBtn from "./LogoutBtn";
 
-const baseItems: MenuItemType[] = [
-    ...navLinks.map((link) => ({
-        key: link.key,
-        icon: link.icon,
-        label: <Link to={link.path}>{link.label}</Link>,
-    })),
-];
-
 function NavLinksMobile() {
     const [collapse, setCollapse] = useState(true);
     const { userProfile, isLoading } = useUserProfile();
+    const lang = "en";
+
+    const baseItems: MenuItemType[] = [
+        ...navLinks.map((link) => ({
+            key: link.key,
+            icon: link.icon,
+            label: <Link to={link.path}>{link.label[lang]}</Link>,
+        })),
+    ];
 
     const items: MenuItemType[] =
         !isLoading && userProfile

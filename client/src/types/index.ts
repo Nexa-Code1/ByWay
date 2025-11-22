@@ -43,6 +43,35 @@ export interface IResetPassword {
     confirmNewPassword: string;
 }
 
+export interface IStatisticItem {
+    statistic: string;
+    label: ILangObj;
+}
+
+export interface IAllInOneEle {
+    icon: ReactNode;
+    iconBgColor: string;
+    title: ILangObj;
+    content: ILangObj;
+}
+
+export interface ICategory {
+    name: ILangObj;
+    slug: string;
+}
+
+export interface ILangObj {
+    en: string;
+    ar: string;
+}
+
+export interface IBlog {
+    id: string;
+    image: string;
+    title: string;
+    content: string;
+}
+
 export type RoleType = "student" | "instructor";
 
 export type AuthType =

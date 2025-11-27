@@ -2,6 +2,7 @@ import coursesModel from "../../../DB/Models/courses.model.js";
 import categoryModel from "../../../DB/Models/categories.model.js";
 import { COURSE_STATUS } from "../../../Constants/constants.js";
 import cartModel from "../../../DB/Models/cart.model.js";
+import wishlistModel from "../../../DB/Models/wishlist.model.js";
 
 export const createCourse = async (req, res) => {
   const { id } = req.user;
@@ -93,14 +94,8 @@ export const getCourseDetails = async (req, res) => {
   const { id } = req.params;
 
   const course = await coursesModel.findById(id).populate([
-    {
-      path: "category",
-      select: "name slug",
-    },
-    {
-      path: "instructor",
-      select: "firstName lastName email image",
-    },
+    { path: "category", select: "name slug" },
+    { path: "instructor", select: "firstName lastName email image" },
     {
       path: "content.lessons",
       select: "section_ID title description link duration isCompleted",
@@ -112,16 +107,23 @@ export const getCourseDetails = async (req, res) => {
   }
 
   const cart = await cartModel.findOne({ student_ID: req.user.id });
-
   const isInCart = cart
     ? cart.courses.some((c) => c.course.toString() === id)
     : false;
+
+  const wishlist = await wishlistModel.findOne({
+    student_ID: req.user.id,
+    course_ID: id,
+  });
+
+  const isFavourite = Boolean(wishlist);
 
   res.status(200).json({
     message: "Course details fetched successfully",
     course: {
       ...course.toObject(),
       isInCart,
+      isFavourite,
     },
   });
 };
@@ -164,23 +166,16 @@ export const getAllCourses = async (req, res) => {
   let courses = await coursesModel
     .find(query)
     .populate([
-      {
-        path: "category",
-        select: "name slug",
-      },
-      {
-        path: "instructor",
-        select: "firstName lastName email image",
-      },
+      { path: "category", select: "name slug" },
+      { path: "instructor", select: "firstName lastName email image" },
       {
         path: "content.lessons",
         select: "section_ID title description link duration isCompleted",
       },
     ])
-    .select(
-      "title subTitle image price discount category instructor isFavourite"
-    );
+    .select("title subTitle image price discount category instructor");
 
+  // Sorting
   if (sort) {
     const [field, order] = sort.split("-");
     const sortValue = order === "desc" ? -1 : 1;
@@ -199,21 +194,25 @@ export const getAllCourses = async (req, res) => {
   const totalCourses = courses.length;
   const paginatedCourses = courses.slice(skip, skip + limitNumber);
 
-  // 🔥 Get user cart once
+  // Cart check once
   const cart = await cartModel.findOne({ student_ID: req.user.id });
-
   const cartCoursesIds = cart
     ? cart.courses.map((c) => c.course.toString())
     : [];
 
-  const paginatedCoursesWithCartFlag = paginatedCourses.map((c) => ({
+  // Wishlist check once
+  const wishlist = await wishlistModel.find({ student_ID: req.user.id });
+  const wishlistCourseIds = wishlist.map((w) => w.course_ID.toString());
+
+  const paginatedCoursesWithFlags = paginatedCourses.map((c) => ({
     ...c.toObject(),
     isInCart: cartCoursesIds.includes(c._id.toString()),
+    isFavourite: wishlistCourseIds.includes(c._id.toString()),
   }));
 
   res.status(200).json({
     message: "Courses fetched successfully",
-    courses: paginatedCoursesWithCartFlag,
+    courses: paginatedCoursesWithFlags,
     pagination: {
       totalCourses,
       totalPages: Math.ceil(totalCourses / limitNumber),

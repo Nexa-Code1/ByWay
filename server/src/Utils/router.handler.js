@@ -5,6 +5,7 @@ import coursesRouter from "../Modules/Courses/course.controller.js";
 import sectionsRouter from "../Modules/Sections/section.controller.js";
 import lessonsRouter from "../Modules/Sections/Lessons/lesson.controller.js";
 import cartRouter from "../Modules/Cart/cart.controller.js";
+import wishlistRouter from "../Modules/Wishlist/wishlist.controller.js";
 
 const routerHandler = (app) => {
   app.get("/", (req, res) => {
@@ -18,6 +19,7 @@ const routerHandler = (app) => {
   app.use("/api/sections", sectionsRouter);
   app.use("/api/lessons", lessonsRouter);
   app.use("/api/cart", cartRouter);
+  app.use("/api/wishlist", wishlistRouter);
 
   app.all(/.*/, (req, res) => {
     res.status(404).json({ message: "Route not found" });

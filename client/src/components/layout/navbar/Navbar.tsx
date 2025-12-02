@@ -2,19 +2,19 @@ import { Link } from "react-router";
 import { Header } from "antd/es/layout/layout";
 
 import NavLinks from "./NavLinks";
-import Logo from "../../shared/Logo";
 import NavLinksMobile from "./NavLinksMobile";
 import RegisterBtns from "./RegisterBtns";
 import UserMenu from "./UserMenu";
-import Spinner from "../../shared/Spinner";
-import { useUserProfile } from "../../../hooks/user/useUserProfile";
-import SectionContainer from "../../shared/SectionContainer";
+import Spinner from "@/components/shared/Spinner";
+import SectionContainer from "@/components/shared/SectionContainer";
+import Logo from "@/components/shared/Logo";
+import { useUserProfile } from "@/hooks/user/useUserProfile";
 
 function Navbar() {
     const { userProfile, isLoading } = useUserProfile();
 
     return (
-        <Header className="bg-gray-900! h-auto! flex items-center justify-center px-0!">
+        <Header className="bg-gray-900! h-20! flex items-center justify-center px-0!">
             <SectionContainer className="flex items-center justify-between gap-2 my-0!">
                 <Link to="/">
                     <Logo />

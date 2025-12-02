@@ -1,6 +1,6 @@
-import SectionContainer from "../../../components/shared/SectionContainer";
-import TextDescription from "../../../components/shared/TextDescription";
-import { blogs } from "../../../utils/blogs";
+import SectionContainer from "@/components/shared/SectionContainer";
+import TextDescription from "@/components/shared/TextDescription";
+import { blogs } from "@/utils/blogs";
 import BlogCard from "./BlogCard";
 import LatestBlogCard from "./LatestBlogCard";
 

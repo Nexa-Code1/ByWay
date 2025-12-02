@@ -1,11 +1,11 @@
 import { useSearchParams } from "react-router";
 import { Button, Form, type FormProps } from "antd";
 
-import PasswordInput from "../../shared/PasswordInput";
-import EmailInput from "../../shared/EmailInput";
-import { useLogin } from "../../../hooks/auth/useLogin";
-import AppSubmitBtn from "../../shared/AppSubmitBtn";
-import type { ILogin } from "../../../types";
+import PasswordInput from "@/components/shared/PasswordInput";
+import EmailInput from "@/components/shared/EmailInput";
+import AppSubmitBtn from "@/components/shared/AppSubmitBtn";
+import { useLogin } from "@/hooks/auth/useLogin";
+import type { ILogin } from "@/types";
 
 const initialValues: ILogin = {
     email: "",

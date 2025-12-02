@@ -1,6 +1,6 @@
 import type { MouseEvent } from "react";
 
-import { useLogout } from "../../../hooks/auth/useLogout";
+import { useLogout } from "@/hooks/auth/useLogout";
 
 function LogoutBtn() {
     const { logout } = useLogout();

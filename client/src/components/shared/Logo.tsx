@@ -1,4 +1,4 @@
-import logoIcon from "../../assets/images/icon.png";
+import logoIcon from "@/assets/images/icon.png";
 
 type LogoProps = {
     textStyle?: string;

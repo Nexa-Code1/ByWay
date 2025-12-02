@@ -1,7 +1,7 @@
-import blog1Img from "../assets/images/blog-1.jpg";
-import blog2Img from "../assets/images/blog-2.jpg";
-import blog3Img from "../assets/images/blog-3.jpg";
-import blog4Img from "../assets/images/blog-4.jpg";
+import blog1Img from "@/assets/images/blog-1.jpg";
+import blog2Img from "@/assets/images/blog-2.jpg";
+import blog3Img from "@/assets/images/blog-3.jpg";
+import blog4Img from "@/assets/images/blog-4.jpg";
 import type { IBlog } from "../types";
 
 export const blogs: IBlog[] = [

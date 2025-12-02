@@ -1,6 +1,6 @@
 import { Button } from "antd";
 
-import googleIcon from "../../assets/images/GoogleIcon.png";
+import googleIcon from "@/assets/images/GoogleIcon.png";
 
 function GoogleBtn() {
     return (

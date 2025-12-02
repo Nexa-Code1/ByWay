@@ -1,6 +1,6 @@
-import heroImg from "../../../assets/images/hero-img.png";
-import SectionContainer from "../../../components/shared/SectionContainer";
-import TextDescription from "../../../components/shared/TextDescription";
+import SectionContainer from "@/components/shared/SectionContainer";
+import TextDescription from "@/components/shared/TextDescription";
+import heroImg from "@/assets/images/hero-img.png";
 
 function HeroSections() {
     return (

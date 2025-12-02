@@ -48,7 +48,7 @@ import {
     InstructorLayout,
 } from "./instructor/pages";
 
-import AppLayout from "./components/layout/AppLayout";
+import AppLayout from "@/components/layout/AppLayout";
 
 export const router = createBrowserRouter([
     // Public

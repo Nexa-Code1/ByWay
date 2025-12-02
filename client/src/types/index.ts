@@ -56,8 +56,12 @@ export interface IAllInOneEle {
 }
 
 export interface ICategory {
+    id: string;
     name: ILangObj;
     slug: string;
+    description: ILangObj;
+    icon: string;
+    color: string;
 }
 
 export interface ILangObj {
@@ -70,6 +74,23 @@ export interface IBlog {
     image: string;
     title: string;
     content: string;
+    // category: string;
+    // author: {
+    //     name: string;
+    //     avatar: string;
+    // };
+    // seen: number;
+    // createdAt: Date;
+    // updatedAt: Date;
+}
+
+export interface IFilterCoursesBy {
+    price?: string;
+    category?: string;
+    title?: string;
+    sort?: "time-asc" | "time-desc" | "price-asc" | "price-desc";
+    page?: number;
+    limit?: number;
 }
 
 export type RoleType = "student" | "instructor";

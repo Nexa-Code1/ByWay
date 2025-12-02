@@ -1,6 +1,6 @@
-import SectionContainer from "../../../components/shared/SectionContainer";
-import TextDescription from "../../../components/shared/TextDescription";
-import { allInOne } from "../../../utils/homePageData";
+import SectionContainer from "@/components/shared/SectionContainer";
+import TextDescription from "@/components/shared/TextDescription";
+import { allInOne } from "@/utils/homePageData";
 import AllInOneCard from "./AllInOneCard";
 
 function AllInOneSection() {

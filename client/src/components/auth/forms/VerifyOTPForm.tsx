@@ -1,8 +1,8 @@
 import { Form, Input, type FormProps } from "antd";
 
-import AppSubmitBtn from "../../shared/AppSubmitBtn";
-import { useVerifyOTP } from "../../../hooks/auth/useVerifyOTP";
-import type { IVerifyOTP } from "../../../types";
+import AppSubmitBtn from "@/components/shared/AppSubmitBtn";
+import { useVerifyOTP } from "@/hooks/auth/useVerifyOTP";
+import type { IVerifyOTP } from "@/types";
 
 const initialValues: IVerifyOTP = {
     email: "",

@@ -7,12 +7,12 @@ import {
 } from "@ant-design/icons";
 import Dropdown from "antd/es/dropdown/dropdown";
 
-import { navLinks } from "../../../utils/navLinks";
 import RegisterBtns from "./RegisterBtns";
-import { useUserProfile } from "../../../hooks/user/useUserProfile";
-import type { MenuItemType } from "../../../types";
 import UserProfileLink from "./UserProfileLink";
 import LogoutBtn from "./LogoutBtn";
+import { navLinks } from "@/utils/navLinks";
+import { useUserProfile } from "@/hooks/user/useUserProfile";
+import type { MenuItemType } from "@/types";
 
 function NavLinksMobile() {
     const [collapse, setCollapse] = useState(true);

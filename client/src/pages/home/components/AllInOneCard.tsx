@@ -1,5 +1,5 @@
-import TextDescription from "../../../components/shared/TextDescription";
-import type { IAllInOneEle } from "../../../types";
+import TextDescription from "@/components/shared/TextDescription";
+import type { IAllInOneEle } from "@/types";
 
 type AllInOneCardProps = {
     ele: IAllInOneEle;

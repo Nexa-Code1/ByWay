@@ -16,7 +16,7 @@ function VerificationResult({
     children,
 }: VerificationResultProps) {
     return (
-        <>
+        <div className="w-full min-h-[calc(100vh-80px)] flex flex-col items-center justify-center">
             <div className="w-40 h-40">
                 <img
                     src={img}
@@ -27,7 +27,7 @@ function VerificationResult({
             <h1 className="font-bold text-lg text-gray-800 mt-4">{title}</h1>
             <p className="text-sm text-gray-800 mb-2">{subTitle}</p>
             {children}
-        </>
+        </div>
     );
 }
 

@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useParams } from "react-router";
-
-import { useVerifyEmail } from "../../hooks/auth/useVerifyEmail";
-import emailVerifiedImg from "../../assets/images/email-verified.png";
-import emailUnverifiedImg from "../../assets/images/email-unverified.png";
-import PageSpinner from "../../components/shared/PageSpinner";
-import VerificationResult from "./VerificationResult";
 import { Button } from "antd";
-import RegisterBtns from "../../components/layout/navbar/RegisterBtns";
+
+import VerificationResult from "./VerificationResult";
+import { useVerifyEmail } from "@/hooks/auth/useVerifyEmail";
+import PageSpinner from "@/components/shared/PageSpinner";
+import RegisterBtns from "@/components/layout/navbar/RegisterBtns";
+import emailVerifiedImg from "@/assets/images/email-verified.png";
+import emailUnverifiedImg from "@/assets/images/email-unverified.png";
 
 function AuthVerification() {
     const params = useParams();

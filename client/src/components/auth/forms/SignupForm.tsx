@@ -1,11 +1,11 @@
 import { Form, Input, type FormProps } from "antd";
 import Checkbox from "antd/es/checkbox/Checkbox";
 
-import { useSignup } from "../../../hooks/auth/useSignup";
-import type { INewAccount } from "../../../types";
-import PasswordInput from "../../shared/PasswordInput";
-import EmailInput from "../../shared/EmailInput";
-import AppSubmitBtn from "../../shared/AppSubmitBtn";
+import { useSignup } from "@/hooks/auth/useSignup";
+import type { INewAccount } from "@/types";
+import PasswordInput from "@/components/shared/PasswordInput";
+import EmailInput from "@/components/shared/EmailInput";
+import AppSubmitBtn from "@/components/shared/AppSubmitBtn";
 
 const initialValues: INewAccount = {
     firstName: "",

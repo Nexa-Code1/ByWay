@@ -14,10 +14,10 @@ function UserProfileLink({ userProfile }: UserProfileLinkProps) {
             to={userProfile.role === "student" ? "/profile" : "/instructor"}
             className="flex items-center gap-1"
         >
-            <UserAvatar avatar={userProfile.avatar} />
-            <p>
-                {userProfile.firstName} {userProfile.lastName}
-            </p>
+            <UserAvatar
+                avatar={userProfile.avatar}
+                userName={`${userProfile.firstName} ${userProfile.lastName}`}
+            />
             <CaretRightFilled className="w-3 h-3" />
         </Link>
     );

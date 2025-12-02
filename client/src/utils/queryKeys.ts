@@ -2,23 +2,9 @@ export enum QUERY_KEYS {
     // AUTH KEYS
     USER_PROFILE = "userProfile",
 
-    // USER KEYS
-    GET_CURRENT_USER = "getCurrentUser",
-    GET_USERS = "getUsers",
-    GET_USER_BY_ID = "getUserById",
+    // CATEGORIES KEYS
+    GET_ALL_CATEGORIES = "getAllCategories",
 
-    // FOLLOW KEYS
-    GET_FOLLOWERS_BY_USER_ID = "followers",
-    GET_FOLLOWINGS_BY_USER_ID = "followings",
-
-    // POST KEYS
-    GET_POSTS = "getPosts",
-    GET_INFINITE_POSTS = "getInfinitePosts",
-    GET_RECENT_POSTS = "getRecentPosts",
-    GET_POST_BY_ID = "getPostById",
-    GET_USER_POSTS = "getUserPosts",
-    GET_FILE_PREVIEW = "getFilePreview",
-
-    //  SEARCH KEYS
-    SEARCH_POSTS = "getSearchPosts",
+    // COURSES KEYS
+    GET_ALL_COURSES = "getAllCourses",
 }

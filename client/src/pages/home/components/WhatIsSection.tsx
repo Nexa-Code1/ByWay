@@ -1,10 +1,10 @@
-import SectionContainer from "../../../components/shared/SectionContainer";
-import instructorImg from "../../../assets/images/what-is-byway-img-1.jpg";
-import studentImg from "../../../assets/images/what-is-byway-img-2.jpg";
 import WhatIsCard from "./WhatIsCard";
-import { whatIsByway } from "../../../utils/homePageData";
-import TextDescription from "../../../components/shared/TextDescription";
-import { useUserProfile } from "../../../hooks/user/useUserProfile";
+import SectionContainer from "@/components/shared/SectionContainer";
+import { whatIsByway } from "@/utils/homePageData";
+import TextDescription from "@/components/shared/TextDescription";
+import { useUserProfile } from "@/hooks/user/useUserProfile";
+import instructorImg from "@/assets/images/what-is-byway-img-1.jpg";
+import studentImg from "@/assets/images/what-is-byway-img-2.jpg";
 
 function WhatIsSection() {
     const { userProfile, isLoading, error } = useUserProfile();

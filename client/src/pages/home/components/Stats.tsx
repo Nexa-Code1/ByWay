@@ -1,5 +1,5 @@
-import SectionContainer from "../../../components/shared/SectionContainer";
-import { stats } from "../../../utils/homePageData";
+import SectionContainer from "@/components/shared/SectionContainer";
+import { stats } from "@/utils/homePageData";
 import StatisticItem from "./StatisticItem";
 
 function Stats() {

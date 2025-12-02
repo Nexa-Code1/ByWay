@@ -32,7 +32,10 @@ function UserMenu({ user }: UserMenuProps) {
                 type="text"
                 className="flex items-center gap-1 text-gray-300! group"
             >
-                <UserAvatar avatar={user.avatar} />
+                <UserAvatar
+                    avatar={user.avatar}
+                    userName={`${user.firstName} ${user.lastName}`}
+                />
                 <p className="text-sm">{user.firstName}</p>
                 <DownOutlined className="w-3 h-3 group-hover:scale-115 transition-all" />
             </Button>

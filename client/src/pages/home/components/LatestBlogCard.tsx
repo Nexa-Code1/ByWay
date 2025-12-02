@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router";
 import { Button, Tag } from "antd";
 
-import type { IBlog } from "../../../types";
-import TextDescription from "../../../components/shared/TextDescription";
+import type { IBlog } from "@/types";
+import TextDescription from "@/components/shared/TextDescription";
 
 type LatestBlogCardProps = {
     blog: IBlog;

@@ -5,9 +5,9 @@ import {
 } from "@ant-design/icons";
 
 import type { IAllInOneEle } from "../types";
-import testimonialImg1 from "../assets/images/testimonial-1.jpg";
-import testimonialImg2 from "../assets/images/testimonial-2.jpg";
-import testimonialImg3 from "../assets/images/testimonial-3.jpg";
+import testimonialImg1 from "@/assets/images/testimonial-1.jpg";
+import testimonialImg2 from "@/assets/images/testimonial-2.jpg";
+import testimonialImg3 from "@/assets/images/testimonial-3.jpg";
 
 export const whatIsByway = {
     en: "Our platform is a learning hub where students can easily purchase courses, track their progress, and share their feedback. It offers multiple secure payment options for a smooth learning experience. Instructors can also upload their own courses, manage their content, and reach a wide community of learners — all in one place.",

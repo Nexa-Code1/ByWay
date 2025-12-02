@@ -1,9 +1,9 @@
 import { Form, type FormProps } from "antd";
 
-import AppSubmitBtn from "../../shared/AppSubmitBtn";
-import type { IResetPassword } from "../../../types";
-import PasswordInput from "../../shared/PasswordInput";
-import { useResetPassword } from "../../../hooks/auth/useForgetPassword";
+import AppSubmitBtn from "@/components/shared/AppSubmitBtn";
+import PasswordInput from "@/components/shared/PasswordInput";
+import type { IResetPassword } from "@/types";
+import { useResetPassword } from "@/hooks/auth/useForgetPassword";
 
 const initialValues: IResetPassword = {
     email: "",

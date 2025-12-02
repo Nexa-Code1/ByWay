@@ -1,6 +1,6 @@
-import SectionContainer from "../../../components/shared/SectionContainer";
-import TextDescription from "../../../components/shared/TextDescription";
-import { categories } from "../../../utils/categories";
+import SectionContainer from "@/components/shared/SectionContainer";
+import TextDescription from "@/components/shared/TextDescription";
+import { categories } from "@/utils/categories";
 import CategoryBtn from "./CategoryBtn";
 
 function Categories() {

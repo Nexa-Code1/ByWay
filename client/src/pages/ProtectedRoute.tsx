@@ -2,8 +2,8 @@ import type { ReactNode } from "react";
 import { Navigate } from "react-router";
 import { useCookies } from "react-cookie";
 
-import { useUserProfile } from "../hooks/user/useUserProfile";
-import PageSpinner from "../components/shared/PageSpinner";
+import { useUserProfile } from "@/hooks/user/useUserProfile";
+import PageSpinner from "@/components/shared/PageSpinner";
 
 type ProtectedRouteProps = {
     children: ReactNode;

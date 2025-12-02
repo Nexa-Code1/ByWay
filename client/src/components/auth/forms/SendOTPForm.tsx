@@ -1,9 +1,9 @@
 import { Form, type FormProps } from "antd";
 
-import EmailInput from "../../shared/EmailInput";
-import { useSendOTP } from "../../../hooks/auth/useSendOTP";
-import AppSubmitBtn from "../../shared/AppSubmitBtn";
-import type { ISendOTP } from "../../../types";
+import EmailInput from "@/components/shared/EmailInput";
+import AppSubmitBtn from "@/components/shared/AppSubmitBtn";
+import { useSendOTP } from "@/hooks/auth/useSendOTP";
+import type { ISendOTP } from "@/types";
 
 const initialValues: ISendOTP = { email: "" };
 

@@ -8,10 +8,10 @@ import {
 } from "@ant-design/icons";
 import { Button } from "antd";
 
-import SectionContainer from "../../../components/shared/SectionContainer";
-import { testimonials } from "../../../utils/homePageData";
+import SectionContainer from "@/components/shared/SectionContainer";
+import { testimonials } from "@/utils/homePageData";
 import ArrowBtn from "./ArrowBtn";
-import TextDescription from "../../../components/shared/TextDescription";
+import TextDescription from "@/components/shared/TextDescription";
 
 function TestimonialSection() {
     const [currentFeedbackIndex, setCurrentFeedbackIndex] = useState(0);

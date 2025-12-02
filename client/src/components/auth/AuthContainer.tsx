@@ -2,8 +2,8 @@ import { type Dispatch, type ReactNode, type SetStateAction } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router";
 import { Modal } from "antd";
 
-import loginImg from "../../assets/images/login-img.jpg";
-import defaultAuthImg from "../../assets/images/default-auth-img.jpg";
+import loginImg from "@/assets/images/login-img.jpg";
+import defaultAuthImg from "@/assets/images/default-auth-img.jpg";
 import Login from "./Login";
 import Signup from "./Signup";
 import SendOTP from "./SendOTP";

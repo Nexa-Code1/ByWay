@@ -4,64 +4,54 @@ import { authenticationMiddleware } from "../../Middlewares/authentication.middl
 import { authorizationMiddleware } from "../../Middlewares/authorization.middleware.js";
 import { USER_ROLES, USER_TYPES } from "../../Constants/constants.js";
 import {
-    createCourse,
-    deleteCourse,
-    getAllCourses,
-    getCourseDetails,
-    getInstructorCourses,
-    publishCourse,
-    updateCourse,
+  createCourse,
+  deleteCourse,
+  getAllCourses,
+  getCourseDetails,
+  getInstructorCourses,
+  publishCourse,
+  updateCourse,
 } from "./Services/course.service.js";
 
 const coursesRouter = Router();
 
 coursesRouter.post(
-    "/create-course",
-    authenticationMiddleware,
-    authorizationMiddleware(USER_ROLES.INSTRUCTOR),
-    errorHandlerMiddleware(createCourse)
+  "/create-course",
+  authenticationMiddleware,
+  authorizationMiddleware(USER_ROLES.INSTRUCTOR),
+  errorHandlerMiddleware(createCourse)
 );
 
 coursesRouter.put(
-    "/update-course/:id",
-    authenticationMiddleware,
-    authorizationMiddleware(USER_ROLES.INSTRUCTOR),
-    errorHandlerMiddleware(updateCourse)
+  "/update-course/:id",
+  authenticationMiddleware,
+  authorizationMiddleware(USER_ROLES.INSTRUCTOR),
+  errorHandlerMiddleware(updateCourse)
 );
 
 coursesRouter.delete(
-    "/delete-course/:id",
-    authenticationMiddleware,
-    authorizationMiddleware(USER_ROLES.INSTRUCTOR),
-    errorHandlerMiddleware(deleteCourse)
+  "/delete-course/:id",
+  authenticationMiddleware,
+  authorizationMiddleware(USER_ROLES.INSTRUCTOR),
+  errorHandlerMiddleware(deleteCourse)
 );
 
-coursesRouter.get(
-    "/get-course/:id",
-    // authenticationMiddleware,
-    // authorizationMiddleware(USER_TYPES),
-    errorHandlerMiddleware(getCourseDetails)
-);
+coursesRouter.get("/get-course/:id", errorHandlerMiddleware(getCourseDetails));
 
-coursesRouter.get(
-    "/get-courses",
-    // authenticationMiddleware,
-    // authorizationMiddleware(USER_TYPES),
-    errorHandlerMiddleware(getAllCourses)
-);
+coursesRouter.get("/get-courses", errorHandlerMiddleware(getAllCourses));
 
 coursesRouter.patch(
-    "/publish-course/:id",
-    authenticationMiddleware,
-    authorizationMiddleware(USER_ROLES.INSTRUCTOR),
-    errorHandlerMiddleware(publishCourse)
+  "/publish-course/:id",
+  authenticationMiddleware,
+  authorizationMiddleware(USER_ROLES.INSTRUCTOR),
+  errorHandlerMiddleware(publishCourse)
 );
 
 coursesRouter.get(
-    "/get-instructor-courses/:instructorId",
-    authenticationMiddleware,
-    authorizationMiddleware(USER_TYPES),
-    errorHandlerMiddleware(getInstructorCourses)
+  "/get-instructor-courses/:instructorId",
+  authenticationMiddleware,
+  authorizationMiddleware(USER_TYPES),
+  errorHandlerMiddleware(getInstructorCourses)
 );
 
 export default coursesRouter;

@@ -3,7 +3,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useCookies } from "react-cookie";
 import { message } from "antd";
 
-import { handleLogin } from "../../api/auth/auth";
+import { handleLogin } from "@/api/auth/auth";
 
 export function useLogin() {
     const [messageApi, contextHolder] = message.useMessage();
@@ -13,9 +13,10 @@ export function useLogin() {
     const { mutateAsync: login, isPending: isLoggingin } = useMutation({
         mutationFn: handleLogin,
         onSuccess: (data) => {
+            //! DOESN'T WORK
+            navigate("/", { replace: true });
             setCookie("token", data.token, { path: "/" });
             setCookie("refreshToken", data.refreshToken, { path: "/" });
-            navigate("/", { replace: true });
         },
         onError: (error) => messageApi.error(error.message),
     });

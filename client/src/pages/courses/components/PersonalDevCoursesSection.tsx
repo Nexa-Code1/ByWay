@@ -1,11 +1,11 @@
 import CourseCard from "@/components/shared/CourseCard";
-import SectionLayout from "./SectionLayout";
-import { useGetAllCourses } from "@/hooks/courses/useGetAllCourses";
+import SectionLayout from "../../../components/shared/SectionLayout";
+// import { useGetAllCourses } from "@/hooks/courses/useGetAllCourses";
 
 function PersonalDevCoursesSection() {
-    const { courses, isLoading, error } = useGetAllCourses({
-        category: "personal-development",
-    });
+    // const { courses, isLoading, error } = useGetAllCourses({
+    //     category: "personal-development",
+    // });
 
     return (
         <SectionLayout

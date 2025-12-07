@@ -1,4 +1,4 @@
-import SectionLayout from "./SectionLayout";
+import SectionLayout from "../../../components/shared/SectionLayout";
 import ContinueCourseCard from "./ContinueCourseCard";
 
 function ContinueLearningSection() {

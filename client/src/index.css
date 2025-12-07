@@ -218,7 +218,12 @@
     -webkit-box-orient: vertical;
     line-clamp: 2;
     -webkit-line-clamp: 2;
-    /* white-space: nowrap; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.truncate-line {
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }

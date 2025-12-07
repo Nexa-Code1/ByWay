@@ -4,13 +4,13 @@ import SVG from "react-inlinesvg";
 import TextDescription from "@/components/shared/TextDescription";
 import type { ICategory } from "@/types";
 import Card from "@/components/shared/Card";
+import iconPlaceholder from "@/assets/icons/icon-placeholder.svg";
 
 type CategoryCardProps = {
     category: ICategory;
 };
 
 export default function CategoryCard({ category }: CategoryCardProps) {
-    console.log(category);
     const lang = "en";
 
     return (
@@ -18,10 +18,10 @@ export default function CategoryCard({ category }: CategoryCardProps) {
             <Link to={`/courses?category=${category.slug}`}>
                 <div
                     className="relative w-14 h-14 mb-4 mx-auto flex items-center justify-center"
-                    style={{ color: category.color }}
+                    style={{ fill: category.color, color: category.color }}
                 >
                     <SVG
-                        src={category.icon}
+                        src={category.icon || iconPlaceholder}
                         className="rounded-sm w-6 h-6"
                         title={category.name[lang]}
                         cacheRequests={false}

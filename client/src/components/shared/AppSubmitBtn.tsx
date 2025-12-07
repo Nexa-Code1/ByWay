@@ -1,17 +1,27 @@
 import { Button } from "antd";
+import type { ReactNode } from "react";
+import type { BaseButtonProps } from "antd/es/button/button";
+
 import Spinner from "./Spinner";
 
 type AppSubmitBtnProps = {
     isLoading: boolean;
-    children: string;
+    className?: string;
+    type?: BaseButtonProps["type"];
+    children: ReactNode;
 };
 
-function AppSubmitBtn({ isLoading, children }: AppSubmitBtnProps) {
+function AppSubmitBtn({
+    isLoading,
+    className,
+    type = "default",
+    children,
+}: AppSubmitBtnProps) {
     return (
         <Button
-            type="primary"
+            type={type}
             htmlType="submit"
-            className="w-full bg-primary-600! hover:bg-primary-500! disabled:cursor-not-allowed disabled:text-white! capitalize"
+            className={`w-full bg-primary-600! text-gray-100! hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:text-white! capitalize ${className}`}
             disabled={isLoading}
         >
             {isLoading ? <Spinner size="small" /> : children}

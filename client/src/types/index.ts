@@ -56,11 +56,11 @@ export interface IAllInOneEle {
 }
 
 export interface ICategory {
-    id: string;
+    _id: string;
     name: ILangObj;
     slug: string;
     description: ILangObj;
-    icon: string;
+    icon?: string;
     color: string;
 }
 
@@ -91,6 +91,37 @@ export interface IFilterCoursesBy {
     sort?: "time-asc" | "time-desc" | "price-asc" | "price-desc";
     page?: number;
     limit?: number;
+}
+
+export interface ICourseDetails {
+    _id: string;
+    title: string;
+    subTitle: string;
+    instructor: IInstructor;
+    rate: number;
+    students: [];
+    description: string;
+    requirements: string[];
+    content: [];
+    status: string;
+    price: number;
+    discount: number;
+    reviews: [];
+    category: ICategory;
+    isFavourite: boolean;
+    progress: number;
+    createdAt: Date;
+    updatedAt: Date;
+    __v: number;
+    isInCart: boolean;
+}
+
+export interface IInstructor {
+    _id: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    image: string;
 }
 
 export type RoleType = "student" | "instructor";

@@ -1,15 +1,20 @@
 import categoryModel from "../../../DB/Models/categories.model.js";
 
 export const createCategory = async (req, res) => {
-    const { name, slug } = req.body;
+    const { name, slug, description, color } = req.body;
 
-    if (!name || !slug) {
+    if (!name || !slug || !description || !color) {
         return res.status(400).json({
-            message: "Name and slug are required",
+            message: "Name, slug, description, and color are required",
         });
     }
 
-    const category = await categoryModel.create({ name, slug });
+    const category = await categoryModel.create({
+        name,
+        slug,
+        description,
+        color,
+    });
 
     return res.status(201).json({
         message: "Category created successfully",
@@ -18,7 +23,9 @@ export const createCategory = async (req, res) => {
 };
 
 export const getAllCategories = async (req, res) => {
-    const categories = await categoryModel.find().select("name slug");
+    const categories = await categoryModel
+        .find()
+        .select("name slug description color");
 
     return res.status(200).json({
         message: "Categories fetched successfully",

@@ -1,32 +1,27 @@
 import Spinner from "@/components/shared/Spinner";
-// import { useGetAllCategories } from "@/hooks/categories/useGetAllCategories";
+import { useGetAllCategories } from "@/hooks/categories/useGetAllCategories";
 import type { ICategory } from "@/types";
 import CategoryCard from "./CategoryCard";
-import SectionLayout from "./SectionLayout";
-
-//! For Testing
-import { categories } from "@/utils/categories";
-const isLoading = false;
+import SectionLayout from "../../../components/shared/SectionLayout";
 
 function CategoriesSection() {
-    // const { categories, isLoading, error } = useGetAllCategories();
+    const { categories, isLoading, error } = useGetAllCategories();
 
-    // if (!isLoading || error || !categories?.categories.length) return;
+    if (isLoading)
+        return (
+            <Spinner
+                size="large"
+                className="w-full! mx-auto! text-primary-700!"
+            />
+        );
+    if (!isLoading && (error || !categories || !categories.categories.length))
+        return;
 
     return (
         <SectionLayout title="Choice favourite course from top category">
-            {isLoading ? (
-                <Spinner />
-            ) : (
-                // categories.categories.map((category: ICategory) => (
-                //     <CategoryCard category={category} key={category.id} />
-                // ))
-
-                //! For Testing
-                categories.map((category: ICategory) => (
-                    <CategoryCard category={category} key={category.id} />
-                ))
-            )}
+            {categories.categories.map((category: ICategory) => (
+                <CategoryCard category={category} key={category._id} />
+            ))}
         </SectionLayout>
     );
 }

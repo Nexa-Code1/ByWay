@@ -6,7 +6,7 @@ import TextDescription from "./TextDescription";
 import courseImg from "@/assets/images/course.jpg";
 import UserAvatar from "../layout/navbar/UserAvatar";
 
-function CourseCard() {
+function CourseCard({ course }) {
     return (
         <Card className="text-start!">
             <Link to={`/courses/${1}`}>

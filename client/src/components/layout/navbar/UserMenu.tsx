@@ -30,7 +30,7 @@ function UserMenu({ user }: UserMenuProps) {
         >
             <Button
                 type="text"
-                className="flex items-center gap-1 text-gray-300! group"
+                className="flex items-center gap-1 text-gray-300! group p-0!"
             >
                 <UserAvatar
                     avatar={user.avatar}

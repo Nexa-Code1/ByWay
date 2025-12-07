@@ -12,6 +12,16 @@ const categorySchema = new mongoose.Schema(
             unique: true,
             lowercase: true,
         },
+
+        description: {
+            en: String,
+            ar: String,
+        },
+
+        color: {
+            type: String,
+            unique: true,
+        },
     },
     { timestamps: true }
 );

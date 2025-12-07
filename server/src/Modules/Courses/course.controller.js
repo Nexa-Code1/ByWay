@@ -38,15 +38,15 @@ coursesRouter.delete(
 
 coursesRouter.get(
     "/get-course/:id",
-    // authenticationMiddleware,
-    // authorizationMiddleware(USER_TYPES),
+    authenticationMiddleware,
+    authorizationMiddleware(USER_TYPES),
     errorHandlerMiddleware(getCourseDetails)
 );
 
 coursesRouter.get(
     "/get-courses",
-    // authenticationMiddleware,
-    // authorizationMiddleware(USER_TYPES),
+    authenticationMiddleware,
+    authorizationMiddleware(USER_TYPES),
     errorHandlerMiddleware(getAllCourses)
 );
 

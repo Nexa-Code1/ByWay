@@ -2,6 +2,8 @@ import { Button } from "antd";
 import type { ReactNode } from "react";
 import { useNavigate } from "react-router";
 
+import SectionHeader from "./SectionHeader";
+
 type SectionLayoutProps = {
     title: string;
     className?: string;
@@ -22,9 +24,7 @@ function SectionLayout({
     return (
         <section className={`mb-20 ${className}`}>
             <header className="flex items-center justify-between">
-                <h2 className="font-bold text-xl mb-6 text-gray-800 text-center sm:text-start">
-                    {title}
-                </h2>
+                <SectionHeader title={title} />
                 {linkPath && (
                     <Button
                         type="text"

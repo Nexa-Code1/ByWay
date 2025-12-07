@@ -1,5 +1,5 @@
 import CourseCard from "@/components/shared/CourseCard";
-import SectionLayout from "./SectionLayout";
+import SectionLayout from "../../../components/shared/SectionLayout";
 
 function RecommendedSection() {
     return (

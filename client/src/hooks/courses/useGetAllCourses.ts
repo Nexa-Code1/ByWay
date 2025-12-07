@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
+import { useCookies } from "react-cookie";
 
 import { handleGetAllCourses } from "@/api/courses/courses";
 import type { IFilterCoursesBy } from "@/types";
 import { QUERY_KEYS } from "@/utils/queryKeys";
-import { useCookies } from "react-cookie";
 
 export function useGetAllCourses(filter: IFilterCoursesBy) {
     const [cookies] = useCookies(["token"]);

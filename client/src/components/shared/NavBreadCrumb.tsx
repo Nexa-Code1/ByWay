@@ -36,7 +36,7 @@ function NavBreadCrumb({ items, className }: NavBreadCrumbProps) {
                 },
                 ...items,
             ]}
-            className={className}
+            className={`[&_li]:text-gray-700! [&_a]:text-primary-600! [&_.ant-breadcrumb-separator]:text-primary-600! [&_a]:hover:bg-transparent! ${className}`}
         />
     );
 }

@@ -93,6 +93,23 @@ export interface IFilterCoursesBy {
     limit?: number;
 }
 
+export interface ICourseCart {
+    _id: string;
+    title: string;
+    subTitle: string;
+    instructor: {
+        _id: string;
+        firstName: string;
+        lastName: string;
+    };
+    rate: 0;
+    price: 160;
+    discount: 0;
+    reviews: [];
+    isFavourite: false;
+    previewImg: string;
+}
+
 export interface ICourseDetails {
     _id: string;
     title: string;
@@ -106,7 +123,7 @@ export interface ICourseDetails {
     status: string;
     price: number;
     discount: number;
-    reviews: [];
+    reviews: IReview[];
     category: ICategory;
     isFavourite: boolean;
     progress: number;
@@ -122,6 +139,18 @@ export interface IInstructor {
     lastName: string;
     email: string;
     image: string;
+}
+
+export interface IReview {
+    _id: string;
+    user: {
+        _id: string;
+        name: string;
+        avatar: string;
+    };
+    rate: number;
+    createdAt: Date;
+    comment: string;
 }
 
 export type RoleType = "student" | "instructor";

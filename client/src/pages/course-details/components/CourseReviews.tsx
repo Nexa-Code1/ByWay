@@ -6,7 +6,7 @@ import CourseDetailWrapper from "./CourseDetailWrapper";
 import CourseReview from "./CourseReview";
 import { MAX_REVIEWS } from "@/utils/constants";
 
-const reviews = [
+const DUMMY_REVIEWS = [
     {
         _id: "1",
         user: {
@@ -35,8 +35,8 @@ const reviews = [
 function CourseReviews() {
     const [isShowMore, setIsShowMore] = useState(false);
     const displayedReviews = isShowMore
-        ? reviews
-        : reviews.slice(0, MAX_REVIEWS);
+        ? DUMMY_REVIEWS
+        : DUMMY_REVIEWS.slice(0, MAX_REVIEWS);
 
     return (
         <CourseDetailWrapper title="Reviews">
@@ -49,7 +49,7 @@ function CourseReviews() {
                     <CourseReview review={review} key={review._id} />
                 ))}
             </div>
-            {reviews.length > MAX_REVIEWS && (
+            {DUMMY_REVIEWS.length > MAX_REVIEWS && (
                 <Button
                     type="primary"
                     className="mx-auto! bg-primary-700! hover:-translate-y-0.5"

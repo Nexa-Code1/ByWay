@@ -17,7 +17,6 @@ function CourseIntroduction({ courseDetails }: CourseIntroductionProps) {
     return (
         <div className="max-w-xl">
             <NavBreadCrumb
-                className="[&_li]:text-gray-700! [&_a]:text-primary-600! [&_.ant-breadcrumb-separator]:text-primary-600!"
                 items={[
                     { title: "Courses", path: "/courses" },
                     {

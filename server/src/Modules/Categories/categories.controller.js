@@ -20,8 +20,6 @@ categoriesRouter.post(
 
 categoriesRouter.get(
     "/get-all-categories",
-    authenticationMiddleware,
-    authorizationMiddleware(USER_ROLES_TYPES),
     errorHandlerMiddleware(getAllCategories)
 );
 

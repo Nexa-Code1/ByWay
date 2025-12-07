@@ -1,10 +1,15 @@
 import { Link } from "react-router";
 import { formatDistanceToNowStrict } from "date-fns";
-import { Rate } from "antd";
 
 import UserAvatar from "@/components/layout/navbar/UserAvatar";
+import StarsRate from "@/components/shared/StarsRate";
+import type { IReview } from "@/types";
 
-function CourseReview({ review }) {
+type CourseReviewProps = {
+    review: IReview;
+};
+
+function CourseReview({ review }: CourseReviewProps) {
     return (
         <div className="border-t border-t-gray-200 py-4">
             <header className="flex items-center gap-4 mb-4">
@@ -20,12 +25,7 @@ function CourseReview({ review }) {
                     >
                         {review.user.name}
                     </Link>
-                    <Rate
-                        allowHalf
-                        disabled
-                        defaultValue={review.rate}
-                        className="text-warning-500! text-sm!"
-                    />
+                    <StarsRate rate={review.rate} />
                     <p className="text-gray-600">
                         {formatDistanceToNowStrict(new Date(review.createdAt))}{" "}
                         ago

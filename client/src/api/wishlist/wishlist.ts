@@ -40,3 +40,17 @@ export async function handleDeleteFromWishlist(
         catchError(err);
     }
 }
+
+export async function handleGetMyWishlist(token: string) {
+    try {
+        const res = await axios.get(`${BASE_URL}wishlist/my-wishlist`, {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+        });
+        return res.data;
+    } catch (err) {
+        catchError(err);
+    }
+}

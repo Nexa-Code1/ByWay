@@ -10,7 +10,7 @@ export interface IUser {
     role: RoleType;
     isPrivate: boolean;
     isVerified: boolean;
-    avatar: string;
+    image: string;
     createdAt: Date;
     updatedAt: Date;
 }
@@ -97,17 +97,35 @@ export interface ICourseCart {
     _id: string;
     title: string;
     subTitle: string;
-    instructor: {
-        _id: string;
-        firstName: string;
-        lastName: string;
-    };
+    instructor: IInstructor;
     rate: 0;
     price: 160;
     discount: 0;
     reviews: [];
     isFavourite: false;
-    previewImg: string;
+    image: string;
+}
+
+export interface IWishlist {
+    _id: string;
+    student_ID: string;
+    course_ID: IWishlistItem;
+    createdAt: Date;
+    updatedAt: Date;
+    __v: number;
+}
+
+export interface IWishlistItem {
+    _id: string;
+    title: string;
+    subTitle: string;
+    instructor: IInstructor;
+    price: number;
+    discount: number;
+    isFavourite: boolean;
+    isInCart: boolean;
+    image: string;
+    rate: number;
 }
 
 export interface ICourseDetails {
@@ -137,8 +155,8 @@ export interface IInstructor {
     _id: string;
     firstName: string;
     lastName: string;
-    email: string;
-    image: string;
+    email?: string;
+    image?: string;
 }
 
 export interface IReview {

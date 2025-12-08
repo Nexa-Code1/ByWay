@@ -1,11 +1,17 @@
+import SectionContainer from "@/components/shared/SectionContainer";
 import { Outlet } from "react-router";
+import ProfileHeader from "./components/ProfileHeader";
+import ProfileNav from "./components/ProfileNav";
 
 function Profile() {
     return (
-        <div>
-            Profile
+        <SectionContainer className="mt-4!">
+            <div className="border border-gray-300">
+                <ProfileHeader />
+                <ProfileNav />
+            </div>
             <Outlet />
-        </div>
+        </SectionContainer>
     );
 }
 

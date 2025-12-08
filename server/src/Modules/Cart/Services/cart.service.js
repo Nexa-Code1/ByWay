@@ -6,15 +6,11 @@ export const getCartService = async (req, res) => {
 
     const cart = await cartModel.findOne({ student_ID: id }).populate({
         path: "courses.course",
-        select: "title subTitle instructor price discount isFavourite rate",
+        select: "title subTitle instructor price discount isFavourite rate image",
         populate: [
             {
                 path: "instructor",
-                select: "firstName lastName image",
-            },
-            {
-                path: "category",
-                select: "name slug -_id",
+                select: "firstName lastName",
             },
         ],
     });

@@ -1,32 +1,24 @@
-import { useState } from "react";
-
 import StarsRate from "@/components/shared/StarsRate";
 import type { ICourseCart } from "@/types";
-import placeholderView from "@/assets/images/placeholder_view.svg";
 import CourseCartItemsActions from "./CourseCartItemsActions";
+import ListItemImg from "@/components/shared/ListItemImg";
+import { Link } from "react-router";
 
 type CourseCartItemProps = {
     course: ICourseCart;
 };
 
 function CourseCartItem({ course }: CourseCartItemProps) {
-    const [prevImg, setPrevImg] = useState(
-        course.previewImg || placeholderView
-    );
-
     return (
         <li key={course._id} className="flex items-start gap-4">
-            <div className="w-50 h-30 rounded-lg overflow-hidden">
-                <img
-                    src={prevImg}
-                    alt={course.title}
-                    onError={() => setPrevImg(placeholderView)}
-                    className="w-full h-full object-cover object-center"
-                />
-            </div>
+            <Link to={`/courses/${course._id}`}>
+                <ListItemImg image={course.image} alt={course.title} />
+            </Link>
 
             <div className="flex-1 flex flex-col gap-2">
-                <h2 className="font-semibold">{course.title}</h2>
+                <Link to={`/courses/${course._id}`}>
+                    <h2 className="font-semibold">{course.title}</h2>
+                </Link>
                 <p className="text-sm">
                     By {course.instructor.firstName}{" "}
                     {course.instructor.lastName}

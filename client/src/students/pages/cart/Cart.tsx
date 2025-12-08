@@ -62,7 +62,7 @@ function Cart() {
                                     onConfirm={clearCart}
                                 />
                             </div>
-                            <ul className="border-t border-gray-300 pt-4">
+                            <ul className="border-t border-gray-300 pt-4 flex flex-col gap-4">
                                 {cart.courses.map(
                                     ({ course }: { course: ICourseCart }) => (
                                         <CourseCartItem

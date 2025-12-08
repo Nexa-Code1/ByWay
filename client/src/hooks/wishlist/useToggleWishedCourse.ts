@@ -37,6 +37,9 @@ export function useToggleWishedCourse() {
                 queryClient.invalidateQueries({
                     queryKey: [QUERY_KEYS.GET_MY_CART],
                 });
+                queryClient.invalidateQueries({
+                    queryKey: [QUERY_KEYS.GET_MY_WISHLIST],
+                });
                 messageApi.success(
                     `Course was ${
                         variables.isFavourite ? "deleted" : "added"

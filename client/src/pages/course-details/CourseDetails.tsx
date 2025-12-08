@@ -7,7 +7,7 @@ import CourseIntroduction from "./components/CourseIntroduction";
 import CourseInstructorInfo from "./components/CourseInstructorInfo";
 import CourseReviews from "./components/CourseReviews";
 import CourseContent from "./components/CourseContent";
-import AddCourseToCart from "./components/CourseActions";
+import AddCourseToCart from "./components/CoursePurchasePanel";
 import { useGetCourseDetails } from "@/hooks/courses/useGetCourseDetails";
 import PageSpinner from "@/components/shared/PageSpinner";
 import RelatedCourses from "./components/RelatedCourses";

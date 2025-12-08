@@ -13,7 +13,7 @@ type AppSubmitBtnProps = {
 
 function AppSubmitBtn({
     isLoading,
-    className,
+    className = "bg-primary-600! text-gray-100!",
     type = "default",
     children,
 }: AppSubmitBtnProps) {
@@ -21,7 +21,7 @@ function AppSubmitBtn({
         <Button
             type={type}
             htmlType="submit"
-            className={`w-full bg-primary-600! text-gray-100! hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:text-white! capitalize ${className}`}
+            className={`w-full hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:text-white! capitalize ${className}`}
             disabled={isLoading}
         >
             {isLoading ? <Spinner size="small" /> : children}

@@ -15,7 +15,7 @@ function UserProfileLink({ userProfile }: UserProfileLinkProps) {
             className="flex items-center gap-1"
         >
             <UserAvatar
-                avatar={userProfile.avatar}
+                avatar={userProfile.image}
                 userName={`${userProfile.firstName} ${userProfile.lastName}`}
             />
             <CaretRightFilled className="w-3 h-3" />

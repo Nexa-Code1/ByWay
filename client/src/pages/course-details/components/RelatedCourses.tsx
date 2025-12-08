@@ -28,7 +28,7 @@ function RelatedCourses({ categorySlug, courseId }: RelatedCoursesProps) {
                 .slice(0, 4)
                 .filter((course: ICourseDetails) => course._id !== courseId)
                 .map((course: ICourseDetails) => (
-                    <CourseCard course={course} />
+                    <CourseCard course={course} key={course._id} />
                 ))}
         </SectionLayout>
     );

@@ -11,4 +11,7 @@ export enum QUERY_KEYS {
 
     // CART
     GET_MY_CART = "getMyCart",
+
+    // WISHLIST
+    GET_MY_WISHLIST = "getMyWishlist",
 }

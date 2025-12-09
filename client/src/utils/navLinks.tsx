@@ -22,7 +22,7 @@ export const navLinks = [
     },
     {
         key: "search",
-        path: "/courses/search",
+        path: "/search",
         label: { en: "Search", ar: "بحث" },
         icon: <FileSearchOutlined />,
     },

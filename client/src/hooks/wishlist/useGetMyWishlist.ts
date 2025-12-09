@@ -7,12 +7,16 @@ export function useGetMyWishlist() {
     const [cookies] = useCookies(["token"]);
     const { token } = cookies;
 
-    const { data: wishlist, isPending } = useQuery({
+    const {
+        data: wishlist,
+        isLoading,
+        error,
+    } = useQuery({
         queryKey: [QUERY_KEYS.GET_MY_WISHLIST],
         queryFn: () => handleGetMyWishlist(token),
         retry: false,
         enabled: !!token,
     });
 
-    return { wishlist, isPending };
+    return { wishlist, isLoading, error };
 }

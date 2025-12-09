@@ -7,15 +7,20 @@ import courseImg from "@/assets/images/course.jpg";
 import UserAvatar from "../layout/navbar/UserAvatar";
 
 function CourseCard({ course }) {
+    const lang = "en";
+
     return (
         <Card className="text-start!">
-            <Link to={`/courses/${1}`}>
+            <Link
+                to={`/courses/${course._id}`}
+                className="h-full flex flex-col gap-4"
+            >
                 <img src={courseImg} alt="course image" />
-                <div className="flex items-center justify-between my-4">
+                <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1">
                         <AppstoreOutlined className="text-lg text-gray-300!" />
                         <span className="text-xs font-semibold text-gray-500">
-                            Design
+                            {course.category.name[lang]}
                         </span>
                     </div>
                     <div className="flex items-center gap-1">
@@ -25,21 +30,23 @@ function CourseCard({ course }) {
                         </span>
                     </div>
                 </div>
-                <h3 className="font-semibold text-gray-800 mb-4">
-                    AWS Certified solutions Architect
-                </h3>
-                <TextDescription>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Soluta sapiente velit.
+                <h3 className="font-semibold text-gray-800">{course.title}</h3>
+                <TextDescription className="flex-1!">
+                    {course.subTitle}
                 </TextDescription>
-                <div className="flex gap-2 items-center justify-between mt-4">
-                    <UserAvatar avatar="" userName="Wael" size={30} />
-                    <div className="flex items-center gap-1 text-sm">
-                        <p className="line-through text-gray-300 italic">
-                            4000 EGP
-                        </p>
-                        <p className="text-primary-700 font-bold">1660 EGP</p>
-                    </div>
+                <div className="flex gap-2 items-center text-sm">
+                    <UserAvatar
+                        avatar={course.instructor.image}
+                        userName={course.instructor.firstName}
+                        size={30}
+                    />
+                    <p className="font-medium text-xs flex-1">
+                        {course.instructor.firstName}
+                    </p>
+                    <p className="line-through text-gray-300 italic">
+                        {course.price} EGP
+                    </p>
+                    <p className="text-primary-700 font-bold">1660 EGP</p>
                 </div>
             </Link>
         </Card>

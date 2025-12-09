@@ -71,11 +71,11 @@ export const router = createBrowserRouter([
                         path: ":courseId",
                         Component: CourseDetails,
                     },
-                    {
-                        path: "search",
-                        Component: SearchCourses,
-                    },
                 ],
+            },
+            {
+                path: "search",
+                Component: SearchCourses,
             },
             {
                 path: "blogs",

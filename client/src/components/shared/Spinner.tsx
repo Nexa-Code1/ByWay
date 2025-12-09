@@ -14,7 +14,7 @@ function Spinner({
         <Spin
             indicator={<LoadingOutlined spin />}
             size={size}
-            className={className}
+            className={`w-full ${className}`}
         />
     );
 }

@@ -88,10 +88,16 @@ export interface IFilterCoursesBy {
     price?: string;
     category?: string;
     title?: string;
-    sort?: "time-asc" | "time-desc" | "price-asc" | "price-desc";
-    page?: number;
+    sort?: ISortCoursesBy;
+    page?: number | 1;
     limit?: number;
 }
+
+export type ISortCoursesBy =
+    | "time-asc"
+    | "time-desc"
+    | "price-asc"
+    | "price-desc";
 
 export interface ICourseCart {
     _id: string;

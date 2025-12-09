@@ -35,7 +35,7 @@ function SectionLayout({
                     </Button>
                 )}
             </header>
-            <div className={`grid grid-cols-1 ${cols} gap-8`}>{children}</div>
+            <div className={`grid grid-cols-1 ${cols} gap-6`}>{children}</div>
         </section>
     );
 }

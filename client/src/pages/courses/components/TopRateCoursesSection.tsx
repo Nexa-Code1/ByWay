@@ -4,10 +4,7 @@ import SectionLayout from "../../../components/shared/SectionLayout";
 function TopRateCoursesSection() {
     return (
         <SectionLayout title="Top rate" linkPath="/top-rate">
-            <CourseCard />
-            <CourseCard />
-            <CourseCard />
-            <CourseCard />
+            TOP RATE COURSES
         </SectionLayout>
     );
 }

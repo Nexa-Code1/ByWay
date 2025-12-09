@@ -15,7 +15,7 @@ function RelatedCourses({ categorySlug, courseId }: RelatedCoursesProps) {
     });
 
     if (isLoading)
-        return <Spinner size="large" className="w-full! text-primary-700!" />;
+        return <Spinner size="large" className="text-primary-700!" />;
     if (!isLoading && (error || !courses || courses?.courses.length <= 1))
         return;
 

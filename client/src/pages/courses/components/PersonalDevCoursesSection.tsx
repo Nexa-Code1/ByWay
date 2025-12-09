@@ -12,10 +12,7 @@ function PersonalDevCoursesSection() {
             title="The course in personal development"
             linkPath="/courses?category=personal-development"
         >
-            <CourseCard />
-            <CourseCard />
-            <CourseCard />
-            <CourseCard />
+            PERSONAL DEVELOPMENT COURSES
         </SectionLayout>
     );
 }

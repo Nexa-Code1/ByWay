@@ -3,17 +3,14 @@ import { useGetMyWishlist } from "@/hooks/wishlist/useGetMyWishlist";
 import OutletHeader from "../profile/components/OutletHeader";
 import TableHeader from "./components/TableHeader";
 import TableBody from "./components/TableBody";
+import Error from "@/components/shared/Error";
 
 function Wishlist() {
-    const { wishlist, isPending } = useGetMyWishlist();
+    const { wishlist, isLoading, error } = useGetMyWishlist();
 
-    if (isPending)
-        return (
-            <Spinner
-                size="large"
-                className="w-full! text-primary-700! mt-30!"
-            />
-        );
+    if (isLoading)
+        return <Spinner size="large" className="text-primary-700! mt-30!" />;
+    if (!isLoading && (error || !wishlist)) return <Error />;
 
     return (
         <div>

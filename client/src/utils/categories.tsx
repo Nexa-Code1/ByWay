@@ -66,7 +66,7 @@ export const categories: ICategory[] = [
             ar: "",
         },
         icon: iconImg,
-        color: "#2F327D",
+        color: "#F48C06",
     },
     {
         _id: "design",

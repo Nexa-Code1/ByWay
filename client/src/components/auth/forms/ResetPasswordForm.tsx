@@ -14,7 +14,7 @@ const initialValues: IResetPassword = {
 function ResetPasswordForm() {
     const [form] = Form.useForm();
 
-    const { forgetPassword, isResettingPassword, contextHolder } =
+    const { forgetPassword, isResettingPassword } =
         useResetPassword();
 
     const onFinish: FormProps<IResetPassword>["onFinish"] = async (values) => {
@@ -23,25 +23,23 @@ function ResetPasswordForm() {
     };
 
     return (
-        <>
-            {contextHolder}
-            <Form
-                name="resetPasswordForm"
-                onFinish={onFinish}
-                autoComplete="off"
-                form={form}
-                initialValues={initialValues}
-            >
-                <PasswordInput name="newPassword" placeholder="new password" />
-                <PasswordInput
-                    name="confirmNewPassword"
-                    placeholder="re-write password"
-                />
-                <AppSubmitBtn isLoading={isResettingPassword}>
-                    reset password
-                </AppSubmitBtn>
-            </Form>
-        </>
+        <Form
+            name="resetPasswordForm"
+            onFinish={onFinish}
+            autoComplete="off"
+            form={form}
+            initialValues={initialValues}
+        >
+            <PasswordInput name="newPassword" placeholder="new password" />
+            <PasswordInput
+                name="confirmNewPassword"
+                placeholder="re-write password"
+                className="bg-gray-100! border-0!"
+            />
+            <AppSubmitBtn isLoading={isResettingPassword}>
+                reset password
+            </AppSubmitBtn>
+        </Form>
     );
 }
 

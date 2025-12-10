@@ -3,11 +3,13 @@ import { Form, Input } from "antd";
 type PasswordInputProps = {
     name?: string;
     placeholder?: string;
+    className?: string;
 };
 
 function PasswordInput({
     name = "password",
     placeholder = "Password",
+    className,
 }: PasswordInputProps) {
     return (
         <Form.Item
@@ -21,10 +23,7 @@ function PasswordInput({
             ]}
             className="mb-4!"
         >
-            <Input.Password
-                placeholder={placeholder}
-                className="bg-gray-100! border-0!"
-            />
+            <Input.Password placeholder={placeholder} className={className} />
         </Form.Item>
     );
 }

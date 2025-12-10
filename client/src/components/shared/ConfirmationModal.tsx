@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { Button, Modal } from "antd";
 import type { ButtonType } from "antd/es/button";
 import type { UseMutateFunction } from "@tanstack/react-query";
@@ -6,7 +6,7 @@ import type { UseMutateFunction } from "@tanstack/react-query";
 type ConfirmationModalProps = {
     triggerBtnType: ButtonType;
     triggerBtnStyles: string;
-    triggerBtnLabel: string;
+    triggerBtnLabel: ReactNode;
     onConfirm: UseMutateFunction<unknown, Error, void, unknown>;
 };
 

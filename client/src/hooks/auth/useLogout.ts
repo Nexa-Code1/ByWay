@@ -3,13 +3,12 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useCookies } from "react-cookie";
 import { message } from "antd";
 
-import { handleLogout } from "../../api/auth/auth";
-import { QUERY_KEYS } from "../../utils/queryKeys";
+import { handleLogout } from "@/api/auth/auth";
+import { QUERY_KEYS } from "@/utils/queryKeys";
 
 export function useLogout() {
     const queryClient = useQueryClient();
 
-    const [messageApi, contextHolder] = message.useMessage();
     const navigate = useNavigate();
     const [cookies, , removeCookie] = useCookies(["token", "refreshToken"]);
 
@@ -23,8 +22,8 @@ export function useLogout() {
                 queryKey: [QUERY_KEYS.USER_PROFILE],
             });
         },
-        onError: (error) => messageApi.error(error.message),
+        onError: (error) => message.error(error.message),
     });
 
-    return { logout, isLoggingout, contextHolder };
+    return { logout, isLoggingout };
 }

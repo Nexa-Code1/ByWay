@@ -10,7 +10,7 @@ const profileLinks = [
 
 function ProfileNav() {
     return (
-        <nav className="flex items-center justify-between gap-2">
+        <nav className="flex flex-wrap items-center md:justify-between gap-2">
             {profileLinks.map((link) => (
                 <NavLink
                     key={link.label}

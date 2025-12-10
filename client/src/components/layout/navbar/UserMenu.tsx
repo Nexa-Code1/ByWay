@@ -2,9 +2,9 @@ import { Button } from "antd";
 import Dropdown from "antd/es/dropdown/dropdown";
 import { DownOutlined, LogoutOutlined } from "@ant-design/icons";
 
-import type { IUser } from "../../../types";
+import type { IUser } from "@/types";
 import UserAvatar from "./UserAvatar";
-import { profileLinks } from "../../../utils/profileLinks";
+import { profileLinks } from "@/utils/profileLinks";
 import LogoutBtn from "./LogoutBtn";
 
 type UserMenuProps = {
@@ -33,7 +33,7 @@ function UserMenu({ user }: UserMenuProps) {
                 className="flex items-center gap-1 text-gray-300! group p-0!"
             >
                 <UserAvatar
-                    avatar={user.avatar}
+                    avatar={user.image}
                     userName={`${user.firstName} ${user.lastName}`}
                 />
                 <p className="text-sm">{user.firstName}</p>

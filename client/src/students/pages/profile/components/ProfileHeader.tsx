@@ -13,19 +13,21 @@ function ProfileHeader() {
     if (isLoading) return <PageSpinner />;
     if (!isLoading && error) return;
 
-    const fullUserName = `${userProfile.firstName} ${userProfile.lastName}`;
+    const fullUserName = `${userProfile.user.firstName} ${userProfile.user.lastName}`;
 
     return (
-        <header className="flex items-center justify-between gap-2 p-4 md:px-8 border-b border-b-inherit">
+        <header className="flex flex-wrap items-center justify-between gap-2 p-4 md:px-8 border-b border-b-inherit">
             <div className="flex items-center gap-4">
                 <UserAvatar
-                    avatar={userProfile.image}
+                    avatar={userProfile.user.image}
                     userName={fullUserName}
                     size={70}
                 />
                 <div>
                     <p className="font-semibold">{fullUserName}</p>
-                    <p className="text-gray-500">bio test</p>
+                    <p className="text-gray-500 text-sm">
+                        {userProfile.user.headLine}
+                    </p>
                 </div>
             </div>
             <Button

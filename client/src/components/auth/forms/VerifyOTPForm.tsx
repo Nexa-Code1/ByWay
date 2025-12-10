@@ -12,7 +12,7 @@ const initialValues: IVerifyOTP = {
 function VerifyOTPForm() {
     const [form] = Form.useForm();
 
-    const { verifyOTP, isVerifyingOTP, contextHolder } = useVerifyOTP();
+    const { verifyOTP, isVerifyingOTP } = useVerifyOTP();
 
     const onFinish: FormProps<IVerifyOTP>["onFinish"] = async (values) => {
         await verifyOTP(values);
@@ -20,27 +20,22 @@ function VerifyOTPForm() {
     };
 
     return (
-        <>
-            {contextHolder}
-            <Form
-                name="verifyOTPForm"
-                onFinish={onFinish}
-                autoComplete="off"
-                form={form}
-                initialValues={initialValues}
+        <Form
+            name="verifyOTPForm"
+            onFinish={onFinish}
+            autoComplete="off"
+            form={form}
+            initialValues={initialValues}
+        >
+            <Form.Item<IVerifyOTP>
+                name="otp"
+                rules={[{ required: true, message: "Please input code!" }]}
+                className="mb-4!"
             >
-                <Form.Item<IVerifyOTP>
-                    name="otp"
-                    rules={[{ required: true, message: "Please input code!" }]}
-                    className="mb-4!"
-                >
-                    <Input.OTP className="bg-gray-100! border-0!" />
-                </Form.Item>
-                <AppSubmitBtn isLoading={isVerifyingOTP}>
-                    verify code
-                </AppSubmitBtn>
-            </Form>
-        </>
+                <Input.OTP className="bg-gray-100! border-0!" />
+            </Form.Item>
+            <AppSubmitBtn isLoading={isVerifyingOTP}>verify code</AppSubmitBtn>
+        </Form>
     );
 }
 

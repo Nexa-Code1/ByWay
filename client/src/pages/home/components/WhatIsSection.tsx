@@ -21,7 +21,7 @@ function WhatIsSection() {
                     title="for instructors"
                     buttonLabel="Start a class today"
                     pagePath={
-                        isUserExist && userProfile?.role === "instructor"
+                        isUserExist && userProfile?.user?.role === "instructor"
                             ? "/instructor"
                             : "/become-instructor"
                     }
@@ -31,7 +31,7 @@ function WhatIsSection() {
                     title="for students"
                     buttonLabel="Start learning"
                     pagePath={
-                        isUserExist && userProfile?.role === "student"
+                        isUserExist && userProfile?.user?.role === "student"
                             ? "/profile/student-courses"
                             : "/courses"
                     }

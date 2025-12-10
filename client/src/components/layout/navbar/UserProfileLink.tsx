@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { CaretRightFilled } from "@ant-design/icons";
 
 import UserAvatar from "./UserAvatar";
-import type { IUser } from "../../../types";
+import type { IUser } from "@/types";
 
 type UserProfileLinkProps = {
     userProfile: IUser;

@@ -24,7 +24,7 @@ function Navbar() {
                     {isLoading ? (
                         <Spinner />
                     ) : userProfile ? (
-                        <UserMenu user={userProfile} />
+                        <UserMenu user={userProfile.user} />
                     ) : (
                         <RegisterBtns shape="round" />
                     )}

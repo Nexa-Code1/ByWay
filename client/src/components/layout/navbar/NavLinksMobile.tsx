@@ -32,7 +32,7 @@ function NavLinksMobile() {
             ? [
                   {
                       key: "userProfile",
-                      label: <UserProfileLink userProfile={userProfile} />,
+                      label: <UserProfileLink userProfile={userProfile.user} />,
                   },
                   ...baseItems,
                   {

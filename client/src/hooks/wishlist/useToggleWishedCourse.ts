@@ -11,7 +11,6 @@ import { QUERY_KEYS } from "@/utils/queryKeys";
 export function useToggleWishedCourse() {
     const queryClient = useQueryClient();
     const [cookies] = useCookies(["token"]);
-    const [messageApi, contextHolder] = message.useMessage();
 
     const { mutate: toggleWishedCourse, isPending: isTogglingWishedCourse } =
         useMutation({
@@ -40,7 +39,7 @@ export function useToggleWishedCourse() {
                 queryClient.invalidateQueries({
                     queryKey: [QUERY_KEYS.GET_MY_WISHLIST],
                 });
-                messageApi.success(
+                message.success(
                     `Course was ${
                         variables.isFavourite ? "deleted" : "added"
                     } successfully ${
@@ -49,7 +48,7 @@ export function useToggleWishedCourse() {
                 );
             },
             onError: (_, variables) =>
-                messageApi.error(
+                message.error(
                     `Something went wrong. Cannot ${
                         variables.isFavourite ? "delete" : "add"
                     } course ${
@@ -58,5 +57,5 @@ export function useToggleWishedCourse() {
                 ),
         });
 
-    return { toggleWishedCourse, isTogglingWishedCourse, contextHolder };
+    return { toggleWishedCourse, isTogglingWishedCourse };
 }

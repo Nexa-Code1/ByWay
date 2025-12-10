@@ -21,7 +21,7 @@ type SignupFormProps = {
 
 function SignupForm({ handleClose }: SignupFormProps) {
     const [form] = Form.useForm();
-    const { signup, isCreatingAccount, contextHolder } = useSignup();
+    const { signup, isCreatingAccount } = useSignup();
 
     const onFinish: FormProps<INewAccount>["onFinish"] = async (values) => {
         await signup(values);
@@ -30,67 +30,64 @@ function SignupForm({ handleClose }: SignupFormProps) {
     };
 
     return (
-        <>
-            {contextHolder}
-            <Form
-                form={form}
-                name="signupForm"
-                onFinish={onFinish}
-                autoComplete="off"
-                initialValues={initialValues}
-            >
-                <div className="w-full flex gap-4">
-                    <Form.Item<INewAccount>
-                        name="firstName"
-                        rules={[
-                            {
-                                required: true,
-                                message: "Please input your first name!",
-                            },
-                        ]}
-                        className="w-full mb-4!"
-                    >
-                        <Input
-                            placeholder="First Name"
-                            className="bg-gray-100! border-0!"
-                        />
-                    </Form.Item>
-
-                    <Form.Item<INewAccount>
-                        name="lastName"
-                        rules={[
-                            {
-                                required: true,
-                                message: "Please input your last name!",
-                            },
-                        ]}
-                        className="w-full mb-4!"
-                    >
-                        <Input
-                            placeholder="Last Name"
-                            className="bg-gray-100! border-0!"
-                        />
-                    </Form.Item>
-                </div>
-
-                <EmailInput />
-                <PasswordInput />
-
+        <Form
+            form={form}
+            name="signupForm"
+            onFinish={onFinish}
+            autoComplete="off"
+            initialValues={initialValues}
+        >
+            <div className="w-full flex gap-4">
                 <Form.Item<INewAccount>
-                    name="role"
-                    valuePropName="checked"
-                    label={null}
+                    name="firstName"
+                    rules={[
+                        {
+                            required: true,
+                            message: "Please input your first name!",
+                        },
+                    ]}
+                    className="w-full mb-4!"
                 >
-                    <Checkbox className="capitalize">
-                        join us as an instructor
-                    </Checkbox>
+                    <Input
+                        placeholder="First Name"
+                        className="bg-gray-100! border-0!"
+                    />
                 </Form.Item>
 
-                <AppSubmitBtn isLoading={isCreatingAccount}>
-                    create account
-                </AppSubmitBtn>
-            </Form>
-        </>
+                <Form.Item<INewAccount>
+                    name="lastName"
+                    rules={[
+                        {
+                            required: true,
+                            message: "Please input your last name!",
+                        },
+                    ]}
+                    className="w-full mb-4!"
+                >
+                    <Input
+                        placeholder="Last Name"
+                        className="bg-gray-100! border-0!"
+                    />
+                </Form.Item>
+            </div>
+
+            <EmailInput />
+            <PasswordInput className="bg-gray-100! border-0!" />
+
+            <Form.Item<INewAccount>
+                name="role"
+                valuePropName="checked"
+                label={null}
+            >
+                <Checkbox className="capitalize">
+                    join us as an instructor
+                </Checkbox>
+            </Form.Item>
+
+            <AppSubmitBtn isLoading={isCreatingAccount}>
+                create account
+            </AppSubmitBtn>
+        </Form>
     );
 }
 

@@ -10,14 +10,14 @@ type UserAvatarProps = {
 };
 
 function UserAvatar({ avatar, userName, size = 40 }: UserAvatarProps) {
-    const [img, setImg] = useState(avatar || userPlaceholder);
+    const [img, setImg] = useState(avatar);
 
     return (
         <Avatar
             src={
                 <img
                     draggable={false}
-                    src={img}
+                    src={img || userPlaceholder}
                     onError={() => setImg(userPlaceholder)}
                     alt={userName}
                 />

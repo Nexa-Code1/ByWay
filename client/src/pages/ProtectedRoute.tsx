@@ -18,7 +18,7 @@ function ProtectedRoute({ children, role }: ProtectedRouteProps) {
 
     if (isLoading) return <PageSpinner />;
 
-    return !token || userProfile?.role !== role ? (
+    return !token || userProfile?.user?.role !== role ? (
         <Navigate to="/" replace />
     ) : (
         children

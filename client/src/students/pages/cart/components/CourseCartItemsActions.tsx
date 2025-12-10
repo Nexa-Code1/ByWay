@@ -11,41 +11,38 @@ type CourseCartItemsActionsProps = {
 function CourseCartItemsActions({ course }: CourseCartItemsActionsProps) {
     const { removeCartItem, isRemovingCartItem } = useRemoveCartItem();
 
-    const { toggleWishedCourse, isTogglingWishedCourse, contextHolder } =
+    const { toggleWishedCourse, isTogglingWishedCourse } =
         useToggleWishedCourse();
 
     return (
-        <>
-            {contextHolder}
-            <div className="flex items-center gap-2">
-                <Button
-                    type="text"
-                    className="text-primary-500! w-fit! hover:bg-transparent! p-0!"
-                    disabled={isTogglingWishedCourse}
-                    onClick={() =>
-                        toggleWishedCourse({
-                            courseId: course._id,
-                            isFavourite: course.isFavourite,
-                        })
-                    }
-                >
-                    {isTogglingWishedCourse
-                        ? "Loading..."
-                        : course.isFavourite
-                        ? "Remove from wishlist"
-                        : "Add to wishlist"}
-                </Button>
-                <span className="text-gray-500">|</span>
-                <Button
-                    type="text"
-                    className="text-error-800! w-fit! hover:bg-transparent! p-0!"
-                    onClick={() => removeCartItem({ courseId: course._id })}
-                    disabled={isRemovingCartItem}
-                >
-                    {isRemovingCartItem ? "Removing..." : "Remove"}
-                </Button>
-            </div>
-        </>
+        <div className="flex items-center gap-2">
+            <Button
+                type="text"
+                className="text-primary-500! w-fit! hover:bg-transparent! p-0!"
+                disabled={isTogglingWishedCourse}
+                onClick={() =>
+                    toggleWishedCourse({
+                        courseId: course._id,
+                        isFavourite: course.isFavourite,
+                    })
+                }
+            >
+                {isTogglingWishedCourse
+                    ? "Loading..."
+                    : course.isFavourite
+                    ? "Remove from wishlist"
+                    : "Add to wishlist"}
+            </Button>
+            <span className="text-gray-500">|</span>
+            <Button
+                type="text"
+                className="text-error-800! w-fit! hover:bg-transparent! p-0!"
+                onClick={() => removeCartItem({ courseId: course._id })}
+                disabled={isRemovingCartItem}
+            >
+                {isRemovingCartItem ? "Removing..." : "Remove"}
+            </Button>
+        </div>
     );
 }
 

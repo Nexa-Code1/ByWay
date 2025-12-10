@@ -9,7 +9,7 @@ const initialValues: ISendOTP = { email: "" };
 
 function SendOTPForm() {
     const [form] = Form.useForm();
-    const { sendOTP, isSendingOTP, contextHolder } = useSendOTP();
+    const { sendOTP, isSendingOTP } = useSendOTP();
 
     const onFinish: FormProps<ISendOTP>["onFinish"] = async (values) => {
         await sendOTP(values);
@@ -17,19 +17,16 @@ function SendOTPForm() {
     };
 
     return (
-        <>
-            {contextHolder}
-            <Form
-                name="sendOTPForm"
-                onFinish={onFinish}
-                autoComplete="off"
-                form={form}
-                initialValues={initialValues}
-            >
-                <EmailInput />
-                <AppSubmitBtn isLoading={isSendingOTP}>send code</AppSubmitBtn>
-            </Form>
-        </>
+        <Form
+            name="sendOTPForm"
+            onFinish={onFinish}
+            autoComplete="off"
+            form={form}
+            initialValues={initialValues}
+        >
+            <EmailInput />
+            <AppSubmitBtn isLoading={isSendingOTP}>send code</AppSubmitBtn>
+        </Form>
     );
 }
 

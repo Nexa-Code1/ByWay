@@ -6,14 +6,35 @@ export interface IUser {
     lastName: string;
     email: string;
     language: "ar" | "en";
-    links: string[];
+    links: ProfileLink[];
     role: RoleType;
     isPrivate: boolean;
     isVerified: boolean;
     image: string;
+    bio: string;
+    headLine: string;
     createdAt: Date;
     updatedAt: Date;
 }
+
+export interface IUpdateProfile {
+    firstName?: string;
+    lastName?: string;
+    headLine?: string;
+    bio?: string;
+    language?: "en" | "ar";
+    isPrivate?: boolean;
+    facebookLink?: string;
+    instagramLink?: string;
+}
+
+export interface IUpdatePassword {
+    currentPassword: string;
+    newPassword: string;
+    confirmPassword: string;
+}
+
+export type ProfileLink = { name: string; link: string };
 
 export interface INewAccount {
     firstName: string;

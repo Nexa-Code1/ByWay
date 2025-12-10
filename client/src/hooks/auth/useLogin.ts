@@ -8,7 +8,6 @@ import { QUERY_KEYS } from "@/utils/queryKeys";
 
 export function useLogin() {
     const queryClient = useQueryClient();
-    const [messageApi, contextHolder] = message.useMessage();
     const navigate = useNavigate();
     const [, setCookie] = useCookies(["token", "refreshToken"]);
 
@@ -23,8 +22,8 @@ export function useLogin() {
                 queryKey: [QUERY_KEYS.USER_PROFILE],
             });
         },
-        onError: (error) => messageApi.error(error.message),
+        onError: (error) => message.error(error.message),
     });
 
-    return { login, isLoggingin, contextHolder };
+    return { login, isLoggingin };
 }

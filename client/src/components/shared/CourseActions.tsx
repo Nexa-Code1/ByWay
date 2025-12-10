@@ -18,7 +18,7 @@ function CourseActions({ courseDetails, btnColorClass }: CourseActionsProps) {
 
     const navigate = useNavigate();
 
-    const { toggleWishedCourse, isTogglingWishedCourse, contextHolder } =
+    const { toggleWishedCourse, isTogglingWishedCourse } =
         useToggleWishedCourse();
     const { addToCart, isAddingToCart } = useAddToCart();
 
@@ -38,8 +38,6 @@ function CourseActions({ courseDetails, btnColorClass }: CourseActionsProps) {
     }
 
     return (
-        <>
-            {contextHolder}
             <div className="flex w-full items-center justify-between gap-2">
                 {!isInCart ? (
                     <form onSubmit={handleAddCourseToCart} className="flex-1">
@@ -73,7 +71,6 @@ function CourseActions({ courseDetails, btnColorClass }: CourseActionsProps) {
                     </AppSubmitBtn>
                 </form>
             </div>
-        </>
     );
 }
 

@@ -182,8 +182,9 @@ export interface IInstructor {
     _id: string;
     firstName: string;
     lastName: string;
-    email?: string;
-    image?: string;
+    image: string;
+    bio: string;
+    headLine: string;
 }
 
 export interface IReview {

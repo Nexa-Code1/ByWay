@@ -11,7 +11,7 @@ function ListItemImg({ image, alt }: ListItemImgProps) {
     const [prevImg, setPrevImg] = useState(image || placeholderView);
 
     return (
-        <div className="w-50 h-30 rounded-lg overflow-hidden">
+        <div className="w-30 sm:w-50 h-20 sm:h-30 rounded-lg overflow-hidden">
             <img
                 src={prevImg}
                 alt={alt}

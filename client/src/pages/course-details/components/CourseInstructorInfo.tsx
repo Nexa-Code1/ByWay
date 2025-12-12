@@ -16,16 +16,14 @@ function CourseInstructorInfo({ instructor }: CourseInstructorInfoProps) {
             >
                 {instructor.firstName} {instructor.lastName}
             </UnderlineLink>
+            <p className="text-gray-600">{instructor.headLine}</p>
             <div className="grid grid-cols-[auto_1fr] gap-4 items-center mt-3">
                 <UserAvatar
                     avatar={instructor.image}
                     userName={instructor.firstName}
                     size={80}
                 />
-                <span>
-                    Bundling the courses and know how of successful instructors,
-                    Academind strives to deliver high quality online education.
-                </span>
+                <span>{instructor.bio}</span>
             </div>
         </CourseDetailWrapper>
     );

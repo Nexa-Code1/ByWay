@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 import { Navigate } from "react-router";
-import { useCookies } from "react-cookie";
 
 import { useUserProfile } from "@/hooks/user/useUserProfile";
 import PageSpinner from "@/components/shared/PageSpinner";
+import { getAccessToken } from "@/utils/tokenService";
 
 type ProtectedRouteProps = {
     children: ReactNode;
@@ -11,14 +11,13 @@ type ProtectedRouteProps = {
 };
 
 function ProtectedRoute({ children, role }: ProtectedRouteProps) {
-    const [cookies] = useCookies(["token"]);
-    const token = cookies.token;
+    const accessToken = getAccessToken();
 
     const { userProfile, isLoading } = useUserProfile();
 
     if (isLoading) return <PageSpinner />;
 
-    return !token || userProfile?.user?.role !== role ? (
+    return !accessToken || userProfile?.user?.role !== role ? (
         <Navigate to="/" replace />
     ) : (
         children

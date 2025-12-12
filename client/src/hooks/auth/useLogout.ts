@@ -1,26 +1,30 @@
 import { useNavigate } from "react-router";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useCookies } from "react-cookie";
 import { message } from "antd";
 
 import { handleLogout } from "@/api/auth/auth";
 import { QUERY_KEYS } from "@/utils/queryKeys";
+import {
+    getAccessToken,
+    getRefreshToken,
+    removeTokens,
+} from "@/utils/tokenService";
 
 export function useLogout() {
     const queryClient = useQueryClient();
-
     const navigate = useNavigate();
-    const [cookies, , removeCookie] = useCookies(["token", "refreshToken"]);
+
+    const accessToken = getAccessToken();
+    const refreshToken = getRefreshToken();
 
     const { mutate: logout, isPending: isLoggingout } = useMutation({
-        mutationFn: () => handleLogout(cookies.token, cookies.refreshToken),
+        mutationFn: () => handleLogout(accessToken, refreshToken),
         onSuccess: () => {
-            removeCookie("token", { path: "/" });
-            removeCookie("refreshToken", { path: "/" });
-            navigate("/", { replace: true });
-            queryClient.removeQueries({
+            removeTokens();
+            queryClient.invalidateQueries({
                 queryKey: [QUERY_KEYS.USER_PROFILE],
             });
+            navigate("/", { replace: true });
         },
         onError: (error) => message.error(error.message),
     });

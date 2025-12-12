@@ -1,5 +1,4 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useCookies } from "react-cookie";
 import { message } from "antd";
 
 import { handleDeleteProfileImg } from "@/api/user/user";
@@ -7,11 +6,9 @@ import { QUERY_KEYS } from "@/utils/queryKeys";
 
 export function useDeleteProfileImg() {
     const queryClient = useQueryClient();
-    const [cookies] = useCookies(["token"]);
-    const { token } = cookies;
 
     const { mutate: deleteProfileImg, isPending } = useMutation({
-        mutationFn: () => handleDeleteProfileImg(token),
+        mutationFn: handleDeleteProfileImg,
         onSuccess: () => {
             queryClient.invalidateQueries({
                 queryKey: [QUERY_KEYS.USER_PROFILE],

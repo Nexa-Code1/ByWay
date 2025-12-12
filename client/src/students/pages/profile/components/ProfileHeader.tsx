@@ -22,6 +22,7 @@ function ProfileHeader() {
                     avatar={userProfile.user.image}
                     userName={fullUserName}
                     size={70}
+                    key={userProfile.user.image}
                 />
                 <div>
                     <p className="font-semibold">{fullUserName}</p>

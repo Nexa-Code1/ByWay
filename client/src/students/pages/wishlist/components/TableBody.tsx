@@ -22,7 +22,7 @@ function TableBody({ wishlist }: TableBodyProps) {
                                     alt={item.title}
                                 />
                             </Link>
-                            <div className="flex flex-col gap-2">
+                            <div className="flex flex-col gap-2 text-sm sm:text-base min-w-50">
                                 <p className="flex items-center gap-2">
                                     <StarFilled className="text-orange-100!" />
                                     <span className="text-sm font-medium">

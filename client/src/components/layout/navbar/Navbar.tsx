@@ -11,7 +11,7 @@ import Logo from "@/components/shared/Logo";
 import { useUserProfile } from "@/hooks/user/useUserProfile";
 
 function Navbar() {
-    const { userProfile, isLoading } = useUserProfile();
+    const { userProfile, isLoading, error } = useUserProfile();
 
     return (
         <Header className="bg-gray-900! h-20! flex items-center justify-center px-0!">
@@ -23,10 +23,10 @@ function Navbar() {
                 <div className="hidden md:flex items-center gap-2">
                     {isLoading ? (
                         <Spinner />
-                    ) : userProfile ? (
-                        <UserMenu user={userProfile.user} />
-                    ) : (
+                    ) : !isLoading && (error || !userProfile) ? (
                         <RegisterBtns shape="round" />
+                    ) : (
+                        <UserMenu user={userProfile.user} />
                     )}
                 </div>
                 <NavLinksMobile />

@@ -1,6 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { message } from "antd";
-import { useCookies } from "react-cookie";
 
 import { handleUpdatePassword } from "@/api/user/user";
 import type { IUpdatePassword } from "@/types";
@@ -8,12 +7,10 @@ import { QUERY_KEYS } from "@/utils/queryKeys";
 
 export function useUpdatePassword() {
     const queryClient = useQueryClient();
-    const [cookies] = useCookies(["token"]);
-    const { token } = cookies;
 
     const { mutateAsync: updatePassword, isPending } = useMutation({
         mutationFn: async ({ values }: { values: IUpdatePassword }) => {
-            handleUpdatePassword(token, values);
+            handleUpdatePassword(values);
         },
         onSuccess: () => {
             queryClient.invalidateQueries({

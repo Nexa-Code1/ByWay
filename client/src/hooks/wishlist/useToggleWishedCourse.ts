@@ -1,4 +1,3 @@
-import { useCookies } from "react-cookie";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { message } from "antd";
 
@@ -10,7 +9,6 @@ import { QUERY_KEYS } from "@/utils/queryKeys";
 
 export function useToggleWishedCourse() {
     const queryClient = useQueryClient();
-    const [cookies] = useCookies(["token"]);
 
     const { mutate: toggleWishedCourse, isPending: isTogglingWishedCourse } =
         useMutation({
@@ -21,10 +19,9 @@ export function useToggleWishedCourse() {
                 courseId: string;
                 isFavourite: boolean;
             }) => {
-                if (!cookies.token) return;
                 return isFavourite
-                    ? handleDeleteFromWishlist(cookies.token, courseId)
-                    : handleAddToWishlist(cookies.token, courseId);
+                    ? handleDeleteFromWishlist(courseId)
+                    : handleAddToWishlist(courseId);
             },
             onSuccess: (_, variables) => {
                 queryClient.invalidateQueries({

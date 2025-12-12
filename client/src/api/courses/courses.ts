@@ -1,14 +1,8 @@
-import axios from "axios";
-
+import api from "../api";
 import { catchError } from "../catchError";
 import type { IFilterCoursesBy } from "@/types";
 
-const BASE_URL = import.meta.env.VITE_BASE_URL;
-
-export async function handleGetAllCourses(
-    filter: IFilterCoursesBy,
-    token: string
-) {
+export async function handleGetAllCourses(filter: IFilterCoursesBy) {
     try {
         let url = "courses/get-courses";
         const filterArr = Object.entries(filter);
@@ -19,27 +13,17 @@ export async function handleGetAllCourses(
             url += `?${joinedFilterArr}`;
         }
 
-        const res = await axios.get(`${BASE_URL}${url}`, {
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-        });
+        const res = await api.get(url);
         return res.data;
     } catch (err) {
         catchError(err);
     }
 }
 
-export async function handleGetCourseDetails(token: string, id?: string) {
+export async function handleGetCourseDetails(id?: string) {
     try {
         if (!id) throw new Error("course id is required");
-        const res = await axios.get(`${BASE_URL}courses/get-course/${id}`, {
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-        });
+        const res = await api.get(`courses/get-course/${id}`);
         return res.data;
     } catch (err) {
         catchError(err);

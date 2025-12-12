@@ -1,27 +1,17 @@
-import axios from "axios";
+import api from "../api";
 import { catchError } from "../catchError";
 import type { IUpdatePassword, IUpdateProfile } from "@/types";
 
-const BASE_URL = import.meta.env.VITE_BASE_URL;
-
-export async function handleGetProfile(token: string) {
+export async function handleGetProfile() {
     try {
-        const res = await axios.get(`${BASE_URL}users/profile`, {
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-        });
+        const res = await api.get(`users/profile`);
         return res.data;
     } catch (err) {
         catchError(err);
     }
 }
 
-export async function handleUpdateProfile(
-    token: string,
-    updatedValues: IUpdateProfile
-) {
+export async function handleUpdateProfile(updatedValues: IUpdateProfile) {
     try {
         const {
             firstName,
@@ -47,15 +37,9 @@ export async function handleUpdateProfile(
             ],
         };
 
-        const res = await axios.put(
-            `${BASE_URL}users/update-profile`,
-            formattedUpdatedValues,
-            {
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                },
-            }
+        const res = await api.put(
+            `users/update-profile`,
+            formattedUpdatedValues
         );
         return res.data;
     } catch (err) {
@@ -63,57 +47,31 @@ export async function handleUpdateProfile(
     }
 }
 
-export async function handleUploadProfileImg(token: string, file: File | null) {
+export async function handleUploadProfileImg(file: File | null) {
     try {
         if (!file) return;
         const formData = new FormData();
         formData.append("image", file);
 
-        const res = await axios.post(
-            `${BASE_URL}users/upload-profile-image`,
-            formData,
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            }
-        );
+        const res = await api.post(`users/upload-profile-image`, formData);
         return res.data;
     } catch (err) {
         catchError(err);
     }
 }
 
-export async function handleDeleteProfileImg(token: string) {
+export async function handleDeleteProfileImg() {
     try {
-        const res = await axios.delete(
-            `${BASE_URL}users/delete-profile-image`,
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            }
-        );
+        const res = await api.delete(`users/delete-profile-image`);
         return res.data;
     } catch (err) {
         catchError(err);
     }
 }
 
-export async function handleUpdatePassword(
-    token: string,
-    values: IUpdatePassword
-) {
+export async function handleUpdatePassword(values: IUpdatePassword) {
     try {
-        const res = await axios.patch(
-            `${BASE_URL}users/update-password`,
-            values,
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            }
-        );
+        const res = await api.patch(`users/update-password`, values);
         return res.data;
     } catch (err) {
         catchError(err);

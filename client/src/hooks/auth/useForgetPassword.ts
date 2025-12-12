@@ -2,8 +2,8 @@ import { useSearchParams } from "react-router";
 import { useMutation } from "@tanstack/react-query";
 import { message } from "antd";
 
-import { handleForgetPassword } from "../../api/auth/auth";
-import type { IResetPassword } from "../../types";
+import { handleForgetPassword } from "@/api/auth/auth";
+import type { IResetPassword } from "@/types";
 
 export function useResetPassword() {
     const [searchParams, setSearchParams] = useSearchParams();

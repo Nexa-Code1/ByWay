@@ -35,6 +35,7 @@ function UserMenu({ user }: UserMenuProps) {
                 <UserAvatar
                     avatar={user.image}
                     userName={`${user.firstName} ${user.lastName}`}
+                    key={user.image}
                 />
                 <p className="text-sm">{user.firstName}</p>
                 <DownOutlined className="w-3 h-3 group-hover:scale-115 transition-all" />

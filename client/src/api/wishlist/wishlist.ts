@@ -1,19 +1,19 @@
-import axios from "axios";
+import api from "../api";
 import { catchError } from "../catchError";
 
-const BASE_URL = import.meta.env.VITE_BASE_URL;
-
-export async function handleAddToWishlist(token: string, courseId: string) {
+export async function handleAddToWishlist(courseId: string) {
     try {
-        const res = await axios.post(
-            `${BASE_URL}wishlist/add-to-wishlist/${courseId}`,
-            undefined,
-            {
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                },
-            }
+        const res = await api.post(`wishlist/add-to-wishlist/${courseId}`);
+        return res.data;
+    } catch (err) {
+        catchError(err);
+    }
+}
+
+export async function handleDeleteFromWishlist(courseId: string) {
+    try {
+        const res = await api.delete(
+            `wishlist/delete-from-wishlist/${courseId}`
         );
         return res.data;
     } catch (err) {
@@ -21,34 +21,9 @@ export async function handleAddToWishlist(token: string, courseId: string) {
     }
 }
 
-export async function handleDeleteFromWishlist(
-    token: string,
-    courseId: string
-) {
+export async function handleGetMyWishlist() {
     try {
-        const res = await axios.delete(
-            `${BASE_URL}wishlist/delete-from-wishlist/${courseId}`,
-            {
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                },
-            }
-        );
-        return res.data;
-    } catch (err) {
-        catchError(err);
-    }
-}
-
-export async function handleGetMyWishlist(token: string) {
-    try {
-        const res = await axios.get(`${BASE_URL}wishlist/my-wishlist`, {
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-        });
+        const res = await api.get(`wishlist/my-wishlist`);
         return res.data;
     } catch (err) {
         catchError(err);

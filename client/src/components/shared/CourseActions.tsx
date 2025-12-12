@@ -38,39 +38,39 @@ function CourseActions({ courseDetails, btnColorClass }: CourseActionsProps) {
     }
 
     return (
-            <div className="flex w-full items-center justify-between gap-2">
-                {!isInCart ? (
-                    <form onSubmit={handleAddCourseToCart} className="flex-1">
-                        <AppSubmitBtn
-                            isLoading={isAddingToCart}
-                            type="primary"
-                            className={`h-10! ${btnColorClass}`}
-                        >
-                            Add to cart
-                        </AppSubmitBtn>
-                    </form>
-                ) : (
-                    <Button
-                        type="primary"
-                        onClick={() => navigate("/cart")}
-                        className={`flex-1! h-10! hover:-translate-y-0.5 ${btnColorClass}`}
-                    >
-                        Go to cart
-                    </Button>
-                )}
-                <form onSubmit={handleToggleWishedCourse}>
+        <div className="flex w-full items-center justify-between gap-2">
+            {!isInCart ? (
+                <form onSubmit={handleAddCourseToCart} className="flex-1">
                     <AppSubmitBtn
-                        isLoading={isTogglingWishedCourse}
-                        className="w-12! h-10! text-base! bg-transparent! text-gray-600!"
+                        isLoading={isAddingToCart}
+                        type="primary"
+                        className={`h-8! sm:h-10! ${btnColorClass}`}
                     >
-                        {isFavourite ? (
-                            <HeartFilled className="text-error-800!" />
-                        ) : (
-                            <HeartOutlined />
-                        )}
+                        Add to cart
                     </AppSubmitBtn>
                 </form>
-            </div>
+            ) : (
+                <Button
+                    type="primary"
+                    onClick={() => navigate("/cart")}
+                    className={`flex-1! h-8! sm:h-10! hover:-translate-y-0.5 ${btnColorClass}`}
+                >
+                    Go to cart
+                </Button>
+            )}
+            <form onSubmit={handleToggleWishedCourse}>
+                <AppSubmitBtn
+                    isLoading={isTogglingWishedCourse}
+                    className="w-12! h-8! sm:h-10! text-base! bg-transparent! text-gray-600!"
+                >
+                    {isFavourite ? (
+                        <HeartFilled className="text-error-800!" />
+                    ) : (
+                        <HeartOutlined />
+                    )}
+                </AppSubmitBtn>
+            </form>
+        </div>
     );
 }
 

@@ -107,22 +107,22 @@ export const router = createBrowserRouter([
                 path: "faq",
                 Component: FAQ,
             },
+            // PRIVATE STUDENTS ONLY
             // CART
             {
                 path: "cart",
+                element: (
+                    <ProtectedRoute role="student">
+                        <Cart />
+                    </ProtectedRoute>
+                ),
                 children: [
-                    { index: true, Component: Cart },
-                    // PRIVATE STUDENTS ONLY
                     {
                         path: "checkout",
                         children: [
                             {
                                 index: true,
-                                element: (
-                                    <ProtectedRoute role="student">
-                                        <Checkout />
-                                    </ProtectedRoute>
-                                ),
+                                Component: Checkout,
                             },
                             {
                                 path: "success",

@@ -13,7 +13,7 @@ function Wishlist() {
     if (!isLoading && (error || !wishlist)) return <Error />;
 
     return (
-        <div>
+        <div className="overflow-x-auto">
             <OutletHeader>Wishlist ({wishlist.wishlist.length})</OutletHeader>
             <table className="w-full border border-gray-300">
                 <TableHeader />

@@ -95,7 +95,7 @@ export const getCourseDetails = async (req, res) => {
 
     const course = await coursesModel.findById(id).populate([
         { path: "category", select: "name slug" },
-        { path: "instructor", select: "firstName lastName email image" },
+        { path: "instructor", select: "firstName lastName headLine bio image" },
         {
             path: "content.lessons",
             select: "section_ID title description link duration isCompleted",

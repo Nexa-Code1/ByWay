@@ -5,6 +5,7 @@ import { message } from "antd";
 import { handleLogin } from "@/api/auth/auth";
 import { QUERY_KEYS } from "@/utils/queryKeys";
 import { setTokens } from "@/utils/tokenService";
+import defaultRoutes from "@/utils/defaultRoutes";
 
 export function useLogin() {
     const queryClient = useQueryClient();
@@ -20,8 +21,10 @@ export function useLogin() {
             queryClient.invalidateQueries({
                 queryKey: [QUERY_KEYS.USER_PROFILE],
             });
-            //! DOESN'T WORK
-            navigate("/", { replace: true });
+
+            navigate(defaultRoutes[data.user.role], {
+                replace: true,
+            });
         },
         onError: (error) => message.error(error.message),
     });

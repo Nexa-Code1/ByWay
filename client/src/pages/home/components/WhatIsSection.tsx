@@ -22,7 +22,7 @@ function WhatIsSection() {
                     buttonLabel="Start a class today"
                     pagePath={
                         isUserExist && userProfile?.user?.role === "instructor"
-                            ? "/instructor"
+                            ? "/instructor/dashboard"
                             : "/become-instructor"
                     }
                 />

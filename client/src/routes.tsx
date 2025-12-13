@@ -55,7 +55,11 @@ export const router = createBrowserRouter([
     { path: "*", Component: NotFound },
     {
         path: "/",
-        Component: AppLayout,
+        element: (
+            <ProtectedRoute roles={["guest", "student"]}>
+                <AppLayout />
+            </ProtectedRoute>
+        ),
         children: [
             // PUBLIC (GUESTS, STUDENTS, INSTRUCTORS)
             { index: true, Component: Home },
@@ -107,12 +111,13 @@ export const router = createBrowserRouter([
                 path: "faq",
                 Component: FAQ,
             },
+            // STUDENT
             // PRIVATE STUDENTS ONLY
             // CART
             {
                 path: "cart",
                 element: (
-                    <ProtectedRoute role="student">
+                    <ProtectedRoute roles={["student"]}>
                         <Cart />
                     </ProtectedRoute>
                 ),
@@ -132,12 +137,10 @@ export const router = createBrowserRouter([
                     },
                 ],
             },
-            // STUDENT
-            // PRIVATE STUDENTS ONLY
             {
                 path: "profile",
                 element: (
-                    <ProtectedRoute role="student">
+                    <ProtectedRoute roles={["student"]}>
                         <Profile />
                     </ProtectedRoute>
                 ),
@@ -186,7 +189,7 @@ export const router = createBrowserRouter([
     {
         path: "/instructor",
         element: (
-            <ProtectedRoute role="instructor">
+            <ProtectedRoute roles={["instructor"]}>
                 <InstructorLayout />
             </ProtectedRoute>
         ),

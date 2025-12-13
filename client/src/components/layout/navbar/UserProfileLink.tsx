@@ -11,7 +11,11 @@ type UserProfileLinkProps = {
 function UserProfileLink({ userProfile }: UserProfileLinkProps) {
     return (
         <Link
-            to={userProfile.role === "student" ? "/profile" : "/instructor"}
+            to={
+                userProfile.role === "student"
+                    ? "/profile"
+                    : "/instructor/dashboard"
+            }
             className="flex items-center gap-1"
         >
             <UserAvatar

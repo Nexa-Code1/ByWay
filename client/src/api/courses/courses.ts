@@ -1,6 +1,6 @@
 import api from "../api";
 import { catchError } from "../catchError";
-import type { IFilterCoursesBy } from "@/types";
+import type { ICourseDataBasicInfo, IFilterCoursesBy } from "@/types";
 
 export async function handleGetAllCourses(filter: IFilterCoursesBy) {
     try {
@@ -24,6 +24,50 @@ export async function handleGetCourseDetails(id?: string) {
     try {
         if (!id) throw new Error("course id is required");
         const res = await api.get(`courses/get-course/${id}`);
+        return res.data;
+    } catch (err) {
+        catchError(err);
+    }
+}
+
+export async function handleCreateNewCourse(
+    newCourseData: ICourseDataBasicInfo
+) {
+    try {
+        const res = await api.post(`courses/create-course`, newCourseData);
+        return res.data;
+    } catch (err) {
+        catchError(err);
+    }
+}
+
+export async function handleUpdateCourse(
+    courseId: string,
+    updatedCourseData: ICourseDataBasicInfo
+) {
+    try {
+        const res = await api.put(
+            `courses/update-course/${courseId}`,
+            updatedCourseData
+        );
+        return res.data;
+    } catch (err) {
+        catchError(err);
+    }
+}
+
+export async function handleDeleteCourse(courseId: string) {
+    try {
+        const res = await api.delete(`courses/delete-course/${courseId}`);
+        return res.data;
+    } catch (err) {
+        catchError(err);
+    }
+}
+
+export async function handlePublishCourse(courseId: string) {
+    try {
+        const res = await api.patch(`courses/publish-course/${courseId}`);
         return res.data;
     } catch (err) {
         catchError(err);

@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useMemo, type ReactNode } from "react";
 import { Navigate } from "react-router";
 
 import { useUserProfile } from "@/hooks/user/useUserProfile";
@@ -13,16 +13,17 @@ type ProtectedRouteProps = {
 function ProtectedRoute({ children, roles }: ProtectedRouteProps) {
     const { userProfile, isLoading, error } = useUserProfile();
 
-    if (isLoading) return <PageSpinner />;
+    const userRole = useMemo(
+        () => (!isLoading && !error && userProfile?.user.role) || "guest",
+        [userProfile, isLoading, error]
+    );
 
-    let userRole;
-    if (!isLoading && (error || !userProfile)) userRole = "guest";
-    if (!isLoading && !error) userRole = userProfile?.user.role;
+    if (isLoading) return <PageSpinner />;
 
     return !roles.includes(userRole) ? (
         <Navigate to={defaultRoutes[userRole]} replace />
     ) : (
-        children
+        <>{children}</>
     );
 }
 

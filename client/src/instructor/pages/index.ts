@@ -2,7 +2,6 @@ export { default as InstructorLayout } from "./InstructorLayout";
 export { default as InstructorDashboard } from "./dashboard/Dashboard";
 export { default as CreateCourse } from "./create-course/CreateCourse";
 export { default as CreateCourseBasicInfo } from "./create-course-basic-info/CreateCourseBasicInfo";
-export { default as CreateCourseAdvancedInfo } from "./create-course-advanced-info/CreateCourseAdvancedInfo";
 export { default as CreateCourseCurriculum } from "./create-course-curriculum/CreateCourseCurriculum";
 export { default as CreateCoursePublish } from "./create-course-publish/CreateCoursePublish";
 export { default as CreateBlog } from "./create-blog/CreateBlog";

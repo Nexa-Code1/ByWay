@@ -209,3 +209,40 @@ export type AuthType =
     | "reset-password";
 
 export type MenuItemType = { key: string; icon?: ReactNode; label: ReactNode };
+
+export interface ICourseDataBasicInfo {
+    title: string;
+    subTitle: string;
+    price: number;
+    description: string;
+    requirements: string[];
+    content: string[];
+    category: string;
+    image: File | null;
+    imagePreview: string | null;
+}
+
+export interface ICourseContent {
+    section: string;
+    _id: string;
+    lessons: ICourseSectionLesson[];
+}
+
+export interface ICourseLessonData {
+    link: File;
+    title: string;
+    description: string;
+}
+
+export interface ICourseLessonUpdatedData {
+    link?: File;
+    title?: string;
+    description?: string;
+}
+
+export interface ICourseSectionLesson extends ICourseLessonData {
+    _id: string;
+    section_ID: string;
+    duration: number;
+    isCompleted: boolean;
+}

@@ -14,10 +14,10 @@ function LayoutHeader() {
     );
 
     return (
-        <header className="flex items-center justify-between pt-4 pb-10">
+        <header className="flex items-center justify-between pt-4 pb-6">
             <div>
                 <p className="text-sm text-gray-600">Good Morning</p>
-                <h1 className="font-bold text-lg text-primary-700">
+                <h1 className="font-bold md:text-lg text-primary-700">
                     {activeLink && activeLink.label.en}
                 </h1>
             </div>

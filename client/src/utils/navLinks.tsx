@@ -1,6 +1,7 @@
 import {
     AudioOutlined,
     BarChartOutlined,
+    CheckCircleOutlined,
     CopyOutlined,
     CreditCardOutlined,
     FileOutlined,
@@ -10,6 +11,7 @@ import {
     PlusCircleOutlined,
     SettingOutlined,
     ShoppingCartOutlined,
+    VideoCameraOutlined,
 } from "@ant-design/icons";
 
 export const navLinks = [
@@ -81,5 +83,26 @@ export const instructorNavLinks = [
         path: "/instructor/settings",
         label: { en: "Settings", ar: "الاعدادات" },
         icon: <SettingOutlined />,
+    },
+];
+
+export const createCourseNavLinks = [
+    {
+        key: "basic-information",
+        path: "/instructor/create-course/basic-information",
+        label: { en: "Basic Information", ar: "معلومات أساسية" },
+        icon: <CopyOutlined />,
+    },
+    {
+        key: "curriculum",
+        path: "/instructor/create-course/curriculum",
+        label: { en: "Curriculum", ar: "مقرر" },
+        icon: <VideoCameraOutlined />,
+    },
+    {
+        key: "publish-course",
+        path: "/instructor/create-course/publish",
+        label: { en: "Publish Course", ar: "نشر الكورس" },
+        icon: <CheckCircleOutlined />,
     },
 ];

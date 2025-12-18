@@ -46,6 +46,25 @@ function ConfirmationModal({
                 open={isModalOpen}
                 onOk={handleOk}
                 onCancel={handleCancel}
+                footer={[
+                    <Button
+                        key="cancel"
+                        type="text"
+                        className="text-primary-700! font-medium! hover:bg-transparent!"
+                        onClick={handleCancel}
+                    >
+                        Cancel
+                    </Button>,
+                    <Button
+                        key="save"
+                        type="primary"
+                        loading={false}
+                        onClick={handleOk}
+                        className="bg-orange-100!"
+                    >
+                        Save
+                    </Button>,
+                ]}
             >
                 <p>
                     This action can not be undone. Please confirm if you want to

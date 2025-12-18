@@ -1,15 +1,36 @@
 import { NavLink } from "react-router";
-import { LogoutOutlined } from "@ant-design/icons";
+import { LogoutOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import { Button } from "antd";
+import { MenuFoldOutlined } from "@ant-design/icons";
+import { useState } from "react";
 
 import { instructorNavLinks } from "@/utils/navLinks";
 import AppSubmitBtn from "@/components/shared/AppSubmitBtn";
 import { useLogout } from "@/hooks/auth/useLogout";
+import Logo from "@/components/shared/Logo";
 
 function NavSidebar() {
     const { logout, isLoggingout } = useLogout();
+    const [isOpen, setIsOpen] = useState(true);
 
     return (
-        <>
+        <div
+            className={`min-w-64 flex flex-col min-h-screen bg-white z-20 absolute top-0 md:static ${
+                isOpen ? "translate-x-0" : "-translate-x-full"
+            } md:translate-x-0 transition-transform ease-linear duration-150 shadow-xl`}
+        >
+            <Button
+                type="text"
+                className={`w-fit absolute -right-64 top-6 shadow-2xl! inline-block! md:hidden! bg-gray-50! rounded-r-full! z-30!`}
+                onClick={() => setIsOpen((prev) => !prev)}
+            >
+                {isOpen ? <MenuFoldOutlined /> : <MenuUnfoldOutlined />}
+            </Button>
+
+            <div className="m-4 flex items-center justify-between gap-2">
+                <Logo textStyle="text-primary-700 font-bold text-xl" />
+            </div>
+
             <ul className="flex-1 flex flex-col">
                 {instructorNavLinks.map((link) => (
                     <li key={link.key}>
@@ -44,7 +65,7 @@ function NavSidebar() {
                     <span>Sign out</span>
                 </AppSubmitBtn>
             </form>
-        </>
+        </div>
     );
 }
 

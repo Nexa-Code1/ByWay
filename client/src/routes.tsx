@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
 
 import {
     Courses,
@@ -34,7 +34,6 @@ import {
 import {
     CreateBlog,
     CreateCourse,
-    CreateCourseAdvancedInfo,
     CreateCourseBasicInfo,
     CreateCourseCurriculum,
     CreateCoursePublish,
@@ -56,12 +55,12 @@ export const router = createBrowserRouter([
     {
         path: "/",
         element: (
-            <ProtectedRoute roles={["guest", "student"]}>
-                <AppLayout />
-            </ProtectedRoute>
+            // <ProtectedRoute roles={["guest", "student"]}>
+            <AppLayout />
+            // </ProtectedRoute>
         ),
         children: [
-            // PUBLIC (GUESTS, STUDENTS, INSTRUCTORS)
+            // PUBLIC (GUESTS, STUDENTS)
             { index: true, Component: Home },
             {
                 path: "auth/verification/:verifyEmailToken",
@@ -203,12 +202,17 @@ export const router = createBrowserRouter([
                 Component: CreateCourse,
                 children: [
                     {
-                        path: "basic-information",
-                        Component: CreateCourseBasicInfo,
+                        index: true,
+                        element: (
+                            <Navigate
+                                to="/instructor/create-course/basic-information"
+                                replace
+                            />
+                        ),
                     },
                     {
-                        path: "advanced-information",
-                        Component: CreateCourseAdvancedInfo,
+                        path: "basic-information",
+                        Component: CreateCourseBasicInfo,
                     },
                     {
                         path: "curriculum",

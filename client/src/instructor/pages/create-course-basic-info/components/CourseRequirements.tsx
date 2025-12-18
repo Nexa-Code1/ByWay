@@ -1,0 +1,75 @@
+import { useState, type Dispatch, type SetStateAction } from "react";
+import { Button, message } from "antd";
+import Input from "antd/es/input/Input";
+import { CloseOutlined, PlusOutlined } from "@ant-design/icons";
+import IconBtn from "@/components/shared/IconBtn";
+
+type CourseRequirementsProps = {
+    requirements: string[];
+    onSetRequirements: Dispatch<SetStateAction<string[]>>;
+};
+
+function CourseRequirements({
+    requirements,
+    onSetRequirements,
+}: CourseRequirementsProps) {
+    const [value, setValue] = useState("");
+
+    function handleAddRequirement() {
+        if (!value) return;
+        if (requirements.includes(value))
+            return message.error("Requirement is already exist.");
+        onSetRequirements((prev) => [...prev, value]);
+        setValue("");
+    }
+
+    function handleDeleteRequirement(requirement: string) {
+        onSetRequirements((prev) =>
+            prev.filter((item) => item !== requirement)
+        );
+    }
+
+    return (
+        <div>
+            <div className="w-full! flex items-center mb-2">
+                <label>Requirements:</label>
+                <Input
+                    placeholder="Please input"
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
+                />
+                <Button
+                    type="text"
+                    htmlType="button"
+                    className="text-orange-100! flex gap-2 bg-transparent!"
+                    onClick={handleAddRequirement}
+                >
+                    <PlusOutlined />
+                    <span className="hidden md:block">Add requirement</span>
+                </Button>
+            </div>
+
+            {requirements.length > 0 && (
+                <ul className="mt-4 grid grid-cols-2 gap-2">
+                    {requirements.map((requirement) => (
+                        <li
+                            key={requirement}
+                            className="flex gap-2 items-center justify-between text-gray-400 border border-gray-200 px-2 rounded-sm bg-gray-50"
+                        >
+                            <span>{requirement}</span>
+                            <IconBtn
+                                onClick={() =>
+                                    handleDeleteRequirement(requirement)
+                                }
+                            >
+                                <CloseOutlined className="text-xs! text-gray-400! " />
+                            </IconBtn>
+                        </li>
+                    ))}
+                </ul>
+            )}
+        </div>
+    );
+}
+
+export default CourseRequirements;

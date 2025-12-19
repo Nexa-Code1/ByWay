@@ -10,19 +10,19 @@ type CreateCourseNavProps = {
 };
 
 function CreateCourseNav({ courseDetails }: CreateCourseNavProps) {
-    const [cookies] = useCookies(["newCourseId"]);
-    const { newCourseId } = cookies;
+    const [cookies] = useCookies(["draftCourseId"]);
+    const { draftCourseId } = cookies;
 
     return (
         <ul className="flex justify-between items-center gap-8 border-b-2 border-b-gray-200 mb-8 touch-pan-x whitespace-nowrap overflow-auto scroll-m-0">
             {createCourseNavLinks.map((link) => {
                 const isDisabled =
-                    (link.key === "curriculum" && !newCourseId) ||
+                    (link.key === "curriculum" && !draftCourseId) ||
                     (link.key === "publish-course" &&
-                        (!newCourseId || !courseDetails?.content.length));
+                        (!draftCourseId || !courseDetails?.content.length));
 
                 const isCompleted =
-                    (link.key === "basic-information" && newCourseId) ||
+                    (link.key === "basic-information" && draftCourseId) ||
                     (link.key === "curriculum" &&
                         courseDetails?.content.length > 0);
 

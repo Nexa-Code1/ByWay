@@ -18,11 +18,11 @@ import { useGetCourseDetails } from "@/hooks/courses/useGetCourseDetails";
 // import { fileToBase64 } from "@/utils/helper";
 
 function CreateCourseBasicInfo() {
-    const [cookies, setCookie, removeCookie] = useCookies(["newCourseId"]);
-    const { newCourseId } = cookies;
+    const [cookies, setCookie, removeCookie] = useCookies(["draftCourseId"]);
+    const { draftCourseId } = cookies;
 
     const { courseDetails, isLoading, error } =
-        useGetCourseDetails(newCourseId);
+        useGetCourseDetails(draftCourseId);
     const { createNewCourse, isCreatingNewCourse } = useCreateNewCourse();
     const { updateCourse, isUpdatingCourse } = useUpdateCourse();
     const { deleteCourse, isDeletingCourse } = useDeleteCourse();
@@ -51,7 +51,7 @@ function CreateCourseBasicInfo() {
         description: courseDetails?.course.description || "",
         requirements,
         content: [],
-        category: courseDetails?.course.category || "",
+        category: courseDetails?.course.category._id || "",
         image: null,
         imagePreview: "",
         // image: courseDetails?.course.image || null,
@@ -68,20 +68,20 @@ function CreateCourseBasicInfo() {
             image: file,
             imagePreview: previewUrl,
         };
-        if (newCourseId)
+        if (draftCourseId)
             updateCourse({
-                courseId: newCourseId,
+                courseId: draftCourseId,
                 updatedCourseData: courseData,
             });
         else {
             const newCourse = await createNewCourse(courseData);
-            setCookie("newCourseId", newCourse.course._id);
+            setCookie("draftCourseId", newCourse.course._id);
         }
     };
 
     async function handleDeleteCourse() {
-        await deleteCourse(newCourseId);
-        removeCookie("newCourseId");
+        await deleteCourse(draftCourseId);
+        removeCookie("draftCourseId");
         form.resetFields();
     }
 
@@ -161,7 +161,7 @@ function CreateCourseBasicInfo() {
 
             {/* Submit form */}
             <div className="self-end flex items-center gap-4 mt-4! mb-10!">
-                {newCourseId && (
+                {draftCourseId && (
                     <Button
                         htmlType="button"
                         className="text-error-800! border-error-800! mt-0! hover:-translate-y-0.5"
@@ -176,7 +176,7 @@ function CreateCourseBasicInfo() {
                     type="primary"
                     className="max-w-36! bg-orange-100!"
                 >
-                    {newCourseId ? "update" : "save & next"}
+                    {draftCourseId ? "update" : "save & next"}
                 </AppSubmitBtn>
             </div>
         </Form>

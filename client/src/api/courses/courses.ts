@@ -1,6 +1,10 @@
 import api from "../api";
 import { catchError } from "../catchError";
-import type { ICourseDataBasicInfo, IFilterCoursesBy } from "@/types";
+import type {
+    CourseStatusType,
+    ICourseDataBasicInfo,
+    IFilterCoursesBy,
+} from "@/types";
 
 export async function handleGetAllCourses(filter: IFilterCoursesBy) {
     try {
@@ -68,6 +72,21 @@ export async function handleDeleteCourse(courseId: string) {
 export async function handlePublishCourse(courseId: string) {
     try {
         const res = await api.patch(`courses/publish-course/${courseId}`);
+        return res.data;
+    } catch (err) {
+        catchError(err);
+    }
+}
+
+export async function handleGetInstructorCourses(
+    instructorId: string,
+    status: CourseStatusType | ""
+) {
+    try {
+        let url = `courses/get-instructor-courses/${instructorId}`;
+        if (status) url += `?status=${status}`;
+
+        const res = await api.get(url);
         return res.data;
     } catch (err) {
         catchError(err);

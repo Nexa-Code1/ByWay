@@ -9,23 +9,23 @@ import CourseSection from "./components/CourseSection";
 import type { ICourseContent } from "@/types";
 
 function CreateCourseCurriculum() {
-    const [cookies] = useCookies(["newCourseId"]);
-    const { newCourseId } = cookies;
+    const [cookies] = useCookies(["draftCourseId"]);
+    const { draftCourseId } = cookies;
 
     const { createCourseSection, isCreatingCourseSection } =
         useCreateCourseSection();
     const { courseDetails, isLoading, error } =
-        useGetCourseDetails(newCourseId);
+        useGetCourseDetails(draftCourseId);
 
     function addNewSectionHandler(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
         createCourseSection({
-            courseId: newCourseId,
+            courseId: draftCourseId,
             section: "New section",
         });
     }
 
-    if (!newCourseId)
+    if (!draftCourseId)
         return <Navigate to="/instructor/create-course/basic-information" />;
 
     return (
@@ -36,7 +36,7 @@ function CreateCourseCurriculum() {
                     (item: ICourseContent, index: number) => (
                         <CourseSection
                             key={item._id}
-                            courseId={newCourseId}
+                            courseId={draftCourseId}
                             item={item}
                             index={index}
                         />

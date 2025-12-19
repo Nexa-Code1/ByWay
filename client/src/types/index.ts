@@ -155,7 +155,7 @@ export interface IWishlistItem {
     rate: number;
 }
 
-export interface ICourseDetails {
+export interface ICourse {
     _id: string;
     title: string;
     subTitle: string;
@@ -165,7 +165,7 @@ export interface ICourseDetails {
     description: string;
     requirements: string[];
     content: [];
-    status: string;
+    status: CourseStatusType;
     price: number;
     discount: number;
     reviews: IReview[];
@@ -175,6 +175,13 @@ export interface ICourseDetails {
     createdAt: Date;
     updatedAt: Date;
     __v: number;
+    isInCart: boolean;
+    image: string;
+}
+
+export type CourseStatusType = "draft" | "published";
+
+export interface ICourseDetails extends ICourse {
     isInCart: boolean;
 }
 

@@ -261,10 +261,12 @@ export const getInstructorCourses = async (req, res) => {
         statusFilter.status = req.query.status;
     }
 
-    const courses = await coursesModel.find({
-        instructor: instructorId,
-        ...statusFilter,
-    });
+    const courses = await coursesModel
+        .find({
+            instructor: instructorId,
+            ...statusFilter,
+        })
+        .populate([{ path: "category", select: "name slug" }]);
 
     if (!courses || courses.length === 0) {
         return res.status(404).json({ message: "Courses not found" });

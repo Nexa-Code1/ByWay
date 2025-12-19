@@ -8,19 +8,19 @@ import { useGetCourseDetails } from "@/hooks/courses/useGetCourseDetails";
 
 function CreateCoursePublish() {
     const navigate = useNavigate();
-    const [cookies, , removeCookie] = useCookies(["newCourseId"]);
-    const { newCourseId } = cookies;
+    const [cookies, , removeCookie] = useCookies(["draftCourseId"]);
+    const { draftCourseId } = cookies;
 
-    const { courseDetails } = useGetCourseDetails(newCourseId);
+    const { courseDetails } = useGetCourseDetails(draftCourseId);
     const { publishCourse, isPublishingCourse } = usePublishCourse();
 
     function publishCourseHandler() {
-        removeCookie("newCourseId");
-        publishCourse({ courseId: newCourseId });
+        removeCookie("draftCourseId");
+        publishCourse({ courseId: draftCourseId });
         navigate("/instructor/my-courses");
     }
 
-    if (!newCourseId || !courseDetails?.course.content.length)
+    if (!draftCourseId || !courseDetails?.course.content.length)
         return <Navigate to="/instructor/create-course/basic-information" />;
 
     return (

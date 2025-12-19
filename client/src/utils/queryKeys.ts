@@ -8,6 +8,7 @@ export enum QUERY_KEYS {
     // COURSES KEYS
     GET_ALL_COURSES = "getAllCourses",
     GET_COURSE_DETAILS = "getCourseDetails",
+    GET_INSTRUCTOR_COURSES = "getInstructorCourses",
 
     // CART
     GET_MY_CART = "getMyCart",

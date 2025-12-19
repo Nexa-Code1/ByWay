@@ -7,11 +7,11 @@ import PageSpinner from "@/components/shared/PageSpinner";
 import Error from "@/components/shared/Error";
 
 function CreateCourse() {
-    const [cookies] = useCookies(["newCourseId"]);
-    const { newCourseId } = cookies;
+    const [cookies] = useCookies(["draftCourseId"]);
+    const { draftCourseId } = cookies;
 
     const { courseDetails, isLoading, error } =
-        useGetCourseDetails(newCourseId);
+        useGetCourseDetails(draftCourseId);
 
     if (isLoading) return <PageSpinner />;
     if (!isLoading && error) return <Error />;

@@ -51,11 +51,11 @@ function UploadProfileImg({ userImage, onSetFile }: UploadProfileImgProps) {
     }
 
     return (
-        <div className="max-w-52 sm:max-w-40 md:max-w-52 p-4 md:p-6 box-content border text-white self-center sm:self-start">
+        <div className="max-w-52 sm:max-w-40 md:max-w-52 p-4 md:p-6 box-content border text-white self-center sm:self-start relative">
             {userImage && (
                 <ConfirmationModal
                     triggerBtnType="text"
-                    triggerBtnStyles="bg-transparent! hover:bg-transparent! hover:text-error-800! text-lg! p-0!"
+                    triggerBtnStyles="absolute! z-30! left-8! hover:text-error-800! text-lg! text-gray-100! p-2! mt-2 shadow-lg! before:w-full before:h-full before:absolute before:bottom-0 before:bg-black before:opacity-30 before:-z-10"
                     triggerBtnLabel={
                         isDeletingImg ? (
                             <Spinner

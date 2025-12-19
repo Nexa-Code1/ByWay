@@ -10,4 +10,4 @@ export { default as MyBlogDetails } from "./my-blog-details/MyBlogDetails";
 export { default as MyCourses } from "./my-courses/MyCourses";
 export { default as MyCourseDetails } from "./my-course-details/MyCourseDetails";
 export { default as Earning } from "./earning/Earning";
-export { default as InstructorSettings } from "./settings/Settings";
+export { default as InstructorSettings } from "./settings/InstructorSettings";

@@ -24,11 +24,11 @@ import {
     PaymentMethods,
     Profile,
     PurchaseHistory,
-    StudentSettings,
     StudentCourseDetails,
     StudentCourses,
     Success,
     Wishlist,
+    StudentSettings,
 } from "./students/pages";
 
 import {
@@ -39,12 +39,12 @@ import {
     CreateCoursePublish,
     Earning,
     InstructorDashboard,
-    InstructorSettings,
     MyBlogDetails,
     MyBlogs,
     MyCourseDetails,
     MyCourses,
     InstructorLayout,
+    InstructorSettings,
 } from "./instructor/pages";
 
 import AppLayout from "@/components/layout/AppLayout";

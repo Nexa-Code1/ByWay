@@ -8,4 +8,4 @@ export { default as CourseLesson } from "./course-lesson/CourseLesson";
 export { default as Wishlist } from "./wishlist/Wishlist";
 export { default as PurchaseHistory } from "./purchase-history/PurchaseHistory";
 export { default as PaymentMethods } from "./payment-methods/PaymentMethods";
-export { default as StudentSettings } from "./settings/Settings";
+export { default as StudentSettings } from "./settings/StudentSettings";

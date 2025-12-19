@@ -28,6 +28,7 @@ function LayoutHeader() {
                     <UserAvatar
                         avatar={userProfile.user.image}
                         userName={`${userProfile.user.firstName} ${userProfile.user.lastName}`}
+                        key={userProfile.user.image}
                     />
                     <p className="text-sm font-semibold">
                         {userProfile.user.firstName}

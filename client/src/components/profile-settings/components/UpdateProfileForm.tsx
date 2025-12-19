@@ -10,11 +10,13 @@ import { useUpdateProfile } from "@/hooks/user/useUpdateProfile";
 type UpdateProfileFormProps = {
     userInfo: IUser;
     profileImgFile: File | null;
+    privateOption?: boolean;
 };
 
 function UpdateProfileForm({
     userInfo,
     profileImgFile,
+    privateOption = true,
 }: UpdateProfileFormProps) {
     const { updateProfile, isPending: isUpdating } = useUpdateProfile();
     const [form] = Form.useForm();
@@ -36,7 +38,10 @@ function UpdateProfileForm({
     };
 
     const onFinish: FormProps<IUpdateProfile>["onFinish"] = async (values) => {
-        updateProfile({ updatedValues: values, file: profileImgFile });
+        updateProfile({
+            updatedValues: { ...values, isPrivate: values.isPrivate || false },
+            file: profileImgFile,
+        });
     };
 
     return (
@@ -127,16 +132,20 @@ function UpdateProfileForm({
             >
                 <Input placeholder="Instagram link" />
             </Form.Item>
-            <hr />
 
             {/* isPrivate checkbox */}
-            <Form.Item<IUpdateProfile>
-                name="isPrivate"
-                valuePropName="checked"
-                className="mt-4!"
-            >
-                <Checkbox>Make your profile private</Checkbox>
-            </Form.Item>
+            {privateOption && (
+                <>
+                    <hr />
+                    <Form.Item<IUpdateProfile>
+                        name="isPrivate"
+                        valuePropName="checked"
+                        className="mt-4!"
+                    >
+                        <Checkbox>Make your profile private</Checkbox>
+                    </Form.Item>
+                </>
+            )}
 
             {/* Submit form */}
             <AppSubmitBtn

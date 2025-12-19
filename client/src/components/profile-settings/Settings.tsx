@@ -1,14 +1,18 @@
 import { useState } from "react";
 
 import Error from "@/components/shared/Error";
-import OutletHeader from "../profile/components/OutletHeader";
-import UploadProfileImg from "./components/UploadProfileImg";
 import { useUserProfile } from "@/hooks/user/useUserProfile";
 import Spinner from "@/components/shared/Spinner";
-import UpdateProfileForm from "./components/UpdateProfileForm";
+import OutletHeader from "@/components/shared/OutletHeader";
+import UploadProfileImg from "./components/UploadProfileImg";
 import UpdatePasswordForm from "./components/UpdatePasswordForm";
+import UpdateProfileForm from "./components/UpdateProfileForm";
 
-function Settings() {
+type SettingsProps = {
+    privateOption?: boolean;
+};
+
+function Settings({ privateOption }: SettingsProps) {
     // Coming from UploadProfileImg component for upload-profile-image backend request
     // Will be sent once user clicks save changes in UpdateProfileForm
     const [file, setFile] = useState<File | null>(null);
@@ -33,12 +37,15 @@ function Settings() {
                 <UpdateProfileForm
                     userInfo={userProfile.user}
                     profileImgFile={file}
+                    privateOption={privateOption}
                 />
             </div>
 
             <hr className="my-8" />
-            <OutletHeader>Change password</OutletHeader>
-            <UpdatePasswordForm />
+            <div className="mb-10">
+                <OutletHeader>Change password</OutletHeader>
+                <UpdatePasswordForm />
+            </div>
         </div>
     );
 }

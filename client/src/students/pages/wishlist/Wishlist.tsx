@@ -1,6 +1,6 @@
 import Spinner from "@/components/shared/Spinner";
 import { useGetMyWishlist } from "@/hooks/wishlist/useGetMyWishlist";
-import OutletHeader from "../profile/components/OutletHeader";
+import OutletHeader from "../../../components/shared/OutletHeader";
 import TableHeader from "./components/TableHeader";
 import TableBody from "./components/TableBody";
 import Error from "@/components/shared/Error";

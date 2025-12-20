@@ -1,6 +1,7 @@
 export enum QUERY_KEYS {
     // AUTH KEYS
     USER_PROFILE = "userProfile",
+    GET_PROFILE = "getProfile",
 
     // CATEGORIES KEYS
     GET_ALL_CATEGORIES = "getAllCategories",

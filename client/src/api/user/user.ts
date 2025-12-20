@@ -11,6 +11,16 @@ export async function handleGetProfile() {
     }
 }
 
+export async function handleGetProfileById(id?: string) {
+    try {
+        if (!id) throw new Error("ID is required");
+        const res = await api.get(`users/profile/${id}`);
+        return res.data;
+    } catch (err) {
+        catchError(err);
+    }
+}
+
 export async function handleUpdateProfile(updatedValues: IUpdateProfile) {
     try {
         const {

@@ -5,8 +5,13 @@ import Card from "./Card";
 import TextDescription from "./TextDescription";
 import courseImg from "@/assets/images/course.jpg";
 import UserAvatar from "../layout/navbar/UserAvatar";
+import type { ICourseDetails } from "@/types";
 
-function CourseCard({ course }) {
+type CourseCardProps = {
+    course: ICourseDetails;
+};
+
+function CourseCard({ course }: CourseCardProps) {
     const lang = "en";
 
     return (

@@ -5,25 +5,27 @@ import coursesRouter from "../Modules/Courses/course.controller.js";
 import sectionsRouter from "../Modules/Sections/section.controller.js";
 import lessonsRouter from "../Modules/Sections/Lessons/lesson.controller.js";
 import cartRouter from "../Modules/Cart/cart.controller.js";
+import paymentRouter from "../Modules/Payment/payment.controller.js";
 import wishlistRouter from "../Modules/Wishlist/wishlist.controller.js";
 
 const routerHandler = (app) => {
-  app.get("/", (req, res) => {
-    res.json({ message: "Hello in ByWay project!" });
-  });
+    app.get("/", (req, res) => {
+        res.json({ message: "Hello in ByWay project!" });
+    });
 
-  app.use("/api/auth", authRouter);
-  app.use("/api/users", userRouter);
-  app.use("/api/categories", categoriesRouter);
-  app.use("/api/courses", coursesRouter);
-  app.use("/api/sections", sectionsRouter);
-  app.use("/api/lessons", lessonsRouter);
-  app.use("/api/cart", cartRouter);
-  app.use("/api/wishlist", wishlistRouter);
+    app.use("/api/auth", authRouter);
+    app.use("/api/users", userRouter);
+    app.use("/api/categories", categoriesRouter);
+    app.use("/api/courses", coursesRouter);
+    app.use("/api/sections", sectionsRouter);
+    app.use("/api/lessons", lessonsRouter);
+    app.use("/api/cart", cartRouter);
+    app.use("/api/payment", paymentRouter);
+    app.use("/api/wishlist", wishlistRouter);
 
-  app.all(/.*/, (req, res) => {
-    res.status(404).json({ message: "Route not found" });
-  });
+    app.all(/.*/, (req, res) => {
+        res.status(404).json({ message: "Route not found" });
+    });
 };
 
 export default routerHandler;

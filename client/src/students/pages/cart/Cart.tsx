@@ -10,8 +10,11 @@ import EmptyCart from "./components/EmptyCart";
 import Error from "@/components/shared/Error";
 import { useClearCart } from "@/hooks/cart/useClearCart";
 import ConfirmationModal from "@/components/shared/ConfirmationModal";
+import { useNavigate } from "react-router";
 
 function Cart() {
+    const navigate = useNavigate();
+
     const { myCart, isLoading, error } = useGetMyCart();
     const { clearCart, isClearingCart } = useClearCart();
 
@@ -81,6 +84,7 @@ function Cart() {
                             <Button
                                 type="primary"
                                 className="bg-orange-100! h-10! hover:-translate-y-0.5 shadow-md!"
+                                onClick={() => navigate("/cart/checkout")}
                             >
                                 Proceed to checkout
                             </Button>

@@ -16,4 +16,6 @@ export enum QUERY_KEYS {
 
     // WISHLIST
     GET_MY_WISHLIST = "getMyWishlist",
+
+    GET_PAYMENT_METHODS = "getPaymentMethods",
 }

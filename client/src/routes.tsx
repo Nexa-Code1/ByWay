@@ -115,24 +115,22 @@ export const router = createBrowserRouter([
             // CART
             {
                 path: "cart",
-                element: (
-                    <ProtectedRoute roles={["student"]}>
-                        <Cart />
-                    </ProtectedRoute>
-                ),
                 children: [
                     {
+                        index: true,
+                        element: (
+                            <ProtectedRoute roles={["student"]}>
+                                <Cart />
+                            </ProtectedRoute>
+                        ),
+                    },
+                    {
                         path: "checkout",
-                        children: [
-                            {
-                                index: true,
-                                Component: Checkout,
-                            },
-                            {
-                                path: "success",
-                                Component: Success,
-                            },
-                        ],
+                        Component: Checkout,
+                    },
+                    {
+                        path: "success",
+                        Component: Success,
                     },
                 ],
             },

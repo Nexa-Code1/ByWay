@@ -1,12 +1,13 @@
-import usersModel from "../../../DB/Models/users.model.js";
-import blacklisttokensModel from "../../../DB/Models/blacklist.model.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import cryptoJS from "crypto-js";
+import { v4 as uuidv4 } from "uuid";
+import s from "stripe";
+import usersModel from "../../../DB/Models/users.model.js";
+import blacklisttokensModel from "../../../DB/Models/blacklist.model.js";
 import { verifyEmailTemplate } from "../../../Utils/verify.email.template.js";
 import emitter from "../../../Services/send.email.service.js";
-import cryptoJS from "crypto-js";
 import { verifyOTPTemplate } from "../../../Utils/verify.otp.template.js";
-import { v4 as uuidv4 } from "uuid";
 import { TOKEN_TYPES } from "../../../Constants/constants.js";
 uuidv4();
 
@@ -24,12 +25,17 @@ export const register = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, +process.env.SALT);
 
+    // CREATING A CUSTOMER IN STRIPE FOR SAVING PAYMENT METHOD
+    const stripe = s(process.env.STRIPE_SECRET_KEY);
+    const customer = await stripe.customers.create({ email });
+
     const newUser = await usersModel.create({
         firstName,
         lastName,
         email,
         password: hashedPassword,
         role,
+        customer_id: customer.id,
     });
 
     const verifyEmailToken = jwt.sign(

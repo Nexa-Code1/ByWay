@@ -133,6 +133,13 @@ export interface ICourseCart {
     image: string;
 }
 
+export interface ICourseCartRes {
+    course: ICourseCart;
+    quantity: number;
+    totalPrice: number;
+    _id: string;
+}
+
 export interface IWishlist {
     _id: string;
     student_ID: string;
@@ -253,3 +260,17 @@ export interface ICourseSectionLesson extends ICourseLessonData {
     duration: number;
     isCompleted: boolean;
 }
+
+export interface IBuyCourseIntentOptions {
+    amount: number;
+    currency: string;
+    customer?: string;
+    payment_method?: string;
+    off_session?: boolean;
+    confirm?: boolean;
+    automatic_payment_methods?: {
+        enabled: boolean;
+    };
+}
+
+export type CardBrand = "visa" | "mastercard";

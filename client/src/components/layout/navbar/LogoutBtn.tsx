@@ -11,6 +11,7 @@ function LogoutBtn() {
         e.preventDefault();
         logout();
     }
+    
     return (
         <a onClick={handleLogout} className="cursor-pointer logout">
             logout

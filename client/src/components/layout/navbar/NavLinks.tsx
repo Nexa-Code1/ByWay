@@ -1,13 +1,23 @@
 import { NavLink } from "react-router";
 
-import { navLinks } from "../../../utils/navLinks";
+import { navLinks } from "@/utils/navLinks";
+import { useUserProfile } from "@/hooks/user/useUserProfile";
 
 function NavLinks() {
+    const { userProfile, isLoading, error } = useUserProfile();
+
     const lang = "en";
+
+    if (isLoading) return;
+
+    const filteredNavLinks =
+        !userProfile || error
+            ? navLinks.filter((link) => link.key !== "cart")
+            : navLinks;
 
     return (
         <ul className="items-center justify-between gap-2 flex-1 max-w-xl hidden md:flex">
-            {navLinks.map((link) => (
+            {filteredNavLinks.map((link) => (
                 <li key={link.key}>
                     <NavLink
                         to={link.path}

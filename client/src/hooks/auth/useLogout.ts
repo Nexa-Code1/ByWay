@@ -1,17 +1,18 @@
 import { useNavigate } from "react-router";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { message } from "antd";
 
 import { handleLogout } from "@/api/auth/auth";
-import { QUERY_KEYS } from "@/utils/queryKeys";
 import {
     getAccessToken,
     getRefreshToken,
     removeTokens,
 } from "@/utils/tokenService";
+import { useUserProfile } from "../user/useUserProfile";
 
 export function useLogout() {
-    const queryClient = useQueryClient();
+    const { refetch } = useUserProfile();
+
     const navigate = useNavigate();
 
     const accessToken = getAccessToken();
@@ -19,11 +20,9 @@ export function useLogout() {
 
     const { mutate: logout, isPending: isLoggingout } = useMutation({
         mutationFn: () => handleLogout(accessToken, refreshToken),
-        onSuccess: () => {
+        onSuccess: async () => {
             removeTokens();
-            queryClient.invalidateQueries({
-                queryKey: [QUERY_KEYS.USER_PROFILE],
-            });
+            await refetch();
             navigate("/", { replace: true });
         },
         onError: (error) => message.error(error.message),

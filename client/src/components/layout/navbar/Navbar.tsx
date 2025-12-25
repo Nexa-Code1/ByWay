@@ -5,13 +5,15 @@ import NavLinks from "./NavLinks";
 import NavLinksMobile from "./NavLinksMobile";
 import RegisterBtns from "./RegisterBtns";
 import UserMenu from "./UserMenu";
-import Spinner from "@/components/shared/Spinner";
 import SectionContainer from "@/components/shared/SectionContainer";
 import Logo from "@/components/shared/Logo";
 import { useUserProfile } from "@/hooks/user/useUserProfile";
+import PageSpinner from "@/components/shared/PageSpinner";
 
 function Navbar() {
     const { userProfile, isLoading, error } = useUserProfile();
+
+    if (isLoading) return <PageSpinner />;
 
     return (
         <Header className="bg-gray-900! h-20! flex items-center justify-center px-0!">
@@ -21,9 +23,7 @@ function Navbar() {
                 </Link>
                 <NavLinks />
                 <div className="hidden md:flex items-center gap-2">
-                    {isLoading ? (
-                        <Spinner />
-                    ) : !isLoading && (error || !userProfile) ? (
+                    {!isLoading && (error || !userProfile) ? (
                         <RegisterBtns shape="round" />
                     ) : (
                         <UserMenu user={userProfile.user} />

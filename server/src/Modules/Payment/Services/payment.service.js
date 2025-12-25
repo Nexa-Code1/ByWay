@@ -1,6 +1,7 @@
 import s from "stripe";
 
 import coursesModel from "../../../DB/Models/courses.model.js";
+import usersModel from "../../../DB/Models/users.model.js";
 
 export const buyCourseIntent = async (req, res) => {
     const stripe = s(process.env.STRIPE_SECRET_KEY);
@@ -30,8 +31,8 @@ export const buyCourseIntent = async (req, res) => {
 };
 
 export const createSetupIntent = async (req, res) => {
-    const stripe = s(process.env.STRIPE_SECRET_KEY);
     try {
+        const stripe = s(process.env.STRIPE_SECRET_KEY);
         const { customer_id } = req.user;
 
         const customer = await stripe.customers.retrieve(customer_id);
@@ -116,8 +117,8 @@ export const addPaymentMethod = async (req, res) => {
 };
 
 export const removePaymentMethod = async (req, res) => {
-    const stripe = s(process.env.STRIPE_SECRET_KEY);
     try {
+        const stripe = s(process.env.STRIPE_SECRET_KEY);
         const { pmId } = req.params;
 
         if (!pmId) {
@@ -126,6 +127,13 @@ export const removePaymentMethod = async (req, res) => {
                 .json({ message: "Payment method not found" });
         }
 
+        // Find user
+        const updatedUser = await usersModel.findById(req.user.id);
+        if (!updatedUser) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        // Detach payment method from user
         const detached = await stripe.paymentMethods.detach(pmId);
 
         // Parse stripe_payment_methods if it's a string
@@ -147,11 +155,7 @@ export const removePaymentMethod = async (req, res) => {
             (paymentMethod) => paymentMethod.pm_id !== pmId
         );
 
-        const updatedUser = await usersModel.findById(user.id);
-        if (!updatedUser) {
-            return res.status(404).json({ message: "User not found" });
-        }
-
+        // Update user DB payment methods
         updatedUser.stripe_payment_methods = newPaymentMethodsArr;
         await updatedUser.save();
 

@@ -7,7 +7,7 @@ import { handleAddPaymentMethod } from "@/api/payment/payment";
 export function useAddPaymentMethod() {
     const queryClient = useQueryClient();
 
-    const { mutate: addPaymentMethod, isPending: isAddingPaymentMethod } =
+    const { mutateAsync: addPaymentMethod, isPending: isAddingPaymentMethod } =
         useMutation({
             mutationFn: async ({
                 paymentMethodId,

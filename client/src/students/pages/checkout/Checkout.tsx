@@ -17,16 +17,19 @@ function Checkout() {
     const [clientSecret, setClientSecret] = useState("");
 
     const { buyCourseIntent, isCreatingIntent } = useBuyCourseIntent();
-    const { myCart, isLoading: isLoadingCart, error } = useGetMyCart();
+    const {
+        myCart,
+        isLoading: isLoadingCart,
+        error: cartError,
+    } = useGetMyCart();
 
     useEffect(() => {
         (async () => {
-            if (isLoadingCart) return;
-            if (!isLoadingCart && (error || !myCart)) return <Error />;
-
-            const coursesIds = myCart.cart.courses.map(
+            const coursesIds = myCart?.cart.courses.map(
                 (course: ICourseCartRes) => course.course._id
             );
+
+            if (!coursesIds) return;
 
             const res = await buyCourseIntent({
                 coursesIds,
@@ -41,16 +44,20 @@ function Checkout() {
 
             setClientSecret(res.paymentIntent.client_secret);
         })();
-    }, [isLoadingCart, error, myCart]);
+    }, [isLoadingCart, cartError, myCart]);
 
     if (!clientSecret) return;
     if (isCreatingIntent || isLoadingCart) return <PageSpinner />;
+    if (!isLoadingCart && (cartError || !myCart)) return <Error />;
 
     return (
-        <SectionContainer className="mt-4! grid grid-cols-3 gap-10">
-            <div className="col-span-2 shadow-lg p-6 rounded-2xl">
+        <SectionContainer className="mt-4! grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div className="col-span-1 lg:col-span-2 shadow-lg p-6 rounded-2xl border border-gray-100">
                 <Elements stripe={stripePromise} options={{ clientSecret }}>
-                    <PaymentForm />
+                    <PaymentForm
+                        cartTotalPrice={myCart.totalCartPrice}
+                        customerId={myCart.customer_id}
+                    />
                 </Elements>
             </div>
 

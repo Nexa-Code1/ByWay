@@ -1,28 +1,23 @@
-import { useState, type Dispatch, type SetStateAction } from "react";
-import { Button, Radio, type RadioChangeEvent } from "antd";
+import { type Dispatch, type SetStateAction } from "react";
+import { Radio, type RadioChangeEvent } from "antd";
+import { WarningOutlined } from "@ant-design/icons";
 
 import { useGetPaymentMethods } from "@/hooks/payment/useGetPaymentMethods";
 import Spinner from "@/components/shared/Spinner";
-import type { CardBrand } from "@/types";
-import visaImg from "@/assets/images/visa.png";
-import mastercardImg from "@/assets/images/mastercard.png";
-
-const brandLogoSrc = (brand: CardBrand) => {
-    switch (brand) {
-        case "visa":
-            return visaImg;
-        case "mastercard":
-            return mastercardImg;
-    }
-};
+import { brandLogoSrc } from "@/utils/helper";
+import type Stripe from "stripe";
 
 type PaymentMethodsProps = {
     selectedCardId: string;
     onSelectCard: Dispatch<SetStateAction<string>>;
+    isAddingNewCard: boolean;
 };
 
-function PaymentMethods({ selectedCardId, onSelectCard }: PaymentMethodsProps) {
-    const [isAddingNewCard, setIsAddingNewCard] = useState(false);
+function PaymentMethods({
+    selectedCardId,
+    onSelectCard,
+    isAddingNewCard,
+}: PaymentMethodsProps) {
     const { paymentMethods, isLoading, error } = useGetPaymentMethods();
 
     if (isLoading) return <Spinner className="text-primary-700" />;
@@ -30,23 +25,31 @@ function PaymentMethods({ selectedCardId, onSelectCard }: PaymentMethodsProps) {
 
     const userPaymentMethods = paymentMethods.paymentMethods.data;
 
-    if (!userPaymentMethods.length) return;
+    if (!userPaymentMethods.length)
+        return (
+            <p className="flex gap-1 items-center justify-center mb-4 text-sm text-error-800">
+                <WarningOutlined />
+                <span>No available cards please add new card</span>
+            </p>
+        );
 
-    const options = userPaymentMethods.map((pm) => ({
+    const options = userPaymentMethods.map((pm: Stripe.PaymentMethod) => ({
         value: pm.id,
         label: (
             <div>
-                <img
-                    src={brandLogoSrc(pm.card?.brand)}
-                    alt={pm.brand}
-                    className="h-8 w-auto"
-                />
+                <div className="flex items-center gap-3">
+                    <img
+                        src={brandLogoSrc(pm.card?.brand)}
+                        alt={pm.card?.brand}
+                        className="h-8 w-auto"
+                    />
+                    <span className="font-semibold flex-1">
+                        •••• {pm.card?.last4}
+                    </span>
+                </div>
                 <span className="text-sm truncate text-secondary-500">
                     Exp. date {pm.card?.exp_month.toString().padStart(2, "0")}/
                     {pm.card?.exp_year}
-                </span>
-                <span className="font-semibold flex-1">
-                    •••• {pm.card?.last4}
                 </span>
             </div>
         ),
@@ -56,29 +59,15 @@ function PaymentMethods({ selectedCardId, onSelectCard }: PaymentMethodsProps) {
         onSelectCard(e.target.value);
     };
 
-    function handleAddNewCard() {
-        setIsAddingNewCard((prev) => {
-            if (!prev) onSelectCard("");
-            return !prev;
-        });
-    }
-
     return (
         <div className="flex-1">
-            {isAddingNewCard && (
-                <Radio.Group
-                    onChange={onChange}
-                    value={selectedCardId}
-                    className="mb-4!"
-                    options={options}
-                />
-            )}
-            <Button
-                className="w-full border-dashed border-primary-100 text-primary-100 cursor-pointer hover:text-primary-100 mb-4"
-                onClick={handleAddNewCard}
-            >
-                {isAddingNewCard ? "Cancel" : "+ Add new card"}
-            </Button>
+            <Radio.Group
+                onChange={onChange}
+                value={selectedCardId}
+                className="mb-4!"
+                options={options}
+                disabled={isAddingNewCard}
+            />
         </div>
     );
 }

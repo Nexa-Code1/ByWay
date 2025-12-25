@@ -2,7 +2,7 @@ import cartModel from "../../../DB/Models/cart.model.js";
 import coursesModel from "../../../DB/Models/courses.model.js";
 
 export const getCartService = async (req, res) => {
-    const { id } = req.user;
+    const { id, customer_id } = req.user;
 
     const cart = await cartModel.findOne({ student_ID: id }).populate({
         path: "courses.course",
@@ -41,6 +41,7 @@ export const getCartService = async (req, res) => {
         message: "Cart fetched successfully",
         totalCartPrice,
         cart,
+        customer_id,
     });
 };
 

@@ -6,8 +6,8 @@ import {
     Home,
     NotFound,
     SearchCourses,
-    Blogs,
-    BlogDetails,
+    // Blogs,
+    // BlogDetails,
     BecomeInstructor,
     InstructorProfile,
     StudentProfile,
@@ -37,8 +37,8 @@ import {
     CreateCourseBasicInfo,
     CreateCourseCurriculum,
     CreateCoursePublish,
-    Earning,
-    InstructorDashboard,
+    // Earning,
+    // InstructorDashboard,
     MyBlogDetails,
     MyBlogs,
     MyCourseDetails,
@@ -80,16 +80,16 @@ export const router = createBrowserRouter([
                 path: "search",
                 Component: SearchCourses,
             },
-            {
-                path: "blogs",
-                children: [
-                    { index: true, Component: Blogs },
-                    {
-                        path: ":blogId",
-                        Component: BlogDetails,
-                    },
-                ],
-            },
+            // {
+            //     path: "blogs",
+            //     children: [
+            //         { index: true, Component: Blogs },
+            //         {
+            //             path: ":blogId",
+            //             Component: BlogDetails,
+            //         },
+            //     ],
+            // },
             {
                 path: "become-instructor",
                 Component: BecomeInstructor,
@@ -191,10 +191,10 @@ export const router = createBrowserRouter([
             </ProtectedRoute>
         ),
         children: [
-            {
-                path: "dashboard",
-                Component: InstructorDashboard,
-            },
+            // {
+            //     path: "dashboard",
+            //     Component: InstructorDashboard,
+            // },
             {
                 path: "create-course",
                 Component: CreateCourse,
@@ -240,10 +240,10 @@ export const router = createBrowserRouter([
                     { path: ":courseId", Component: MyCourseDetails },
                 ],
             },
-            {
-                path: "earning",
-                Component: Earning,
-            },
+            // {
+            //     path: "earning",
+            //     Component: Earning,
+            // },
             {
                 path: "settings",
                 Component: InstructorSettings,

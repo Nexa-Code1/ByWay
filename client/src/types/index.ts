@@ -64,6 +64,13 @@ export interface IResetPassword {
     confirmNewPassword: string;
 }
 
+export interface IContactUs {
+    firstName: string;
+    lastName: string;
+    email: string;
+    message: string;
+}
+
 export interface IStatisticItem {
     statistic: string;
     label: ILangObj;

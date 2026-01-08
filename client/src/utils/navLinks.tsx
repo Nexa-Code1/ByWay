@@ -1,10 +1,10 @@
 import {
     AudioOutlined,
-    BarChartOutlined,
+    // BarChartOutlined,
     CheckCircleOutlined,
     CopyOutlined,
-    CreditCardOutlined,
-    FileOutlined,
+    // CreditCardOutlined,
+    // FileOutlined,
     FileSearchOutlined,
     FileTextOutlined,
     HomeOutlined,
@@ -33,12 +33,12 @@ export const navLinks = [
         label: { en: "Search", ar: "بحث" },
         icon: <FileSearchOutlined />,
     },
-    {
-        key: "blog",
-        path: "/blogs",
-        label: { en: "Blog", ar: "مقالات" },
-        icon: <FileOutlined />,
-    },
+    // {
+    //     key: "blog",
+    //     path: "/blogs",
+    //     label: { en: "Blog", ar: "مقالات" },
+    //     icon: <FileOutlined />,
+    // },
     {
         key: "cart",
         path: "/cart",
@@ -54,12 +54,12 @@ export const navLinks = [
 ];
 
 export const instructorNavLinks = [
-    {
-        key: "dashboard",
-        path: "/instructor/dashboard",
-        label: { en: "Dashboard", ar: "لوحة التحكم" },
-        icon: <BarChartOutlined />,
-    },
+    // {
+    //     key: "dashboard",
+    //     path: "/instructor/dashboard",
+    //     label: { en: "Dashboard", ar: "لوحة التحكم" },
+    //     icon: <BarChartOutlined />,
+    // },
     {
         key: "create-course",
         path: "/instructor/create-course",
@@ -72,12 +72,12 @@ export const instructorNavLinks = [
         label: { en: "My Courses", ar: "كورساتى" },
         icon: <CopyOutlined />,
     },
-    {
-        key: "erarning",
-        path: "/instructor/earning",
-        label: { en: "Earning", ar: "الارباح" },
-        icon: <CreditCardOutlined />,
-    },
+    // {
+    //     key: "erarning",
+    //     path: "/instructor/earning",
+    //     label: { en: "Earning", ar: "الارباح" },
+    //     icon: <CreditCardOutlined />,
+    // },
     {
         key: "settings",
         path: "/instructor/settings",

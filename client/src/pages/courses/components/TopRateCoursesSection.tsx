@@ -1,5 +1,5 @@
-import CourseCard from "@/components/shared/CourseCard";
-import SectionLayout from "../../../components/shared/SectionLayout";
+// import CourseCard from "@/components/shared/CourseCard";
+import SectionLayout from "@/components/shared/SectionLayout";
 
 function TopRateCoursesSection() {
     return (

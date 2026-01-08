@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { AppstoreOutlined, ClockCircleOutlined } from "@ant-design/icons";
+import { AppstoreOutlined } from "@ant-design/icons";
 
 import Card from "./Card";
 import TextDescription from "./TextDescription";
@@ -28,12 +28,12 @@ function CourseCard({ course }: CourseCardProps) {
                             {course.category.name[lang]}
                         </span>
                     </div>
-                    <div className="flex items-center gap-1">
+                    {/* <div className="flex items-center gap-1">
                         <ClockCircleOutlined className="text-lg text-gray-300!" />
                         <span className="text-xs font-semibold text-gray-500">
                             3 Month
                         </span>
-                    </div>
+                    </div> */}
                 </div>
                 <h3 className="font-semibold text-gray-800">{course.title}</h3>
                 <TextDescription className="flex-1!">
@@ -48,10 +48,15 @@ function CourseCard({ course }: CourseCardProps) {
                     <p className="font-medium text-xs flex-1">
                         {course.instructor.firstName}
                     </p>
-                    <p className="line-through text-gray-300 italic">
-                        {course.price} EGP
+                    {course.discount !== 0 && (
+                        <p className="line-through text-gray-300 italic">
+                            {course.price} EGP
+                        </p>
+                    )}
+                    <p className="text-primary-700 font-bold">
+                        {course.price - (course.price * course.discount) / 100}{" "}
+                        EGP
                     </p>
-                    <p className="text-primary-700 font-bold">1660 EGP</p>
                 </div>
             </Link>
         </Card>

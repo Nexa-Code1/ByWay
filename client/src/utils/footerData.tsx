@@ -47,10 +47,10 @@ export const getHelp = [
         path: "/contact-us",
         label: "Contact Us",
     },
-    {
-        path: "/blogs",
-        label: "Latest Articles",
-    },
+    // {
+    //     path: "/blogs",
+    //     label: "Latest Articles",
+    // },
     {
         path: "/faq",
         label: "FAQ",

@@ -1,25 +1,25 @@
-import { useUserProfile } from "@/hooks/user/useUserProfile";
+// import { useUserProfile } from "@/hooks/user/useUserProfile";
 import SectionContainer from "@/components/shared/SectionContainer";
-import ContinueLearningSection from "./components/ContinueLearningSection";
+// import ContinueLearningSection from "./components/ContinueLearningSection";
 import CategoriesSection from "./components/CategoriesSection";
-import RecommendedSection from "./components/RecommendedSection";
+// import RecommendedSection from "./components/RecommendedSection";
 import PersonalDevCoursesSection from "./components/PersonalDevCoursesSection";
 import OnlineCoachingSection from "./components/OnlineCoachingSection";
-import TopRatedCoursesSection from "./components/TopRateCoursesSection";
+// import TopRatedCoursesSection from "./components/TopRateCoursesSection";
 
 function Courses() {
-    const { userProfile, isLoading: isLoadingUser, error } = useUserProfile();
+    // const { userProfile, isLoading: isLoadingUser, error } = useUserProfile();
 
     return (
         <SectionContainer className="mt-4!">
-            {!isLoadingUser && !error && userProfile && (
+            {/* {!isLoadingUser && !error && userProfile && (
                 <ContinueLearningSection />
-            )}
+            )} */}
             <CategoriesSection />
-            <RecommendedSection />
+            {/* <RecommendedSection /> */}
             <OnlineCoachingSection />
             <PersonalDevCoursesSection />
-            <TopRatedCoursesSection />
+            {/* <TopRatedCoursesSection /> */}
         </SectionContainer>
     );
 }

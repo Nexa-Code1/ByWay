@@ -6,13 +6,13 @@ import SectionContainer from "@/components/shared/SectionContainer";
 import Spinner from "@/components/shared/Spinner";
 import Error from "@/components/shared/Error";
 import SelectCategory from "./components/SelectCategory";
-import CoursesResult from "./components/CoursesResult";
 import SearchForm from "./components/SearchForm";
 import Sort from "./components/Sort";
 import PriceSlider from "./components/PriceSlider";
-import type { ISortCoursesBy } from "@/types";
+import type { ICourseDetails, ISortCoursesBy } from "@/types";
 import CoursesPagination from "./components/CoursesPagination";
 import { COURSES_PER_PAGE } from "@/utils/constants";
+import CourseCard from "@/components/shared/CourseCard";
 
 function SearchCourses() {
     const [searchParams] = useSearchParams();
@@ -31,6 +31,8 @@ function SearchCourses() {
     });
 
     if (!isLoadingCourses && coursesError) return <Error />;
+
+    console.log(courses);
 
     return (
         <>
@@ -53,7 +55,11 @@ function SearchCourses() {
                 )}
                 {!isLoadingCourses && courses && (
                     <>
-                        <CoursesResult courses={courses.courses} />
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                            {courses.courses.map((course: ICourseDetails) => (
+                                <CourseCard key={course._id} course={course} />
+                            ))}
+                        </div>
                         <CoursesPagination total={courses.courses.length} />
                     </>
                 )}

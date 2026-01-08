@@ -1,4 +1,4 @@
-import { contacts, links } from "../../../utils/footerData";
+import { contacts, links } from "@/utils/footerData";
 
 function ContactUs() {
     return (

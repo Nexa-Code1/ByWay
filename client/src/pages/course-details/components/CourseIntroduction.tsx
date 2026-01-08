@@ -24,7 +24,7 @@ function CourseIntroduction({ courseDetails }: CourseIntroductionProps) {
                         path: `/courses?category=${category.slug}`,
                     },
                     {
-                        title: "The Complete JavaScript Course 2025: From Zero to Expert!",
+                        title,
                     },
                 ]}
             />

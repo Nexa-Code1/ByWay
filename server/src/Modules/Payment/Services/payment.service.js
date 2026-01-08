@@ -18,9 +18,26 @@ export const buyCourseIntent = async (req, res) => {
         // CREATING PAYMENTINTENT FROM STRIPE
         const paymentIntent = await stripe.paymentIntents.create(options);
 
+        // if (paymentIntent.status === "failed")
+        //     res.status(401).json({
+        //         message: "Payment failed",
+        //     });
+
+        // payment_method may not be defined yet
+        let paymentMethod = null;
+
+        if (paymentIntent.payment_method) {
+            paymentMethod = await stripe.paymentMethods.retrieve(
+                paymentIntent.payment_method
+            );
+            // create order
+            // const order = await ordersModel.create({});
+        }
+
         res.status(200).json({
             message: "client secret created successfully",
             paymentIntent,
+            paymentMethod,
         });
     } catch (error) {
         res.status(500).json({

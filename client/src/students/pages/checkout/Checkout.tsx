@@ -42,6 +42,8 @@ function Checkout() {
                 },
             });
 
+            console.log(res);
+
             setClientSecret(res.paymentIntent.client_secret);
         })();
     }, [isLoadingCart, cartError, myCart]);

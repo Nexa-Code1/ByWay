@@ -17,7 +17,7 @@ function PaymentMethodsList() {
         <div className="flex flex-col gap-2">
             {paymentMethods.paymentMethods.data.map(
                 (item: Stripe.PaymentMethod) => (
-                    <PaymentMethodItem item={item} />
+                    <PaymentMethodItem item={item} key={item.id} />
                 )
             )}
         </div>

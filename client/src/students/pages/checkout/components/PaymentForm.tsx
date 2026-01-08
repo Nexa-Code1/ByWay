@@ -33,7 +33,7 @@ function PaymentForm({ cartTotalPrice, customerId }: PaymentFormProps) {
         if (!isAddingNewCard && !selectedCardId) {
             message.error("Please select payment method or add new one.");
         } else if (selectedCardId) {
-            await buyCourseIntent({
+            const res = await buyCourseIntent({
                 coursesIds: [],
                 options: {
                     amount: Math.round(cartTotalPrice * 100),
@@ -45,6 +45,7 @@ function PaymentForm({ cartTotalPrice, customerId }: PaymentFormProps) {
                 },
             });
             // Purchase courses API
+            console.log(res);
         } else {
             const { error, paymentIntent } = await stripe.confirmPayment({
                 elements,

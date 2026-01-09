@@ -5,7 +5,7 @@ interface RoutesMap {
 const defaultRoutes: RoutesMap = {
     guest: "/",
     student: "/",
-    instructor: "/instructor/dashboard",
+    instructor: "/instructor",
     admin: "/admin",
 };
 

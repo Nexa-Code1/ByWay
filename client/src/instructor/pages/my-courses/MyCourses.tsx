@@ -7,6 +7,8 @@ import { useGetInstructorCourses } from "@/hooks/courses/useGetInstructorCourses
 import { useUserProfile } from "@/hooks/user/useUserProfile";
 import InstructorCourseCard from "./components/InstructorCourseCard";
 import type { CourseStatusType, ICourse } from "@/types";
+import NoContent from "@/components/shared/NoContent";
+import emptyFolderImg from "@/assets/images/empty-folder.png";
 
 function MyCourses() {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -23,6 +25,16 @@ function MyCourses() {
         isLoading: isLoadingCourses,
         error: coursesError,
     } = useGetInstructorCourses(userProfile?.user._id, status);
+
+    if (isLoadingUser || isLoadingCourses)
+        return <Spinner className="text-primary-700! mt-50!" size="large" />;
+
+    if (
+        !isLoadingCourses &&
+        !isLoadingUser &&
+        (userProfileError || coursesError || !instructorCourses)
+    )
+        <Error />;
 
     const onChange: CheckboxProps["onChange"] = (e) => {
         setSearchParams({ status: e.target.value });
@@ -41,12 +53,12 @@ function MyCourses() {
                 </Radio.Group>
             </div>
 
-            {isLoadingUser || isLoadingCourses ? (
-                <Spinner className="text-primary-700! mt-50!" size="large" />
-            ) : !isLoadingCourses &&
-              !isLoadingUser &&
-              (userProfileError || coursesError) ? (
-                <Error />
+            {!instructorCourses.courses.length ? (
+                <NoContent
+                    imgSrc={emptyFolderImg}
+                    title="No Courses Found"
+                    subTitle="Empty courses list. Start creating one."
+                />
             ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
                     {instructorCourses.courses.map((course: ICourse) => (

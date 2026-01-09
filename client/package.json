@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build": "react-scripts build",
+    "vercel-build": "npm run build"
   },
   "dependencies": {
     "@ant-design/v5-patch-for-react-19": "^1.0.3",

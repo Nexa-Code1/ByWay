@@ -2,6 +2,7 @@
     "name": "byway-mern-root",
     "version": "1.0.0",
     "private": true,
+    "type": "module",
     "scripts": {
         "install-client": "npm install --prefix client",
         "install-server": "npm install --prefix server",

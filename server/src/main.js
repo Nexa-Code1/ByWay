@@ -30,9 +30,9 @@ const bootstrap = () => {
 
     // Serve React build
     const __dirname = path.resolve();
-    app.use(express.static(path.join(__dirname, "client/dist")));
-    app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    app.use(express.static(path.join(__dirname, "client", "dist")));
+    app.use((req, res) => {
+        res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
     });
 
     app.listen(port, () => {

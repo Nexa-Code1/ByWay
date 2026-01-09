@@ -1,0 +1,12 @@
+{
+    "name": "byway-mern-root",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "install-client": "npm install --prefix client",
+        "install-server": "npm install --prefix server",
+        "build-client": "npm run build --prefix client",
+        "build": "npm run install-client && npm run install-server && npm run build-client",
+        "start": "node server/index.js"
+    }
+}

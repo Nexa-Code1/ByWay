@@ -268,10 +268,6 @@ export const getInstructorCourses = async (req, res) => {
         })
         .populate([{ path: "category", select: "name slug" }]);
 
-    if (!courses || courses.length === 0) {
-        return res.status(404).json({ message: "Courses not found" });
-    }
-
     res.status(200).json({
         message: "Courses fetched successfully",
         courses,

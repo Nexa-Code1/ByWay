@@ -21,7 +21,7 @@ const bootstrap = () => {
     );
 
     app.use(express.json());
-    app.use("/Media", express.static("Media"));
+    // app.use("/Media", express.static("Media"));
     connection();
 
     routerHandler(app);

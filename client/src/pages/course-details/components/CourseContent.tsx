@@ -10,8 +10,6 @@ type CourseContentProps = {
 };
 
 function CourseContent({ content }: CourseContentProps) {
-    console.log(content);
-
     const items = content.map((el) => {
         const totalDuration = (
             el.lessons.reduce(

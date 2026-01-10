@@ -18,9 +18,13 @@ function CourseCard({ course }: CourseCardProps) {
         <Card className="text-start!">
             <Link
                 to={`/courses/${course._id}`}
-                className="h-full flex flex-col gap-4"
+                className="w-full h-full flex flex-col gap-4"
             >
-                <img src={courseImg} alt="course image" />
+                <img
+                    src={course.image || courseImg}
+                    alt="course image"
+                    className="w-full h-full object-cover object-center rounded-xl"
+                />
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1">
                         <AppstoreOutlined className="text-lg text-gray-300!" />

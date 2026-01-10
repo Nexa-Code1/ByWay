@@ -4,7 +4,7 @@ type SectionHeaderProps = {
 
 function SectionHeader({ title }: SectionHeaderProps) {
     return (
-        <h2 className="font-bold text-xl mb-6 text-gray-800 text-center sm:text-start">
+        <h2 className="font-bold text-xl mb-6 text-gray-800 text-start">
             {title}
         </h2>
     );

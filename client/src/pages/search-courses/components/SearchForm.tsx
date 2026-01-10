@@ -22,8 +22,9 @@ function SearchForm() {
             initialValues={{ search: "" }}
             onFinish={onFinish}
             autoComplete="off"
+            className="col-span-4"
         >
-            <div className="absolute top-1/2 left-1/2 -translate-1/2 flex items-center w-[95%] max-w-3xl bg-white rounded-md h-10! [&_.ant-form-item-explain-error]:absolute! [&_.ant-form-item-explain-error]:font-semibold! [&_.ant-form-item-explain-error]:text-error-800!">
+            <div className="flex items-center w-full bg-white rounded-md h-10! [&_.ant-form-item-explain-error]:absolute! [&_.ant-form-item-explain-error]:font-semibold! [&_.ant-form-item-explain-error]:text-error-800!">
                 <Form.Item<GetAllCoursesFilter>
                     name="search"
                     rules={[

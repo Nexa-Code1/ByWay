@@ -40,6 +40,7 @@ function SelectCategory() {
             style={{ width: 120 }}
             options={categoriesOptions}
             onChange={handleChange}
+            className="col-span-2 lg:col-span-1 w-full!"
         />
     );
 }

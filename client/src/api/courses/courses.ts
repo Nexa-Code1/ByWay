@@ -37,8 +37,21 @@ export async function handleGetCourseDetails(id?: string) {
 export async function handleCreateNewCourse(
     newCourseData: ICourseDataBasicInfo
 ) {
+    console.log(newCourseData);
     try {
-        const res = await api.post(`courses/create-course`, newCourseData);
+        const data = new FormData();
+
+        // Add text fields
+        data.append("title", newCourseData.title);
+        data.append("subTitle", newCourseData.subTitle);
+        data.append("content", JSON.stringify(newCourseData.content));
+        data.append("price", newCourseData.price.toString());
+        data.append("description", newCourseData.description);
+        data.append("requirements", JSON.stringify(newCourseData.requirements));
+        data.append("category", newCourseData.category);
+        if (newCourseData.image) data.append("image", newCourseData.image);
+
+        const res = await api.post(`courses/create-course`, data);
         return res.data;
     } catch (err) {
         catchError(err);

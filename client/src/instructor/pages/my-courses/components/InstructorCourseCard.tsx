@@ -10,7 +10,7 @@ type InstructorCourseCardProps = {
 function InstructorCourseCard({ course }: InstructorCourseCardProps) {
     return (
         <div className="flex flex-col shadow-lg overflow-hidden">
-            <div className="w-full max-h-50 overflow-hidden">
+            <div className="w-full h-30 overflow-hidden">
                 <img
                     src={course.image || imgPlaceholder}
                     alt={course.title}

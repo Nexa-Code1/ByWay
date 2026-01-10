@@ -26,9 +26,6 @@ function MyCourses() {
         error: coursesError,
     } = useGetInstructorCourses(userProfile?.user._id, status);
 
-    if (isLoadingUser || isLoadingCourses)
-        return <Spinner className="text-primary-700! mt-50!" size="large" />;
-
     if (
         !isLoadingCourses &&
         !isLoadingUser &&
@@ -53,7 +50,9 @@ function MyCourses() {
                 </Radio.Group>
             </div>
 
-            {!instructorCourses.courses.length ? (
+            {isLoadingUser || isLoadingCourses ? (
+                <Spinner className="text-primary-700! mt-50!" size="large" />
+            ) : !instructorCourses.courses.length ? (
                 <NoContent
                     imgSrc={emptyFolderImg}
                     title="No Courses Found"

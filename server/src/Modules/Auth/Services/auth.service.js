@@ -48,7 +48,11 @@ export const register = async (req, res) => {
     newUser.verificationTokenExpiry = new Date(Date.now() + 60 * 60 * 1000);
     await newUser.save();
 
-    const verificationLink = `${process.env.FRONTEND_URL}/auth/verification/${verifyEmailToken}`;
+    const verificationLink = `${
+        process.env.NODE_ENV === "production"
+            ? process.env.FRONTEND_URL
+            : process.env.FRONTEND_DEFAULT_URL
+    }/auth/verification/${verifyEmailToken}`;
 
     emitter.emit("sendEmail", {
         to: email,

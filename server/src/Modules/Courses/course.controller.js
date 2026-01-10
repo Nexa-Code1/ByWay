@@ -12,6 +12,8 @@ import {
     publishCourse,
     updateCourse,
 } from "./Services/course.service.js";
+import { Multer } from "../../Middlewares/multer.middleware.js";
+import { IMAGE_TYPES } from "../../Constants/constants.js";
 
 const coursesRouter = Router();
 
@@ -19,6 +21,7 @@ coursesRouter.post(
     "/create-course",
     authenticationMiddleware,
     authorizationMiddleware(USER_ROLES.INSTRUCTOR),
+    Multer("Courses/Images", IMAGE_TYPES).single("image"),
     errorHandlerMiddleware(createCourse)
 );
 

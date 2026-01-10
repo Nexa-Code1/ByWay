@@ -16,15 +16,41 @@ export const createCourse = async (req, res) => {
         category,
     } = req.body;
 
+    // Check if image was uploaded
+    if (!req.file) {
+        return res.status(400).json({ message: "Course image is required" });
+    }
+
+    // Get image URL from middleware (works for both local and Cloudinary)
+    const imageUrl = req.file.fullUrl;
+
+    // Parse JSON strings if they exist
+    let parsedContent = content;
+    let parsedRequirements = requirements;
+
+    try {
+        if (typeof content === "string") {
+            parsedContent = JSON.parse(content);
+        }
+        if (typeof requirements === "string") {
+            parsedRequirements = JSON.parse(requirements);
+        }
+    } catch (error) {
+        return res.status(400).json({
+            message: "Invalid data format for content or requirements",
+        });
+    }
+
     const course = await coursesModel.create({
         title,
         subTitle,
         instructor: id,
-        content,
+        content: parsedContent,
         price,
         description,
-        requirements,
+        requirements: parsedRequirements,
         category,
+        image: imageUrl,
     });
 
     res.status(201).json({ message: "Course created successfully", course });

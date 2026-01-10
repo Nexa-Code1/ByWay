@@ -3,7 +3,7 @@ import { ClockCircleOutlined } from "@ant-design/icons";
 import courseImg from "@/assets/images/course-details.jpg";
 import type { ICourseDetails } from "@/types";
 import ShareCourse from "./ShareCourse";
-import ApplyCoupon from "./ApplyCoupon";
+// import ApplyCoupon from "./ApplyCoupon";
 import CourseActions from "@/components/shared/CourseActions";
 
 type CoursePurchasePanelprops = {
@@ -11,7 +11,7 @@ type CoursePurchasePanelprops = {
 };
 
 function CoursePurchasePanel({ courseDetails }: CoursePurchasePanelprops) {
-    const { title, discount, price } = courseDetails;
+    const { title, discount, price, image } = courseDetails;
 
     const priceAfterDiscount =
         discount || discount !== 0 ? price - price * (discount / 100) : price;
@@ -22,7 +22,7 @@ function CoursePurchasePanel({ courseDetails }: CoursePurchasePanelprops) {
                 {/* Course preview */}
                 <div className="w-full h-52 shadow-lg">
                     <img
-                        src={courseImg}
+                        src={image || courseImg}
                         alt={title}
                         className="w-full h-full object-cover object-bottom-left"
                     />
@@ -59,7 +59,7 @@ function CoursePurchasePanel({ courseDetails }: CoursePurchasePanelprops) {
                     />
 
                     {/* Coupon input */}
-                    <ApplyCoupon />
+                    {/* <ApplyCoupon /> */}
 
                     <div className="text-sm text-center mt-4 text-gray-600 flex flex-col items-center gap-2">
                         <p>30-Day Money-Back Guarantee</p>

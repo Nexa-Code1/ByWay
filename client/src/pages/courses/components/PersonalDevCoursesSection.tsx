@@ -13,6 +13,8 @@ function PersonalDevCoursesSection() {
         return <Spinner className="text-primary-700! mt-20!" size="large" />;
     if (!isLoading && (error || !courses)) return null;
 
+    if (!courses.courses.length) return null;
+
     return (
         <SectionLayout
             title="The course in personal development"

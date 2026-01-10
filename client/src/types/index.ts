@@ -240,7 +240,6 @@ export interface ICourseDataBasicInfo {
     content: string[];
     category: string;
     image: File | null;
-    imagePreview: string | null;
 }
 
 export interface ICourseContent {

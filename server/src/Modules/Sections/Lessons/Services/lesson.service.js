@@ -7,15 +7,13 @@ export const createLesson = async (req, res) => {
     const { courseId, sectionId } = req.params;
     const { title, description } = req.body;
 
-    const videoPath = req.file ? req.file.path : null;
-
-    const videoURL =
-        `${req.protocol}://${req.get("host")}/` + videoPath.replace(/\\/g, "/");
-
-    if (!videoPath) {
+    if (!req.file) {
         return res.status(400).json({ message: "Video is required" });
     }
-    const durationInSeconds = await getVideoDurationInSeconds(videoPath);
+
+    const videoURL = req.file.fullUrl;
+
+    const durationInSeconds = await getVideoDurationInSeconds(req.file.path);
 
     const course = await coursesModel.findById(courseId);
     if (!course) return res.status(404).json({ message: "Course not found" });
@@ -58,21 +56,14 @@ export const updateLesson = async (req, res) => {
     let durationInSeconds = lesson.duration;
 
     if (req.file) {
-        const videoPath = req.file.path;
-
-        if (lesson.link) {
-            const oldPath = lesson.link
-                .replace(`${req.protocol}://${req.get("host")}/`, "")
-                .replace(/\//g, "\\");
-            fs.unlink(oldPath, (err) => {
+        if (videoURL) {
+            fs.unlink(videoURL, (err) => {
                 if (err) console.log("Failed to delete old video:", err);
             });
         }
 
-        videoURL =
-            `${req.protocol}://${req.get("host")}/` +
-            videoPath.replace(/\\/g, "/");
-        durationInSeconds = await getVideoDurationInSeconds(videoPath);
+        videoURL = req.file.fullUrl;
+        durationInSeconds = await getVideoDurationInSeconds(req.file.path);
     }
 
     lesson.title = title;

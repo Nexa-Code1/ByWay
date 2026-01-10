@@ -21,12 +21,16 @@ function ProfileHeader({ user }: ProfileHeaderProps) {
                 <p className="font-semibold">{fullUserName}</p>
                 <p className="text-gray-500 text-sm">{user.headLine}</p>
             </div>
-            <a href={user.links[0].link} target="_blank">
-                <FacebookOutlined className="bg-gray-100! p-3 text-gray-600! text-lg" />
-            </a>
-            <a href={user.links[1].link} target="_blank">
-                <InstagramOutlined className="bg-gray-100! p-3 text-gray-600! text-lg" />
-            </a>
+            {user.links.length !== 0 && (
+                <>
+                    <a href={user.links[0].link} target="_blank">
+                        <FacebookOutlined className="bg-gray-100! p-3 text-gray-600! text-lg" />
+                    </a>
+                    <a href={user.links[1].link} target="_blank">
+                        <InstagramOutlined className="bg-gray-100! p-3 text-gray-600! text-lg" />
+                    </a>
+                </>
+            )}
         </header>
     );
 }

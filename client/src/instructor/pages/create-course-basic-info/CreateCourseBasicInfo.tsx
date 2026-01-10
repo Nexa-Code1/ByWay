@@ -15,7 +15,6 @@ import { useUpdateCourse } from "@/hooks/courses/useUpdateCourse";
 import { useDeleteCourse } from "@/hooks/courses/useDeleteCourse";
 import Spinner from "@/components/shared/Spinner";
 import { useGetCourseDetails } from "@/hooks/courses/useGetCourseDetails";
-// import { fileToBase64 } from "@/utils/helper";
 
 function CreateCourseBasicInfo() {
     const [cookies, setCookie, removeCookie] = useCookies(["draftCourseId"]);
@@ -34,14 +33,10 @@ function CreateCourseBasicInfo() {
     const [previewUrl, setPreviewUrl] = useState<string | null>(null); // for UI preview
 
     useEffect(() => {
-        if (!isLoading && !error && courseDetails)
+        if (!isLoading && !error && courseDetails) {
             setRequirements(courseDetails.course.requirements);
-        // (async () => {
-        //     if (!isLoading && !error) {
-        //         const imagePreview = await fileToBase64(courseDetails?.course.image);
-        //         setPreviewUrl(imagePreview);
-        //     }
-        // })();
+            setPreviewUrl(courseDetails.course.image);
+        }
     }, [isLoading, error, courseDetails]);
 
     const initialValues: ICourseDataBasicInfo = {
@@ -52,10 +47,7 @@ function CreateCourseBasicInfo() {
         requirements,
         content: [],
         category: courseDetails?.course.category._id || "",
-        image: null,
-        imagePreview: "",
-        // image: courseDetails?.course.image || null,
-        // imagePreview: previewUrl || "",
+        image: courseDetails?.course.image || null,
     };
 
     const onFinish: FormProps<ICourseDataBasicInfo>["onFinish"] = async (

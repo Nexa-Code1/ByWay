@@ -27,6 +27,7 @@ function Sort() {
             style={{ width: 120 }}
             options={options}
             onChange={handleChange}
+            className="col-span-2 lg:col-span-1 w-full!"
         />
     );
 }

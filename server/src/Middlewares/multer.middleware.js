@@ -13,27 +13,24 @@ if (process.env.CLOUDINARY_CLOUD_NAME) {
 }
 
 export const Multer = (destinationPath, allowedExtensions = []) => {
-    const isVercel =
-        process.env.VERCEL === "1" ||
-        process.env.VERCEL === "true" ||
-        !!process.env.VERCEL_URL ||
-        !!process.env.VERCEL_ENV;
+    const isVercel = !!(
+        (
+            process.env.VERCEL === "1" ||
+            process.env.VERCEL === "true" ||
+            process.env.VERCEL_URL ||
+            process.env.VERCEL_ENV ||
+            process.env.AWS_LAMBDA_FUNCTION_NAME
+        ) // Vercel uses AWS Lambda
+    );
+
     const isProduction = process.env.NODE_ENV === "production";
     const useCloudinary = isVercel || isProduction;
 
-    console.log("Environment check:", {
-        VERCEL: process.env.VERCEL,
-        VERCEL_URL: process.env.VERCEL_URL,
-        VERCEL_ENV: process.env.VERCEL_ENV,
-        NODE_ENV: process.env.NODE_ENV,
-        useCloudinary,
-    });
-
     let storage;
 
+    // Cloudinary storage (for Vercel/Production)
     if (useCloudinary) {
-        // PRODUCTION: Use Cloudinary - NO filesystem operations
-        console.log("Using Cloudinary storage for:", destinationPath);
+        console.log("✅ Using Cloudinary storage for:", destinationPath);
 
         storage = new CloudinaryStorage({
             cloudinary: cloudinary,
@@ -50,24 +47,16 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
                 };
             },
         });
-    } else {
-        // DEVELOPMENT: Use local disk storage
-        console.log("Using local storage for:", destinationPath);
+    }
+    // Local disk storage (for Development only)
+    else {
+        console.log("✅ Using local storage for:", destinationPath);
 
         const destinationFolder = "Media/" + destinationPath;
 
-        // Only create directories in local development
-        try {
-            if (!fs.existsSync(destinationFolder)) {
-                fs.mkdirSync(destinationFolder, { recursive: true });
-            }
-        } catch (error) {
-            console.error(
-                "Error creating directory (this is expected on Vercel):",
-                error.message
-            );
-            // If we can't create directories, we must be on Vercel even though env vars aren't set yet
-            // This shouldn't happen, but let's handle it gracefully
+        // Create directory only in development
+        if (!fs.existsSync(destinationFolder)) {
+            fs.mkdirSync(destinationFolder, { recursive: true });
         }
 
         storage = multer.diskStorage({
@@ -92,7 +81,7 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
         } else {
             cb(
                 new Error(
-                    `Invalid file type. Allowed types: ${allowedExtensions.join(
+                    `Invalid file type. Allowed: ${allowedExtensions.join(
                         ", "
                     )}`
                 ),
@@ -118,15 +107,12 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
                         if (isCloudinaryFile) {
                             req.file.fullUrl = req.file.path;
 
-                            // Get duration from Cloudinary for videos
                             if (req.file.mimetype?.startsWith("video/")) {
                                 try {
                                     const publicId = req.file.filename;
-
                                     await new Promise((resolve) =>
                                         setTimeout(resolve, 1000)
                                     );
-
                                     const result =
                                         await cloudinary.api.resource(
                                             publicId,
@@ -134,15 +120,10 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
                                                 resource_type: "video",
                                             }
                                         );
-
                                     req.file.duration = result.duration || 0;
-                                    console.log(
-                                        "Video duration from Cloudinary:",
-                                        req.file.duration
-                                    );
                                 } catch (error) {
                                     console.error(
-                                        "Error getting video duration from Cloudinary:",
+                                        "Error getting video duration:",
                                         error
                                     );
                                     req.file.duration = 0;
@@ -175,7 +156,6 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
 
                             if (isCloudinaryFile) {
                                 file.fullUrl = file.path;
-
                                 if (file.mimetype?.startsWith("video/")) {
                                     try {
                                         const publicId = file.filename;
@@ -227,7 +207,6 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
 
                                 if (isCloudinaryFile) {
                                     file.fullUrl = file.path;
-
                                     if (file.mimetype?.startsWith("video/")) {
                                         try {
                                             const publicId = file.filename;

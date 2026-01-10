@@ -1,7 +1,7 @@
 import coursesModel from "../../../../DB/Models/courses.model.js";
 import lessonsModel from "../../../../DB/Models/lessons.model.js";
-import { getVideoDurationInSeconds } from "get-video-duration";
 import fs from "fs";
+import { getVideoDuration } from "../../../../Utils/video.helper.js";
 
 export const createLesson = async (req, res) => {
     const { courseId, sectionId } = req.params;
@@ -13,7 +13,11 @@ export const createLesson = async (req, res) => {
 
     const videoURL = req.file.fullUrl;
 
-    const durationInSeconds = await getVideoDurationInSeconds(req.file.path);
+    // Get duration (from Cloudinary, middleware, or request body)
+    const durationInSeconds = await getVideoDuration(
+        req.file,
+        parseInt(providedDuration) || 0
+    );
 
     const course = await coursesModel.findById(courseId);
     if (!course) return res.status(404).json({ message: "Course not found" });

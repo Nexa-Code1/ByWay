@@ -3,7 +3,7 @@ import fs from "fs";
 import { v2 as cloudinary } from "cloudinary";
 import { CloudinaryStorage } from "multer-storage-cloudinary";
 
-// Configure Cloudinary (this is fine at module level)
+// Configure Cloudinary
 if (process.env.CLOUDINARY_CLOUD_NAME) {
     cloudinary.config({
         cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -13,14 +13,26 @@ if (process.env.CLOUDINARY_CLOUD_NAME) {
 }
 
 export const Multer = (destinationPath, allowedExtensions = []) => {
-    // ✅ Move environment detection INSIDE the function
-    const isVercel = process.env.VERCEL === "1";
-    const isProduction = process.env.NODE_ENV === "production" || isVercel;
+    const isVercel =
+        process.env.VERCEL === "1" ||
+        process.env.VERCEL === "true" ||
+        !!process.env.VERCEL_URL ||
+        !!process.env.VERCEL_ENV;
+    const isProduction = process.env.NODE_ENV === "production";
+    const useCloudinary = isVercel || isProduction;
+
+    console.log("Environment check:", {
+        VERCEL: process.env.VERCEL,
+        VERCEL_URL: process.env.VERCEL_URL,
+        VERCEL_ENV: process.env.VERCEL_ENV,
+        NODE_ENV: process.env.NODE_ENV,
+        useCloudinary,
+    });
 
     let storage;
 
-    if (isVercel || isProduction) {
-        // PRODUCTION (VERCEL): Use Cloudinary - NO filesystem operations
+    if (useCloudinary) {
+        // PRODUCTION: Use Cloudinary - NO filesystem operations
         console.log("Using Cloudinary storage for:", destinationPath);
 
         storage = new CloudinaryStorage({
@@ -45,8 +57,17 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
         const destinationFolder = "Media/" + destinationPath;
 
         // Only create directories in local development
-        if (!fs.existsSync(destinationFolder)) {
-            fs.mkdirSync(destinationFolder, { recursive: true });
+        try {
+            if (!fs.existsSync(destinationFolder)) {
+                fs.mkdirSync(destinationFolder, { recursive: true });
+            }
+        } catch (error) {
+            console.error(
+                "Error creating directory (this is expected on Vercel):",
+                error.message
+            );
+            // If we can't create directories, we must be on Vercel even though env vars aren't set yet
+            // This shouldn't happen, but let's handle it gracefully
         }
 
         storage = multer.diskStorage({
@@ -91,13 +112,10 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
                     }
 
                     if (req.file) {
-                        // Re-check environment at runtime
-                        const runtimeIsVercel = process.env.VERCEL === "1";
+                        const isCloudinaryFile =
+                            req.file.path.startsWith("http");
 
-                        if (
-                            runtimeIsVercel ||
-                            req.file.path.startsWith("http")
-                        ) {
+                        if (isCloudinaryFile) {
                             req.file.fullUrl = req.file.path;
 
                             // Get duration from Cloudinary for videos
@@ -151,13 +169,11 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
                     }
 
                     if (req.files && req.files.length > 0) {
-                        const runtimeIsVercel = process.env.VERCEL === "1";
-
                         for (const file of req.files) {
-                            if (
-                                runtimeIsVercel ||
-                                file.path.startsWith("http")
-                            ) {
+                            const isCloudinaryFile =
+                                file.path.startsWith("http");
+
+                            if (isCloudinaryFile) {
                                 file.fullUrl = file.path;
 
                                 if (file.mimetype?.startsWith("video/")) {
@@ -204,14 +220,12 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
                     }
 
                     if (req.files) {
-                        const runtimeIsVercel = process.env.VERCEL === "1";
-
                         for (const fieldName of Object.keys(req.files)) {
                             for (const file of req.files[fieldName]) {
-                                if (
-                                    runtimeIsVercel ||
-                                    file.path.startsWith("http")
-                                ) {
+                                const isCloudinaryFile =
+                                    file.path.startsWith("http");
+
+                                if (isCloudinaryFile) {
                                     file.fullUrl = file.path;
 
                                     if (file.mimetype?.startsWith("video/")) {

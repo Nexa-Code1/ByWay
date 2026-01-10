@@ -1,6 +1,7 @@
 import usersModel from "../../../DB/Models/users.model.js";
 import fs from "fs";
 import bcrypt from "bcrypt";
+import { v2 as cloudinary } from "cloudinary";
 
 export const getProfile = async (req, res) => {
     const { _id } = req.user;
@@ -108,37 +109,64 @@ export const uploadImage = async (req, res) => {
         return res.status(404).json({ message: "User not found" });
     }
 
+    // Delete old image
     if (user.image) {
-        const oldImagePath = user.image.replace(
-            `${req.protocol}://${req.get("host")}/`,
-            ""
-        );
-        fs.unlinkSync(oldImagePath);
+        await deleteOldImage(user.image);
     }
 
     await usersModel.updateOne({ _id }, { image: imageURL });
 
     return res
         .status(200)
-        .json({ message: "Profile image uploaded successfully" });
+        .json({ message: "Profile image uploaded successfully", imageURL });
 };
 
 export const deleteImage = async (req, res) => {
     const { _id } = req.user;
 
-    const user = await usersModel.findByIdAndUpdate(_id, {
+    const user = await usersModel.findById(_id);
+
+    if (user && user.image) {
+        await deleteOldImage(user.image);
+    }
+
+    await usersModel.findByIdAndUpdate(_id, {
         $unset: { image: 1 },
     });
-
-    if (user.image) {
-        const oldImagePath = user.image.replace(
-            `${req.protocol}://${req.get("host")}/`,
-            ""
-        );
-        fs.unlinkSync(oldImagePath);
-    }
 
     return res
         .status(200)
         .json({ message: "Profile image deleted successfully" });
 };
+
+// Helper function to delete old images
+async function deleteOldImage(imageUrl) {
+    const isVercel = process.env.VERCEL === "1";
+
+    if (imageUrl.includes("cloudinary.com")) {
+        // Delete from Cloudinary
+        try {
+            const parts = imageUrl.split("/upload/");
+            if (parts.length > 1) {
+                const publicIdWithExt = parts[1].split("/").slice(1).join("/");
+                const publicId = publicIdWithExt.split(".")[0];
+
+                await cloudinary.uploader.destroy(publicId);
+                console.log("Deleted from Cloudinary:", publicId);
+            }
+        } catch (error) {
+            console.error("Error deleting from Cloudinary:", error);
+        }
+    } else if (!isVercel) {
+        // Delete from local storage (only in development)
+        try {
+            const imagePath = imageUrl.replace(/^https?:\/\/[^\/]+\//, "");
+            if (fs.existsSync(imagePath)) {
+                fs.unlinkSync(imagePath);
+                console.log("Deleted local file:", imagePath);
+            }
+        } catch (error) {
+            console.error("Error deleting local file:", error);
+        }
+    }
+}

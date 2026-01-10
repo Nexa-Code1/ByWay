@@ -3,11 +3,7 @@ import fs from "fs";
 import { v2 as cloudinary } from "cloudinary";
 import { CloudinaryStorage } from "multer-storage-cloudinary";
 
-// Detect environment - check VERCEL first, then NODE_ENV
-const isVercel = process.env.VERCEL === "1";
-const isProduction = process.env.NODE_ENV === "production" || isVercel;
-
-// Configure Cloudinary
+// Configure Cloudinary (this is fine at module level)
 if (process.env.CLOUDINARY_CLOUD_NAME) {
     cloudinary.config({
         cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -17,9 +13,13 @@ if (process.env.CLOUDINARY_CLOUD_NAME) {
 }
 
 export const Multer = (destinationPath, allowedExtensions = []) => {
+    // ✅ Move environment detection INSIDE the function
+    const isVercel = process.env.VERCEL === "1";
+    const isProduction = process.env.NODE_ENV === "production" || isVercel;
+
     let storage;
 
-    if (isVercel) {
+    if (isVercel || isProduction) {
         // PRODUCTION (VERCEL): Use Cloudinary - NO filesystem operations
         console.log("Using Cloudinary storage for:", destinationPath);
 
@@ -91,8 +91,13 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
                     }
 
                     if (req.file) {
-                        // Add fullUrl
-                        if (isVercel || req.file.path.startsWith("http")) {
+                        // Re-check environment at runtime
+                        const runtimeIsVercel = process.env.VERCEL === "1";
+
+                        if (
+                            runtimeIsVercel ||
+                            req.file.path.startsWith("http")
+                        ) {
                             req.file.fullUrl = req.file.path;
 
                             // Get duration from Cloudinary for videos
@@ -100,7 +105,6 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
                                 try {
                                     const publicId = req.file.filename;
 
-                                    // Small delay to allow Cloudinary to process
                                     await new Promise((resolve) =>
                                         setTimeout(resolve, 1000)
                                     );
@@ -147,8 +151,13 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
                     }
 
                     if (req.files && req.files.length > 0) {
+                        const runtimeIsVercel = process.env.VERCEL === "1";
+
                         for (const file of req.files) {
-                            if (isVercel || file.path.startsWith("http")) {
+                            if (
+                                runtimeIsVercel ||
+                                file.path.startsWith("http")
+                            ) {
                                 file.fullUrl = file.path;
 
                                 if (file.mimetype?.startsWith("video/")) {
@@ -195,9 +204,14 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
                     }
 
                     if (req.files) {
+                        const runtimeIsVercel = process.env.VERCEL === "1";
+
                         for (const fieldName of Object.keys(req.files)) {
                             for (const file of req.files[fieldName]) {
-                                if (isVercel || file.path.startsWith("http")) {
+                                if (
+                                    runtimeIsVercel ||
+                                    file.path.startsWith("http")
+                                ) {
                                     file.fullUrl = file.path;
 
                                     if (file.mimetype?.startsWith("video/")) {

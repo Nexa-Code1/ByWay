@@ -3,8 +3,9 @@ import fs from "fs";
 import { v2 as cloudinary } from "cloudinary";
 import { CloudinaryStorage } from "multer-storage-cloudinary";
 
-// Detect environment
-const isProduction = process.env.NODE_ENV === "production";
+// Detect environment - check VERCEL first, then NODE_ENV
+const isVercel = process.env.VERCEL === "1";
+const isProduction = process.env.NODE_ENV === "production" || isVercel;
 
 // Configure Cloudinary
 if (process.env.CLOUDINARY_CLOUD_NAME) {
@@ -18,8 +19,8 @@ if (process.env.CLOUDINARY_CLOUD_NAME) {
 export const Multer = (destinationPath, allowedExtensions = []) => {
     let storage;
 
-    if (isProduction) {
-        // PRODUCTION: Use Cloudinary
+    if (isVercel) {
+        // PRODUCTION (VERCEL): Use Cloudinary - NO filesystem operations
         console.log("Using Cloudinary storage for:", destinationPath);
 
         storage = new CloudinaryStorage({
@@ -28,9 +29,12 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
                 return {
                     folder: destinationPath.replace(/^\//, ""),
                     resource_type: "auto",
-                    allowed_formats: allowedExtensions.map(
-                        (mime) => mime.split("/")[1]
-                    ),
+                    allowed_formats:
+                        allowedExtensions.length > 0
+                            ? allowedExtensions.map(
+                                  (mime) => mime.split("/")[1]
+                              )
+                            : undefined,
                 };
             },
         });
@@ -40,6 +44,7 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
 
         const destinationFolder = "Media/" + destinationPath;
 
+        // Only create directories in local development
         if (!fs.existsSync(destinationFolder)) {
             fs.mkdirSync(destinationFolder, { recursive: true });
         }
@@ -87,16 +92,19 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
 
                     if (req.file) {
                         // Add fullUrl
-                        if (isProduction || req.file.path.startsWith("http")) {
+                        if (isVercel || req.file.path.startsWith("http")) {
                             req.file.fullUrl = req.file.path;
 
                             // Get duration from Cloudinary for videos
                             if (req.file.mimetype?.startsWith("video/")) {
                                 try {
-                                    // Extract public_id from Cloudinary response
                                     const publicId = req.file.filename;
 
-                                    // Get resource details from Cloudinary
+                                    // Small delay to allow Cloudinary to process
+                                    await new Promise((resolve) =>
+                                        setTimeout(resolve, 1000)
+                                    );
+
                                     const result =
                                         await cloudinary.api.resource(
                                             publicId,
@@ -105,7 +113,7 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
                                             }
                                         );
 
-                                    req.file.duration = result.duration || 0; // Duration in seconds
+                                    req.file.duration = result.duration || 0;
                                     console.log(
                                         "Video duration from Cloudinary:",
                                         req.file.duration
@@ -122,7 +130,7 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
                             req.file.fullUrl = `${req.protocol}://${req.get(
                                 "host"
                             )}/${req.file.path.replace(/\\/g, "/")}`;
-                            req.file.duration = null; // Will be set by controller for local files
+                            req.file.duration = null;
                         }
                     }
 
@@ -140,12 +148,15 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
 
                     if (req.files && req.files.length > 0) {
                         for (const file of req.files) {
-                            if (isProduction || file.path.startsWith("http")) {
+                            if (isVercel || file.path.startsWith("http")) {
                                 file.fullUrl = file.path;
 
                                 if (file.mimetype?.startsWith("video/")) {
                                     try {
                                         const publicId = file.filename;
+                                        await new Promise((resolve) =>
+                                            setTimeout(resolve, 1000)
+                                        );
                                         const result =
                                             await cloudinary.api.resource(
                                                 publicId,
@@ -186,15 +197,15 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
                     if (req.files) {
                         for (const fieldName of Object.keys(req.files)) {
                             for (const file of req.files[fieldName]) {
-                                if (
-                                    isProduction ||
-                                    file.path.startsWith("http")
-                                ) {
+                                if (isVercel || file.path.startsWith("http")) {
                                     file.fullUrl = file.path;
 
                                     if (file.mimetype?.startsWith("video/")) {
                                         try {
                                             const publicId = file.filename;
+                                            await new Promise((resolve) =>
+                                                setTimeout(resolve, 1000)
+                                            );
                                             const result =
                                                 await cloudinary.api.resource(
                                                     publicId,

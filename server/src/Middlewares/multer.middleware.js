@@ -1,9 +1,10 @@
 import multer from "multer";
 import fs from "fs";
+import path from "path";
 import { v2 as cloudinary } from "cloudinary";
 import { CloudinaryStorage } from "multer-storage-cloudinary";
 
-// Configure Cloudinary
+// ================== Cloudinary Config ==================
 if (process.env.CLOUDINARY_CLOUD_NAME) {
     cloudinary.config({
         cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -12,237 +13,123 @@ if (process.env.CLOUDINARY_CLOUD_NAME) {
     });
 }
 
-export const Multer = (destinationPath, allowedExtensions = []) => {
-    const isVercel = !!(
-        (
-            process.env.VERCEL === "1" ||
-            process.env.VERCEL === "true" ||
-            process.env.VERCEL_URL ||
-            process.env.VERCEL_ENV ||
-            process.env.AWS_LAMBDA_FUNCTION_NAME
-        ) // Vercel uses AWS Lambda
-    );
+// ================== Helpers ==================
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-    const isProduction = process.env.NODE_ENV === "production";
-    const useCloudinary = isVercel || isProduction;
+const attachFileMeta = async (file, req) => {
+    const isCloudinaryFile =
+        typeof file.path === "string" && file.path.startsWith("http");
+
+    if (isCloudinaryFile) {
+        file.fullUrl = file.path;
+
+        if (file.mimetype?.startsWith("video/") && file.public_id) {
+            try {
+                await sleep(1000);
+                const result = await cloudinary.api.resource(file.public_id, {
+                    resource_type: "video",
+                });
+                file.duration = result.duration ?? 0;
+            } catch {
+                file.duration = 0;
+            }
+        }
+    } else {
+        file.fullUrl = `${req.protocol}://${req.get(
+            "host"
+        )}/${file.path.replace(/\\/g, "/")}`;
+        file.duration = null;
+    }
+};
+
+// ================== Main Factory ==================
+export const Multer = (destinationPath, allowedExtensions = []) => {
+    const isServerless =
+        process.env.VERCEL ||
+        process.env.VERCEL_ENV ||
+        process.env.AWS_LAMBDA_FUNCTION_NAME;
+
+    const useCloudinary = isServerless || process.env.NODE_ENV === "production";
 
     let storage;
 
-    // Cloudinary storage (for Vercel/Production)
+    // ================== Cloudinary ==================
     if (useCloudinary) {
-        console.log("✅ Using Cloudinary storage for:", destinationPath);
-
         storage = new CloudinaryStorage({
-            cloudinary: cloudinary,
-            params: async (req, file) => {
-                return {
-                    folder: destinationPath.replace(/^\//, ""),
-                    resource_type: "auto",
-                    allowed_formats:
-                        allowedExtensions.length > 0
-                            ? allowedExtensions.map(
-                                  (mime) => mime.split("/")[1]
-                              )
-                            : undefined,
-                };
+            cloudinary,
+            params: {
+                folder: destinationPath.replace(/^\//, ""),
+                resource_type: "auto",
+                ...(allowedExtensions.length && {
+                    allowed_formats: allowedExtensions.map(
+                        (m) => m.split("/")[1]
+                    ),
+                }),
             },
         });
     }
-    // Local disk storage (for Development only)
+
+    // ================== Local Disk ==================
     else {
-        console.log("✅ Using local storage for:", destinationPath);
-
-        const destinationFolder = "Media/" + destinationPath;
-
-        // Create directory only in development
-        if (!fs.existsSync(destinationFolder)) {
-            fs.mkdirSync(destinationFolder, { recursive: true });
-        }
+        const destinationFolder = path.join("Media", destinationPath);
+        fs.mkdirSync(destinationFolder, { recursive: true });
 
         storage = multer.diskStorage({
-            destination: (req, file, cb) => {
-                cb(null, destinationFolder);
-            },
-            filename: (req, file, cb) => {
-                const uniqueSuffix =
-                    Date.now() + "-" + Math.round(Math.random() * 1e9);
-                const fileName = file.originalname + "-" + uniqueSuffix;
-                cb(null, fileName);
+            destination: (_, __, cb) => cb(null, destinationFolder),
+            filename: (_, file, cb) => {
+                const safeName = file.originalname
+                    .replace(/\s+/g, "-")
+                    .replace(/[^a-zA-Z0-9.-]/g, "");
+                cb(null, `${Date.now()}-${safeName}`);
             },
         });
     }
 
-    const fileFilter = (req, file, cb) => {
+    // ================== File Filter ==================
+    const fileFilter = (_, file, cb) => {
         if (
-            allowedExtensions.length === 0 ||
+            !allowedExtensions.length ||
             allowedExtensions.includes(file.mimetype)
         ) {
             cb(null, true);
         } else {
-            cb(
-                new Error(
-                    `Invalid file type. Allowed: ${allowedExtensions.join(
-                        ", "
-                    )}`
-                ),
-                false
-            );
+            cb(new Error(`Invalid file type: ${file.mimetype}`));
         }
     };
 
-    const upload = multer({ fileFilter, storage });
+    const upload = multer({ storage, fileFilter });
 
+    // ================== API ==================
     return {
-        single: (fieldName) => {
-            return async (req, res, next) => {
-                upload.single(fieldName)(req, res, async (err) => {
-                    if (err) {
-                        return next(err);
+        single: (name) => (req, res, next) =>
+            upload.single(name)(req, res, async (err) => {
+                if (err) return next(err);
+                if (req.file) await attachFileMeta(req.file, req);
+                next();
+            }),
+
+        array: (name, max) => (req, res, next) =>
+            upload.array(name, max)(req, res, async (err) => {
+                if (err) return next(err);
+                if (req.files) {
+                    for (const file of req.files) {
+                        await attachFileMeta(file, req);
                     }
+                }
+                next();
+            }),
 
-                    if (req.file) {
-                        const isCloudinaryFile =
-                            req.file.path.startsWith("http");
-
-                        if (isCloudinaryFile) {
-                            req.file.fullUrl = req.file.path;
-
-                            if (req.file.mimetype?.startsWith("video/")) {
-                                try {
-                                    const publicId = req.file.filename;
-                                    await new Promise((resolve) =>
-                                        setTimeout(resolve, 1000)
-                                    );
-                                    const result =
-                                        await cloudinary.api.resource(
-                                            publicId,
-                                            {
-                                                resource_type: "video",
-                                            }
-                                        );
-                                    req.file.duration = result.duration || 0;
-                                } catch (error) {
-                                    console.error(
-                                        "Error getting video duration:",
-                                        error
-                                    );
-                                    req.file.duration = 0;
-                                }
-                            }
-                        } else {
-                            req.file.fullUrl = `${req.protocol}://${req.get(
-                                "host"
-                            )}/${req.file.path.replace(/\\/g, "/")}`;
-                            req.file.duration = null;
+        fields: (fields) => (req, res, next) =>
+            upload.fields(fields)(req, res, async (err) => {
+                if (err) return next(err);
+                if (req.files) {
+                    for (const key of Object.keys(req.files)) {
+                        for (const file of req.files[key]) {
+                            await attachFileMeta(file, req);
                         }
                     }
-
-                    next();
-                });
-            };
-        },
-
-        array: (fieldName, maxCount) => {
-            return async (req, res, next) => {
-                upload.array(fieldName, maxCount)(req, res, async (err) => {
-                    if (err) {
-                        return next(err);
-                    }
-
-                    if (req.files && req.files.length > 0) {
-                        for (const file of req.files) {
-                            const isCloudinaryFile =
-                                file.path.startsWith("http");
-
-                            if (isCloudinaryFile) {
-                                file.fullUrl = file.path;
-                                if (file.mimetype?.startsWith("video/")) {
-                                    try {
-                                        const publicId = file.filename;
-                                        await new Promise((resolve) =>
-                                            setTimeout(resolve, 1000)
-                                        );
-                                        const result =
-                                            await cloudinary.api.resource(
-                                                publicId,
-                                                {
-                                                    resource_type: "video",
-                                                }
-                                            );
-                                        file.duration = result.duration || 0;
-                                    } catch (error) {
-                                        console.error(
-                                            "Error getting video duration:",
-                                            error
-                                        );
-                                        file.duration = 0;
-                                    }
-                                }
-                            } else {
-                                file.fullUrl = `${req.protocol}://${req.get(
-                                    "host"
-                                )}/${file.path.replace(/\\/g, "/")}`;
-                                file.duration = null;
-                            }
-                        }
-                    }
-
-                    next();
-                });
-            };
-        },
-
-        fields: (fields) => {
-            return async (req, res, next) => {
-                upload.fields(fields)(req, res, async (err) => {
-                    if (err) {
-                        return next(err);
-                    }
-
-                    if (req.files) {
-                        for (const fieldName of Object.keys(req.files)) {
-                            for (const file of req.files[fieldName]) {
-                                const isCloudinaryFile =
-                                    file.path.startsWith("http");
-
-                                if (isCloudinaryFile) {
-                                    file.fullUrl = file.path;
-                                    if (file.mimetype?.startsWith("video/")) {
-                                        try {
-                                            const publicId = file.filename;
-                                            await new Promise((resolve) =>
-                                                setTimeout(resolve, 1000)
-                                            );
-                                            const result =
-                                                await cloudinary.api.resource(
-                                                    publicId,
-                                                    {
-                                                        resource_type: "video",
-                                                    }
-                                                );
-                                            file.duration =
-                                                result.duration || 0;
-                                        } catch (error) {
-                                            console.error(
-                                                "Error getting video duration:",
-                                                error
-                                            );
-                                            file.duration = 0;
-                                        }
-                                    }
-                                } else {
-                                    file.fullUrl = `${req.protocol}://${req.get(
-                                        "host"
-                                    )}/${file.path.replace(/\\/g, "/")}`;
-                                    file.duration = null;
-                                }
-                            }
-                        }
-                    }
-
-                    next();
-                });
-            };
-        },
+                }
+                next();
+            }),
     };
 };

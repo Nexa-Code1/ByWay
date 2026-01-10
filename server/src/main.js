@@ -12,7 +12,8 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 // Detect environment
-const isProduction = process.env.NODE_ENV === "production";
+const isVercel = process.env.VERCEL === "1";
+const isProduction = process.env.NODE_ENV === "production" || isVercel;
 
 // CORS configuration
 app.use(
@@ -29,7 +30,7 @@ app.use(
 app.use(express.json());
 
 // Only serve static files in development (not on Vercel)
-if (!isProduction) {
+if (!isVercel) {
     app.use("/Media", express.static("Media"));
 }
 
@@ -53,7 +54,7 @@ app.get("/", (req, res) => {
 });
 
 // Serve React build (only in development, not on Vercel)
-if (!isProduction) {
+if (!isVercel) {
     const __dirname = path.resolve();
     app.use(express.static(path.join(__dirname, "..", "client", "dist")));
     app.use((req, res) => {

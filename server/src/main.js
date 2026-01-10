@@ -15,18 +15,26 @@ const port = process.env.PORT || 4000;
 const isVercel = process.env.VERCEL === "1";
 const isProduction = process.env.NODE_ENV === "production" || isVercel;
 
-// CORS configuration
+const allowedOrigins = (
+    process.env.FRONTEND_URL || process.env.FRONTEND_DEFAULT_URL
+)
+    .split(",")
+    .map((o) => o.trim());
+
 app.use(
     cors({
-        origin: isProduction
-            ? process.env.ALLOWED_ORIGINS?.split(",") || "*"
-            : [
-                  isProduction
-                      ? process.env.FRONTEND_URL
-                      : process.env.FRONTEND_DEFAULT_URL,
-              ],
-        methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+        origin: (origin, callback) => {
+            // allow server-to-server & tools like Postman
+            if (!origin) return callback(null, true);
+
+            if (allowedOrigins.includes(origin)) {
+                return callback(null, true);
+            }
+
+            return callback(new Error(`CORS blocked origin: ${origin}`));
+        },
         credentials: true,
+        methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
         allowedHeaders: ["Content-Type", "Authorization"],
     })
 );

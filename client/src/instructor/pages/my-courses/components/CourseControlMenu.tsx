@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { Button, Dropdown, type MenuProps } from "antd";
 import { MoreOutlined } from "@ant-design/icons";
 import { useCookies } from "react-cookie";
@@ -22,17 +22,17 @@ function CourseControlMenu({ courseId }: CourseControlMenuProps) {
     }
 
     const items: MenuProps["items"] = [
-        {
-            label: (
-                <NavLink
-                    to={`/instructor/my-courses/${courseId}`}
-                    className="p-0! bg-transparent!"
-                >
-                    View Details
-                </NavLink>
-            ),
-            key: "0",
-        },
+        // {
+        //     label: (
+        //         <NavLink
+        //             to={`/instructor/my-courses/${courseId}`}
+        //             className="p-0! bg-transparent!"
+        //         >
+        //             View Details
+        //         </NavLink>
+        //     ),
+        //     key: "0",
+        // },
         {
             label: (
                 <Button

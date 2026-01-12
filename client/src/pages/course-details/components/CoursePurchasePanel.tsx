@@ -18,7 +18,7 @@ function CoursePurchasePanel({ courseDetails }: CoursePurchasePanelprops) {
 
     return (
         <>
-            <div className="lg:absolute max-w-2xl lg:max-w-96 lg:top-6 lg:right-6 z-10 lg:bg-white lg:text-gray-900 lg:shadow-xl overlfow-hidden lg:rounded-lg mt-4 lg:mt-0">
+            <div className="lg:absolute max-w-2xl lg:w-90 lg:top-6 lg:right-6 z-10 lg:bg-white lg:text-gray-900 lg:shadow-xl lg:rounded-lg mt-4 lg:mt-0">
                 {/* Course preview */}
                 <div className="w-full h-52 shadow-lg">
                     <img

@@ -14,10 +14,7 @@ export const createLesson = async (req, res) => {
     const videoURL = req.file.fullUrl;
 
     // Get duration (from Cloudinary, middleware, or request body)
-    const durationInSeconds = await getVideoDuration(
-        req.file,
-        parseInt(providedDuration) || 0
-    );
+    const durationInSeconds = await getVideoDuration(req.file);
 
     const course = await coursesModel.findById(courseId);
     if (!course) return res.status(404).json({ message: "Course not found" });

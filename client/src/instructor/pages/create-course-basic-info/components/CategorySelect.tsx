@@ -16,7 +16,7 @@ function CategorySelect() {
                 },
             ]}
             label="Category"
-            className="col-span-2"
+            className="col-span-3"
         >
             <Select
                 placeholder="Select Course Category"

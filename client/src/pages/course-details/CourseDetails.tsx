@@ -33,7 +33,7 @@ function CourseDetails() {
                 </SectionContainer>
             </section>
             <SectionContainer className="lg:w-full mt-4! mb-0!">
-                <div className="max-w-2xl flex flex-col gap-8 mb-12 mx-auto lg:mx-0">
+                <div className="max-w-xl flex flex-col gap-8 mb-12 mx-auto lg:mx-0">
                     <CourseContent content={course.content} />
                     <CourseInstructorInfo instructor={course.instructor} />
                     <CourseRequirements requirements={course.requirements} />

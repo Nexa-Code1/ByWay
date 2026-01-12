@@ -13,8 +13,9 @@ function PriceInput() {
                 },
             ]}
             label="Price"
+            className="col-span-2"
         >
-            <InputNumber<number> className="w-full!" />
+            <InputNumber className="w-full!" />
         </Form.Item>
     );
 }

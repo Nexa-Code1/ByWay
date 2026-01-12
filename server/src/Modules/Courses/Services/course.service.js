@@ -222,19 +222,19 @@ export const getAllCourses = async (req, res) => {
     const paginatedCourses = courses.slice(skip, skip + limitNumber);
 
     // Cart check once
-    const cart = await cartModel.findOne({ student_ID: req.user.id });
-    const cartCoursesIds = cart
-        ? cart.courses.map((c) => c.course.toString())
-        : [];
+    // const cart = await cartModel.findOne({ student_ID: req.user.id });
+    // const cartCoursesIds = cart
+    //     ? cart.courses.map((c) => c.course.toString())
+    //     : [];
 
     // Wishlist check once
-    const wishlist = await wishlistModel.find({ student_ID: req.user.id });
-    const wishlistCourseIds = wishlist.map((w) => w.course_ID.toString());
+    // const wishlist = await wishlistModel.find({ student_ID: req.user.id });
+    // const wishlistCourseIds = wishlist.map((w) => w.course_ID.toString());
 
     const paginatedCoursesWithFlags = paginatedCourses.map((c) => ({
         ...c.toObject(),
-        isInCart: cartCoursesIds.includes(c._id.toString()),
-        isFavourite: wishlistCourseIds.includes(c._id.toString()),
+        // isInCart: cartCoursesIds.includes(c._id.toString()),
+        // isFavourite: wishlistCourseIds.includes(c._id.toString()),
     }));
 
     res.status(200).json({

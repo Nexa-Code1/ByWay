@@ -86,7 +86,12 @@ function ContactForm() {
                 />
             </Form.Item>
 
-            <AppSubmitBtn isLoading={false}>Send Message</AppSubmitBtn>
+            <AppSubmitBtn
+                isLoading={false}
+                className="bg-orange-100! text-gray-100! border-0! hover:border-0!"
+            >
+                Send Message
+            </AppSubmitBtn>
         </Form>
     );
 }

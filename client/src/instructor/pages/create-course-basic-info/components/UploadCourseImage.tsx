@@ -1,9 +1,10 @@
 import { type Dispatch, type SetStateAction } from "react";
-import { Button, message, Upload } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
+import { Button, Form, message, Upload } from "antd";
+import { DeleteOutlined, UploadOutlined } from "@ant-design/icons";
 import { fileToBase64 } from "@/utils/helper";
 
 import placeholderImg from "@/assets/images/placeholder_view.svg";
+import type { ICourseDataBasicInfo } from "@/types";
 
 type UploadCourseImageProps = {
     onSetFile: Dispatch<SetStateAction<File | null>>;
@@ -42,17 +43,42 @@ function UploadCourseImage({
         return false;
     };
 
+    const handleDelete = () => {
+        onSetFile(null);
+        onSetPreviewUrl(null);
+    };
+
     return (
-        <div className="my-6">
-            <h2 className="mb-2">Course Thumbnail:</h2>
-            <div className="flex items-center gap-4">
-                <div className="max-w-50">
+        <Form.Item<ICourseDataBasicInfo>
+            name="image"
+            rules={[
+                {
+                    required: true,
+                    message: "Please add course thumbnail!",
+                },
+            ]}
+            className="my-6"
+            label="Thumbnail:"
+        >
+            <div className="flex gap-4">
+                <div className="relative max-w-50 group">
                     <img
                         draggable={false}
                         src={previewUrl || placeholderImg}
                         alt="user profile image"
                         className="w-full h-full aspect-video object-cover object-center"
                     />
+
+                    {/* Hover Overlay */}
+                    {previewUrl && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity rounded-md">
+                            <Button
+                                icon={<DeleteOutlined />}
+                                onClick={handleDelete}
+                                className="bg-transparent! text-white! border-0! text-2xl! hover:text-error-800!"
+                            />
+                        </div>
+                    )}
                 </div>
                 <div className="flex flex-col gap-4">
                     <p className="text-gray-500 font-medium">
@@ -86,7 +112,7 @@ function UploadCourseImage({
                     </Upload>
                 </div>
             </div>
-        </div>
+        </Form.Item>
     );
 }
 

@@ -1,8 +1,10 @@
 import { useState, type Dispatch, type SetStateAction } from "react";
-import { Button, message } from "antd";
+import { Button, Form, message } from "antd";
 import Input from "antd/es/input/Input";
 import { CloseOutlined, PlusOutlined } from "@ant-design/icons";
+
 import IconBtn from "@/components/shared/IconBtn";
+import type { ICourseDataBasicInfo } from "@/types";
 
 type CourseRequirementsProps = {
     requirements: string[];
@@ -19,7 +21,7 @@ function CourseRequirements({
         if (!value) return;
         if (requirements.includes(value))
             return message.error("Requirement is already exist.");
-        onSetRequirements((prev) => [...prev, value]);
+        onSetRequirements((prev) => [...prev, value.trim()]);
         setValue("");
     }
 
@@ -30,9 +32,11 @@ function CourseRequirements({
     }
 
     return (
-        <div>
+        <Form.Item<ICourseDataBasicInfo>
+            name="requirements"
+            label="Requirements"
+        >
             <div className="w-full! flex items-center mb-2">
-                <label>Requirements:</label>
                 <Input
                     placeholder="Please input"
                     value={value}
@@ -68,7 +72,7 @@ function CourseRequirements({
                     ))}
                 </ul>
             )}
-        </div>
+        </Form.Item>
     );
 }
 

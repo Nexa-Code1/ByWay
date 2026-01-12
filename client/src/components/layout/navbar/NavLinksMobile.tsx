@@ -15,12 +15,19 @@ import { useUserProfile } from "@/hooks/user/useUserProfile";
 import type { MenuItemType } from "@/types";
 
 function NavLinksMobile() {
-    const [collapse, setCollapse] = useState(true);
-    const { userProfile, isLoading } = useUserProfile();
     const lang = "en";
+    const [collapse, setCollapse] = useState(true);
+    const { userProfile, isLoading, error } = useUserProfile();
+
+    if (isLoading) return;
+
+    const filteredNavLinks =
+        !userProfile || error
+            ? navLinks.filter((link) => link.key !== "cart")
+            : navLinks;
 
     const baseItems: MenuItemType[] = [
-        ...navLinks.map((link) => ({
+        ...filteredNavLinks.map((link) => ({
             key: link.key,
             icon: link.icon,
             label: <Link to={link.path}>{link.label[lang]}</Link>,

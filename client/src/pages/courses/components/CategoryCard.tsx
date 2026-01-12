@@ -14,8 +14,8 @@ export default function CategoryCard({ category }: CategoryCardProps) {
     const lang = "en";
 
     return (
-        <Card className="max-w-64 mx-auto p-4 shadow-lg rounded-xl text-center hover:scale-105 transition-transform">
-            <Link to={`/courses?category=${category.slug}`}>
+        <Card className="h-52! p-4 m-3! shadow-lg rounded-xl text-center hover:scale-105 transition-transform">
+            <Link to={`/search?category=${category.slug}`}>
                 <div
                     className="relative w-14 h-14 mb-4 mx-auto flex items-center justify-center"
                     style={{ fill: category.color, color: category.color }}

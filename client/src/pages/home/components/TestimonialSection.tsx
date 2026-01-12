@@ -45,7 +45,7 @@ function TestimonialSection() {
                 <Button
                     shape="round"
                     size="large"
-                    className="group border-gray-800! text-gray-800! pr-0! hover:bg-gray-800! hover:text-gray-100! mt-4 capitalize text-base! border-r-0!"
+                    className="group border-gray-800! text-gray-800! pr-0! hover:bg-gray-800! hover:text-gray-100! my-6 capitalize text-base! border-r-0!"
                     onClick={() => navigate("/courses")}
                 >
                     <span>see more feedbacks</span>

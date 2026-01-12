@@ -4,9 +4,9 @@ import { navLinks } from "@/utils/navLinks";
 import { useUserProfile } from "@/hooks/user/useUserProfile";
 
 function NavLinks() {
-    const { userProfile, isLoading, error } = useUserProfile();
-
     const lang = "en";
+
+    const { userProfile, isLoading, error } = useUserProfile();
 
     if (isLoading) return;
 

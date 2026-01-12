@@ -12,10 +12,10 @@ const app = express();
 const isVercel = !!process.env.VERCEL;
 
 const allowedOrigins = (
-    process.env.FRONTEND_URL || process.env.FRONTEND_DEFAULT_URL
+    isVercel ? process.env.FRONTEND_URL : process.env.FRONTEND_DEFAULT_URL
 )
-    .split(",")
-    .map((o) => o.trim().replace(/\/$/, ""));
+    .trim()
+    .replace(/\/$/, "");
 
 app.use(
     cors({
@@ -59,4 +59,19 @@ if (!isVercel) {
     });
 }
 
-export default app;
+// Bootstrap function to start the server
+export default function bootstrap() {
+    if (!isVercel) {
+        const PORT = process.env.PORT || 3000;
+        app.listen(PORT, () => {
+            console.log(`✅ Server is running on port ${PORT}`);
+            console.log(
+                `🌍 Environment: ${process.env.NODE_ENV || "development"}`
+            );
+            console.log(`🔗 Local: http://localhost:${PORT}`);
+        });
+    }
+}
+
+// Also export app for Vercel
+export { app };

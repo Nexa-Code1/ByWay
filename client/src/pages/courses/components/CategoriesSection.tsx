@@ -3,6 +3,7 @@ import { useGetAllCategories } from "@/hooks/categories/useGetAllCategories";
 import type { ICategory } from "@/types";
 import CategoryCard from "./CategoryCard";
 import SectionLayout from "@/components/shared/SectionLayout";
+import HorizontalCarousel from "@/components/shared/HorizontalCarousel";
 
 function CategoriesSection() {
     const { categories, isLoading, error } = useGetAllCategories();
@@ -13,10 +14,17 @@ function CategoriesSection() {
         return;
 
     return (
-        <SectionLayout title="Choice favourite course from top category">
-            {categories.categories.map((category: ICategory) => (
-                <CategoryCard category={category} key={category._id} />
-            ))}
+        <SectionLayout
+            cols="grid-cols-1"
+            title="Choice favourite course from top category"
+        >
+            <HorizontalCarousel className="[&_.slick-arrow]:text-black!">
+                {categories.categories.map((category: ICategory) => (
+                    <div key={category._id} className="flex!">
+                        <CategoryCard category={category} />
+                    </div>
+                ))}
+            </HorizontalCarousel>
         </SectionLayout>
     );
 }

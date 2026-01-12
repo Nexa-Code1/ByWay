@@ -48,8 +48,8 @@ coursesRouter.get(
 
 coursesRouter.get(
     "/get-courses",
-    authenticationMiddleware,
-    authorizationMiddleware(USER_TYPES),
+    // authenticationMiddleware,
+    // authorizationMiddleware(USER_TYPES),
     errorHandlerMiddleware(getAllCourses)
 );
 

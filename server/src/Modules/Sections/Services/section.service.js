@@ -21,7 +21,10 @@ export const createSection = async (req, res) => {
         });
     }
 
-    course.content.push({ section, lessons: [] });
+    course.content.push({
+        section,
+        lessons: [],
+    });
     await course.save();
 
     return res.json({ message: "Section added", course });

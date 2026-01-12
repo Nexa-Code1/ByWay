@@ -12,7 +12,7 @@ function InstructorCourseItem({ course }: InstructorCourseItemProps) {
         <div className="flex flex-col shadow-lg overflow-hidden">
             <NavLink
                 to={`/courses/${course._id}`}
-                className="w-full max-h-50 overflow-hidden"
+                className="w-full h-50 overflow-hidden"
             >
                 <img
                     src={course.image || imgPlaceholder}

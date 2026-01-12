@@ -84,7 +84,7 @@ function CreateCourseBasicInfo() {
             onFinish={onFinish}
             autoComplete="off"
             initialValues={initialValues}
-            className="flex flex-col w-full [&_.ant-form-item-label]:w-22! [&_.ant-form-item-label]:text-start!"
+            className="flex flex-col w-full [&_.ant-form-item-label]:w-24! [&_.ant-form-item-label]:text-start!"
         >
             {/* Course title input */}
             <Form.Item<ICourseDataBasicInfo>
@@ -114,7 +114,7 @@ function CreateCourseBasicInfo() {
                 <Input placeholder="Your course subtitle" />
             </Form.Item>
 
-            <div className="grid grid-cols-3 items-center gap-6">
+            <div className="grid grid-cols-5 items-center gap-4">
                 {/* Price input */}
                 <PriceInput />
                 {/* Select Category input */}

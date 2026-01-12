@@ -5,7 +5,6 @@ import { MenuFoldOutlined } from "@ant-design/icons";
 import { useState } from "react";
 
 import { instructorNavLinks } from "@/utils/navLinks";
-import AppSubmitBtn from "@/components/shared/AppSubmitBtn";
 import { useLogout } from "@/hooks/auth/useLogout";
 import Logo from "@/components/shared/Logo";
 
@@ -57,13 +56,14 @@ function NavSidebar() {
                     logout();
                 }}
             >
-                <AppSubmitBtn
-                    isLoading={isLoggingout}
-                    className="bg-transparent! border-0! w-fit! my-4"
+                <Button
+                    htmlType="submit"
+                    className="hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:text-gray-400! capitalize bg-transparent! border-0! w-fit my-4"
+                    disabled={isLoggingout}
                 >
                     <LogoutOutlined />
                     <span>Sign out</span>
-                </AppSubmitBtn>
+                </Button>
             </form>
         </div>
     );

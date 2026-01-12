@@ -70,7 +70,7 @@ export default function bootstrap() {
             );
             console.log(`🔗 Local: http://localhost:${PORT}`);
         });
-    }
+    } else return;
 }
 
 // Also export app for Vercel

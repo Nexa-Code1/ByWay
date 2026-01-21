@@ -1,0 +1,1798 @@
+[{
+  "_id": {
+    "$oid": "696640001a791e23a9d53601"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328061/Mastering-Productivity_y9vcqq.jpg",
+  "title": "Mastering Productivity: Time Management & Goal Setting",
+  "subTitle": "Transform your life with proven productivity systems, habit formation strategies, and goal-setting frameworks",
+  "instructor": {
+    "$oid": "696632408a791e23a9d53575"
+  },
+  "rate": 4.7,
+  "students": [],
+  "description": "Learn how to maximize your productivity and achieve your goals with proven time management techniques, habit-building strategies, and actionable goal-setting frameworks. This course covers everything from daily routines to long-term planning.",
+  "requirements": [
+    "Open mindset",
+    "Willingness to implement changes",
+    "Notebook for planning"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 120,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014366"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-08T13:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T08:00:00.000Z"
+  },
+  "__v": 9
+},
+{
+  "_id": {
+    "$oid": "696640025a791e23a9d53619"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328053/0_sGdugT7dv2814WCe_cqaxxi.jpg",
+  "title": "AWS Solutions Architect Associate Complete Course 2026",
+  "subTitle": "Master AWS services, design scalable architectures, and pass the AWS SAA certification",
+  "instructor": {
+    "$oid": "6966355b8a791e23a9d535a5"
+  },
+  "rate": 4.9,
+  "students": [],
+  "description": "Comprehensive AWS course covering EC2, S3, VPC, Lambda, RDS, and more. Learn to design fault-tolerant, scalable systems and prepare for AWS Solutions Architect Associate certification.",
+  "requirements": [
+    "Basic cloud knowledge",
+    "Networking fundamentals",
+    "AWS free tier account"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 210,
+  "discount": 25,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014367"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-03T12:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T11:30:00.000Z"
+  },
+  "__v": 15
+},
+{
+  "_id": {
+    "$oid": "696640026a791e23a9d5361a"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328053/1_1QA686LmEq7xXGR4GR3uSA_2x_kcx0hd.jpg",
+  "title": "Microsoft Azure DevOps & Cloud Infrastructure",
+  "subTitle": "Master Azure services, implement CI/CD pipelines, and automate cloud infrastructure",
+  "instructor": {
+    "$oid": "6966355b8a791e23a9d535a5"
+  },
+  "rate": 4.7,
+  "students": [],
+  "description": "Learn Azure cloud services and DevOps practices. Implement CI/CD with Azure DevOps, manage infrastructure as code with Terraform, and deploy containerized applications.",
+  "requirements": [
+    "Cloud computing basics",
+    "Linux and Windows server knowledge",
+    "Git fundamentals"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 230,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014367"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-06T14:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T09:45:00.000Z"
+  },
+  "__v": 13
+},
+{
+  "_id": {
+    "$oid": "696640027a791e23a9d5361b"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328056/docker-masterclass_jkw7cg.jpg",
+  "title": "Docker & Kubernetes: Container Orchestration Masterclass",
+  "subTitle": "Master containerization, orchestration, microservices deployment, and cloud-native development",
+  "instructor": {
+    "$oid": "696635638a791e23a9d535a9"
+  },
+  "rate": 4.8,
+  "students": [],
+  "description": "Complete guide to Docker and Kubernetes. Learn containerization, orchestration, service mesh, monitoring, and deploy scalable microservices to production.",
+  "requirements": [
+    "Linux command line",
+    "Basic networking",
+    "Software development experience"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 220,
+  "discount": 15,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014367"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-04T11:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T10:15:00.000Z"
+  },
+  "__v": 14
+},
+{
+  "_id": {
+    "$oid": "696640028a791e23a9d5361c"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328053/accounting-basics_mn1s0b.jpg",
+  "title": "Serverless Architecture: AWS Lambda & Cloud Functions",
+  "subTitle": "Build serverless applications, implement event-driven architectures, and reduce infrastructure costs",
+  "instructor": {
+    "$oid": "696635638a791e23a9d535a9"
+  },
+  "rate": 4.7,
+  "students": [],
+  "description": "Master serverless computing with AWS Lambda, API Gateway, DynamoDB, and event-driven architectures. Build scalable, cost-effective applications without managing servers.",
+  "requirements": [
+    "Cloud platform experience",
+    "Programming in Node.js or Python",
+    "REST API knowledge"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 200,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014367"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-07T16:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T08:30:00.000Z"
+  },
+  "__v": 11
+},
+{
+  "_id": {
+    "$oid": "696640029a791e23a9d5361d"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768331056/Financial_Accounting_Fundamentals_for_Business_ze2k7s.jpg",
+  "title": "Financial Accounting Fundamentals for Business",
+  "subTitle": "Master accounting principles, financial statements, bookkeeping, and business finance",
+  "instructor": {
+    "$oid": "6966356d8a791e23a9d535ad"
+  },
+  "rate": 4.6,
+  "students": [],
+  "description": "Learn accounting from scratch. Understand financial statements, journal entries, trial balance, budgeting, and financial reporting for small businesses and corporations.",
+  "requirements": [
+    "Basic math skills",
+    "Interest in finance",
+    "Excel basics helpful"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 150,
+  "discount": 20,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014368"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-05T10:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T11:00:00.000Z"
+  },
+  "__v": 8
+},
+{
+  "_id": {
+    "$oid": "696640030a791e23a9d5361e"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328055/Corporate-Finance_bzctb5.jpg",
+  "title": "Corporate Finance: Valuation, Investment & Decision Making",
+  "subTitle": "Master financial analysis, valuation techniques, capital budgeting, and strategic finance",
+  "instructor": {
+    "$oid": "6966356d8a791e23a9d535ad"
+  },
+  "rate": 4.8,
+  "students": [],
+  "description": "Advanced corporate finance course covering DCF valuation, NPV analysis, cost of capital, M&A, and financial modeling. Make better financial decisions for your organization.",
+  "requirements": [
+    "Accounting fundamentals",
+    "Financial statement analysis",
+    "Excel proficiency"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 190,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014368"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-08T10:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T09:15:00.000Z"
+  },
+  "__v": 10
+},
+{
+  "_id": {
+    "$oid": "696640031a791e23a9d5361f"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328062/Personal-Finance-Mastery_yfpnvz.jpg",
+  "title": "Personal Finance Mastery: Budgeting, Investing & Wealth",
+  "subTitle": "Take control of your finances, build wealth, and achieve financial independence",
+  "instructor": {
+    "$oid": "696635778a791e23a9d535b1"
+  },
+  "rate": 4.9,
+  "students": [],
+  "description": "Complete personal finance guide covering budgeting, debt management, saving strategies, investing in stocks and real estate, retirement planning, and building long-term wealth.",
+  "requirements": [
+    "No prerequisites",
+    "Basic math",
+    "Desire to improve finances"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 130,
+  "discount": 25,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014368"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-06T09:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T10:45:00.000Z"
+  },
+  "__v": 12
+},
+{
+  "_id": {
+    "$oid": "696640032a791e23a9d53620"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328056/Investment-Strategies_j6tul5.jpg",
+  "title": "Investment Strategies: Stocks, Bonds & Portfolio Management",
+  "subTitle": "Learn investment fundamentals, portfolio diversification, and wealth-building strategies",
+  "instructor": {
+    "$oid": "696635778a791e23a9d535b1"
+  },
+  "rate": 4.7,
+  "students": [],
+  "description": "Master investment strategies for beginners and intermediate investors. Learn stock analysis, bond investing, ETFs, portfolio rebalancing, risk management, and long-term wealth building.",
+  "requirements": [
+    "Basic finance knowledge",
+    "Personal finance understanding",
+    "Investment capital (optional for practice)"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 170,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014368"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-09T13:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T08:15:00.000Z"
+  },
+  "__v": 9
+},
+{
+  "_id": {
+    "$oid": "696640033a791e23a9d53621"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328064/Professional-Photography_bpaxhs.jpg",
+  "title": "Professional Photography: Master Camera, Composition & Light",
+  "subTitle": "Learn photography fundamentals, DSLR/mirrorless operation, and create stunning images",
+  "instructor": {
+    "$oid": "696635808a791e23a9d535b5"
+  },
+  "rate": 4.8,
+  "students": [],
+  "description": "Complete photography course covering camera basics, exposure triangle, composition rules, lighting techniques, portrait and landscape photography, and post-processing workflow.",
+  "requirements": [
+    "DSLR or mirrorless camera",
+    "Basic computer skills",
+    "Passion for photography"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 180,
+  "discount": 15,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014369"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-04T13:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T00:00:00.000Z"
+  },
+  "__v": 11
+},
+{
+  "_id": {
+    "$oid": "696640034a791e23a9d53622"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328053/Adobe-Lightroom-Photoshop_qdzpam.jpg",
+  "title": "Adobe Lightroom & Photoshop: Complete Photo Editing",
+  "subTitle": "Master photo editing, retouching, color grading, and create professional-quality images",
+  "instructor": {
+    "$oid": "696635808a791e23a9d535b5"
+  },
+  "rate": 4.9,
+  "students": [],
+  "description": "Learn professional photo editing with Lightroom and Photoshop. Cover RAW processing, retouching techniques, compositing, color correction, and develop your unique editing style.",
+  "requirements": [
+    "Adobe Creative Cloud subscription",
+    "Photos to edit",
+    "Photography basics helpful"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 160,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014369"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-07T10:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T11:30:00.000Z"
+  },
+  "__v": 10
+},
+{
+  "_id": {
+    "$oid": "696640035a791e23a9d53623"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328066/Video-Production_c2ggnp.jpg",
+  "title": "Video Production & Filmmaking: From Concept to Delivery",
+  "subTitle": "Master video production, storytelling, cinematography, and create professional videos",
+  "instructor": {
+    "$oid": "696635888a791e23a9d535b9"
+  },
+  "rate": 4.7,
+  "students": [],
+  "description": "Complete video production course covering pre-production planning, camera work, audio recording, lighting setup, directing, and storytelling for corporate, documentary, and creative projects.",
+  "requirements": [
+    "Video camera or smartphone",
+    "Computer for editing",
+    "Creative mindset"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 200,
+  "discount": 20,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014369"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-05T14:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T09:00:00.000Z"
+  },
+  "__v": 13
+},
+{
+  "_id": {
+    "$oid": "696640036a791e23a9d53624"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328057/Adobe-Premiere-BCG-Banner_tjh59l.jpg",
+  "title": "Adobe Premiere Pro & After Effects Complete Course",
+  "subTitle": "Master video editing, motion graphics, visual effects, and post-production workflow",
+  "instructor": {
+    "$oid": "696635888a791e23a9d535b9"
+  },
+  "rate": 4.8,
+  "students": [],
+  "description": "Learn professional video editing with Premiere Pro and After Effects. Cover cutting techniques, color grading, sound design, motion graphics, visual effects, and export optimization.",
+  "requirements": [
+    "Adobe Creative Cloud",
+    "Computer with 16GB+ RAM",
+    "Video footage to edit"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 190,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014369"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-08T11:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T10:30:00.000Z"
+  },
+  "__v": 12
+},
+{
+  "_id": {
+    "$oid": "696640037a791e23a9d53625"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328056/English-Speaking-Mastery_gxmmyv.jpg",
+  "title": "English Speaking Mastery: Fluency & Confidence",
+  "subTitle": "Improve English speaking, pronunciation, vocabulary, and communicate confidently",
+  "instructor": {
+    "$oid": "696635918a791e23a9d535bd"
+  },
+  "rate": 4.9,
+  "students": [],
+  "description": "Comprehensive English speaking course focusing on pronunciation, fluency, vocabulary building, conversation practice, and overcoming speaking anxiety. Real-world scenarios included.",
+  "requirements": [
+    "Basic English understanding",
+    "Microphone for practice",
+    "Commitment to daily practice"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 140,
+  "discount": 25,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701436a"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-03T09:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T11:45:00.000Z"
+  },
+  "__v": 14
+},
+{
+  "_id": {
+    "$oid": "696640038a791e23a9d53626"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328054/Business-English_swjfhl.jpg",
+  "title": "Business English: Professional Communication Skills",
+  "subTitle": "Master business vocabulary, email writing, presentations, and professional English",
+  "instructor": {
+    "$oid": "696635918a791e23a9d535bd"
+  },
+  "rate": 4.7,
+  "students": [],
+  "description": "Learn business English for professional success. Cover email writing, meeting participation, presentations, negotiations, phone calls, and business vocabulary for various industries.",
+  "requirements": [
+    "Intermediate English level",
+    "Working environment context",
+    "Professional goals"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 160,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701436a"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-06T12:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T08:45:00.000Z"
+  },
+  "__v": 11
+},
+{
+  "_id": {
+    "$oid": "696640039a791e23a9d53627"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328056/Effective-Language-Learning_gmqfzr.jpg",
+  "title": "Effective Language Learning: Master Any Language Fast",
+  "subTitle": "Learn proven techniques, memory strategies, and habits to master any foreign language",
+  "instructor": {
+    "$oid": "6966359a8a791e23a9d535c1"
+  },
+  "rate": 4.8,
+  "students": [],
+  "description": "Meta-course on language learning covering effective study techniques, memory strategies, immersion methods, speaking practice, and creating sustainable learning habits for any language.",
+  "requirements": [
+    "Desire to learn languages",
+    "No specific language required",
+    "Daily practice commitment"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 120,
+  "discount": 15,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701436a"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-09T15:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T10:00:00.000Z"
+  },
+  "__v": 9
+},
+{
+  "_id": {
+    "$oid": "696640040a791e23a9d53628"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328056/IELTS-Preparation_dzhxci.jpg",
+  "title": "IELTS Preparation: Complete Guide to 7.5+ Score",
+  "subTitle": "Master all IELTS sections, test strategies, and achieve your target band score",
+  "instructor": {
+    "$oid": "6966359a8a791e23a9d535c1"
+  },
+  "rate": 4.9,
+  "students": [],
+  "description": "Comprehensive IELTS preparation covering all four sections: Listening, Reading, Writing, and Speaking. Practice with real test materials, learn strategies, and get feedback on your performance.",
+  "requirements": [
+    "Upper-intermediate English",
+    "IELTS test booked or planned",
+    "Study materials provided"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 180,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701436a"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-11T10:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T09:30:00.000Z"
+  },
+  "__v": 10
+},
+{
+  "_id": {
+    "$oid": "696640041a791e23a9d53629"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328061/Modern-Teaching-Methods_kklyfp.jpg",
+  "title": "Modern Teaching Methods: Engage & Inspire Students",
+  "subTitle": "Master contemporary teaching strategies, classroom management, and student engagement",
+  "instructor": {
+    "$oid": "696635a28a791e23a9d535c5"
+  },
+  "rate": 4.7,
+  "students": [],
+  "description": "Learn modern teaching methodologies including active learning, flipped classroom, technology integration, differentiated instruction, and assessment strategies for effective education.",
+  "requirements": [
+    "Teaching experience or aspirations",
+    "Access to classroom (recommended)",
+    "Open to innovation"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 155,
+  "discount": 20,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701436b"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-04T15:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T11:15:00.000Z"
+  },
+  "__v": 13
+},
+{
+  "_id": {
+    "$oid": "696640042a791e23a9d5362a"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328062/Online-Teaching-Mastery_uottru.jpg",
+  "title": "Online Teaching Mastery: Create Engaging Virtual Classes",
+  "subTitle": "Master online teaching tools, virtual classroom management, and digital engagement strategies",
+  "instructor": {
+    "$oid": "696635a28a791e23a9d535c5"
+  },
+  "rate": 4.8,
+  "students": [],
+  "description": "Complete guide to online teaching covering virtual platforms, interactive tools, digital content creation, student engagement in virtual settings, and building online learning communities.",
+  "requirements": [
+    "Teaching background",
+    "Computer with webcam",
+    "Stable internet connection"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 145,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701436b"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-07T11:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T08:00:00.000Z"
+  },
+  "__v": 11
+},
+{
+  "_id": {
+    "$oid": "696640043a791e23a9d5362b"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328054/Curriculum-Development_bpdswa.jpg",
+  "title": "Curriculum Development & Instructional Design",
+  "subTitle": "Design effective curricula, learning objectives, and assessment strategies for education",
+  "instructor": {
+    "$oid": "696635aa8a791e23a9d535c9"
+  },
+  "rate": 4.6,
+  "students": [],
+  "description": "Learn to design comprehensive curricula aligned with learning objectives, develop lesson plans, create assessments, and implement backward design principles for effective education.",
+  "requirements": [
+    "Teaching or training experience",
+    "Subject matter expertise",
+    "Educational background helpful"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 170,
+  "discount": 10,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701436b"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-05T16:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T10:45:00.000Z"
+  },
+  "__v": 12
+},
+{
+  "_id": {
+    "$oid": "696640044a791e23a9d5362c"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328057/Educational-Technology_qkcspq.jpg",
+  "title": "Educational Technology: Tools for 21st Century Learning",
+  "subTitle": "Integrate technology effectively, use EdTech tools, and enhance learning with digital resources",
+  "instructor": {
+    "$oid": "696635aa8a791e23a9d535c9"
+  },
+  "rate": 4.9,
+  "students": [],
+  "description": "Explore educational technology tools and strategies. Learn to integrate LMS platforms, interactive whiteboards, educational apps, gamification, and digital assessment tools in teaching.",
+  "requirements": [
+    "Basic technology skills",
+    "Teaching context",
+    "Willingness to experiment"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 140,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701436b"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-10T11:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T09:00:00.000Z"
+  },
+  "__v": 8
+},
+{
+  "_id": {
+    "$oid": "696640045a791e23a9d5362d"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328061/Music-Production-in-Ableton-Live_vxc8sl.jpg",
+  "title": "Music Production in Ableton Live: From Beats to Masters",
+  "subTitle": "Master music production, mixing, mastering, and create professional-quality tracks",
+  "instructor": {
+    "$oid": "696635b28a791e23a9d535cd"
+  },
+  "rate": 4.8,
+  "students": [],
+  "description": "Complete music production course using Ableton Live. Learn beat making, melody creation, arrangement, mixing techniques, mastering, and produce release-ready music in any genre.",
+  "requirements": [
+    "Ableton Live (trial available)",
+    "MIDI keyboard (recommended)",
+    "Audio interface (helpful)"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 210,
+  "discount": 25,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701436c"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-02T10:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T11:00:00.000Z"
+  },
+  "__v": 16
+},
+{
+  "_id": {
+    "$oid": "696640046a791e23a9d5362e"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328064/Sound-Design_qqkosb.jpg",
+  "title": "Sound Design & Synthesis: Create Your Own Sounds",
+  "subTitle": "Master synthesizers, sound design techniques, and create unique sounds for music production",
+  "instructor": {
+    "$oid": "696635b28a791e23a9d535cd"
+  },
+  "rate": 4.7,
+  "students": [],
+  "description": "Learn sound design from fundamentals to advanced techniques. Master synthesizers (subtractive, FM, wavetable), sampling, audio effects, and create original sounds for any production.",
+  "requirements": [
+    "DAW software",
+    "Basic music production knowledge",
+    "Synthesizer plugins"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 190,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701436c"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-06T15:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T09:30:00.000Z"
+  },
+  "__v": 14
+},
+{
+  "_id": {
+    "$oid": "696640047a791e23a9d5362f"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328063/Professional-Mixing_el1ymp.jpg",
+  "title": "Professional Mixing & Mastering: Studio-Quality Results",
+  "subTitle": "Master mixing techniques, mastering process, and achieve professional sound quality",
+  "instructor": {
+    "$oid": "696635ba8a791e23a9d535d1"
+  },
+  "rate": 4.9,
+  "students": [],
+  "description": "Advanced mixing and mastering course covering EQ, compression, spatial processing, automation, mastering chain, and loudness standards. Make your music sound professional and radio-ready.",
+  "requirements": [
+    "Music production experience",
+    "DAW with mixing plugins",
+    "Reference tracks"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 230,
+  "discount": 15,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701436c"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-03T14:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T10:15:00.000Z"
+  },
+  "__v": 15
+},
+{
+  "_id": {
+    "$oid": "696640048a791e23a9d53630"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328062/Music-Theory-Complete_ctj3db.webp",
+  "title": "Music Theory Complete: From Basics to Advanced Harmony",
+  "subTitle": "Master music theory, harmony, chord progressions, and apply theory to your music",
+  "instructor": {
+    "$oid": "696635ba8a791e23a9d535d1"
+  },
+  "rate": 4.8,
+  "students": [],
+  "description": "Comprehensive music theory course from fundamentals to advanced concepts. Learn scales, intervals, chords, harmony, voice leading, modulation, and apply theory practically in composition.",
+  "requirements": [
+    "No music theory knowledge needed",
+    "Instrument or DAW helpful",
+    "Enthusiasm for music"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 160,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701436c"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-10T10:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T08:00:00.000Z"
+  },
+  "__v": 5
+},
+{
+  "_id": {
+    "$oid": "696640002a791e23a9d53602"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328068/The-transformation-mindset-Insights_mqo8oi.jpg",
+  "title": "Mindset Transformation: Building Unshakeable Confidence",
+  "subTitle": "Develop a growth mindset, overcome limiting beliefs, and build lasting confidence through practical exercises",
+  "instructor": {
+    "$oid": "696632408a791e23a9d53575"
+  },
+  "rate": 4.8,
+  "students": [],
+  "description": "This comprehensive course guides you through the process of transforming your mindset. You'll learn to identify and overcome limiting beliefs, develop resilience, and build unshakeable confidence that lasts.",
+  "requirements": [
+    "Commitment to personal growth",
+    "Daily practice time (20-30 minutes)"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 150,
+  "discount": 20,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701435d"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-08T14:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T09:00:00.000Z"
+  },
+  "__v": 7
+},
+{
+  "_id": {
+    "$oid": "696640003a791e23a9d53603"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328055/Emotional-Intelligence_vml7x1.webp",
+  "title": "Emotional Intelligence Masterclass for Success",
+  "subTitle": "Master self-awareness, empathy, and emotional regulation to thrive in personal and professional relationships",
+  "instructor": {
+    "$oid": "696632478a791e23a9d53579"
+  },
+  "rate": 4.6,
+  "students": [],
+  "description": "Develop crucial emotional intelligence skills that will transform your relationships and career. Learn to understand and manage emotions, communicate effectively, and build stronger connections.",
+  "requirements": [
+    "No prerequisites",
+    "Journal for self-reflection"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 135,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701435d"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-09T11:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T07:30:00.000Z"
+  },
+  "__v": 4
+},
+{
+  "_id": {
+    "$oid": "696640004a791e23a9d53604"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328054/Confidence-Building_gke8j5.jpg",
+  "title": "Confidence Building: From Self-Doubt to Self-Assurance",
+  "subTitle": "Overcome imposter syndrome, build authentic confidence, and step into your power",
+  "instructor": {
+    "$oid": "696632478a791e23a9d53579"
+  },
+  "rate": 4.9,
+  "students": [],
+  "description": "A transformative journey from self-doubt to genuine self-assurance. This course provides practical tools and exercises to help you overcome imposter syndrome and build lasting confidence.",
+  "requirements": [
+    "Openness to vulnerability",
+    "Commitment to self-improvement"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 110,
+  "discount": 15,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701435d"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-11T09:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T10:00:00.000Z"
+  },
+  "__v": 6
+},
+{
+  "_id": {
+    "$oid": "696640005a791e23a9d53605"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328054/Complete-Full-Stack-Web-Development-Bootcamp-2026_hf5kez.webp",
+  "title": "Complete Full-Stack Web Development Bootcamp 2026",
+  "subTitle": "Master React, Node.js, Express, MongoDB, and modern web development practices from scratch",
+  "instructor": {
+    "$oid": "696632528a791e23a9d5357d"
+  },
+  "rate": 4.8,
+  "students": [],
+  "description": "Become a professional full-stack developer with this comprehensive bootcamp. Learn front-end development with React, back-end with Node.js and Express, database management with MongoDB, and deploy real-world applications.",
+  "requirements": [
+    "Basic computer skills",
+    "No coding experience needed",
+    "Computer with internet connection"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 280,
+  "discount": 25,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701435e"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-05T08:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T11:00:00.000Z"
+  },
+  "__v": 12
+},
+{
+  "_id": {
+    "$oid": "696640006a791e23a9d53606"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328065/Node.js-Made-Easy_jpe5v6.jpg",
+  "title": "Advanced Node.js: Scalable Backend Applications",
+  "subTitle": "Build production-ready REST APIs, implement microservices, and master advanced Node.js patterns",
+  "instructor": {
+    "$oid": "696632528a791e23a9d5357d"
+  },
+  "rate": 4.7,
+  "students": [],
+  "description": "Take your Node.js skills to the next level. Learn to build scalable backend systems, implement microservices architecture, handle authentication and authorization, and deploy production-ready applications.",
+  "requirements": [
+    "Solid JavaScript knowledge",
+    "Basic Node.js experience",
+    "Understanding of HTTP and REST APIs"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 220,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701435e"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-07T12:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T09:30:00.000Z"
+  },
+  "__v": 8
+},
+{
+  "_id": {
+    "$oid": "696640007a791e23a9d53607"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768331052/Modern_React_Development_Hooks_Context_Performance_vr97u5.webp",
+  "title": "Modern React Development: Hooks, Context & Performance",
+  "subTitle": "Master React Hooks, Context API, performance optimization, and build stunning user interfaces",
+  "instructor": {
+    "$oid": "6966325b8a791e23a9d53581"
+  },
+  "rate": 4.9,
+  "students": [],
+  "description": "Deep dive into modern React development. Learn React Hooks, Context API, performance optimization techniques, and best practices for building maintainable and scalable React applications.",
+  "requirements": [
+    "JavaScript ES6+ knowledge",
+    "Basic React understanding",
+    "HTML and CSS fundamentals"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 190,
+  "discount": 10,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701435e"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-06T10:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T08:45:00.000Z"
+  },
+  "__v": 9
+},
+{
+  "_id": {
+    "$oid": "696640008a791e23a9d53608"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768331053/Building_Accessible_and_Beautiful_UIs_with_React_srzoom.png",
+  "title": "Building Accessible and Beautiful UIs with React",
+  "subTitle": "Create accessible, responsive, and visually stunning React applications following modern design principles",
+  "instructor": {
+    "$oid": "6966325b8a791e23a9d53581"
+  },
+  "rate": 4.6,
+  "students": [],
+  "description": "Learn to build beautiful and accessible user interfaces with React. This course covers modern CSS techniques, responsive design, accessibility standards (WCAG), and component libraries like Material-UI and Tailwind CSS.",
+  "requirements": [
+    "React fundamentals",
+    "CSS basics",
+    "Understanding of HTML semantics"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 160,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701435e"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-09T14:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T10:15:00.000Z"
+  },
+  "__v": 6
+},
+{
+  "_id": {
+    "$oid": "696640009a791e23a9d53609"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768331051/Flutter_Dart_Build_Native_Mobile_Apps_for_iOS_Android_hmsnxu.jpg",
+  "title": "Flutter & Dart: Build Native Mobile Apps for iOS & Android",
+  "subTitle": "Master Flutter framework and Dart programming to create beautiful cross-platform mobile applications",
+  "instructor": {
+    "$oid": "696632648a791e23a9d53585"
+  },
+  "rate": 4.8,
+  "students": [],
+  "description": "Learn Flutter from scratch and build professional iOS and Android apps with a single codebase. Master Dart programming, state management, animations, and publish your apps to app stores.",
+  "requirements": [
+    "Basic programming knowledge",
+    "No mobile development experience needed",
+    "Mac for iOS development (optional)"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 240,
+  "discount": 20,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701435f"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-04T09:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T11:30:00.000Z"
+  },
+  "__v": 11
+},
+{
+  "_id": {
+    "$oid": "696640010a791e23a9d5360a"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768331051/React_Native_The_Complete_Guide_2026_rtsyv0.webp",
+  "title": "React Native: The Complete Guide 2026",
+  "subTitle": "Build real-world iOS and Android apps with React Native, Redux, and modern development tools",
+  "instructor": {
+    "$oid": "696632648a791e23a9d53585"
+  },
+  "rate": 4.7,
+  "students": [],
+  "description": "Comprehensive React Native course covering everything from basics to advanced topics. Learn navigation, state management with Redux, native modules, animations, and deploy to both App Store and Play Store.",
+  "requirements": [
+    "JavaScript and React knowledge",
+    "Node.js installed",
+    "iOS simulator or Android emulator"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 230,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701435f"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-06T13:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T09:45:00.000Z"
+  },
+  "__v": 10
+},
+{
+  "_id": {
+    "$oid": "696640011a791e23a9d5360b"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768331047/iOS_App_Development_with_Swift_SwiftUI_ob8dlj.webp",
+  "title": "iOS App Development with Swift & SwiftUI",
+  "subTitle": "Master Swift programming and SwiftUI to create native iOS applications from beginner to advanced",
+  "instructor": {
+    "$oid": "6966326b8a791e23a9d53589"
+  },
+  "rate": 4.9,
+  "students": [],
+  "description": "Learn iOS development with Swift and SwiftUI. Build beautiful, native iOS apps with modern Apple frameworks, implement Core Data, work with APIs, and publish to the App Store.",
+  "requirements": [
+    "Mac computer with Xcode",
+    "Basic programming knowledge",
+    "iOS device for testing (recommended)"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 260,
+  "discount": 15,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701435f"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-05T11:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T10:30:00.000Z"
+  },
+  "__v": 13
+},
+{
+  "_id": {
+    "$oid": "696640012a791e23a9d5360c"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768331043/Android_App_Development_Masterclass_with_Kotlin_ebup8j.png",
+  "title": "Android App Development Masterclass with Kotlin",
+  "subTitle": "Build professional Android apps using Kotlin, Jetpack Compose, and modern Android architecture",
+  "instructor": {
+    "$oid": "6966326b8a791e23a9d53589"
+  },
+  "rate": 4.7,
+  "students": [],
+  "description": "Complete Android development course using Kotlin and Jetpack Compose. Learn MVVM architecture, Room database, Retrofit for networking, and publish professional apps to Google Play Store.",
+  "requirements": [
+    "Basic programming concepts",
+    "Android Studio installed",
+    "Android device or emulator"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 250,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701435f"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-07T15:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T08:15:00.000Z"
+  },
+  "__v": 12
+},
+{
+  "_id": {
+    "$oid": "696640013a791e23a9d5360d"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768331043/Python_for_Data_Science_Complete_Bootcamp_2026_gzb8jb.jpg",
+  "title": "Python for Data Science: Complete Bootcamp 2026",
+  "subTitle": "Master Python, NumPy, Pandas, Matplotlib, and machine learning for data analysis and visualization",
+  "instructor": {
+    "$oid": "696632738a791e23a9d5358d"
+  },
+  "rate": 4.8,
+  "students": [],
+  "description": "Comprehensive data science course covering Python programming, data analysis with Pandas, visualization with Matplotlib and Seaborn, statistical analysis, and introduction to machine learning.",
+  "requirements": [
+    "Basic computer skills",
+    "No programming experience needed",
+    "Jupyter Notebook"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 210,
+  "discount": 25,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014360"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-03T10:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T11:45:00.000Z"
+  },
+  "__v": 14
+},
+{
+  "_id": {
+    "$oid": "696640014a791e23a9d5360e"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768331041/Machine_Learning_A-Z_Real-World_Python_Projects_dsverm.jpg",
+  "title": "Machine Learning A-Z: Real-World Python Projects",
+  "subTitle": "Master supervised and unsupervised learning, build ML models, and deploy them to production",
+  "instructor": {
+    "$oid": "696632738a791e23a9d5358d"
+  },
+  "rate": 4.9,
+  "students": [],
+  "description": "Learn machine learning with hands-on projects. Cover regression, classification, clustering, neural networks, and deploy models. Work with scikit-learn, TensorFlow, and real datasets.",
+  "requirements": [
+    "Python programming",
+    "Basic statistics",
+    "Linear algebra fundamentals"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 270,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014360"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-04T14:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T09:00:00.000Z"
+  },
+  "__v": 15
+},
+{
+  "_id": {
+    "$oid": "696640015a791e23a9d5360f"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768331043/Data_Analytics_with_Excel_SQL_Python_boihqe.webp",
+  "title": "Data Analytics with Excel, SQL & Python",
+  "subTitle": "Complete data analytics course covering Excel, SQL, Python, and business intelligence tools",
+  "instructor": {
+    "$oid": "6966327a8a791e23a9d53591"
+  },
+  "rate": 4.6,
+  "students": [],
+  "description": "Learn data analytics from scratch. Master Excel for data analysis, SQL for database queries, Python for automation, and create interactive dashboards with Tableau and Power BI.",
+  "requirements": [
+    "Basic computer skills",
+    "Microsoft Excel",
+    "Willingness to learn"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 180,
+  "discount": 20,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014360"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-08T09:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T10:45:00.000Z"
+  },
+  "__v": 7
+},
+{
+  "_id": {
+    "$oid": "696640016a791e23a9d53610"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768331041/Business_Intelligence_Data_Visualization_Masterclass_emf6ft.jpg",
+  "title": "Business Intelligence & Data Visualization Masterclass",
+  "subTitle": "Master Tableau, Power BI, and create compelling data stories for business decisions",
+  "instructor": {
+    "$oid": "6966327a8a791e23a9d53591"
+  },
+  "rate": 4.7,
+  "students": [],
+  "description": "Transform data into actionable insights. Learn to create professional dashboards, perform advanced analytics, and communicate data effectively using industry-leading BI tools.",
+  "requirements": [
+    "Basic data analysis knowledge",
+    "Excel proficiency",
+    "SQL basics recommended"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 200,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014360"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-10T12:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T08:30:00.000Z"
+  },
+  "__v": 8
+},
+{
+  "_id": {
+    "$oid": "696640017a791e23a9d53611"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768331044/Deep_Learning_Neural_Networks_with_TensorFlow_xkg60s.png",
+  "title": "Deep Learning & Neural Networks with TensorFlow",
+  "subTitle": "Master deep learning, CNNs, RNNs, transformers, and build AI-powered applications",
+  "instructor": {
+    "$oid": "696635378a791e23a9d53595"
+  },
+  "rate": 4.9,
+  "students": [],
+  "description": "Comprehensive deep learning course covering neural networks, CNNs for computer vision, RNNs for sequence data, transformers, GANs, and deploying models to production.",
+  "requirements": [
+    "Python programming",
+    "Machine learning basics",
+    "Linear algebra and calculus",
+    "GPU recommended"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 320,
+  "discount": 30,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014365"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-02T08:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T11:00:00.000Z"
+  },
+  "__v": 18
+},
+{
+  "_id": {
+    "$oid": "696640018a791e23a9d53612"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768331043/Natural_Language_Processing_with_Transformers_nstoaf.jpg",
+  "title": "Natural Language Processing with Transformers",
+  "subTitle": "Build state-of-the-art NLP applications using BERT, GPT, and transformer architectures",
+  "instructor": {
+    "$oid": "696635378a791e23a9d53595"
+  },
+  "rate": 4.8,
+  "students": [],
+  "description": "Master NLP and build advanced text processing applications. Learn transformer architectures, fine-tune pre-trained models, implement chatbots, sentiment analysis, and text generation.",
+  "requirements": [
+    "Python proficiency",
+    "Deep learning fundamentals",
+    "Understanding of neural networks"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 300,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014365"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-05T13:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T09:15:00.000Z"
+  },
+  "__v": 16
+},
+{
+  "_id": {
+    "$oid": "696640019a791e23a9d53613"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768331040/Computer_Vision_From_Basics_to_Advanced_Projects_cdjd23.jpg",
+  "title": "Computer Vision: From Basics to Advanced Projects",
+  "subTitle": "Master image processing, object detection, face recognition, and build real-world CV applications",
+  "instructor": {
+    "$oid": "696635428a791e23a9d53599"
+  },
+  "rate": 4.7,
+  "students": [],
+  "description": "Complete computer vision course covering image processing, CNNs, object detection (YOLO, R-CNN), semantic segmentation, face recognition, and deployment of CV models.",
+  "requirements": [
+    "Python knowledge",
+    "Deep learning basics",
+    "NumPy and OpenCV"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 280,
+  "discount": 15,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014365"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-06T11:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T10:00:00.000Z"
+  },
+  "__v": 14
+},
+{
+  "_id": {
+    "$oid": "696640020a791e23a9d53614"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768331602/AI_Product_Development_From_Idea_to_Production_ekihzf.jpg",
+  "title": "AI Product Development: From Idea to Production",
+  "subTitle": "Build and deploy AI-powered products, handle MLOps, and scale machine learning systems",
+  "instructor": {
+    "$oid": "696635428a791e23a9d53599"
+  },
+  "rate": 4.8,
+  "students": [],
+  "description": "Learn to build production-ready AI applications. Cover the full ML lifecycle, MLOps, model deployment, monitoring, A/B testing, and scaling ML systems in real-world scenarios.",
+  "requirements": [
+    "Machine learning experience",
+    "Python and cloud basics",
+    "Software engineering fundamentals"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 290,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014365"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-09T10:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T08:45:00.000Z"
+  },
+  "__v": 13
+},
+{
+  "_id": {
+    "$oid": "696640021a791e23a9d53615"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768331040/Ethical_Hacking_Penetration_Testing_Complete_Course_ydchur.jpg",
+  "title": "Ethical Hacking & Penetration Testing Complete Course",
+  "subTitle": "Master ethical hacking, penetration testing, and cybersecurity from beginner to advanced",
+  "instructor": {
+    "$oid": "696635498a791e23a9d5359d"
+  },
+  "rate": 4.9,
+  "students": [],
+  "description": "Comprehensive ethical hacking course covering network security, web application testing, system exploitation, wireless security, and reporting. Prepare for CEH certification.",
+  "requirements": [
+    "Basic networking knowledge",
+    "Linux fundamentals",
+    "Understanding of TCP/IP"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 250,
+  "discount": 20,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014366"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-04T10:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T11:15:00.000Z"
+  },
+  "__v": 11
+},
+{
+  "_id": {
+    "$oid": "696640022a791e23a9d53616"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768331039/Network_Security_Defense_Protect_Your_Infrastructure_gdnfsw.jpg",
+  "title": "Network Security & Defense: Protect Your Infrastructure",
+  "subTitle": "Learn network security, firewall configuration, IDS/IPS, and defend against cyber attacks",
+  "instructor": {
+    "$oid": "696635498a791e23a9d5359d"
+  },
+  "rate": 4.7,
+  "students": [],
+  "description": "Master network security fundamentals and advanced defense techniques. Configure firewalls, implement IDS/IPS, secure wireless networks, and respond to security incidents.",
+  "requirements": [
+    "Networking basics",
+    "TCP/IP understanding",
+    "Security+ recommended"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 230,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014366"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-07T09:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T09:30:00.000Z"
+  },
+  "__v": 10
+},
+{
+  "_id": {
+    "$oid": "696640023a791e23a9d53617"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768331039/Security_Operations_Center_SOC_Analyst_Training_h2qthq.png",
+  "title": "Security Operations Center (SOC) Analyst Training",
+  "subTitle": "Master threat detection, incident response, SIEM tools, and security monitoring",
+  "instructor": {
+    "$oid": "696635498a791e23a9d5359d"
+  },
+  "rate": 4.8,
+  "students": [],
+  "description": "Complete SOC analyst training covering threat intelligence, log analysis, SIEM platforms, incident response procedures, and security automation. Real-world scenarios included.",
+  "requirements": [
+    "Cybersecurity fundamentals",
+    "Network protocols",
+    "Windows and Linux basics"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 240,
+  "discount": 10,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014366"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-05T15:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T10:30:00.000Z"
+  },
+  "__v": 12
+},
+{
+  "_id": {
+    "$oid": "696640024a791e23a9d53618"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768328052/azure-devops_hod5hf.jpg",
+  "title": "Cloud Security: AWS, Azure & GCP Security Best Practices",
+  "subTitle": "Secure cloud infrastructure, implement IAM, compliance, and cloud-native security solutions",
+  "instructor": {
+    "$oid": "696635528a791e23a9d535a1"
+  },
+  "rate": 4.6,
+  "students": [],
+  "description": "Master cloud security across major platforms. Learn IAM, encryption, network security, compliance frameworks, security monitoring, and implement defense-in-depth strategies.",
+  "requirements": [
+    "Cloud computing basics",
+    "Security fundamentals",
+    "One cloud platform experience"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 260,
+  "discount": 0,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab7947014367"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-05T15:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T10:30:00.000Z"
+  },
+  "__v": 12
+},
+{
+  "_id": {
+    "$oid": "6966a0fd735cc5b19d9a8e2d"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768333551/Time_Management_Mastery_Do_More_Stress_Less_iro25z.jpg",
+  "title": "Time Management Mastery: Do More, Stress Less",
+  "subTitle": "Take control of your time, your to-do list, and your overwhelm. Learn how to get it all done, without the stress.",
+  "instructor": {
+    "$oid": "696635498a791e23a9d5359d"
+  },
+  "rate": 4.3,
+  "students": [],
+  "description": "If you're someone who has a LOT on their plate and wants to find a system to handle it all, but who also craves downtime for yourself, this course is for you.",
+  "requirements": [
+    "Be generally computer literate (ability to use spreadsheets and docs, ability to download an app on your phone, etc.)",
+    "Be interested in improving productivity so that you are able to do more of what you want, and less of what you don't",
+    "Be ready to put in the work to change and transform your work/life balance"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 140,
+  "discount": 10,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701435d"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-05T15:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T10:30:00.000Z"
+  },
+  "__v": 12
+},
+{
+  "_id": {
+    "$oid": "6966a1c8735cc5b19d9a8e2f"
+  },
+  "image": "https://res.cloudinary.com/dcvmaegwn/image/upload/v1768333876/Successful_Negotiation_Master_Your_Negotiating_Skills_m97mod.png",
+  "title": "Successful Negotiation: Master Your Negotiating Skills",
+  "subTitle": "Master negotiation with these negotiating tips",
+  "instructor": {
+    "$oid": "696635498a791e23a9d5359d"
+  },
+  "rate": 4.3,
+  "students": [],
+  "description": "Knowing how to negotiate effectively, and with confidence, is a skill that will change everything. It will make your home life easier, give you more control over your career, and increase your happiness and wellbeing. Whether it’s buying a new car, or handling contracts for your business, mastering negotiation will have a huge impact on every area of your life.",
+  "requirements": [
+    "There are no software or materials needed",
+    "You'll be equipped with confidence and skills during this course, so simply need a willingness to learn",
+    "Have some examples in mind of areas you'd like to negotiate over"
+  ],
+  "content": [],
+  "status": "published",
+  "price": 140,
+  "discount": 10,
+  "reviews": [],
+  "category": {
+    "$oid": "69613705fce8ab794701435d"
+  },
+  "isFavourite": false,
+  "progress": 0,
+  "createdAt": {
+    "$date": "2026-01-05T15:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-13T10:30:00.000Z"
+  },
+  "__v": 12
+}]

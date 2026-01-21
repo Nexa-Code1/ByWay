@@ -1,9 +1,10 @@
+import { useState } from "react";
 import { Link } from "react-router";
 import { AppstoreOutlined } from "@ant-design/icons";
 
 import Card from "./Card";
 import TextDescription from "./TextDescription";
-import courseImg from "@/assets/images/course.jpg";
+import courseImgPlaceholder from "@/assets/images/placeholder_view.svg";
 import UserAvatar from "../layout/navbar/UserAvatar";
 import type { ICourseDetails } from "@/types";
 
@@ -12,6 +13,7 @@ type CourseCardProps = {
 };
 
 function CourseCard({ course }: CourseCardProps) {
+    const [image, setImage] = useState(course.image);
     const lang = "en";
 
     return (
@@ -20,11 +22,14 @@ function CourseCard({ course }: CourseCardProps) {
                 to={`/courses/${course._id}`}
                 className="w-full h-full flex flex-col gap-4"
             >
-                <img
-                    src={course.image || courseImg}
-                    alt="course image"
-                    className="w-full h-full object-cover object-center rounded-xl"
-                />
+                <div className="w-full h-40">
+                    <img
+                        src={image}
+                        onError={() => setImage(courseImgPlaceholder)}
+                        alt="course image"
+                        className="w-full h-full object-cover object-center rounded-xl"
+                    />
+                </div>
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1">
                         <AppstoreOutlined className="text-lg text-gray-300!" />

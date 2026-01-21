@@ -1,0 +1,752 @@
+[
+    {
+        "_id": {
+            "$oid": "6965488f9c7e400ece87f7ea"
+        },
+        "firstName": "Ziad",
+        "lastName": "El-Sayed",
+        "email": "ziadelsayed@gmail.com",
+        "password": "$2b$10$z7zXMb1VqCroFSKF5.QIYOQ22IWLgoCsPgGYaosLrDaNDdtEqcI6q",
+        "language": "en",
+        "links": [],
+        "role": "student",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmPQWbwzhbcQ4V",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-12T19:16:31.994Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-12T19:16:32.172Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjU0ODhmOWM3ZTQwMGVjZTg3ZjdlYSIsImVtYWlsIjoiemlhZGVsc2F5ZWRAZ21haWwuY29tIiwiaWF0IjoxNzY4MjQ1MzkyLCJleHAiOjE3NjgyNDg5OTJ9.NSBOrvDYsI7JGSaM6yzFFXHWud1iGrJMdltepKAJ-bc",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-12T20:16:32.171Z"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "69654b50e03d6a3387898259"
+        },
+        "firstName": "Ziad",
+        "lastName": "El-Sayed",
+        "email": "ziadelsayed046@gmail.com",
+        "password": "$2b$10$EAnSsWcjrjVWxRcI6N272urfCIzC8/nHpFI0jKJ4FTdjYG/q8TlEi",
+        "language": "en",
+        "links": [],
+        "role": "student",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmPbu9opakU8u1",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-12T19:28:16.041Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-12T19:28:16.220Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjU0YjUwZTAzZDZhMzM4Nzg5ODI1OSIsImVtYWlsIjoiemlhZGVsc2F5ZWQwNDZAZ21haWwuY29tIiwiaWF0IjoxNzY4MjQ2MDk2LCJleHAiOjE3NjgyNDk2OTZ9.h7dxSatEjeB2I4ODWGzwKX8ZHwSxubnhzORNfx61hsQ",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-12T20:28:16.219Z"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "696632408a791e23a9d53575"
+        },
+        "firstName": "Alex",
+        "lastName": "Morgan",
+        "email": "alex.morgan@eduplatform.com",
+        "password": "$2b$10$YOAruOvJ4wnc.nLfaLNLwedZytPqVnyhwypFWt0rnsPgieTpzn2Sq",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfVOcqOMzoITX",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T11:53:36.759Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T11:53:36.840Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzMjQwOGE3OTFlMjNhOWQ1MzU3NSIsImVtYWlsIjoiYWxleC5tb3JnYW5AZWR1cGxhdGZvcm0uY29tIiwiaWF0IjoxNzY4MzA1MjE2LCJleHAiOjE3NjgzMDg4MTZ9.ckHsw9jiZ7Noau4YmBSXCFSkWfNf3HgsSscHHtPk1WM",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T12:53:36.839Z"
+        },
+        "bio": "I’m Alex Morgan, a personal development coach focused on productivity, goal setting, and mindset transformation. I help individuals build habits that last and unlock their full potential.",
+        "headline": "Personal Development Coach"
+    },
+    {
+        "_id": {
+            "$oid": "696632478a791e23a9d53579"
+        },
+        "firstName": "Sarah",
+        "lastName": "Williams",
+        "email": "sarah.williams@eduplatform.com",
+        "password": "$2b$10$IxvmJVCwiJDvVh4iTCnlbOWRpwkcIm2zi8c1cVcL3LPtQbMYJhRXW",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfVll0o4bXMUT",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T11:53:43.555Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T11:53:43.629Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzMjQ3OGE3OTFlMjNhOWQ1MzU3OSIsImVtYWlsIjoic2FyYWgud2lsbGlhbXNAZWR1cGxhdGZvcm0uY29tIiwiaWF0IjoxNzY4MzA1MjIzLCJleHAiOjE3NjgzMDg4MjN9.VZl5zRLAJFspW7zzOl3UDD8SreaYuu-EEfoFmYlr_ew",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T12:53:43.628Z"
+        },
+        "bio": "I specialize in confidence building, emotional intelligence, and personal growth strategies for professionals and students.",
+        "headline": "Personal Growth & Mindset Trainer"
+    },
+    {
+        "_id": {
+            "$oid": "696632528a791e23a9d5357d"
+        },
+        "firstName": "Daniel",
+        "lastName": "Reed",
+        "email": "daniel.reed@eduplatform.com",
+        "password": "$2b$10$AOe9f./mZFxQ4F8.7J4YMud206AZhoX57KF8FgwooyKKQuHqJFIjW",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfVWnFtiCR6Ev",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T11:53:54.907Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T11:53:54.979Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzMjUyOGE3OTFlMjNhOWQ1MzU3ZCIsImVtYWlsIjoiZGFuaWVsLnJlZWRAZWR1cGxhdGZvcm0uY29tIiwiaWF0IjoxNzY4MzA1MjM0LCJleHAiOjE3NjgzMDg4MzR9.vVSTCgiwwoSs8fDf_mYD6QOlcXXUOV81lloSngeCJ1U",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T12:53:54.978Z"
+        },
+        "bio": "Full-stack web developer with 8+ years of experience building scalable web applications using React, Node.js, and modern databases.",
+        "headline": "Senior Web Developer"
+    },
+    {
+        "_id": {
+            "$oid": "6966325b8a791e23a9d53581"
+        },
+        "firstName": "Emily",
+        "lastName": "Turner",
+        "email": "emily.turner@eduplatform.com",
+        "password": "$2b$10$FnFt30YkEWrQTuVq0rbxT.qRCY5UCNX0xjtAuXPGnmQRRpHICg.e.",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfVOUP2vKwviB",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T11:54:03.949Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T11:54:04.080Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzMjViOGE3OTFlMjNhOWQ1MzU4MSIsImVtYWlsIjoiZW1pbHkudHVybmVyQGVkdXBsYXRmb3JtLmNvbSIsImlhdCI6MTc2ODMwNTI0NCwiZXhwIjoxNzY4MzA4ODQ0fQ.oVwI2c2ozxKScB6dHfD0locOa8M5vrNnJ4V_7jsTmj0",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T12:54:04.079Z"
+        },
+        "bio": "Frontend engineer passionate about clean UI, accessibility, and modern JavaScript frameworks.",
+        "headline": "Frontend Web Engineer"
+    },
+    {
+        "_id": {
+            "$oid": "696632648a791e23a9d53585"
+        },
+        "firstName": "Michael",
+        "lastName": "Chen",
+        "email": "michael.chen@eduplatform.com",
+        "password": "$2b$10$JlhwYHnqL5dw9MhH6N6bT.TmD3GX.KIbIUk5NAAfYB8PtV0UiGwiW",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfVoVe9StFqH3",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T11:54:12.663Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T11:54:12.818Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzMjY0OGE3OTFlMjNhOWQ1MzU4NSIsImVtYWlsIjoibWljaGFlbC5jaGVuQGVkdXBsYXRmb3JtLmNvbSIsImlhdCI6MTc2ODMwNTI1MiwiZXhwIjoxNzY4MzA4ODUyfQ.G8stgf7vy3nFEcjALBdxlNkqhbQ0ICmVtPHZaWx94XY",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T12:54:12.817Z"
+        },
+        "bio": "Mobile application developer specializing in cross-platform apps using Flutter and React Native.",
+        "headline": "Mobile App Developer"
+    },
+    {
+        "_id": {
+            "$oid": "6966326b8a791e23a9d53589"
+        },
+        "firstName": "Laura",
+        "lastName": "Hernandez",
+        "email": "laura.hernandez@eduplatform.com",
+        "password": "$2b$10$bbj2Kz2hr0H1VzfCBFYL8uSbuTEWoTjzlrkFbaNzJAO54IW46YJfW",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfWmdAIEu1kLz",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T11:54:19.571Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T11:54:19.653Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzMjZiOGE3OTFlMjNhOWQ1MzU4OSIsImVtYWlsIjoibGF1cmEuaGVybmFuZGV6QGVkdXBsYXRmb3JtLmNvbSIsImlhdCI6MTc2ODMwNTI1OSwiZXhwIjoxNzY4MzA4ODU5fQ.YoHraggDpE8zi5esQVopZ5A8bA96jjhyYVPrwY_xUiE",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T12:54:19.652Z"
+        },
+        "bio": "iOS and Android developer with a strong focus on performance optimization and clean architecture.",
+        "headline": "Senior Mobile Engineer"
+    },
+    {
+        "_id": {
+            "$oid": "696632738a791e23a9d5358d"
+        },
+        "firstName": "Robert",
+        "lastName": "King",
+        "email": "robert.king@eduplatform.com",
+        "password": "$2b$10$183wmyz8HNJdWQacF0tFw.cgqCN3RyBZtSxB88BwOU9Hs3y5BYESe",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfWXG9w7Lq24F",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T11:54:27.644Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T11:54:27.732Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzMjczOGE3OTFlMjNhOWQ1MzU4ZCIsImVtYWlsIjoicm9iZXJ0LmtpbmdAZWR1cGxhdGZvcm0uY29tIiwiaWF0IjoxNzY4MzA1MjY3LCJleHAiOjE3NjgzMDg4Njd9.vDaNuQdnPy1oeBK6626d0xTMjmspdu6iw2yzm6RRtfc",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T12:54:27.732Z"
+        },
+        "bio": "Data scientist with hands-on experience in machine learning, Python, and real-world data analysis.",
+        "headline": "Data Science Instructor"
+    },
+    {
+        "_id": {
+            "$oid": "6966327a8a791e23a9d53591"
+        },
+        "firstName": "Nina",
+        "lastName": "Patel",
+        "email": "nina.patel@eduplatform.com",
+        "password": "$2b$10$OKrSeM8C/W5xlUzSiORjM.7aKRGrqkSgv.tqVDNxOQlN7XIgjCyfa",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfWRl4t5zUA53",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T11:54:34.421Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T11:54:34.490Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzMjdhOGE3OTFlMjNhOWQ1MzU5MSIsImVtYWlsIjoibmluYS5wYXRlbEBlZHVwbGF0Zm9ybS5jb20iLCJpYXQiOjE3NjgzMDUyNzQsImV4cCI6MTc2ODMwODg3NH0.UjMARxdQ5-ByEZYCtU8GrCSSJhHvzeGZfDbED-e7hzQ",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T12:54:34.490Z"
+        },
+        "bio": "I teach statistics, data visualization, and analytics for business and technology students.",
+        "headline": "Data Analytics Specialist"
+    },
+    {
+        "_id": {
+            "$oid": "696635378a791e23a9d53595"
+        },
+        "firstName": "Ethan",
+        "lastName": "Brooks",
+        "email": "ethan.brooks@eduplatform.com",
+        "password": "$2b$10$vPEOR7OuTgvNh0eH5YRPBuqaotCVxTjsAZM9tkqA1Wn8rmt5fSiZa",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfhLav9CqOZlW",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T12:06:15.028Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T12:06:15.120Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzNTM3OGE3OTFlMjNhOWQ1MzU5NSIsImVtYWlsIjoiZXRoYW4uYnJvb2tzQGVkdXBsYXRmb3JtLmNvbSIsImlhdCI6MTc2ODMwNTk3NSwiZXhwIjoxNzY4MzA5NTc1fQ.y5X5DHDgE9mSWq-4G29ttbl2kmLzK8KCR_eyShquXzg",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T13:06:15.119Z"
+        },
+        "bio": "AI engineer with a strong background in machine learning, neural networks, and real-world AI applications.",
+        "headline": "Artificial Intelligence Engineer"
+    },
+    {
+        "_id": {
+            "$oid": "696635428a791e23a9d53599"
+        },
+        "firstName": "Olivia",
+        "lastName": "Stone",
+        "email": "olivia.stone@eduplatform.com",
+        "password": "$2b$10$Ed95twLg0u2tNkZvcgzi2.rgP.qpaRZ5UQBUdFGb1PF0r2Fgw0iEK",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfiqXzRCbvB80",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T12:06:26.355Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T12:06:26.429Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzNTQyOGE3OTFlMjNhOWQ1MzU5OSIsImVtYWlsIjoib2xpdmlhLnN0b25lQGVkdXBsYXRmb3JtLmNvbSIsImlhdCI6MTc2ODMwNTk4NiwiZXhwIjoxNzY4MzA5NTg2fQ.CqvgAYDA1162RVg4vTnxQPbzN-IEyX1XK9DSC4Tc47w",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T13:06:26.429Z"
+        },
+        "bio": "I teach deep learning, computer vision, and AI-powered product development.",
+        "headline": "AI & Machine Learning Specialist"
+    },
+    {
+        "_id": {
+            "$oid": "696635498a791e23a9d5359d"
+        },
+        "firstName": "Jason",
+        "lastName": "Miller",
+        "email": "jason.miller@eduplatform.com",
+        "password": "$2b$10$ACI4mLO9PxZ8Bec84.fd/OSnliH8ekIpLOj7.FXHHueMc2hRybwU2",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfiwSD0Azrg0W",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T12:06:33.797Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T12:06:33.879Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzNTQ5OGE3OTFlMjNhOWQ1MzU5ZCIsImVtYWlsIjoiamFzb24ubWlsbGVyQGVkdXBsYXRmb3JtLmNvbSIsImlhdCI6MTc2ODMwNTk5MywiZXhwIjoxNzY4MzA5NTkzfQ.PbjJu9HbtVzeG0EhVC9RYGGGiretv8uCj6SjDTAFfjo",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T13:06:33.879Z"
+        },
+        "bio": "Cyber security professional specializing in ethical hacking, penetration testing, and system defense.",
+        "headline": "Cyber Security Analyst"
+    },
+    {
+        "_id": {
+            "$oid": "696635528a791e23a9d535a1"
+        },
+        "firstName": "Amina",
+        "lastName": "Khaled",
+        "email": "amina.khaled@eduplatform.com",
+        "password": "$2b$10$MzsJn2odwlz1/KByhqtsEuIa/mVZDwJMMoejaESy3xQbhoeF8qxz6",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfiWIfzq7vh6J",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T12:06:42.843Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T12:06:42.915Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzNTUyOGE3OTFlMjNhOWQ1MzVhMSIsImVtYWlsIjoiYW1pbmEua2hhbGVkQGVkdXBsYXRmb3JtLmNvbSIsImlhdCI6MTc2ODMwNjAwMiwiZXhwIjoxNzY4MzA5NjAyfQ.IWJaADfMHaVnXVSvZoFp_o9E4cfMsKzFXKBNJ99SK8I",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T13:06:42.914Z"
+        },
+        "bio": "Security trainer focused on network security, threat analysis, and incident response.",
+        "headline": "Information Security Trainer"
+    },
+    {
+        "_id": {
+            "$oid": "6966355b8a791e23a9d535a5"
+        },
+        "firstName": "Lucas",
+        "lastName": "Anderson",
+        "email": "lucas.anderson@eduplatform.com",
+        "password": "$2b$10$.ZLhz47Iv4Eq3ZTKkWw5DexhuEj5p1efcB1D6PYasxyOVxTOvjKqW",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfijrxRvQQGaf",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T12:06:51.011Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T12:06:51.084Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzNTViOGE3OTFlMjNhOWQ1MzVhNSIsImVtYWlsIjoibHVjYXMuYW5kZXJzb25AZWR1cGxhdGZvcm0uY29tIiwiaWF0IjoxNzY4MzA2MDExLCJleHAiOjE3NjgzMDk2MTF9.ELlytwG7oIkCMLJo4FXXeafzNf-JDBNKW5bPU8ZdM58",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T13:06:51.084Z"
+        },
+        "bio": "Cloud architect with hands-on experience designing scalable systems on AWS and Azure.",
+        "headline": "Cloud Solutions Architect"
+    },
+    {
+        "_id": {
+            "$oid": "696635638a791e23a9d535a9"
+        },
+        "firstName": "Sophia",
+        "lastName": "Lee",
+        "email": "sophia.lee@eduplatform.com",
+        "password": "$2b$10$IxxaODLrkKNZZAbdZ9lXR.HwdRcnIDAir4QOoFaTSJvylI984kbmW",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfieVW11xm31D",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T12:06:59.886Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T12:06:59.979Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzNTYzOGE3OTFlMjNhOWQ1MzVhOSIsImVtYWlsIjoic29waGlhLmxlZUBlZHVwbGF0Zm9ybS5jb20iLCJpYXQiOjE3NjgzMDYwMTksImV4cCI6MTc2ODMwOTYxOX0.oXbgXZxOB3ecgJBr9_gSBAQ2fau29yEHirGRmR3GPdU",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T13:06:59.979Z"
+        },
+        "bio": "I teach cloud computing fundamentals, DevOps practices, and infrastructure automation.",
+        "headline": "Cloud Computing Instructor"
+    },
+    {
+        "_id": {
+            "$oid": "6966356d8a791e23a9d535ad"
+        },
+        "firstName": "David",
+        "lastName": "Carter",
+        "email": "david.carter@eduplatform.com",
+        "password": "$2b$10$dI7YF.kVwsz4PFFnXFQPIeI9mrzLtkPRF9kjgo9208Z45I3J8WPNe",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfiHQQNZGiG5M",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T12:07:09.075Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T12:07:09.155Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzNTZkOGE3OTFlMjNhOWQ1MzVhZCIsImVtYWlsIjoiZGF2aWQuY2FydGVyQGVkdXBsYXRmb3JtLmNvbSIsImlhdCI6MTc2ODMwNjAyOSwiZXhwIjoxNzY4MzA5NjI5fQ.7bLKlrGrEgyS4Mv7bzDw4DbwbNjY8rAlWmlmKTwuiUY",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T13:07:09.154Z"
+        },
+        "bio": "Finance professional teaching accounting fundamentals, budgeting, and financial reporting.",
+        "headline": "Finance & Accounting Instructor"
+    },
+    {
+        "_id": {
+            "$oid": "696635778a791e23a9d535b1"
+        },
+        "firstName": "Maria",
+        "lastName": "Gomez",
+        "email": "maria.gomez@eduplatform.com",
+        "password": "$2b$10$qbLpA7y4Io3mG76mqFfrZuQ7Z/VAW/KGm.fT1dnoRm3cSmd930LsC",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfjweyfJ3QU2y",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T12:07:19.261Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T12:07:19.330Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzNTc3OGE3OTFlMjNhOWQ1MzViMSIsImVtYWlsIjoibWFyaWEuZ29tZXpAZWR1cGxhdGZvcm0uY29tIiwiaWF0IjoxNzY4MzA2MDM5LCJleHAiOjE3NjgzMDk2Mzl9.kUlHTG2ySl5oUiKFYEzxanv0YoKHVDh3RKSot7mGtmM",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T13:07:19.330Z"
+        },
+        "bio": "I focus on personal finance, investment basics, and financial planning for beginners.",
+        "headline": "Personal Finance Educator"
+    },
+    {
+        "_id": {
+            "$oid": "696635808a791e23a9d535b5"
+        },
+        "firstName": "Noah",
+        "lastName": "Foster",
+        "email": "noah.foster@eduplatform.com",
+        "password": "$2b$10$r.p8Oql4788GsZ2bCfrptOsjZ4mFV6E8wNhOgdvWRWv3O.b/n4lne",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfjMeaWjcB0yV",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T12:07:28.642Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T12:07:28.713Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzNTgwOGE3OTFlMjNhOWQ1MzViNSIsImVtYWlsIjoibm9haC5mb3N0ZXJAZWR1cGxhdGZvcm0uY29tIiwiaWF0IjoxNzY4MzA2MDQ4LCJleHAiOjE3NjgzMDk2NDh9.KMwK85FyTOepyQ3w7BVz_PJAsjidYJFE-_JmEbCIBrk",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T13:07:28.713Z"
+        },
+        "bio": "Professional photographer teaching composition, lighting, and photo editing techniques.",
+        "headline": "Photography Instructor"
+    },
+    {
+        "_id": {
+            "$oid": "696635888a791e23a9d535b9"
+        },
+        "firstName": "Hannah",
+        "lastName": "Moore",
+        "email": "hannah.moore@eduplatform.com",
+        "password": "$2b$10$9vk74qnuIa4hrD7nN5e7Eu4RWQi6JNKZf.n3rtyKddcVxc6xRLr7a",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_Tmfje7euBA91S4",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T12:07:36.631Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T12:07:36.704Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzNTg4OGE3OTFlMjNhOWQ1MzViOSIsImVtYWlsIjoiaGFubmFoLm1vb3JlQGVkdXBsYXRmb3JtLmNvbSIsImlhdCI6MTc2ODMwNjA1NiwiZXhwIjoxNzY4MzA5NjU2fQ.z1dM05-TfJZ-0M4O81TOgU7Waa0TTR34c5ljmA8vAOo",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T13:07:36.704Z"
+        },
+        "bio": "Video creator and editor with experience in storytelling, filmmaking, and post-production",
+        "headline": "Video Production Instructor"
+    },
+    {
+        "_id": {
+            "$oid": "696635918a791e23a9d535bd"
+        },
+        "firstName": "James",
+        "lastName": "Wilson",
+        "email": "james.wilson@eduplatform.com",
+        "password": "$2b$10$6Tt8XkzDdFyeEWlUQgm9D.B8dhUp60lfuCyhOQQPG5O5bVU5BJUvu",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfjsNWavhXo1f",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T12:07:45.656Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T12:07:45.725Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzNTkxOGE3OTFlMjNhOWQ1MzViZCIsImVtYWlsIjoiamFtZXMud2lsc29uQGVkdXBsYXRmb3JtLmNvbSIsImlhdCI6MTc2ODMwNjA2NSwiZXhwIjoxNzY4MzA5NjY1fQ.Ba77EmF_qXU9fiXkOXfIs-fmf2s9obdGmc8gGic8jw4",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T13:07:45.725Z"
+        },
+        "bio": "Language teacher helping students improve English speaking, grammar, and pronunciation.",
+        "headline": "English Language Instructor"
+    },
+    {
+        "_id": {
+            "$oid": "6966359a8a791e23a9d535c1"
+        },
+        "firstName": "Lina",
+        "lastName": "Hassan",
+        "email": "lina.hassan@eduplatform.com",
+        "password": "$2b$10$e.dYp3jLMBEgMD.CUROq7.vmF7hCBstBesl0aO9jM0Pc86grWcRta",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfjJh26Wmzbge",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T12:07:54.660Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T12:07:54.729Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzNTlhOGE3OTFlMjNhOWQ1MzVjMSIsImVtYWlsIjoibGluYS5oYXNzYW5AZWR1cGxhdGZvcm0uY29tIiwiaWF0IjoxNzY4MzA2MDc0LCJleHAiOjE3NjgzMDk2NzR9.Q-oBFul9ubiMZudtexD4_L4O-h9Qfc96KFQWJshaUZ0",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T13:07:54.729Z"
+        },
+        "bio": "Language coach specializing in conversational English and communication skills.",
+        "headline": "Language Learning Coach"
+    },
+    {
+        "_id": {
+            "$oid": "696635a28a791e23a9d535c5"
+        },
+        "firstName": "Mark",
+        "lastName": "Evans",
+        "email": "mark.evans@eduplatform.com",
+        "password": "$2b$10$xkpD85DxtBecmqm2goGnle3xW8jI90IYhIhFarWIAN92E64zOTYIi",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfjwwIbslWLor",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T12:08:02.574Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T12:08:02.643Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzNWEyOGE3OTFlMjNhOWQ1MzVjNSIsImVtYWlsIjoibWFyay5ldmFuc0BlZHVwbGF0Zm9ybS5jb20iLCJpYXQiOjE3NjgzMDYwODIsImV4cCI6MTc2ODMwOTY4Mn0.bNtCbjfG30Mfx2EgTI-yHGU68-K4KYmzgrzWh2Smhr0",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T13:08:02.643Z"
+        },
+        "bio": "Experienced educator providing training for teachers and academic professionals.",
+        "headline": "Teaching & Education Specialist"
+    },
+    {
+        "_id": {
+            "$oid": "696635aa8a791e23a9d535c9"
+        },
+        "firstName": "Rania",
+        "lastName": "Saleh",
+        "email": "rania.saleh@eduplatform.com",
+        "password": "$2b$10$aYIwPNyLIRS3zM0dq59T4ezId.s5n/xAf8yJGAcQ26VGgK.3yIi.i",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfjIFPUJBhin4",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T12:08:10.737Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T12:08:10.817Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzNWFhOGE3OTFlMjNhOWQ1MzVjOSIsImVtYWlsIjoicmFuaWEuc2FsZWhAZWR1cGxhdGZvcm0uY29tIiwiaWF0IjoxNzY4MzA2MDkwLCJleHAiOjE3NjgzMDk2OTB9.ikX2BrZyzK3TW5a7OCj2QRxf5AfRwI4BSgQw_wM5C14",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T13:08:10.817Z"
+        },
+        "bio": "Academic trainer focused on curriculum development and modern teaching methods.",
+        "headline": "Academic Training Instructor"
+    },
+    {
+        "_id": {
+            "$oid": "696635b28a791e23a9d535cd"
+        },
+        "firstName": "Chris",
+        "lastName": "Bennett",
+        "email": "chris.bennett@eduplatform.com",
+        "password": "$2b$10$hLimI5vjq97BPYdJJGHDk.YZbiLlnGMph9VVC2y4fMy3ZAaZx0jcC",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_Tmfk6GJUNQUrAi",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T12:08:18.737Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T12:08:18.824Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzNWIyOGE3OTFlMjNhOWQ1MzVjZCIsImVtYWlsIjoiY2hyaXMuYmVubmV0dEBlZHVwbGF0Zm9ybS5jb20iLCJpYXQiOjE3NjgzMDYwOTgsImV4cCI6MTc2ODMwOTY5OH0.EFjXz-GnzZRtAP0_sDZARYzETBcuFqOOMBbBnKvJA2Q",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T13:08:18.823Z"
+        },
+        "bio": "Music producer teaching audio recording, mixing, and sound design.",
+        "headline": "Music Production Instructor"
+    },
+    {
+        "_id": {
+            "$oid": "696635ba8a791e23a9d535d1"
+        },
+        "firstName": "Ella",
+        "lastName": "Roberts",
+        "email": "ella.roberts@eduplatform.com",
+        "password": "$2b$10$0c/0tLxxyRlematoXrDhA.s/2Zze5ng1hECl.P3UpeILac0TQYovq",
+        "language": "en",
+        "links": [],
+        "role": "instructor",
+        "isPrivate": false,
+        "isVerified": true,
+        "customer_id": "cus_TmfkTBoQYCMjuW",
+        "stripe_payment_methods": [],
+        "createdAt": {
+            "$date": "2026-01-13T12:08:26.565Z"
+        },
+        "updatedAt": {
+            "$date": "2026-01-13T12:08:26.637Z"
+        },
+        "__v": 0,
+        "verificationToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjYzNWJhOGE3OTFlMjNhOWQ1MzVkMSIsImVtYWlsIjoiZWxsYS5yb2JlcnRzQGVkdXBsYXRmb3JtLmNvbSIsImlhdCI6MTc2ODMwNjEwNiwiZXhwIjoxNzY4MzA5NzA2fQ.FmOLxxFO4ozyoQTjQL6dNUrH8tF5atrFxGa8356xYvs",
+        "verificationTokenExpiry": {
+            "$date": "2026-01-13T13:08:26.637Z"
+        },
+        "bio": "Audio engineer with experience in music theory, recording, and live sound.",
+        "headline": "Audio Engineering Instructor"
+    }
+]

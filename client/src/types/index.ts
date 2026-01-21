@@ -280,3 +280,11 @@ export interface IBuyCourseIntentOptions {
 }
 
 export type CardBrand = "visa" | "mastercard";
+
+export interface IPagination {
+    currentPage: number;
+    nextPage: number;
+    prevPage: number;
+    totalCourses: number;
+    totalPages: number;
+}

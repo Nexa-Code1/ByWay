@@ -231,15 +231,15 @@ export const getAllCourses = async (req, res) => {
     // const wishlist = await wishlistModel.find({ student_ID: req.user.id });
     // const wishlistCourseIds = wishlist.map((w) => w.course_ID.toString());
 
-    const paginatedCoursesWithFlags = paginatedCourses.map((c) => ({
-        ...c.toObject(),
-        // isInCart: cartCoursesIds.includes(c._id.toString()),
-        // isFavourite: wishlistCourseIds.includes(c._id.toString()),
-    }));
+    // const paginatedCoursesWithFlags = paginatedCourses.map((c) => ({
+    //     ...c.toObject(),
+    // isInCart: cartCoursesIds.includes(c._id.toString()),
+    // isFavourite: wishlistCourseIds.includes(c._id.toString()),
+    // }));
 
     res.status(200).json({
         message: "Courses fetched successfully",
-        courses: paginatedCoursesWithFlags,
+        courses: paginatedCourses,
         pagination: {
             totalCourses,
             totalPages: Math.ceil(totalCourses / limitNumber),

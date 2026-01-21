@@ -7,6 +7,7 @@ import type { ICourseDetails } from "@/types";
 function PersonalDevCoursesSection() {
     const { courses, isLoading, error } = useGetAllCourses({
         category: "personal-development",
+        limit: 4,
     });
 
     if (isLoading)
@@ -18,7 +19,7 @@ function PersonalDevCoursesSection() {
     return (
         <SectionLayout
             title="The course in personal development"
-            linkPath="/courses?category=personal-development"
+            linkPath="/search?category=personal-development"
         >
             {courses.courses.map((course: ICourseDetails) => (
                 <CourseCard course={course} />

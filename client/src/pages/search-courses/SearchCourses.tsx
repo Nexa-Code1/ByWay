@@ -50,13 +50,12 @@ function SearchCourses() {
                 </div>
             </div>
             <SectionContainer className="mt-4!">
-                {isLoadingCourses && (
+                {isLoadingCourses ? (
                     <Spinner
                         className="text-primary-700! mt-20!"
                         size="large"
                     />
-                )}
-                {!isLoadingCourses && !courses.courses.length ? (
+                ) : !isLoadingCourses && !courses.courses.length ? (
                     <NoContent
                         imgSrc={emptyFolderImg}
                         title="No Courses"
@@ -76,7 +75,9 @@ function SearchCourses() {
                                     )
                                 )}
                             </div>
-                            <CoursesPagination total={courses.courses.length} />
+                            <CoursesPagination
+                                pagination={courses.pagination}
+                            />
                         </>
                     )
                 )}

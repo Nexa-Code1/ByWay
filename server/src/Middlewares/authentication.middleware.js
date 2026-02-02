@@ -7,7 +7,8 @@ export const authenticationMiddleware = async (req, res, next) => {
     const authHeader = req.headers.authorization;
 
     if (!authHeader) {
-      return res.status(400).json({ message: "Unauthorized, please login!" });
+      res.isGuest = true;
+      return next();
     }
 
     const token = authHeader.split(" ")[1];

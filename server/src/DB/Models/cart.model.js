@@ -7,7 +7,6 @@ const cartSchema = new mongoose.Schema(
     courses: [
       {
         course: { type: mongoose.Schema.Types.ObjectId, ref: "Course" },
-        quantity: { type: Number, default: 1 },
         totalPrice: { type: Number, default: 0 },
       },
     ],

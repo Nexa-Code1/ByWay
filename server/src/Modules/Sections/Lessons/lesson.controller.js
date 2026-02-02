@@ -17,7 +17,7 @@ lessonsRouter.post(
   authenticationMiddleware,
   authorizationMiddleware(USER_ROLES.INSTRUCTOR),
   Multer("/Lessons/Videos", VIDEO_TYPES).single("link"),
-  errorHandlerMiddleware(createLesson)
+  errorHandlerMiddleware(createLesson),
 );
 
 lessonsRouter.put(
@@ -25,14 +25,14 @@ lessonsRouter.put(
   authenticationMiddleware,
   authorizationMiddleware(USER_ROLES.INSTRUCTOR),
   Multer("/Lessons/Videos", VIDEO_TYPES).single("link"),
-  errorHandlerMiddleware(updateLesson)
+  errorHandlerMiddleware(updateLesson),
 );
 
 lessonsRouter.delete(
   "/delete-lesson/:lessonId",
   authenticationMiddleware,
   authorizationMiddleware(USER_ROLES.INSTRUCTOR),
-  errorHandlerMiddleware(deleteLesson)
+  errorHandlerMiddleware(deleteLesson),
 );
 
 export default lessonsRouter;

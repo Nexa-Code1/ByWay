@@ -5,297 +5,303 @@ import cartModel from "../../../DB/Models/cart.model.js";
 import wishlistModel from "../../../DB/Models/wishlist.model.js";
 
 export const createCourse = async (req, res) => {
-    const { id } = req.user;
-    const {
-        title,
-        subTitle,
-        content,
-        price,
-        description,
-        requirements,
-        category,
-    } = req.body;
+  const { id } = req.user;
+  const {
+    title,
+    subTitle,
+    content,
+    price,
+    description,
+    requirements,
+    category,
+  } = req.body;
 
-    // Check if image was uploaded
-    if (!req.file) {
-        return res.status(400).json({ message: "Course image is required" });
+  // Check if image was uploaded
+  if (!req.file) {
+    return res.status(400).json({ message: "Course image is required" });
+  }
+
+  // Get image URL from middleware (works for both local and Cloudinary)
+  const imageUrl = req.file.fullUrl;
+
+  // Parse JSON strings if they exist
+  let parsedContent = content;
+  let parsedRequirements = requirements;
+
+  try {
+    if (typeof content === "string") {
+      parsedContent = JSON.parse(content);
     }
-
-    // Get image URL from middleware (works for both local and Cloudinary)
-    const imageUrl = req.file.fullUrl;
-
-    // Parse JSON strings if they exist
-    let parsedContent = content;
-    let parsedRequirements = requirements;
-
-    try {
-        if (typeof content === "string") {
-            parsedContent = JSON.parse(content);
-        }
-        if (typeof requirements === "string") {
-            parsedRequirements = JSON.parse(requirements);
-        }
-    } catch (error) {
-        return res.status(400).json({
-            message: "Invalid data format for content or requirements",
-        });
+    if (typeof requirements === "string") {
+      parsedRequirements = JSON.parse(requirements);
     }
-
-    const course = await coursesModel.create({
-        title,
-        subTitle,
-        instructor: id,
-        content: parsedContent,
-        price,
-        description,
-        requirements: parsedRequirements,
-        category,
-        image: imageUrl,
+  } catch (error) {
+    return res.status(400).json({
+      message: "Invalid data format for content or requirements",
     });
+  }
 
-    res.status(201).json({ message: "Course created successfully", course });
+  const course = await coursesModel.create({
+    title,
+    subTitle,
+    instructor: id,
+    content: parsedContent,
+    price,
+    description,
+    requirements: parsedRequirements,
+    category,
+    image: imageUrl,
+  });
+
+  res.status(201).json({ message: "Course created successfully", course });
 };
 
 export const updateCourse = async (req, res) => {
-    const { id } = req.params;
-    const {
-        title,
-        subTitle,
-        content,
-        price,
-        description,
-        requirements,
-        category,
-    } = req.body;
+  const { id } = req.params;
+  const {
+    title,
+    subTitle,
+    content,
+    price,
+    description,
+    requirements,
+    category,
+  } = req.body;
 
-    const course = await coursesModel.findById(id);
+  const course = await coursesModel.findById(id);
 
-    if (!course) {
-        return res.status(404).json({ message: "Course not found" });
-    }
+  if (!course) {
+    return res.status(404).json({ message: "Course not found" });
+  }
 
-    if (course.instructor.toString() !== req.user.id) {
-        return res.status(401).json({
-            message: "Unauthorized, you are not the instructor of this course",
-        });
-    }
+  if (course.instructor.toString() !== req.user.id) {
+    return res.status(401).json({
+      message: "Unauthorized, you are not the instructor of this course",
+    });
+  }
 
-    await coursesModel.updateOne(
-        { _id: id },
-        {
-            title,
-            subTitle,
-            content,
-            price,
-            description,
-            requirements,
-            category,
-        }
-    );
+  await coursesModel.updateOne(
+    { _id: id },
+    {
+      title,
+      subTitle,
+      content,
+      price,
+      description,
+      requirements,
+      category,
+    },
+  );
 
-    res.status(200).json({ message: "Course updated successfully" });
+  res.status(200).json({ message: "Course updated successfully" });
 };
 
 export const deleteCourse = async (req, res) => {
-    const { id } = req.params;
+  const { id } = req.params;
 
-    const course = await coursesModel.findById(id);
+  const course = await coursesModel.findById(id);
 
-    if (!course) {
-        return res.status(404).json({ message: "Course not found" });
-    }
+  if (!course) {
+    return res.status(404).json({ message: "Course not found" });
+  }
 
-    if (course.instructor.toString() !== req.user.id) {
-        return res.status(401).json({
-            message: "Unauthorized, you are not the instructor of this course",
-        });
-    }
+  if (course.instructor.toString() !== req.user.id) {
+    return res.status(401).json({
+      message: "Unauthorized",
+    });
+  }
 
-    await coursesModel.deleteOne({ _id: id });
+  await coursesModel.findByIdAndDelete(id);
 
-    res.status(200).json({ message: "Course deleted successfully" });
+  res.status(200).json({
+    message: "Course deleted successfully",
+  });
 };
 
 export const getCourseDetails = async (req, res) => {
-    const { id } = req.params;
+  const { id } = req.params;
 
-    const course = await coursesModel.findById(id).populate([
-        { path: "category", select: "name slug" },
-        { path: "instructor", select: "firstName lastName headLine bio image" },
-        {
-            path: "content.lessons",
-            select: "section_ID title description link duration isCompleted",
-        },
-    ]);
+  const course = await coursesModel.findById(id).populate([
+    { path: "category", select: "name slug" },
+    { path: "instructor", select: "firstName lastName headLine bio image" },
+    {
+      path: "content.lessons",
+      select: "section_ID title description link duration isCompleted",
+    },
+  ]);
 
-    if (!course) {
-        return res.status(404).json({ message: "Course not found" });
-    }
+  if (!course) {
+    return res.status(404).json({ message: "Course not found" });
+  }
 
+  let isInCart = false;
+  let isFavourite = false;
+
+  if (!req.isGuest) {
     const cart = await cartModel.findOne({ student_ID: req.user.id });
-    const isInCart = cart
-        ? cart.courses.some((c) => c.course.toString() === id)
-        : false;
+    isInCart = cart
+      ? cart.courses.some((c) => c.course.toString() === id)
+      : false;
 
     const wishlist = await wishlistModel.findOne({
-        student_ID: req.user.id,
-        course_ID: id,
+      student_ID: req.user.id,
+      course_ID: id,
     });
 
-    const isFavourite = Boolean(wishlist);
+    isFavourite = Boolean(wishlist);
+  }
 
-    res.status(200).json({
-        message: "Course details fetched successfully",
-        course: {
-            ...course.toObject(),
-            isInCart,
-            isFavourite,
-        },
-    });
+  res.status(200).json({
+    message: "Course details fetched successfully",
+    course: {
+      ...course.toObject(),
+      isInCart,
+      isFavourite,
+    },
+  });
 };
 
 export const getAllCourses = async (req, res) => {
-    const { price, category, title, sort, page = 1, limit = 10 } = req.query;
+  const { price, category, title, sort, page = 1, limit = 10 } = req.query;
 
-    const query = {};
+  const query = {};
 
-    if (price) {
-        if (price.includes("-")) {
-            const [min, max] = price.split("-");
-            query.price = { $gte: Number(min), $lte: Number(max) };
-        } else {
-            query.price = Number(price);
-        }
+  if (price) {
+    if (price.includes("-")) {
+      const [min, max] = price.split("-");
+      query.price = { $gte: Number(min), $lte: Number(max) };
+    } else {
+      query.price = Number(price);
+    }
+  }
+
+  if (category) {
+    const foundCategory = await categoryModel.findOne({ slug: category });
+
+    if (!foundCategory) {
+      return res.status(400).json({
+        message: "Invalid category slug",
+        category,
+      });
     }
 
-    if (category) {
-        const foundCategory = await categoryModel.findOne({ slug: category });
+    query.category = foundCategory._id;
+  }
 
-        if (!foundCategory) {
-            return res.status(400).json({
-                message: "Invalid category slug",
-                category,
-            });
-        }
+  if (title) {
+    query.title = { $regex: title, $options: "i" };
+  }
 
-        query.category = foundCategory._id;
+  const pageNumber = Number(page);
+  const limitNumber = Number(limit);
+  const skip = (pageNumber - 1) * limitNumber;
+
+  let courses = await coursesModel
+    .find(query)
+    .populate([
+      { path: "category", select: "name slug" },
+      { path: "instructor", select: "firstName lastName email image" },
+      {
+        path: "content.lessons",
+        select: "section_ID title description link duration isCompleted",
+      },
+    ])
+    .select("title subTitle image price discount category instructor");
+
+  // Sorting
+  if (sort) {
+    const [field, order] = sort.split("-");
+    const sortValue = order === "desc" ? -1 : 1;
+
+    if (field === "price") {
+      courses = courses.sort((a, b) => (a.price - b.price) * sortValue);
     }
 
-    if (title) {
-        query.title = { $regex: title, $options: "i" };
+    if (field === "time") {
+      courses = courses.sort(
+        (a, b) => (new Date(a.createdAt) - new Date(b.createdAt)) * sortValue,
+      );
     }
+  }
 
-    const pageNumber = Number(page);
-    const limitNumber = Number(limit);
-    const skip = (pageNumber - 1) * limitNumber;
+  const totalCourses = courses.length;
+  const paginatedCourses = courses.slice(skip, skip + limitNumber);
+  let paginatedCoursesWithFlags = paginatedCourses;
 
-    let courses = await coursesModel
-        .find(query)
-        .populate([
-            { path: "category", select: "name slug" },
-            { path: "instructor", select: "firstName lastName email image" },
-            {
-                path: "content.lessons",
-                select: "section_ID title description link duration isCompleted",
-            },
-        ])
-        .select("title subTitle image price discount category instructor");
+  if (!req.isGuest) {
+    const cart = await cartModel.findOne({ student_ID: req.user.id });
+    const cartCoursesIds = cart
+      ? cart.courses.map((c) => c.course.toString())
+      : [];
 
-    // Sorting
-    if (sort) {
-        const [field, order] = sort.split("-");
-        const sortValue = order === "desc" ? -1 : 1;
+    const wishlist = await wishlistModel.find({ student_ID: req.user.id });
+    const wishlistCourseIds = wishlist.map((w) => w.course_ID.toString());
 
-        if (field === "price") {
-            courses = courses.sort((a, b) => (a.price - b.price) * sortValue);
-        }
+    paginatedCoursesWithFlags = paginatedCourses.map((c) => ({
+      ...c.toObject(),
+      isInCart: cartCoursesIds.includes(c._id.toString()),
+      isFavourite: wishlistCourseIds.includes(c._id.toString()),
+    }));
+  }
 
-        if (field === "time") {
-            courses = courses.sort(
-                (a, b) =>
-                    (new Date(a.createdAt) - new Date(b.createdAt)) * sortValue
-            );
-        }
-    }
-
-    const totalCourses = courses.length;
-    const paginatedCourses = courses.slice(skip, skip + limitNumber);
-
-    // Cart check once
-    // const cart = await cartModel.findOne({ student_ID: req.user.id });
-    // const cartCoursesIds = cart
-    //     ? cart.courses.map((c) => c.course.toString())
-    //     : [];
-
-    // Wishlist check once
-    // const wishlist = await wishlistModel.find({ student_ID: req.user.id });
-    // const wishlistCourseIds = wishlist.map((w) => w.course_ID.toString());
-
-    // const paginatedCoursesWithFlags = paginatedCourses.map((c) => ({
-    //     ...c.toObject(),
-    // isInCart: cartCoursesIds.includes(c._id.toString()),
-    // isFavourite: wishlistCourseIds.includes(c._id.toString()),
-    // }));
-
-    res.status(200).json({
-        message: "Courses fetched successfully",
-        courses: paginatedCourses,
-        pagination: {
-            totalCourses,
-            totalPages: Math.ceil(totalCourses / limitNumber),
-            currentPage: pageNumber,
-            nextPage:
-                pageNumber * limitNumber < totalCourses ? pageNumber + 1 : null,
-            prevPage: pageNumber > 1 ? pageNumber - 1 : null,
-        },
-    });
+  res.status(200).json({
+    message: "Courses fetched successfully",
+    courses: paginatedCoursesWithFlags,
+    pagination: {
+      totalCourses,
+      totalPages: Math.ceil(totalCourses / limitNumber),
+      currentPage: pageNumber,
+      nextPage: pageNumber * limitNumber < totalCourses ? pageNumber + 1 : null,
+      prevPage: pageNumber > 1 ? pageNumber - 1 : null,
+    },
+  });
 };
 
 export const publishCourse = async (req, res) => {
-    const { id } = req.params;
+  const { id } = req.params;
 
-    const course = await coursesModel.findById(id);
+  const course = await coursesModel.findById(id);
 
-    if (!course) {
-        return res.status(404).json({ message: "Course not found" });
-    }
+  if (!course) {
+    return res.status(404).json({ message: "Course not found" });
+  }
 
-    if (course.instructor.toString() !== req.user.id) {
-        return res.status(401).json({
-            message: "Unauthorized, you are not the instructor of this course",
-        });
-    }
+  if (course.instructor.toString() !== req.user.id) {
+    return res.status(401).json({
+      message: "Unauthorized, you are not the instructor of this course",
+    });
+  }
 
-    await coursesModel.updateOne(
-        { _id: id },
-        { status: COURSE_STATUS.PUBLISHED }
-    );
+  await coursesModel.updateOne(
+    { _id: id },
+    { status: COURSE_STATUS.PUBLISHED },
+  );
 
-    res.status(200).json({ message: "Course published successfully" });
+  res.status(200).json({ message: "Course published successfully" });
 };
 
 export const getInstructorCourses = async (req, res) => {
-    const { instructorId } = req.params;
+  const { instructorId } = req.params;
 
-    let statusFilter = {};
+  let statusFilter = {};
 
-    if (req.user.id !== instructorId) {
-        statusFilter.status = COURSE_STATUS.PUBLISHED;
-    }
+  if (req.user.id !== instructorId) {
+    statusFilter.status = COURSE_STATUS.PUBLISHED;
+  }
 
-    if (req.user.id === instructorId && req.query.status) {
-        statusFilter.status = req.query.status;
-    }
+  if (req.user.id === instructorId && req.query.status) {
+    statusFilter.status = req.query.status;
+  }
 
-    const courses = await coursesModel
-        .find({
-            instructor: instructorId,
-            ...statusFilter,
-        })
-        .populate([{ path: "category", select: "name slug" }]);
+  const courses = await coursesModel
+    .find({
+      instructor: instructorId,
+      ...statusFilter,
+    })
+    .populate([{ path: "category", select: "name slug" }]);
 
-    res.status(200).json({
-        message: "Courses fetched successfully",
-        courses,
-    });
+  res.status(200).json({
+    message: "Courses fetched successfully",
+    courses,
+  });
 };

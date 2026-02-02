@@ -1,7 +1,7 @@
 import coursesModel from "../../../../DB/Models/courses.model.js";
 import lessonsModel from "../../../../DB/Models/lessons.model.js";
 import fs from "fs";
-import { getVideoDuration } from "../../../../Utils/video.helper.js";
+import { getLocalVideoDuration } from "../../../../Utils/video.helper.js";
 
 export const createLesson = async (req, res) => {
     const { courseId, sectionId } = req.params;
@@ -14,7 +14,7 @@ export const createLesson = async (req, res) => {
     const videoURL = req.file.fullUrl;
 
     // Get duration (from Cloudinary, middleware, or request body)
-    const durationInSeconds = await getVideoDuration(req.file);
+    const durationInSeconds = await getLocalVideoDuration(req.file.path);
 
     const course = await coursesModel.findById(courseId);
     if (!course) return res.status(404).json({ message: "Course not found" });
@@ -64,7 +64,7 @@ export const updateLesson = async (req, res) => {
         }
 
         videoURL = req.file.fullUrl;
-        durationInSeconds = await getVideoDurationInSeconds(req.file.path);
+        durationInSeconds = await getLocalVideoDuration(req.file.path);
     }
 
     lesson.title = title;

@@ -1,6 +1,5 @@
-import { Navigate } from "react-router";
+import { Navigate, useLocation } from "react-router";
 import { type FormEvent } from "react";
-import { useCookies } from "react-cookie";
 
 import { useCreateCourseSection } from "@/hooks/courseSections/useCreateCourseSection";
 import AppSubmitBtn from "@/components/shared/AppSubmitBtn";
@@ -9,8 +8,8 @@ import CourseSection from "./components/CourseSection";
 import type { ICourseContent } from "@/types";
 
 function CreateCourseCurriculum() {
-    const [cookies] = useCookies(["draftCourseId"]);
-    const { draftCourseId } = cookies;
+    const location = useLocation();
+    const draftCourseId = location.state?.draftCourseId;
 
     const { createCourseSection, isCreatingCourseSection } =
         useCreateCourseSection();
@@ -40,7 +39,7 @@ function CreateCourseCurriculum() {
                             item={item}
                             index={index}
                         />
-                    )
+                    ),
                 )}
 
             <form onSubmit={addNewSectionHandler}>

@@ -1,14 +1,14 @@
 import { useSearchParams } from "react-router";
 import { Pagination } from "antd";
 
-import { COURSES_PER_PAGE } from "@/utils/constants";
+import { ITEMS_PER_PAGE } from "@/utils/constants";
 import type { IPagination } from "@/types";
 
-type CoursesPaginationProps = {
+type ItemsPaginationProps = {
     pagination: IPagination;
 };
 
-function CoursesPagination({ pagination }: CoursesPaginationProps) {
+function ItemsPagination({ pagination }: ItemsPaginationProps) {
     const [searchParams, setSearchParams] = useSearchParams();
 
     function handleChange(value: number) {
@@ -20,15 +20,16 @@ function CoursesPagination({ pagination }: CoursesPaginationProps) {
 
     return (
         <Pagination
-            total={pagination.totalCourses}
-            pageSize={COURSES_PER_PAGE}
+            total={pagination.total}
+            pageSize={ITEMS_PER_PAGE}
             className="mt-8!"
             hideOnSinglePage={true}
             align="center"
             onChange={handleChange}
             defaultCurrent={Number(searchParams.get("page")) || 1}
+            showSizeChanger={false}
         />
     );
 }
 
-export default CoursesPagination;
+export default ItemsPagination;

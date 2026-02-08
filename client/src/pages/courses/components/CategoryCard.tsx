@@ -15,7 +15,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
 
     return (
         <Card className="h-52! p-4 m-3! shadow-lg rounded-xl text-center hover:scale-105 transition-transform">
-            <Link to={`/search?category=${category.slug}`}>
+            <Link to={`/search?type=courses&category=${category.slug}`}>
                 <div
                     className="relative w-14 h-14 mb-4 mx-auto flex items-center justify-center"
                     style={{ fill: category.color, color: category.color }}
@@ -28,7 +28,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
                         preProcessor={(code) =>
                             code.replace(
                                 /fill=(["'])(.*?)\1/g,
-                                'fill="currentColor"'
+                                'fill="currentColor"',
                             )
                         }
                     />

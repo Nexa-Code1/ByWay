@@ -19,10 +19,10 @@ function PersonalDevCoursesSection() {
     return (
         <SectionLayout
             title="The course in personal development"
-            linkPath="/search?category=personal-development"
+            linkPath="/search?type=courses&category=personal-development"
         >
             {courses.courses.map((course: ICourseDetails) => (
-                <CourseCard course={course} />
+                <CourseCard course={course} key={course._id} />
             ))}
         </SectionLayout>
     );

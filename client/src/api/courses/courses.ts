@@ -35,9 +35,8 @@ export async function handleGetCourseDetails(id?: string) {
 }
 
 export async function handleCreateNewCourse(
-    newCourseData: ICourseDataBasicInfo
+    newCourseData: ICourseDataBasicInfo,
 ) {
-    console.log(newCourseData);
     try {
         const data = new FormData();
 
@@ -60,12 +59,12 @@ export async function handleCreateNewCourse(
 
 export async function handleUpdateCourse(
     courseId: string,
-    updatedCourseData: ICourseDataBasicInfo
+    updatedCourseData: ICourseDataBasicInfo,
 ) {
     try {
         const res = await api.put(
             `courses/update-course/${courseId}`,
-            updatedCourseData
+            updatedCourseData,
         );
         return res.data;
     } catch (err) {
@@ -91,13 +90,28 @@ export async function handlePublishCourse(courseId: string) {
     }
 }
 
-export async function handleGetInstructorCourses(
-    instructorId: string,
-    status: CourseStatusType | ""
-) {
+export async function handleGetInstructorCourses({
+    status,
+    limit,
+    page,
+    instructorId,
+}: {
+    status: CourseStatusType | "";
+    limit: number;
+    page: number;
+    instructorId?: string;
+}) {
     try {
+        if (!instructorId) throw new Error("instructor id is required");
+
         let url = `courses/get-instructor-courses/${instructorId}`;
-        if (status) url += `?status=${status}`;
+        const filterArr = Object.entries({ status, limit, page });
+        if (filterArr.length > 0) {
+            const joinedFilterArr = filterArr
+                .map((el) => `${el[0]}=${el[1]}`)
+                .join("&");
+            url += `?${joinedFilterArr}`;
+        }
 
         const res = await api.get(url);
         return res.data;

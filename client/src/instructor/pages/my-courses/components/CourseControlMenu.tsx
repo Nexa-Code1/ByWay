@@ -18,7 +18,9 @@ function CourseControlMenu({ courseId }: CourseControlMenuProps) {
 
     function editCourseHandler() {
         setCookie("draftCourseId", courseId);
-        navigate("/instructor/create-course/basic-information");
+        navigate("/instructor/create-course/basic-information", {
+            state: { draftCourseId: courseId },
+        });
     }
 
     const items: MenuProps["items"] = [

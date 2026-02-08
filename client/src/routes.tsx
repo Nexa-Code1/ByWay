@@ -5,9 +5,9 @@ import {
     CourseDetails,
     Home,
     NotFound,
-    SearchCourses,
-    // Blogs,
-    // BlogDetails,
+    Search,
+    Blogs,
+    BlogDetails,
     BecomeInstructor,
     InstructorProfile,
     StudentProfile,
@@ -78,18 +78,18 @@ export const router = createBrowserRouter([
             },
             {
                 path: "search",
-                Component: SearchCourses,
+                Component: Search,
             },
-            // {
-            //     path: "blogs",
-            //     children: [
-            //         { index: true, Component: Blogs },
-            //         {
-            //             path: ":blogId",
-            //             Component: BlogDetails,
-            //         },
-            //     ],
-            // },
+            {
+                path: "blogs",
+                children: [
+                    { index: true, Component: Blogs },
+                    {
+                        path: ":blogId",
+                        Component: BlogDetails,
+                    },
+                ],
+            },
             {
                 path: "become-instructor",
                 Component: BecomeInstructor,

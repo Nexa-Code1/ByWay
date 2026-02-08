@@ -24,7 +24,10 @@ function MyCourses() {
         instructorCourses,
         isLoading: isLoadingCourses,
         error: coursesError,
-    } = useGetInstructorCourses(userProfile?.user._id, status);
+    } = useGetInstructorCourses({
+        instructorId: userProfile?.user._id,
+        status,
+    });
 
     if (
         !isLoadingCourses &&

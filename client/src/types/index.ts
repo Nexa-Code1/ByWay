@@ -98,18 +98,28 @@ export interface ILangObj {
 }
 
 export interface IBlog {
-    id: string;
+    _id: string;
     image: string;
     title: string;
+    description: string;
     content: string;
-    // category: string;
-    // author: {
-    //     name: string;
-    //     avatar: string;
-    // };
-    // seen: number;
-    // createdAt: Date;
-    // updatedAt: Date;
+    views: number;
+    category: ICategory;
+    instructor: {
+        _id: string;
+        firstName: string;
+        lastName: string;
+        image: string;
+    };
+    createdAt: Date;
+    updatedAt: Date;
+}
+
+export interface IFilterBlogsBy {
+    category?: string;
+    search?: string;
+    page?: number;
+    limit?: number;
 }
 
 export interface IFilterCoursesBy {
@@ -117,7 +127,7 @@ export interface IFilterCoursesBy {
     category?: string;
     title?: string;
     sort?: ISortCoursesBy;
-    page?: number | 1;
+    page?: number;
     limit?: number;
 }
 
@@ -125,7 +135,9 @@ export type ISortCoursesBy =
     | "time-asc"
     | "time-desc"
     | "price-asc"
-    | "price-desc";
+    | "price-desc"
+    | "rate-asc"
+    | "rate-desc";
 
 export interface ICourseCart {
     _id: string;
@@ -285,6 +297,14 @@ export interface IPagination {
     currentPage: number;
     nextPage: number;
     prevPage: number;
-    totalCourses: number;
+    total: number;
     totalPages: number;
+}
+
+export interface IBlogFormData {
+    title: string;
+    description: string;
+    content: string;
+    category: string;
+    image: File | null;
 }

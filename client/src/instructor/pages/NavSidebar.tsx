@@ -14,7 +14,7 @@ function NavSidebar() {
 
     return (
         <div
-            className={`min-w-64 flex flex-col min-h-screen bg-white z-20 absolute top-0 md:static ${
+            className={`min-w-64 flex flex-col fixed md:sticky h-screen bg-white z-20 top-0 ${
                 isOpen ? "translate-x-0" : "-translate-x-full"
             } md:translate-x-0 transition-transform ease-linear duration-150 shadow-xl`}
         >

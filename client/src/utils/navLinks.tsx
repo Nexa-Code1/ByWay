@@ -3,10 +3,12 @@ import {
     // BarChartOutlined,
     CheckCircleOutlined,
     CopyOutlined,
+    DiffOutlined,
+    FileOutlined,
     // CreditCardOutlined,
-    // FileOutlined,
     FileSearchOutlined,
     FileTextOutlined,
+    HighlightOutlined,
     HomeOutlined,
     PlusCircleOutlined,
     SettingOutlined,
@@ -28,17 +30,17 @@ export const navLinks = [
         icon: <FileTextOutlined />,
     },
     {
+        key: "blog",
+        path: "/blogs",
+        label: { en: "Blog", ar: "مقالات" },
+        icon: <FileOutlined />,
+    },
+    {
         key: "search",
         path: "/search",
         label: { en: "Search", ar: "بحث" },
         icon: <FileSearchOutlined />,
     },
-    // {
-    //     key: "blog",
-    //     path: "/blogs",
-    //     label: { en: "Blog", ar: "مقالات" },
-    //     icon: <FileOutlined />,
-    // },
     {
         key: "cart",
         path: "/cart",
@@ -61,6 +63,12 @@ export const instructorNavLinks = [
     //     icon: <BarChartOutlined />,
     // },
     {
+        key: "create-blog",
+        path: "/instructor/create-blog",
+        label: { en: "Create New Blog", ar: "انشاء مقالة جديدة" },
+        icon: <DiffOutlined />,
+    },
+    {
         key: "create-course",
         path: "/instructor/create-course",
         label: { en: "Create New Course", ar: "انشاء كورس جديد" },
@@ -71,6 +79,12 @@ export const instructorNavLinks = [
         path: "/instructor/my-courses",
         label: { en: "My Courses", ar: "كورساتى" },
         icon: <CopyOutlined />,
+    },
+    {
+        key: "my-blogs",
+        path: "/instructor/my-blogs",
+        label: { en: "My Blogs", ar: "مقالاتى" },
+        icon: <HighlightOutlined />,
     },
     // {
     //     key: "erarning",

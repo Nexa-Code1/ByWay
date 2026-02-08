@@ -36,15 +36,17 @@ function InstructorCourseCard({ course }: InstructorCourseCardProps) {
             </div>
 
             <div className="p-4 flex items-center justify-between gap-2">
-                <p className="font-semibold text-orange-100">
-                    {course.price - course.discount}EGP
-                </p>
+                <div className="flex gap-2 items-center">
+                    <span className="font-semibold text-orange-100">
+                        {course.price - course.discount}EGP
+                    </span>
 
-                {course.discount !== 0 && (
-                    <p className="line-through text-gray-300 text-sm">
-                        {course.price}EGP
-                    </p>
-                )}
+                    {course.discount !== 0 && (
+                        <span className="line-through text-gray-300 text-sm">
+                            {course.price}EGP
+                        </span>
+                    )}
+                </div>
 
                 <CourseControlMenu courseId={course._id} />
             </div>

@@ -1,42 +1,49 @@
 import { useSearchParams } from "react-router";
 import { Form, Input, Button, type FormProps } from "antd";
 
-type GetAllCoursesFilter = {
+type SearchFormProps = {
+    placeholder: string;
+    className?: string;
+};
+
+type SearchFormData = {
     search: string;
 };
 
-function SearchForm() {
+function SearchForm({
+    placeholder,
+    className = "col-span-4",
+}: SearchFormProps) {
     const [form] = Form.useForm();
-    const [, setSearchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams();
 
-    const onFinish: FormProps<GetAllCoursesFilter>["onFinish"] = (values) => {
-        console.log(values);
-        setSearchParams({ searchTitle: values.search.trim() });
-        form.resetFields();
+    const searchTitle = searchParams.get("searchTitle");
+
+    const onFinish: FormProps<SearchFormData>["onFinish"] = (
+        values: SearchFormData,
+    ) => {
+        setSearchParams((prev) => {
+            prev.set("searchTitle", values.search.trim());
+            return prev;
+        });
     };
 
     return (
         <Form
             form={form}
             name="search"
-            initialValues={{ search: "" }}
+            initialValues={{ search: searchTitle || "" }}
             onFinish={onFinish}
             autoComplete="off"
-            className="col-span-4"
+            className={className}
         >
             <div className="flex items-center w-full bg-white rounded-md h-10! [&_.ant-form-item-explain-error]:absolute! [&_.ant-form-item-explain-error]:font-semibold! [&_.ant-form-item-explain-error]:text-error-800!">
-                <Form.Item<GetAllCoursesFilter>
+                <Form.Item<SearchFormData>
                     name="search"
-                    rules={[
-                        {
-                            required: true,
-                            message: "Please input course title!",
-                        },
-                    ]}
                     className="w-full! mb-0!"
                 >
                     <Input
-                        placeholder="Search your favourite course"
+                        placeholder={placeholder}
                         className="border-0! h-10!"
                     />
                 </Form.Item>

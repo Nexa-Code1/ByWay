@@ -7,6 +7,7 @@ import lessonsRouter from "../Modules/Sections/Lessons/lesson.controller.js";
 import cartRouter from "../Modules/Cart/cart.controller.js";
 import paymentRouter from "../Modules/Payment/payment.controller.js";
 import wishlistRouter from "../Modules/Wishlist/wishlist.controller.js";
+import blogsRouter from "../Modules/Blogs/blog.controller.js";
 
 const routerHandler = (app) => {
     app.get("/", (req, res) => {
@@ -22,6 +23,7 @@ const routerHandler = (app) => {
     app.use("/api/cart", cartRouter);
     app.use("/api/payment", paymentRouter);
     app.use("/api/wishlist", wishlistRouter);
+    app.use("/api/blogs", blogsRouter);
 
     app.all(/.*/, (req, res) => {
         res.status(404).json({ message: "Route not found" });

@@ -1,32 +1,30 @@
+import { useLocation, useNavigate } from "react-router";
 import { useEffect, useState } from "react";
-import { useCookies } from "react-cookie";
-import { Button, Form, type FormProps } from "antd";
+import { Form, type FormProps } from "antd";
 import Input from "antd/es/input/Input";
 import TextArea from "antd/es/input/TextArea";
 
-import AppSubmitBtn from "@/components/shared/AppSubmitBtn";
 import type { ICourseDataBasicInfo } from "@/types";
 import PriceInput from "./components/PriceInput";
 import CourseRequirements from "./components/CourseRequirements";
 import CategorySelect from "./components/CategorySelect";
-import UploadCourseImage from "./components/UploadCourseImage";
+import CourseImageUpload from "./components/CourseImageUpload";
 import { useCreateNewCourse } from "@/hooks/courses/useCreateNewCourse";
 import { useUpdateCourse } from "@/hooks/courses/useUpdateCourse";
-import { useDeleteCourse } from "@/hooks/courses/useDeleteCourse";
-import Spinner from "@/components/shared/Spinner";
 import { useGetCourseDetails } from "@/hooks/courses/useGetCourseDetails";
+import FormActions from "@/instructor/components/common/FormActions";
+import Spinner from "@/components/shared/Spinner";
 
 function CreateCourseBasicInfo() {
-    const [cookies, setCookie, removeCookie] = useCookies(["draftCourseId"]);
-    const { draftCourseId } = cookies;
+    const [form] = Form.useForm();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const draftCourseId = location.state?.draftCourseId;
 
     const { courseDetails, isLoading, error } =
         useGetCourseDetails(draftCourseId);
     const { createNewCourse, isCreatingNewCourse } = useCreateNewCourse();
     const { updateCourse, isUpdatingCourse } = useUpdateCourse();
-    const { deleteCourse, isDeletingCourse } = useDeleteCourse();
-
-    const [form] = Form.useForm();
 
     const [requirements, setRequirements] = useState<string[]>([]);
     const [file, setFile] = useState<File | null>(null);
@@ -36,22 +34,34 @@ function CreateCourseBasicInfo() {
         if (!isLoading && !error && courseDetails) {
             setRequirements(courseDetails.course.requirements);
             setPreviewUrl(courseDetails.course.image);
+
+            // Update form fields with course data
+            form.setFieldsValue({
+                title: courseDetails.course.title,
+                subTitle: courseDetails.course.subTitle,
+                price: courseDetails.course.price,
+                description: courseDetails.course.description,
+                category: courseDetails.course.category._id,
+            });
         }
-    }, [isLoading, error, courseDetails]);
+    }, [isLoading, error, courseDetails, form]);
+
+    if (isLoading)
+        return <Spinner className="text-primary-700! mt-50!" size="large" />;
 
     const initialValues: ICourseDataBasicInfo = {
-        title: courseDetails?.course.title || "",
-        subTitle: courseDetails?.course.subTitle || "",
-        price: courseDetails?.course.price || 100,
-        description: courseDetails?.course.description || "",
+        title: "",
+        subTitle: "",
+        price: 100,
+        description: "",
         requirements,
         content: [],
-        category: courseDetails?.course.category._id || "",
-        image: courseDetails?.course.image || null,
+        category: "",
+        image: null,
     };
 
     const onFinish: FormProps<ICourseDataBasicInfo>["onFinish"] = async (
-        values
+        values,
     ) => {
         const courseData = {
             ...values,
@@ -66,16 +76,14 @@ function CreateCourseBasicInfo() {
                 updatedCourseData: courseData,
             });
         else {
-            const newCourse = await createNewCourse(courseData);
-            setCookie("draftCourseId", newCourse.course._id);
+            createNewCourse(courseData, {
+                onSuccess: (courseData) =>
+                    navigate("/instructor/create-course/curriculum", {
+                        state: { draftCourseId: courseData._id },
+                    }),
+            });
         }
     };
-
-    async function handleDeleteCourse() {
-        await deleteCourse(draftCourseId);
-        removeCookie("draftCourseId");
-        form.resetFields();
-    }
 
     return (
         <Form
@@ -145,7 +153,7 @@ function CreateCourseBasicInfo() {
             />
 
             {/* Course image */}
-            <UploadCourseImage
+            <CourseImageUpload
                 onSetFile={setFile}
                 previewUrl={previewUrl}
                 onSetPreviewUrl={setPreviewUrl}
@@ -153,23 +161,11 @@ function CreateCourseBasicInfo() {
 
             {/* Submit form */}
             <div className="self-end flex items-center gap-4 mt-4! mb-10!">
-                {draftCourseId && (
-                    <Button
-                        htmlType="button"
-                        className="text-error-800! border-error-800! mt-0! hover:-translate-y-0.5"
-                        onClick={handleDeleteCourse}
-                        disabled={isDeletingCourse}
-                    >
-                        {isDeletingCourse ? <Spinner size="small" /> : "Delete"}
-                    </Button>
-                )}
-                <AppSubmitBtn
+                <FormActions
                     isLoading={isCreatingNewCourse || isUpdatingCourse}
-                    type="primary"
-                    className="max-w-36! bg-orange-100!"
-                >
-                    {draftCourseId ? "update" : "save & next"}
-                </AppSubmitBtn>
+                    cancelLink="/instructor/my-courses"
+                    submitText="Save & Next"
+                />
             </div>
         </Form>
     );

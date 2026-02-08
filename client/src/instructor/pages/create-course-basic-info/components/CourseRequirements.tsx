@@ -27,34 +27,35 @@ function CourseRequirements({
 
     function handleDeleteRequirement(requirement: string) {
         onSetRequirements((prev) =>
-            prev.filter((item) => item !== requirement)
+            prev.filter((item) => item !== requirement),
         );
     }
 
     return (
-        <Form.Item<ICourseDataBasicInfo>
-            name="requirements"
-            label="Requirements"
-        >
-            <div className="w-full! flex items-center mb-2">
-                <Input
-                    placeholder="Please input"
-                    value={value}
-                    onChange={(e) => setValue(e.target.value)}
-                />
-                <Button
-                    type="text"
-                    htmlType="button"
-                    className="text-orange-100! flex gap-2 bg-transparent!"
-                    onClick={handleAddRequirement}
-                >
-                    <PlusOutlined />
-                    <span className="hidden md:block">Add requirement</span>
-                </Button>
-            </div>
-
+        <div className="mb-6">
+            <Form.Item<ICourseDataBasicInfo>
+                name="requirements"
+                label="Requirements"
+            >
+                <div className="w-full! flex items-center">
+                    <Input
+                        placeholder="Please input"
+                        value={value}
+                        onChange={(e) => setValue(e.target.value)}
+                    />
+                    <Button
+                        type="text"
+                        htmlType="button"
+                        className="text-orange-100! flex gap-2 bg-transparent!"
+                        onClick={handleAddRequirement}
+                    >
+                        <PlusOutlined />
+                        <span className="hidden md:block">Add requirement</span>
+                    </Button>
+                </div>
+            </Form.Item>
             {requirements.length > 0 && (
-                <ul className="mt-4 grid grid-cols-2 gap-2">
+                <ul className="grid grid-cols-2 gap-2">
                     {requirements.map((requirement) => (
                         <li
                             key={requirement}
@@ -72,7 +73,7 @@ function CourseRequirements({
                     ))}
                 </ul>
             )}
-        </Form.Item>
+        </div>
     );
 }
 

@@ -5,7 +5,7 @@ import CategoriesSection from "./components/CategoriesSection";
 // import RecommendedSection from "./components/RecommendedSection";
 import PersonalDevCoursesSection from "./components/PersonalDevCoursesSection";
 import OnlineCoachingSection from "./components/OnlineCoachingSection";
-// import TopRatedCoursesSection from "./components/TopRateCoursesSection";
+import TopRatedCoursesSection from "./components/TopRateCoursesSection";
 
 function Courses() {
     // const { userProfile, isLoading: isLoadingUser, error } = useUserProfile();
@@ -19,7 +19,7 @@ function Courses() {
             {/* <RecommendedSection /> */}
             <OnlineCoachingSection />
             <PersonalDevCoursesSection />
-            {/* <TopRatedCoursesSection /> */}
+            <TopRatedCoursesSection />
         </SectionContainer>
     );
 }

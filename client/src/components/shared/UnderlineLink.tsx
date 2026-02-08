@@ -11,7 +11,7 @@ function UnderlineLink({ children, to, className }: UnderlineLinkProps) {
     return (
         <Link
             to={to}
-            className={`underline text-primary-600 font-semibold ${className}`}
+            className={`underline text-primary-600 font-semibold transition ${className}`}
         >
             {children}
         </Link>

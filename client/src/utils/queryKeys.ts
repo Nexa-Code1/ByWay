@@ -11,6 +11,11 @@ export enum QUERY_KEYS {
     GET_COURSE_DETAILS = "getCourseDetails",
     GET_INSTRUCTOR_COURSES = "getInstructorCourses",
 
+    // BLOGS KEYS
+    GET_ALL_BLOGS = "getAllBlogs",
+    GET_BLOG_DETAILS = "getBlogDetails",
+    GET_ALL_INSTRUCTOR_BLOGS = "getInstructorBlogs",
+
     // CART
     GET_MY_CART = "getMyCart",
 

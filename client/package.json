@@ -20,7 +20,9 @@
         "axios": "^1.13.2",
         "byway-mern-root": "file:..",
         "date-fns": "^4.1.0",
+        "dompurify": "^3.3.1",
         "get-video-duration": "^5.0.0",
+        "html-react-parser": "^5.2.16",
         "react": "^19.2.0",
         "react-cookie": "^8.0.1",
         "react-dom": "^19.2.0",
@@ -28,6 +30,7 @@
         "react-intersection-observer": "^10.0.0",
         "react-router": "^7.9.5",
         "react-share": "^5.2.2",
+        "react-simple-wysiwyg": "^3.4.1",
         "stripe": "^20.1.0",
         "tailwindcss": "^4.1.17"
     },

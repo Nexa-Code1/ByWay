@@ -1,5 +1,6 @@
 import visaImg from "@/assets/images/visa.png";
 import mastercardImg from "@/assets/images/mastercard.png";
+import { message } from "antd";
 
 // Helper to convert file → Base64 for image preview
 export function fileToBase64(file: File): Promise<string> {
@@ -9,6 +10,32 @@ export function fileToBase64(file: File): Promise<string> {
         reader.onerror = reject;
         reader.readAsDataURL(file);
     });
+}
+
+export function imageValidation({
+    file,
+    fileSize = "2MB",
+    fileTypes = ["image/jpeg", "image/png"],
+}: {
+    file: File;
+    fileSize?: string;
+    fileTypes?: string[];
+}) {
+    // validate type => jpg or png only
+    const valid = fileTypes.includes(file.type);
+
+    if (!valid) {
+        message.error("Only JPG/PNG images are allowed.");
+        return;
+    }
+
+    // validate size max fileSize prop
+    const isUnderFileSize =
+        file.size && file.size / 1024 / 1024 < parseFloat(fileSize);
+    if (!isUnderFileSize) {
+        message.error(`Image must be smaller than ${fileSize}.`);
+        return;
+    }
 }
 
 export async function videoUrlToFile(url: string) {

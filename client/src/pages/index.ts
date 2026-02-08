@@ -2,7 +2,7 @@ export { default as NotFound } from "./NotFound";
 export { default as Home } from "./home/Home";
 export { default as Courses } from "./courses/Courses";
 export { default as CourseDetails } from "./course-details/CourseDetails";
-export { default as SearchCourses } from "./search-courses/SearchCourses";
+export { default as Search } from "./search/Search";
 export { default as Blogs } from "./blogs/Blogs";
 export { default as BlogDetails } from "./blog-details/BlogDetails";
 export { default as BecomeInstructor } from "./become-instructor/BecomeInstructor";

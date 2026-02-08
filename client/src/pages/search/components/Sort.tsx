@@ -4,10 +4,12 @@ import { useSearchParams } from "react-router";
 import type { ISortCoursesBy } from "@/types";
 
 const options: { label: string; value: ISortCoursesBy }[] = [
-    { label: "Time Asc", value: "time-asc" },
-    { label: "Time Desc", value: "time-desc" },
-    { label: "Price Asc", value: "price-asc" },
-    { label: "Price Desc", value: "price-desc" },
+    { label: "Shortest", value: "time-asc" },
+    { label: "Longest", value: "time-desc" },
+    { label: "Lowest Price", value: "price-asc" },
+    { label: "Highest Price", value: "price-desc" },
+    { label: "Lowest Rate", value: "rate-asc" },
+    { label: "Highest Rate", value: "rate-desc" },
 ];
 
 function Sort() {

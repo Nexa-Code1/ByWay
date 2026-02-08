@@ -1,36 +1,25 @@
 import { type Dispatch, type SetStateAction } from "react";
-import { Button, Form, message, Upload } from "antd";
+import { Button, Form, Upload } from "antd";
 import { DeleteOutlined, UploadOutlined } from "@ant-design/icons";
-import { fileToBase64 } from "@/utils/helper";
+import { fileToBase64, imageValidation } from "@/utils/helper";
 
 import placeholderImg from "@/assets/images/placeholder_view.svg";
 import type { ICourseDataBasicInfo } from "@/types";
 
-type UploadCourseImageProps = {
+type CourseImageUploadProps = {
     onSetFile: Dispatch<SetStateAction<File | null>>;
     previewUrl: string | null;
     onSetPreviewUrl: Dispatch<SetStateAction<string | null>>;
 };
 
-function UploadCourseImage({
+function CourseImageUpload({
     onSetFile,
     previewUrl,
     onSetPreviewUrl,
-}: UploadCourseImageProps) {
+}: CourseImageUploadProps) {
     const handleBeforeUpload = async (file: File) => {
-        // validate type => jpg or png only
-        const valid = file.type === "image/jpeg" || file.type === "image/png";
-        if (!valid) {
-            message.error("Only JPG/PNG images are allowed.");
-            return;
-        }
-
-        // validate size max 2MB
-        const isUnder2MB = file.size && file.size / 1024 / 1024 < 2;
-        if (!isUnder2MB) {
-            message.error("Image must be smaller than 2MB.");
-            return;
-        }
+        // image validattion
+        imageValidation({ file });
 
         // hold file for later upload
         onSetFile(file);
@@ -51,14 +40,25 @@ function UploadCourseImage({
     return (
         <Form.Item<ICourseDataBasicInfo>
             name="image"
+            label={
+                <p>
+                    <span className="text-red-500">* </span>
+                    <span>Thumbnail</span>
+                </p>
+            }
             rules={[
                 {
-                    required: true,
-                    message: "Please add course thumbnail!",
+                    validator: () => {
+                        if (previewUrl) {
+                            return Promise.resolve();
+                        }
+                        return Promise.reject(
+                            new Error("Please add course thumbnail!"),
+                        );
+                    },
                 },
             ]}
             className="my-6"
-            label="Thumbnail:"
         >
             <div className="flex gap-4">
                 <div className="relative max-w-50 group">
@@ -116,4 +116,4 @@ function UploadCourseImage({
     );
 }
 
-export default UploadCourseImage;
+export default CourseImageUpload;

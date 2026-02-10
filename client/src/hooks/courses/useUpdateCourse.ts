@@ -1,24 +1,32 @@
-import { useMutation } from "@tanstack/react-query";
-
-import { handleUpdateCourse } from "@/api/courses/courses";
-import type { ICourseDataBasicInfo } from "@/types";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { message } from "antd";
 
+import { handleUpdateCourse } from "@/api/courses/courses";
+import { QUERY_KEYS } from "@/utils/queryKeys";
+
 export function useUpdateCourse() {
-    const { mutate: updateCourse, isPending: isUpdatingCourse } = useMutation({
-        mutationFn: async ({
-            courseId,
-            updatedCourseData,
-        }: {
-            courseId: string;
-            updatedCourseData: ICourseDataBasicInfo;
-        }) => {
-            return handleUpdateCourse(courseId, updatedCourseData);
-        },
-        onSuccess: () => message.success("Course updated successfully!"),
-        onError: () =>
-            message.error("Something went wrong. Cannot update course."),
-    });
+    const queryClient = useQueryClient();
+
+    const { mutateAsync: updateCourse, isPending: isUpdatingCourse } =
+        useMutation({
+            mutationFn: async ({
+                courseId,
+                updatedCourseData,
+            }: {
+                courseId: string;
+                updatedCourseData: FormData;
+            }) => {
+                return handleUpdateCourse(courseId, updatedCourseData);
+            },
+            onSuccess: () => {
+                queryClient.invalidateQueries({
+                    queryKey: [QUERY_KEYS.GET_INSTRUCTOR_COURSES],
+                });
+                message.success("Course updated successfully!");
+            },
+            onError: () =>
+                message.error("Something went wrong. Cannot update course."),
+        });
 
     return { updateCourse, isUpdatingCourse };
 }

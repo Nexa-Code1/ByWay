@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router";
 import { Button, Dropdown, type MenuProps } from "antd";
 import { MoreOutlined } from "@ant-design/icons";
-import { useCookies } from "react-cookie";
 
 import ConfirmationModal from "@/components/shared/ConfirmationModal";
 import { useDeleteCourse } from "@/hooks/courses/useDeleteCourse";
+import { handleGetCourseDetails } from "@/api/courses/courses";
+import { useNewCourseContext } from "@/instructor/context/NewCourseContext";
 
 type CourseControlMenuProps = {
     courseId: string;
@@ -12,15 +13,45 @@ type CourseControlMenuProps = {
 
 function CourseControlMenu({ courseId }: CourseControlMenuProps) {
     const navigate = useNavigate();
-    const [, setCookie] = useCookies(["draftCourseId"]);
-
+    const { setEditMode, updateBasicInfo, updateCourseContent } =
+        useNewCourseContext();
     const { deleteCourse } = useDeleteCourse();
 
-    function editCourseHandler() {
-        setCookie("draftCourseId", courseId);
-        navigate("/instructor/create-course/basic-information", {
-            state: { draftCourseId: courseId },
-        });
+    async function editCourseHandler() {
+        try {
+            // Fetch course details first
+            const courseDetails = await handleGetCourseDetails(courseId);
+
+            // Set edit mode
+            setEditMode(true, courseId);
+
+            if (courseDetails && courseDetails.course) {
+                const course = courseDetails.course;
+
+                // Update basic info
+                updateBasicInfo({
+                    title: course.title,
+                    subTitle: course.subTitle,
+                    price: course.price,
+                    description: course.description,
+                    requirements: course.requirements,
+                    category: course.category?._id,
+                    imagePreview: course.image,
+                });
+
+                // Update course content if available
+                if (course.content) {
+                    updateCourseContent(course.content);
+                }
+            }
+
+            // Navigate to basic information page
+            navigate("/instructor/create-course/basic-information");
+        } catch {
+            // Still navigate even if there's an error
+            setEditMode(true, courseId);
+            navigate("/instructor/create-course/basic-information");
+        }
     }
 
     const items: MenuProps["items"] = [

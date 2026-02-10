@@ -3,49 +3,30 @@ import { Dropdown, Space, type MenuProps } from "antd";
 
 import type { ICourseLessonUpdatedData, ICourseSectionLesson } from "@/types";
 import ConfirmationModal from "@/components/shared/ConfirmationModal";
-import { useUpdateLesson } from "@/hooks/courseSectionLessons/useUpdateLesson";
-import { useDeleteLesson } from "@/hooks/courseSectionLessons/useDeleteLesson";
-import Spinner from "@/components/shared/Spinner";
 import UploadLessonVideo from "./UploadLessonVideo";
 import UpdateLessonDescription from "./UpdateLessonDescription";
 import UpdateLessonTitle from "./UpdateLessonTitle";
+import { useNewCourseContext } from "@/instructor/context/NewCourseContext";
 
 type LessonElementProps = {
     lesson: ICourseSectionLesson;
-    courseId: string;
     sectionId: string;
 };
 
-function LessonElement({ lesson, courseId, sectionId }: LessonElementProps) {
-    const { updateLesson, isUpdatingLesson } = useUpdateLesson();
-    const { deleteLesson, isDeletingLesson } = useDeleteLesson();
+function LessonElement({ lesson, sectionId }: LessonElementProps) {
+    const { deleteLesson, updateLesson } = useNewCourseContext();
 
     function handleOk(updatedProp: ICourseLessonUpdatedData) {
-        updateLesson({
-            courseId,
-            sectionId,
-            lessonId: lesson._id,
-            updatedLesson: { ...lesson, ...updatedProp },
-        });
+        updateLesson(sectionId, lesson._id, updatedProp);
     }
 
     const items: MenuProps["items"] = [
         {
-            label: (
-                <UploadLessonVideo
-                    onOk={handleOk}
-                    isUpdatingLesson={isUpdatingLesson}
-                />
-            ),
+            label: <UploadLessonVideo onOk={handleOk} />,
             key: "0",
         },
         {
-            label: (
-                <UpdateLessonDescription
-                    onOk={handleOk}
-                    isUpdatingLesson={isUpdatingLesson}
-                />
-            ),
+            label: <UpdateLessonDescription onOk={handleOk} />,
             key: "1",
         },
     ];
@@ -67,22 +48,13 @@ function LessonElement({ lesson, courseId, sectionId }: LessonElementProps) {
                 </a>
             </Dropdown>
 
-            <UpdateLessonTitle
-                onOk={handleOk}
-                isUpdatingLesson={isUpdatingLesson}
-            />
+            <UpdateLessonTitle onOk={handleOk} />
 
             <ConfirmationModal
                 triggerBtnType="text"
                 triggerBtnStyles="bg-transparent! border-0! shadow-none! p-2! hover:text-orange-100! text-base!"
-                triggerBtnLabel={
-                    isDeletingLesson ? (
-                        <Spinner size="small" className="text-black!" />
-                    ) : (
-                        <DeleteOutlined />
-                    )
-                }
-                onConfirm={() => deleteLesson({ lessonId: lesson._id })}
+                triggerBtnLabel={<DeleteOutlined />}
+                onConfirm={() => deleteLesson(sectionId, lesson._id)}
             />
         </li>
     );

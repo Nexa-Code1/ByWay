@@ -26,7 +26,7 @@ function Checkout() {
     useEffect(() => {
         (async () => {
             const coursesIds = myCart?.cart.courses.map(
-                (course: ICourseCartRes) => course.course._id
+                (course: ICourseCartRes) => course.course._id,
             );
 
             if (!coursesIds) return;
@@ -41,8 +41,6 @@ function Checkout() {
                     },
                 },
             });
-
-            console.log(res);
 
             setClientSecret(res.paymentIntent.client_secret);
         })();

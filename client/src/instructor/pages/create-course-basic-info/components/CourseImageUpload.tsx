@@ -1,4 +1,3 @@
-import { type Dispatch, type SetStateAction } from "react";
 import { Button, Form, Upload } from "antd";
 import { DeleteOutlined, UploadOutlined } from "@ant-design/icons";
 import { fileToBase64, imageValidation } from "@/utils/helper";
@@ -7,9 +6,9 @@ import placeholderImg from "@/assets/images/placeholder_view.svg";
 import type { ICourseDataBasicInfo } from "@/types";
 
 type CourseImageUploadProps = {
-    onSetFile: Dispatch<SetStateAction<File | null>>;
+    onSetFile: (file: File | null) => void;
     previewUrl: string | null;
-    onSetPreviewUrl: Dispatch<SetStateAction<string | null>>;
+    onSetPreviewUrl: (preview: string | null) => void;
 };
 
 function CourseImageUpload({
@@ -17,24 +16,36 @@ function CourseImageUpload({
     previewUrl,
     onSetPreviewUrl,
 }: CourseImageUploadProps) {
+    // Get form instance from context
+    const formInstance = Form.useFormInstance();
     const handleBeforeUpload = async (file: File) => {
-        // image validattion
-        imageValidation({ file });
+        try {
+            // image validation - this will throw an error if validation fails
+            imageValidation({ file });
 
-        // hold file for later upload
-        onSetFile(file);
+            // hold file for later upload
+            onSetFile(file);
 
-        // convert to base64 for preview
-        const base64 = await fileToBase64(file);
-        onSetPreviewUrl(base64);
+            // convert to base64 for preview
+            const base64 = await fileToBase64(file);
+            onSetPreviewUrl(base64);
 
-        // stop uploading (default behaviour of Ant Design Upload component)
-        return false;
+            // Set the form field value to ensure proper validation
+            formInstance.setFieldValue("image", file);
+
+            // stop uploading (default behaviour of Ant Design Upload component)
+            return false;
+        } catch {
+            // If validation fails, don't process the file
+            return false;
+        }
     };
 
     const handleDelete = () => {
         onSetFile(null);
         onSetPreviewUrl(null);
+        // Clear the form field value
+        formInstance.setFieldValue("image", null);
     };
 
     return (
@@ -48,8 +59,9 @@ function CourseImageUpload({
             }
             rules={[
                 {
-                    validator: () => {
-                        if (previewUrl) {
+                    validator: (_, value) => {
+                        // Check if we have either a preview URL (for display) or a file object
+                        if (previewUrl || value instanceof File) {
                             return Promise.resolve();
                         }
                         return Promise.reject(

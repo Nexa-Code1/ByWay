@@ -9,13 +9,13 @@ function PriceInput() {
             rules={[
                 {
                     required: true,
-                    message: "Please input your course price in EGP!",
+                    message: "Please input course price!",
                 },
             ]}
             label="Price"
             className="col-span-2"
         >
-            <InputNumber className="w-full!" />
+            <InputNumber className="w-full!" placeholder="Enter price" />
         </Form.Item>
     );
 }

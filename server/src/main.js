@@ -50,7 +50,7 @@ app.use(
         credentials: true,
         methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
         allowedHeaders: ["Content-Type", "Authorization"],
-    })
+    }),
 );
 
 /* =======================
@@ -93,7 +93,7 @@ if (!isVercel) {
     app.use(express.static(path.join(__dirname, "..", "client", "dist")));
     app.use((req, res) => {
         res.sendFile(
-            path.join(__dirname, "..", "client", "dist", "index.html")
+            path.join(__dirname, "..", "client", "dist", "index.html"),
         );
     });
 }
@@ -108,7 +108,7 @@ export function bootstrap() {
         app.listen(PORT, () => {
             console.log(`✅ Server running on port ${PORT}`);
             console.log(
-                `🌍 Environment: ${process.env.NODE_ENV || "development"}`
+                `🌍 Environment: ${process.env.NODE_ENV || "development"}`,
             );
             console.log(`🔗 Local: http://localhost:${PORT}`);
         });

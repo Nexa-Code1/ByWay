@@ -1,63 +1,128 @@
+import { Button, message } from "antd";
 import { Navigate, useNavigate } from "react-router";
-import { useCookies } from "react-cookie";
-import { CheckCircleOutlined } from "@ant-design/icons";
 
-import AppSubmitBtn from "@/components/shared/AppSubmitBtn";
 import { usePublishCourse } from "@/hooks/courses/usePublishCourse";
+import { useNewCourseContext } from "@/instructor/context/NewCourseContext";
+import Spinner from "@/components/shared/Spinner";
+import FormActions from "@/instructor/components/common/FormActions";
+import CourseContentSummary from "./components/CourseContentSummary";
+import CourseImagePreview from "./components/CourseImagePreview";
+import CourseDataEle from "./components/CourseDataEle";
 import { useGetCourseDetails } from "@/hooks/courses/useGetCourseDetails";
 
 function CreateCoursePublish() {
     const navigate = useNavigate();
-    const [cookies, , removeCookie] = useCookies(["draftCourseId"]);
-    const { draftCourseId } = cookies;
 
-    const { courseDetails } = useGetCourseDetails(draftCourseId);
+    const { state, resetCourse, canPublish, hasCourseContent } =
+        useNewCourseContext();
+
+    const { courseDetails, isLoading, error } = useGetCourseDetails(
+        state.draftCourseId || "",
+    );
     const { publishCourse, isPublishingCourse } = usePublishCourse();
 
-    function publishCourseHandler() {
-        removeCookie("draftCourseId");
-        publishCourse({ courseId: draftCourseId });
-        navigate("/instructor/my-courses");
-    }
+    const handlePublish = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        // Use context validation function to check if all required data exists
+        if (!canPublish) {
+            return message.error(
+                "Please complete all required course information, add course content with lessons, and upload a course image before publishing.",
+            );
+        } else {
+            await publishCourse({ courseId: state.draftCourseId || "" });
+            resetCourse();
+            navigate("/instructor/my-courses");
+        }
+    };
 
-    if (!draftCourseId || !courseDetails?.course.content.length)
+    const handleCancel = () => {
+        resetCourse();
+        navigate("/instructor/my-courses");
+    };
+
+    if (!hasCourseContent)
         return <Navigate to="/instructor/create-course/basic-information" />;
 
+    if (isPublishingCourse) {
+        return <Spinner className="text-primary-700! mt-50!" size="large" />;
+    }
+
     return (
-        <div className="flex flex-col items-center text-center gap-4">
-            <CheckCircleOutlined className="text-primary-main! text-6xl!" />
+        <form onSubmit={handlePublish} className="mb-10">
+            {/* Course Preview */}
+            <div className="mb-8 p-6 bg-gray-50 rounded-lg">
+                <h2 className="text-xl font-semibold text-gray-800 mb-4">
+                    Course Preview
+                    {!isLoading && !error && courseDetails.course?.status && (
+                        <span className="mx-4 px-4 py-1 text-sm bg-orange-100 rounded-full text-gray-100">
+                            {courseDetails.course.status}
+                        </span>
+                    )}
+                </h2>
 
-            <p className="font-medium text-lg">
-                You’ve successfully completed all the steps to create your
-                course
-            </p>
-            <p>
-                Your course is currently saved as a draft and is not visible to
-                learners yet.
-            </p>
-            <p>
-                You’re now in the final step
-                <br /> Once you publish the course, it will become publicly
-                available and visible to all users on the platform.
-            </p>
-            <p>
-                You can still edit your content after publishing, but publishing
-                confirms that your course is ready for learners.
-            </p>
-            <p className="text-primary-700 font-medium">
-                When you’re ready, click “Publish Course” to make it live.
-            </p>
+                <div className="space-y-4">
+                    <ul>
+                        <CourseDataEle title="title" value={state.title} />
+                        <CourseDataEle
+                            title="subTitle"
+                            value={state.subTitle}
+                        />
+                        <CourseDataEle
+                            title="price"
+                            value={state.price.toString()}
+                        />
+                        <CourseDataEle
+                            title="description"
+                            value={state.description}
+                        />
+                        <CourseDataEle
+                            title="requirements"
+                            value={state.requirements.join(" | ")}
+                        />
+                    </ul>
 
-            <form onSubmit={publishCourseHandler}>
-                <AppSubmitBtn
-                    isLoading={isPublishingCourse}
-                    type="primary"
-                    className="bg-orange-100!"
+                    {/* Course Content Summary */}
+                    <CourseContentSummary courseContent={state.courseContent} />
+
+                    {state.imagePreview && (
+                        <CourseImagePreview imagePreview={state.imagePreview} />
+                    )}
+                </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex justify-between items-center gap-4">
+                <Button
+                    onClick={() =>
+                        navigate("/instructor/create-course/curriculum")
+                    }
+                    className="border-orange-100! text-orange-100! hover:-translate-y-0.5"
+                    disabled={isPublishingCourse}
                 >
-                    Publish Course
-                </AppSubmitBtn>
-            </form>
-        </div>
+                    Back to Edit
+                </Button>
+
+                <FormActions
+                    onCancel={handleCancel}
+                    submitLabel={
+                        isPublishingCourse ? (
+                            <>
+                                <div className="w-4 h-4 border-2 border-white border-t-transparent border-r-transparent animate-spin"></div>
+                                Publishing...
+                            </>
+                        ) : (
+                            "Publish Course"
+                        )
+                    }
+                    isLoading={isPublishingCourse}
+                    disabled={
+                        !isLoading &&
+                        !error &&
+                        courseDetails.course?.status === "published"
+                    }
+                />
+            </div>
+        </form>
     );
 }
 

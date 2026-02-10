@@ -4,164 +4,167 @@ import bcrypt from "bcrypt";
 import { v2 as cloudinary } from "cloudinary";
 
 export const getProfile = async (req, res) => {
-  const { _id } = req.user;
+    const { _id } = req.user;
 
-  const user = await usersModel.findById(_id).select("-password -__v");
+    const user = await usersModel.findById(_id).select("-password -__v");
 
-  if (!user) {
-    return res.status(404).json({ message: "User not found" });
-  }
+    if (!user) {
+        return res.status(404).json({ message: "User not found" });
+    }
 
-  return res
-    .status(200)
-    .json({ message: "User profile fetched successfully", user });
+    return res
+        .status(200)
+        .json({ message: "User profile fetched successfully", user });
 };
 
 export const getUserProfileById = async (req, res) => {
-  const { id } = req.params;
+    const { id } = req.params;
 
-  const user = await usersModel.findById(id).select("-password -__v");
+    const user = await usersModel.findById(id).select("-password -__v");
 
-  if (!user) {
-    return res.status(404).json({ message: "User not found" });
-  }
+    if (!user) {
+        return res.status(404).json({ message: "User not found" });
+    }
 
-  return res
-    .status(200)
-    .json({ message: "User profile fetched successfully", user });
+    return res
+        .status(200)
+        .json({ message: "User profile fetched successfully", user });
 };
 
 export const updateProfile = async (req, res) => {
-  const { _id } = req.user;
-  const { firstName, lastName, headLine, bio, language, links, isPrivate } =
-    req.body;
+    const { _id } = req.user;
+    const { firstName, lastName, headLine, bio, language, links, isPrivate } =
+        req.body;
 
-  const user = await usersModel.findByIdAndUpdate(
-    _id,
-    {
-      firstName,
-      lastName,
-      headLine,
-      bio,
-      language,
-      links,
-      isPrivate,
-    },
-    { new: true },
-  );
+    const user = await usersModel.findByIdAndUpdate(
+        _id,
+        {
+            firstName,
+            lastName,
+            headLine,
+            bio,
+            language,
+            links,
+            isPrivate,
+        },
+        { new: true },
+    );
 
-  return res.status(200).json({ message: "User profile updated successfully" });
+    return res
+        .status(200)
+        .json({ message: "User profile updated successfully" });
 };
 
 export const updatePassword = async (req, res) => {
-  const { _id } = req.user;
-  const { currentPassword, newPassword, confirmPassword } = req.body;
+    const { _id } = req.user;
+    const { currentPassword, newPassword, confirmPassword } = req.body;
 
-  if (newPassword !== confirmPassword) {
-    return res.status(400).json({ message: "Passwords do not match" });
-  }
+    if (newPassword !== confirmPassword) {
+        return res.status(400).json({ message: "Passwords do not match" });
+    }
 
-  const user = await usersModel.findById(_id);
+    const user = await usersModel.findById(_id);
 
-  if (!user) {
-    return res.status(404).json({ message: "User not found" });
-  }
+    if (!user) {
+        return res.status(404).json({ message: "User not found" });
+    }
 
-  const isPasswordMatched = bcrypt.compareSync(currentPassword, user.password);
-  const isPasswordReMatched = bcrypt.compareSync(newPassword, user.password);
+    const isPasswordMatched = bcrypt.compareSync(
+        currentPassword,
+        user.password,
+    );
+    const isPasswordReMatched = bcrypt.compareSync(newPassword, user.password);
 
-  if (!isPasswordMatched) {
-    return res.status(400).json({ message: "Invalid current password" });
-  }
+    if (!isPasswordMatched) {
+        return res.status(400).json({ message: "Invalid current password" });
+    }
 
-  if (isPasswordReMatched) {
+    if (isPasswordReMatched) {
+        return res
+            .status(400)
+            .json({ message: "New password is same as current password" });
+    }
+
+    user.password = bcrypt.hashSync(newPassword, +process.env.SALT);
+
+    await user.save();
+
     return res
-      .status(400)
-      .json({ message: "New password is same as current password" });
-  }
-
-  user.password = bcrypt.hashSync(newPassword, +process.env.SALT);
-
-  await user.save();
-
-  return res
-    .status(200)
-    .json({ message: "User password updated successfully" });
+        .status(200)
+        .json({ message: "User password updated successfully" });
 };
 
 export const uploadImage = async (req, res) => {
-  const { _id } = req.user;
+    const { _id } = req.user;
 
-  if (!req.file) {
-    return res.status(400).json({ message: "No image uploaded" });
-  }
+    if (!req.file) {
+        return res.status(400).json({ message: "No image uploaded" });
+    }
 
-  const imageURL = req.file.fullUrl;
+    const imageURL = req.file.fullUrl;
 
-  const user = await usersModel.findById(_id);
+    const user = await usersModel.findById(_id);
 
-  if (!user) {
-    return res.status(404).json({ message: "User not found" });
-  }
+    if (!user) {
+        return res.status(404).json({ message: "User not found" });
+    }
 
-  // Delete old image
-  if (user.image) {
-    await deleteOldImage(user.image);
-  }
+    // Delete old image
+    if (user.image) {
+        await deleteOldImage(user.image);
+    }
 
-  await usersModel.updateOne({ _id }, { image: imageURL });
+    await usersModel.updateOne({ _id }, { image: imageURL });
 
-  return res
-    .status(200)
-    .json({ message: "Profile image uploaded successfully", imageURL });
+    return res
+        .status(200)
+        .json({ message: "Profile image uploaded successfully", imageURL });
 };
 
 export const deleteImage = async (req, res) => {
-  const { _id } = req.user;
+    const { _id } = req.user;
 
-  const user = await usersModel.findById(_id);
+    const user = await usersModel.findById(_id);
 
-  if (user && user.image) {
-    await deleteOldImage(user.image);
-  }
+    if (user && user.image) {
+        await deleteOldImage(user.image);
+    }
 
-  await usersModel.findByIdAndUpdate(_id, {
-    $unset: { image: 1 },
-  });
+    await usersModel.findByIdAndUpdate(_id, {
+        $unset: { image: 1 },
+    });
 
-  return res
-    .status(200)
-    .json({ message: "Profile image deleted successfully" });
+    return res
+        .status(200)
+        .json({ message: "Profile image deleted successfully" });
 };
 
 // Helper function to delete old images
 async function deleteOldImage(imageUrl) {
-  const isVercel = process.env.VERCEL === "1";
+    const isVercel = process.env.VERCEL === "1";
 
-  if (imageUrl.includes("cloudinary.com")) {
-    // Delete from Cloudinary
-    try {
-      const parts = imageUrl.split("/upload/");
-      if (parts.length > 1) {
-        const publicIdWithExt = parts[1].split("/").slice(1).join("/");
-        const publicId = publicIdWithExt.split(".")[0];
+    if (imageUrl.includes("cloudinary.com")) {
+        // Delete from Cloudinary
+        try {
+            const parts = imageUrl.split("/upload/");
+            if (parts.length > 1) {
+                const publicIdWithExt = parts[1].split("/").slice(1).join("/");
+                const publicId = publicIdWithExt.split(".")[0];
 
-        await cloudinary.uploader.destroy(publicId);
-        console.log("Deleted from Cloudinary:", publicId);
-      }
-    } catch (error) {
-      console.error("Error deleting from Cloudinary:", error);
+                await cloudinary.uploader.destroy(publicId);
+            }
+        } catch (error) {
+            console.error("Error deleting from Cloudinary:", error);
+        }
+    } else if (!isVercel) {
+        // Delete from local storage (only in development)
+        try {
+            const imagePath = imageUrl.replace(/^https?:\/\/[^\/]+\//, "");
+            if (fs.existsSync(imagePath)) {
+                fs.unlinkSync(imagePath);
+            }
+        } catch (error) {
+            console.error("Error deleting local file:", error);
+        }
     }
-  } else if (!isVercel) {
-    // Delete from local storage (only in development)
-    try {
-      const imagePath = imageUrl.replace(/^https?:\/\/[^\/]+\//, "");
-      if (fs.existsSync(imagePath)) {
-        fs.unlinkSync(imagePath);
-        console.log("Deleted local file:", imagePath);
-      }
-    } catch (error) {
-      console.error("Error deleting local file:", error);
-    }
-  }
 }

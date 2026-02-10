@@ -4,14 +4,13 @@ import { handlePublishCourse } from "@/api/courses/courses";
 import { message } from "antd";
 
 export function usePublishCourse() {
-    const { mutate: publishCourse, isPending: isPublishingCourse } =
+    const { mutateAsync: publishCourse, isPending: isPublishingCourse } =
         useMutation({
-            mutationFn: async ({ courseId }: { courseId: string }) => {
-                return handlePublishCourse(courseId);
-            },
-            onSuccess: () => message.success("Course updated successfully!"),
+            mutationFn: async ({ courseId }: { courseId: string }) =>
+                handlePublishCourse(courseId),
+            onSuccess: () => message.success("Course published successfully!"),
             onError: () =>
-                message.error("Something went wrong. Cannot update course."),
+                message.error("Something went wrong. Cannot publish course."),
         });
 
     return { publishCourse, isPublishingCourse };

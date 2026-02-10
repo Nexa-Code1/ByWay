@@ -62,7 +62,7 @@ function ConfirmationModal({
                         onClick={handleOk}
                         className="bg-orange-100!"
                     >
-                        Save
+                        Continue
                     </Button>,
                 ]}
             >

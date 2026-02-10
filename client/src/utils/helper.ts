@@ -26,7 +26,7 @@ export function imageValidation({
 
     if (!valid) {
         message.error("Only JPG/PNG images are allowed.");
-        return;
+        throw new Error("Only JPG/PNG images are allowed.");
     }
 
     // validate size max fileSize prop
@@ -34,7 +34,7 @@ export function imageValidation({
         file.size && file.size / 1024 / 1024 < parseFloat(fileSize);
     if (!isUnderFileSize) {
         message.error(`Image must be smaller than ${fileSize}.`);
-        return;
+        throw new Error(`Image must be smaller than ${fileSize}.`);
     }
 }
 
@@ -64,4 +64,25 @@ export const formatDuration = (durationInSeconds: number) => {
         String(mins).padStart(2, "0"),
         String(secs).padStart(2, "0"),
     ].join(":");
+};
+
+/**
+ * Utility functions for handling MongoDB ObjectIds
+ * Generate a valid MongoDB ObjectId string (24 hex characters)
+ */
+export const generateObjectId = (): string => {
+    // Generate exactly 24 hex characters
+    const timestamp = Date.now().toString(16).padStart(8, "0"); // 8 chars
+    const random = Math.random().toString(16).substring(2, 18); // 16 chars
+    const id = (timestamp + random).substring(0, 24);
+
+    // Validate the generated ID
+    if (!/^[0-9a-f]{24}$/.test(id)) {
+        // Fallback to a simpler method if something goes wrong
+        return Array.from({ length: 24 }, () =>
+            Math.floor(Math.random() * 16).toString(16),
+        ).join("");
+    }
+
+    return id;
 };

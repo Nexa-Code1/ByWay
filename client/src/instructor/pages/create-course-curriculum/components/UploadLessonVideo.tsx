@@ -2,17 +2,15 @@ import { useState } from "react";
 import { Button, message, Upload } from "antd";
 import { DeleteOutlined, UploadOutlined } from "@ant-design/icons";
 
-import Spinner from "@/components/shared/Spinner";
 import InputModal from "./InputModal";
 import IconBtn from "@/components/shared/IconBtn";
 import type { ICourseLessonUpdatedData } from "@/types";
 
 type UploadLessonVideoProps = {
     onOk(updatedProp: ICourseLessonUpdatedData): void;
-    isUpdatingLesson: boolean;
 };
 
-function UploadLessonVideo({ onOk, isUpdatingLesson }: UploadLessonVideoProps) {
+function UploadLessonVideo({ onOk }: UploadLessonVideoProps) {
     const [file, setFile] = useState<File | null>(null);
 
     async function handleBeforeUpload(file: File) {
@@ -40,13 +38,7 @@ function UploadLessonVideo({ onOk, isUpdatingLesson }: UploadLessonVideoProps) {
     return (
         <InputModal
             onOk={() => file !== null && onOk({ link: file })}
-            icon={
-                isUpdatingLesson ? (
-                    <Spinner size="small" className="text-black!" />
-                ) : (
-                    <p className="text-sm p-0">Upload Video</p>
-                )
-            }
+            icon={<p className="text-sm p-0">Upload Video</p>}
             modalTitle="Edit Lecture Video"
         >
             <div className="flex gap-2">

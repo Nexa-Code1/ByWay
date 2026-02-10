@@ -4,13 +4,13 @@ import { authenticationMiddleware } from "../../Middlewares/authentication.middl
 import { authorizationMiddleware } from "../../Middlewares/authorization.middleware.js";
 import { USER_ROLES, USER_TYPES } from "../../Constants/constants.js";
 import {
-    createCourse,
+    createCourseWithContent,
     deleteCourse,
     getAllCourses,
     getCourseDetails,
     getInstructorCourses,
     publishCourse,
-    updateCourse,
+    updateCourseWithContent,
 } from "./Services/course.service.js";
 import { Multer } from "../../Middlewares/multer.middleware.js";
 import { IMAGE_TYPES } from "../../Constants/constants.js";
@@ -22,14 +22,15 @@ coursesRouter.post(
     authenticationMiddleware,
     authorizationMiddleware(USER_ROLES.INSTRUCTOR),
     Multer("Courses/Images", IMAGE_TYPES).single("image"),
-    errorHandlerMiddleware(createCourse),
+    errorHandlerMiddleware(createCourseWithContent),
 );
 
 coursesRouter.put(
     "/update-course/:id",
     authenticationMiddleware,
     authorizationMiddleware(USER_ROLES.INSTRUCTOR),
-    errorHandlerMiddleware(updateCourse),
+    Multer("Courses/Images", IMAGE_TYPES).single("image"),
+    errorHandlerMiddleware(updateCourseWithContent),
 );
 
 coursesRouter.delete(

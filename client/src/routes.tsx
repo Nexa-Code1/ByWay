@@ -48,6 +48,7 @@ import {
 } from "./instructor/pages";
 
 import AppLayout from "@/components/layout/AppLayout";
+import NewCourseProvider from "./instructor/context/NewCourseContext";
 
 export const router = createBrowserRouter([
     // Public
@@ -187,7 +188,9 @@ export const router = createBrowserRouter([
         path: "/instructor",
         element: (
             <ProtectedRoute roles={["instructor"]}>
-                <InstructorLayout />
+                <NewCourseProvider>
+                    <InstructorLayout />
+                </NewCourseProvider>
             </ProtectedRoute>
         ),
         children: [

@@ -12,51 +12,35 @@ import InputModal from "./InputModal";
 import IconBtn from "@/components/shared/IconBtn";
 import type { ICourseContent } from "@/types";
 import ConfirmationModal from "@/components/shared/ConfirmationModal";
-import { useDeleteCourseSection } from "@/hooks/courseSections/useDeleteCourseSection";
-import { useUpdateCourseSection } from "@/hooks/courseSections/useUpdateCourseSection";
-import Spinner from "@/components/shared/Spinner";
-import { useCreateLesson } from "@/hooks/courseSectionLessons/useCreateLesson";
 import placeholderVideo from "@/assets/videos/placeholder-video.mp4";
-import { videoUrlToFile } from "@/utils/helper";
+import { generateObjectId, videoUrlToFile } from "@/utils/helper";
+import { useNewCourseContext } from "@/instructor/context/NewCourseContext";
 
 type CourseSectionProps = {
     index: number;
     item: ICourseContent;
-    courseId: string;
 };
 
-function CourseSection({ item, index, courseId }: CourseSectionProps) {
-    const { deleteCourseSection, isDeletingCourseSection } =
-        useDeleteCourseSection();
-    const { updateCourseSection, isUpdatingCourseSection } =
-        useUpdateCourseSection();
-    const { createLesson, isCreatingLesson } = useCreateLesson();
+function CourseSection({ item, index }: CourseSectionProps) {
+    const { deleteSection, updateSection, addLesson } = useNewCourseContext();
 
     const [newSectionName, setNewSectionName] = useState("");
 
     function handleOk() {
-        updateCourseSection({
-            courseId,
-            sectionId: item._id,
-            section: newSectionName,
-        });
+        updateSection(item._id, newSectionName);
         setNewSectionName("");
-    }
-
-    function handleDeleteCourseSection() {
-        deleteCourseSection({ sectionId: item._id, courseId });
     }
 
     async function handleAddNewLesson() {
         const videoFile = await videoUrlToFile(placeholderVideo);
-        createLesson({
-            courseId,
-            sectionId: item._id,
-            lessonData: {
-                link: videoFile,
-                title: "New Lesson",
-                description: "",
-            },
+        addLesson(item._id, {
+            _id: generateObjectId(),
+            section_ID: item._id,
+            title: "New Lesson",
+            description: "",
+            isCompleted: false,
+            link: videoFile,
+            duration: 0,
         });
     }
 
@@ -72,22 +56,12 @@ function CourseSection({ item, index, courseId }: CourseSectionProps) {
                 </h3>
                 <div className="flex items-center">
                     <IconBtn onClick={handleAddNewLesson}>
-                        {isCreatingLesson ? (
-                            <Spinner size="small" className="text-black!" />
-                        ) : (
-                            <PlusOutlined />
-                        )}
+                        <PlusOutlined />
                     </IconBtn>
 
                     <InputModal
                         onOk={handleOk}
-                        icon={
-                            isUpdatingCourseSection ? (
-                                <Spinner size="small" className="text-black!" />
-                            ) : (
-                                <EditOutlined />
-                            )
-                        }
+                        icon={<EditOutlined />}
                         modalTitle="Edit Section Name"
                     >
                         <p className="mb-2 pt-4 border-t border-t-gray-200">
@@ -102,14 +76,8 @@ function CourseSection({ item, index, courseId }: CourseSectionProps) {
                     <ConfirmationModal
                         triggerBtnType="text"
                         triggerBtnStyles="bg-transparent! border-0! shadow-none! hover:text-orange-100! text-base!"
-                        triggerBtnLabel={
-                            isDeletingCourseSection ? (
-                                <Spinner size="small" className="text-black!" />
-                            ) : (
-                                <DeleteOutlined />
-                            )
-                        }
-                        onConfirm={handleDeleteCourseSection}
+                        triggerBtnLabel={<DeleteOutlined />}
+                        onConfirm={() => deleteSection(item._id)}
                     />
                 </div>
             </div>
@@ -120,7 +88,6 @@ function CourseSection({ item, index, courseId }: CourseSectionProps) {
                         <LessonElement
                             key={lesson._id}
                             lesson={lesson}
-                            courseId={courseId}
                             sectionId={item._id}
                         />
                     ))}

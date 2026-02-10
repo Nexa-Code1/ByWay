@@ -1,88 +1,109 @@
-import { useLocation, useNavigate } from "react-router";
-import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import { Form, type FormProps } from "antd";
 import Input from "antd/es/input/Input";
 import TextArea from "antd/es/input/TextArea";
+import { useEffect, useMemo, useState } from "react";
 
 import type { ICourseDataBasicInfo } from "@/types";
 import PriceInput from "./components/PriceInput";
 import CourseRequirements from "./components/CourseRequirements";
 import CategorySelect from "./components/CategorySelect";
 import CourseImageUpload from "./components/CourseImageUpload";
-import { useCreateNewCourse } from "@/hooks/courses/useCreateNewCourse";
-import { useUpdateCourse } from "@/hooks/courses/useUpdateCourse";
-import { useGetCourseDetails } from "@/hooks/courses/useGetCourseDetails";
 import FormActions from "@/instructor/components/common/FormActions";
-import Spinner from "@/components/shared/Spinner";
+import { useNewCourseContext } from "@/instructor/context/NewCourseContext";
 
 function CreateCourseBasicInfo() {
     const [form] = Form.useForm();
     const navigate = useNavigate();
-    const location = useLocation();
-    const draftCourseId = location.state?.draftCourseId;
 
-    const { courseDetails, isLoading, error } =
-        useGetCourseDetails(draftCourseId);
-    const { createNewCourse, isCreatingNewCourse } = useCreateNewCourse();
-    const { updateCourse, isUpdatingCourse } = useUpdateCourse();
+    const {
+        state: {
+            title,
+            subTitle,
+            price,
+            description,
+            requirements,
+            image,
+            imagePreview,
+            category,
+            courseContent,
+            isEditMode,
+        },
+        updateBasicInfo,
+        resetCourse,
+    } = useNewCourseContext();
 
-    const [requirements, setRequirements] = useState<string[]>([]);
-    const [file, setFile] = useState<File | null>(null);
-    const [previewUrl, setPreviewUrl] = useState<string | null>(null); // for UI preview
+    const [curRequirements, setCurRequirements] =
+        useState<string[]>(requirements);
 
+    const initialValues: ICourseDataBasicInfo = useMemo(
+        () => ({
+            title,
+            subTitle,
+            price,
+            description,
+            requirements,
+            category,
+            imagePreview,
+            content: courseContent,
+            image: image, // Ensure the actual file is in initial values
+        }),
+        [
+            title,
+            subTitle,
+            price,
+            description,
+            requirements,
+            category,
+            imagePreview,
+            courseContent,
+            image,
+        ],
+    );
+
+    // Update form values when in edit mode and data changes
     useEffect(() => {
-        if (!isLoading && !error && courseDetails) {
-            setRequirements(courseDetails.course.requirements);
-            setPreviewUrl(courseDetails.course.image);
-
-            // Update form fields with course data
+        if (isEditMode && form) {
             form.setFieldsValue({
-                title: courseDetails.course.title,
-                subTitle: courseDetails.course.subTitle,
-                price: courseDetails.course.price,
-                description: courseDetails.course.description,
-                category: courseDetails.course.category._id,
+                title,
+                subTitle,
+                price,
+                description,
+                requirements,
+                category,
+                imagePreview,
+                content: courseContent,
+                image: image,
             });
         }
-    }, [isLoading, error, courseDetails, form]);
-
-    if (isLoading)
-        return <Spinner className="text-primary-700! mt-50!" size="large" />;
-
-    const initialValues: ICourseDataBasicInfo = {
-        title: "",
-        subTitle: "",
-        price: 100,
-        description: "",
+    }, [
+        isEditMode,
+        title,
+        subTitle,
+        price,
+        description,
         requirements,
-        content: [],
-        category: "",
-        image: null,
+        category,
+        imagePreview,
+        courseContent,
+        image,
+        form,
+    ]);
+
+    const onFinish: FormProps<ICourseDataBasicInfo>["onFinish"] = (values) => {
+        // Update context with form values
+        updateBasicInfo({
+            ...values,
+            requirements: curRequirements,
+        });
+
+        // Navigate to curriculum page
+        navigate("/instructor/create-course/curriculum");
     };
 
-    const onFinish: FormProps<ICourseDataBasicInfo>["onFinish"] = async (
-        values,
-    ) => {
-        const courseData = {
-            ...values,
-            requirements,
-            content: [],
-            image: file,
-            imagePreview: previewUrl,
-        };
-        if (draftCourseId)
-            updateCourse({
-                courseId: draftCourseId,
-                updatedCourseData: courseData,
-            });
-        else {
-            createNewCourse(courseData, {
-                onSuccess: (courseData) =>
-                    navigate("/instructor/create-course/curriculum", {
-                        state: { draftCourseId: courseData._id },
-                    }),
-            });
-        }
+    const handleCancel = () => {
+        resetCourse();
+        navigate("/instructor/my-courses");
     };
 
     return (
@@ -148,23 +169,25 @@ function CreateCourseBasicInfo() {
 
             {/* Add Course requirement */}
             <CourseRequirements
-                requirements={requirements}
-                onSetRequirements={setRequirements}
+                requirements={curRequirements}
+                onSetCurRequirements={setCurRequirements}
             />
 
             {/* Course image */}
             <CourseImageUpload
-                onSetFile={setFile}
-                previewUrl={previewUrl}
-                onSetPreviewUrl={setPreviewUrl}
+                onSetFile={(file) => updateBasicInfo({ image: file })}
+                onSetPreviewUrl={(preview) =>
+                    updateBasicInfo({ imagePreview: preview })
+                }
+                previewUrl={imagePreview}
             />
 
             {/* Submit form */}
             <div className="self-end flex items-center gap-4 mt-4! mb-10!">
                 <FormActions
-                    isLoading={isCreatingNewCourse || isUpdatingCourse}
-                    cancelLink="/instructor/my-courses"
-                    submitText="Save & Next"
+                    isLoading={false}
+                    onCancel={handleCancel}
+                    submitLabel={isEditMode ? "Update & Next" : "Save & Next"}
                 />
             </div>
         </Form>

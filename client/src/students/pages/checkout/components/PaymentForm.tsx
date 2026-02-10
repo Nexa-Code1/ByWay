@@ -45,7 +45,6 @@ function PaymentForm({ cartTotalPrice, customerId }: PaymentFormProps) {
                 },
             });
             // Purchase courses API
-            console.log(res);
         } else {
             const { error, paymentIntent } = await stripe.confirmPayment({
                 elements,
@@ -54,7 +53,6 @@ function PaymentForm({ cartTotalPrice, customerId }: PaymentFormProps) {
             if (error) {
                 return message.error(error.message as string);
             } else {
-                console.log(paymentIntent);
                 // Purchase courses API
             }
         }

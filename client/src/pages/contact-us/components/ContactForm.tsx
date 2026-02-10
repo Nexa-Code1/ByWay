@@ -17,7 +17,6 @@ function ContactForm() {
     const [form] = Form.useForm();
 
     const onFinish: FormProps<IContactUs>["onFinish"] = async (values) => {
-        console.log(values);
         form.resetFields();
     };
 

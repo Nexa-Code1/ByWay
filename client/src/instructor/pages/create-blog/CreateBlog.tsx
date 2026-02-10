@@ -1,4 +1,4 @@
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { useEffect, useState } from "react";
 import { Form, type FormProps } from "antd";
 import DOMPurify from "dompurify";
@@ -14,6 +14,7 @@ import Spinner from "@/components/shared/Spinner";
 import { useUpdateBlog } from "@/hooks/blogs/useUpdateBlog";
 
 function CreateBlog() {
+    const navigate = useNavigate();
     const location = useLocation();
     const [form] = Form.useForm();
 
@@ -100,8 +101,8 @@ function CreateBlog() {
             {/* Form Actions */}
             <FormActions
                 isLoading={isCreatingBlog || isUpdatingBlog}
-                cancelLink="/instructor/my-blogs"
-                submitText={
+                onCancel={() => navigate("/instructor/my-blogs")}
+                submitLabel={
                     location.state?.blogId ? "Update Blog" : "Create Blog"
                 }
             />

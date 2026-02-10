@@ -4,56 +4,68 @@ import Input from "antd/es/input/Input";
 import { CloseOutlined, PlusOutlined } from "@ant-design/icons";
 
 import IconBtn from "@/components/shared/IconBtn";
-import type { ICourseDataBasicInfo } from "@/types";
 
 type CourseRequirementsProps = {
     requirements: string[];
-    onSetRequirements: Dispatch<SetStateAction<string[]>>;
+    onSetCurRequirements: Dispatch<SetStateAction<string[]>>;
 };
 
 function CourseRequirements({
     requirements,
-    onSetRequirements,
+    onSetCurRequirements,
 }: CourseRequirementsProps) {
     const [value, setValue] = useState("");
+    const form = Form.useFormInstance();
 
     function handleAddRequirement() {
-        if (!value) return;
-        if (requirements.includes(value))
+        if (!value.trim()) return setValue("");
+        if (requirements.includes(value.trim()))
             return message.error("Requirement is already exist.");
-        onSetRequirements((prev) => [...prev, value.trim()]);
+
+        onSetCurRequirements((prev) => [...prev, value.trim()]);
+
+        // Update form field value
+        form.setFieldValue("requirements", requirements);
         setValue("");
     }
 
     function handleDeleteRequirement(requirement: string) {
-        onSetRequirements((prev) =>
-            prev.filter((item) => item !== requirement),
+        const newRequirements = requirements.filter(
+            (item) => item !== requirement,
         );
+        onSetCurRequirements(newRequirements);
+
+        // Update form field value
+        form.setFieldValue("requirements", newRequirements);
     }
 
     return (
         <div className="mb-6">
-            <Form.Item<ICourseDataBasicInfo>
-                name="requirements"
-                label="Requirements"
-            >
-                <div className="w-full! flex items-center">
-                    <Input
-                        placeholder="Please input"
-                        value={value}
-                        onChange={(e) => setValue(e.target.value)}
-                    />
-                    <Button
-                        type="text"
-                        htmlType="button"
-                        className="text-orange-100! flex gap-2 bg-transparent!"
-                        onClick={handleAddRequirement}
+            <div className="w-full! flex items-center mb-6">
+                <div>
+                    <label
+                        htmlFor="requirements"
+                        className="inline-block! w-24!"
                     >
-                        <PlusOutlined />
-                        <span className="hidden md:block">Add requirement</span>
-                    </Button>
+                        Requirements:
+                    </label>
                 </div>
-            </Form.Item>
+                <Input
+                    id="requirements"
+                    placeholder="Please input"
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
+                />
+                <Button
+                    type="text"
+                    htmlType="button"
+                    className="text-orange-100! flex gap-2 bg-transparent!"
+                    onClick={handleAddRequirement}
+                >
+                    <PlusOutlined />
+                    <span className="hidden md:block">Add requirement</span>
+                </Button>
+            </div>
             {requirements.length > 0 && (
                 <ul className="grid grid-cols-2 gap-2">
                     {requirements.map((requirement) => (

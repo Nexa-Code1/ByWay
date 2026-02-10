@@ -249,9 +249,10 @@ export interface ICourseDataBasicInfo {
     price: number;
     description: string;
     requirements: string[];
-    content: string[];
+    content: ICourseContent[];
     category: string;
     image: File | null;
+    imagePreview: string | null;
 }
 
 export interface ICourseContent {
@@ -308,3 +309,85 @@ export interface IBlogFormData {
     category: string;
     image: File | null;
 }
+
+// State interface for the reducer
+export interface NewCourseState {
+    // Basic course info
+    title: string;
+    subTitle: string;
+    price: number;
+    description: string;
+    requirements: string[];
+    category: string;
+    image: File | null;
+    imagePreview: string | null;
+
+    // Course content (sections and lessons)
+    courseContent: ICourseContent[];
+
+    // Course state
+    isEditMode: boolean;
+    draftCourseId: string | null;
+}
+
+export interface NewCourseContextType {
+    state: NewCourseState;
+    // Actions
+    updateBasicInfo: (info: Partial<ICourseDataBasicInfo>) => void;
+    updateCourseContent: (content: ICourseContent[]) => void;
+    addSection: () => void;
+    updateSection: (sectionId: string, sectionName: string) => void;
+    deleteSection: (sectionId: string) => void;
+    addLesson: (sectionId: string, lesson: ICourseSectionLesson) => void;
+    updateLesson: (
+        sectionId: string,
+        lessonId: string,
+        lesson: Partial<ICourseSectionLesson>,
+    ) => void;
+    deleteLesson: (sectionId: string, lessonId: string) => void;
+    setEditMode: (isEdit: boolean, draftId?: string) => void;
+    resetCourse: () => void;
+    reorderCourseContent: (content: ICourseContent[]) => void;
+    reorderLessons: (
+        sectionId: string,
+        lessons: ICourseSectionLesson[],
+    ) => void;
+    // Validation functions
+    hasBasicInfo: boolean;
+    hasCourseContent: boolean;
+    canPublish: boolean;
+}
+
+// Action types for the reducer
+export type NewCourseAction =
+    | { type: "SET_BASIC_INFO"; payload: Partial<ICourseDataBasicInfo> }
+    | { type: "SET_COURSE_CONTENT"; payload: ICourseContent[] }
+    | { type: "ADD_SECTION" }
+    | {
+          type: "UPDATE_SECTION";
+          payload: { sectionId: string; sectionName: string };
+      }
+    | { type: "DELETE_SECTION"; payload: string }
+    | {
+          type: "ADD_LESSON";
+          payload: { sectionId: string; lesson: ICourseSectionLesson };
+      }
+    | {
+          type: "UPDATE_LESSON";
+          payload: {
+              sectionId: string;
+              lessonId: string;
+              lesson: Partial<ICourseSectionLesson>;
+          };
+      }
+    | {
+          type: "DELETE_LESSON";
+          payload: { sectionId: string; lessonId: string };
+      }
+    | { type: "SET_EDIT_MODE"; payload: { isEdit: boolean; draftId?: string } }
+    | { type: "RESET_COURSE" }
+    | { type: "REORDER_CONTENT"; payload: ICourseContent[] }
+    | {
+          type: "REORDER_LESSONS";
+          payload: { sectionId: string; lessons: ICourseSectionLesson[] };
+      };

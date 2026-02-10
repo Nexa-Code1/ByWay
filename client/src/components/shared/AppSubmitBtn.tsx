@@ -9,6 +9,7 @@ type AppSubmitBtnProps = {
     className?: string;
     type?: BaseButtonProps["type"];
     children: ReactNode;
+    disabled?: boolean;
 };
 
 function AppSubmitBtn({
@@ -16,13 +17,14 @@ function AppSubmitBtn({
     className = "bg-primary-600! text-gray-100!",
     type = "default",
     children,
+    disabled = false,
 }: AppSubmitBtnProps) {
     return (
         <Button
             type={type}
             htmlType="submit"
             className={`w-full hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:text-white! capitalize ${className}`}
-            disabled={isLoading}
+            disabled={isLoading || disabled}
         >
             {isLoading ? <Spinner size="small" /> : children}
         </Button>

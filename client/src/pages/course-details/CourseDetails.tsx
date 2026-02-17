@@ -15,7 +15,7 @@ import RelatedCourses from "./components/RelatedCourses";
 function CourseDetails() {
     const params = useParams();
     const { courseDetails, isLoading, error } = useGetCourseDetails(
-        params.courseId
+        params.courseId,
     );
 
     if (isLoading) return <PageSpinner />;
@@ -34,7 +34,9 @@ function CourseDetails() {
             </section>
             <SectionContainer className="lg:w-full mt-4! mb-0!">
                 <div className="max-w-xl flex flex-col gap-8 mb-12 mx-auto lg:mx-0">
-                    <CourseContent content={course.content} />
+                    {course.content.length > 0 && (
+                        <CourseContent content={course.content} />
+                    )}
                     <CourseInstructorInfo instructor={course.instructor} />
                     <CourseRequirements requirements={course.requirements} />
                     <CourseDescription description={course.description} />

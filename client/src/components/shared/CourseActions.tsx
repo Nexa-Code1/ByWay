@@ -1,3 +1,4 @@
+import { useCookies } from "react-cookie";
 import type { FormEvent } from "react";
 import { useNavigate } from "react-router";
 import { Button } from "antd";
@@ -7,6 +8,7 @@ import AppSubmitBtn from "@/components/shared/AppSubmitBtn";
 import { useToggleWishedCourse } from "@/hooks/wishlist/useToggleWishedCourse";
 import { useAddToCart } from "@/hooks/cart/useAddToCart";
 import type { ICourseDetails, IWishlistItem } from "@/types";
+import RegisterBtns from "../layout/navbar/RegisterBtns";
 
 type CourseActionsProps = {
     courseDetails: ICourseDetails | IWishlistItem;
@@ -15,6 +17,8 @@ type CourseActionsProps = {
 
 function CourseActions({ courseDetails, btnColorClass }: CourseActionsProps) {
     const { _id, isFavourite, isInCart } = courseDetails;
+    const [cookies] = useCookies();
+    const { token } = cookies;
 
     const navigate = useNavigate();
 
@@ -39,8 +43,18 @@ function CourseActions({ courseDetails, btnColorClass }: CourseActionsProps) {
 
     return (
         <div className="flex w-full items-center justify-between gap-2">
-            {!isInCart ? (
-                <form onSubmit={handleAddCourseToCart} className="flex-1">
+            {!token ? (
+                <RegisterBtns
+                    displaySignupBtn={false}
+                    loginBtnLabel="Add to cart"
+                    className={`w-full h-8! sm:h-10! hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:text-white! capitalize text-white! ${btnColorClass}`}
+                />
+            ) : token && !isInCart ? (
+                <form
+                    name="cart"
+                    onSubmit={handleAddCourseToCart}
+                    className="flex-1"
+                >
                     <AppSubmitBtn
                         isLoading={isAddingToCart}
                         type="primary"
@@ -58,18 +72,32 @@ function CourseActions({ courseDetails, btnColorClass }: CourseActionsProps) {
                     Go to cart
                 </Button>
             )}
-            <form onSubmit={handleToggleWishedCourse}>
-                <AppSubmitBtn
-                    isLoading={isTogglingWishedCourse}
+            {!token ? (
+                <RegisterBtns
+                    displaySignupBtn={false}
+                    loginBtnLabel={
+                        isFavourite ? (
+                            <HeartFilled className="text-error-800!" />
+                        ) : (
+                            <HeartOutlined />
+                        )
+                    }
                     className="w-12! h-8! sm:h-10! text-base! bg-transparent! text-gray-600!"
-                >
-                    {isFavourite ? (
-                        <HeartFilled className="text-error-800!" />
-                    ) : (
-                        <HeartOutlined />
-                    )}
-                </AppSubmitBtn>
-            </form>
+                />
+            ) : (
+                <form name="wishlist" onSubmit={handleToggleWishedCourse}>
+                    <AppSubmitBtn
+                        isLoading={isTogglingWishedCourse}
+                        className="w-12! h-8! sm:h-10! text-base! bg-transparent! text-gray-600!"
+                    >
+                        {isFavourite ? (
+                            <HeartFilled className="text-error-800!" />
+                        ) : (
+                            <HeartOutlined />
+                        )}
+                    </AppSubmitBtn>
+                </form>
+            )}
         </div>
     );
 }

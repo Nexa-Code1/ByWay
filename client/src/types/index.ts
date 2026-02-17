@@ -120,6 +120,7 @@ export interface IFilterBlogsBy {
     search?: string;
     page?: number;
     limit?: number;
+    sortBy?: "views";
 }
 
 export interface IFilterCoursesBy {

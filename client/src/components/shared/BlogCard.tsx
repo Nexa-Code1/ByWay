@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { EyeFilled } from "@ant-design/icons";
 
-import blogImgPlaceholder from "@/assets/images/placeholder_view.svg";
+import blogImgPlaceholder from "@/assets/images/placeholder_blog.png";
 import type { IBlog } from "@/types";
 import Card from "@/components/shared/Card";
 import TextDescription from "@/components/shared/TextDescription";
@@ -18,7 +18,9 @@ function BlogCard({ blog, className }: BlogCardProps) {
     const [image, setImage] = useState(blog.image);
 
     return (
-        <Card className={`text-start! hover:scale-none! ${className}`}>
+        <Card
+            className={`text-start! hover:scale-none! flex flex-col ${className}`}
+        >
             <div className="w-full h-40">
                 <img
                     src={image}

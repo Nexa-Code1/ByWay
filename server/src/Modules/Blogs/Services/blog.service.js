@@ -197,7 +197,7 @@ export const deleteBlog = async (req, res) => {
 
 // Get all blogs (for authenticated users)
 export const getAllBlogs = async (req, res) => {
-    const { page = 1, limit = 10, category, search } = req.query;
+    const { page = 1, limit = 10, category, search, sortBy } = req.query;
 
     // Build filter object
     const filter = {};
@@ -221,11 +221,17 @@ export const getAllBlogs = async (req, res) => {
         filter.title = { $regex: search, $options: "i" };
     }
 
+    // Determine sort order based on sortBy parameter
+    let sortOptions = { createdAt: -1 }; // default: newest first only
+    if (sortBy) {
+        sortOptions = { views: -1, createdAt: -1 };
+    }
+
     const blogs = await blogsModel
         .find(filter)
         .populate("instructor", "firstName lastName image")
         .populate("category", "name slug")
-        .sort({ createdAt: -1 })
+        .sort(sortOptions)
         .limit(limit * 1)
         .skip((page - 1) * limit);
 

@@ -33,5 +33,9 @@
         "nodemailer": "^7.0.10",
         "stripe": "^20.0.0",
         "uuid": "^13.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "^25.3.0",
+        "typescript": "^5.9.3"
     }
 }

@@ -18,7 +18,7 @@ type CourseActionsProps = {
 function CourseActions({ courseDetails, btnColorClass }: CourseActionsProps) {
     const { _id, isFavourite, isInCart } = courseDetails;
     const [cookies] = useCookies();
-    const { token } = cookies;
+    const { accessToken } = cookies;
 
     const navigate = useNavigate();
 
@@ -43,13 +43,13 @@ function CourseActions({ courseDetails, btnColorClass }: CourseActionsProps) {
 
     return (
         <div className="flex w-full items-center justify-between gap-2">
-            {!token ? (
+            {!accessToken ? (
                 <RegisterBtns
                     displaySignupBtn={false}
                     loginBtnLabel="Add to cart"
                     className={`w-full h-8! sm:h-10! hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:text-white! capitalize text-white! ${btnColorClass}`}
                 />
-            ) : token && !isInCart ? (
+            ) : accessToken && !isInCart ? (
                 <form
                     name="cart"
                     onSubmit={handleAddCourseToCart}
@@ -72,7 +72,7 @@ function CourseActions({ courseDetails, btnColorClass }: CourseActionsProps) {
                     Go to cart
                 </Button>
             )}
-            {!token ? (
+            {!accessToken ? (
                 <RegisterBtns
                     displaySignupBtn={false}
                     loginBtnLabel={

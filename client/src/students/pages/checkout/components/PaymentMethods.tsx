@@ -20,7 +20,7 @@ function PaymentMethods({
 }: PaymentMethodsProps) {
     const { paymentMethods, isLoading, error } = useGetPaymentMethods();
 
-    if (isLoading) return <Spinner className="text-primary-700" />;
+    if (isLoading) return <Spinner className="text-primary-700 mb-4!" />;
     if (!isLoading && (error || !paymentMethods)) return;
 
     const userPaymentMethods = paymentMethods.paymentMethods.data;

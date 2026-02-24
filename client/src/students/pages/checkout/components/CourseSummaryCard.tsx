@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import type { ICourseCart } from "@/types";
 import imagePlaceholder from "@/assets/images/placeholder_view.svg";
+import { calcPriceAfterDiscount } from "@/utils/helper";
 
 type CourseSummaryCardProps = {
     course: ICourseCart;
@@ -25,7 +26,17 @@ function CourseSummaryCard({ course }: CourseSummaryCardProps) {
                 <p className="truncate-line text-gray-600 my-1">
                     {course.subTitle}
                 </p>
-                <p className="font-medium text-lg">{course.price} EGP</p>
+                <div className="flex items-center gap-2">
+                    <p className="font-medium text-lg">
+                        {calcPriceAfterDiscount(course.price, course.discount)}{" "}
+                        EGP
+                    </p>
+                    {course.discount !== 0 && (
+                        <p className="text-sm line-through text-gray-500">
+                            {course.price} EGP
+                        </p>
+                    )}
+                </div>
             </div>
         </div>
     );

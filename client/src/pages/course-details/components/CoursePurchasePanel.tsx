@@ -5,6 +5,7 @@ import type { ICourseDetails } from "@/types";
 import ShareCourse from "./ShareCourse";
 // import ApplyCoupon from "./ApplyCoupon";
 import CourseActions from "@/components/shared/CourseActions";
+import { calcPriceAfterDiscount } from "@/utils/helper";
 
 type CoursePurchasePanelprops = {
     courseDetails: ICourseDetails;
@@ -12,9 +13,6 @@ type CoursePurchasePanelprops = {
 
 function CoursePurchasePanel({ courseDetails }: CoursePurchasePanelprops) {
     const { title, discount, price, image } = courseDetails;
-
-    const priceAfterDiscount =
-        discount || discount !== 0 ? price - price * (discount / 100) : price;
 
     return (
         <>
@@ -32,7 +30,7 @@ function CoursePurchasePanel({ courseDetails }: CoursePurchasePanelprops) {
                     {/* Course price + discount if exist */}
                     <div className="flex items-center gap-2 mb-4">
                         <span className="font-bold text-2xl">
-                            {priceAfterDiscount.toFixed(2)} L.E
+                            {calcPriceAfterDiscount(price, discount)} L.E
                         </span>
                         {discount !== 0 && (
                             <>

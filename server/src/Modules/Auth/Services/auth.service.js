@@ -41,7 +41,7 @@ export const register = async (req, res) => {
     const verifyEmailToken = jwt.sign(
         { id: newUser._id, email },
         process.env.JWT_VERIFY_EMAIL_SECRET,
-        { expiresIn: "1h" }
+        { expiresIn: "1h" },
     );
 
     newUser.verificationToken = verifyEmailToken;
@@ -86,7 +86,7 @@ export const verifyEmail = async (req, res) => {
         }
 
         if (user.isVerified) {
-            return res.status(400).json({ message: "Email already verified" });
+            return res.status(200).json({ message: "Email already verified" });
         }
 
         await usersModel.updateOne(
@@ -97,7 +97,7 @@ export const verifyEmail = async (req, res) => {
                     verificationToken: "",
                     verificationTokenExpiry: "",
                 },
-            }
+            },
         );
 
         return res.status(200).json({ message: "Email verified successfully" });
@@ -132,13 +132,13 @@ export const login = async (req, res) => {
     const token = jwt.sign(
         { id: user._id, email },
         process.env.JWT_SECRET_LOGIN,
-        { expiresIn: "1h", jwtid: uuidv4() }
+        { expiresIn: "1h", jwtid: uuidv4() },
     );
 
     const refreshToken = jwt.sign(
         { id: user._id, email },
         process.env.JWT_REFRESH_SECRET,
-        { expiresIn: "7d", jwtid: uuidv4() }
+        { expiresIn: "7d", jwtid: uuidv4() },
     );
 
     return res.status(200).json({
@@ -164,7 +164,7 @@ export const sendOTP = async (req, res) => {
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
     const encryptedOTP = cryptoJS.AES.encrypt(
         otp,
-        process.env.ENCRYPT_SECRET
+        process.env.ENCRYPT_SECRET,
     ).toString();
 
     user.otp = encryptedOTP;
@@ -198,7 +198,7 @@ export const verifyOTP = async (req, res) => {
 
     const decryptedOTP = cryptoJS.AES.decrypt(
         user.otp,
-        process.env.ENCRYPT_SECRET
+        process.env.ENCRYPT_SECRET,
     ).toString(cryptoJS.enc.Utf8);
 
     if (decryptedOTP !== otp) {
@@ -212,7 +212,7 @@ export const verifyOTP = async (req, res) => {
                 otp: "",
                 otpExpiry: "",
             },
-        }
+        },
     );
 
     return res.status(200).json({ message: "OTP verified successfully" });
@@ -247,7 +247,7 @@ export const forgetPassword = async (req, res) => {
         { _id: user._id },
         {
             $set: { password: hashedPassword },
-        }
+        },
     );
 
     return res.status(200).json({ message: "Password reset successfully" });
@@ -270,7 +270,7 @@ export const refreshToken = async (req, res) => {
     const token = jwt.sign(
         { id: user._id, email: user.email },
         process.env.JWT_SECRET_LOGIN,
-        { expiresIn: "1h" }
+        { expiresIn: "1h" },
     );
 
     return res.status(200).json({ token });
@@ -289,7 +289,7 @@ export const logout = async (req, res) => {
 
     const decodedRefresh = jwt.verify(
         refreshToken,
-        process.env.JWT_REFRESH_SECRET
+        process.env.JWT_REFRESH_SECRET,
     );
 
     await blacklisttokensModel.insertMany([

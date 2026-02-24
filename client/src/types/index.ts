@@ -392,3 +392,19 @@ export type NewCourseAction =
           type: "REORDER_LESSONS";
           payload: { sectionId: string; lessons: ICourseSectionLesson[] };
       };
+
+export interface OrderData {
+    student_ID: string;
+    course_IDs: string[];
+    amount: number;
+    payment_intent_id: string;
+    status: string;
+    coupon_ID?: string;
+}
+
+export interface Order extends OrderData {
+    _id: string;
+    createdAt: Date;
+    updatedAt: Date;
+    __v: number;
+}

@@ -23,4 +23,8 @@ export enum QUERY_KEYS {
     GET_MY_WISHLIST = "getMyWishlist",
 
     GET_PAYMENT_METHODS = "getPaymentMethods",
+
+    // ORDERS
+    GET_STUDENT_ORDERS = "getStudentOrders",
+    GET_ORDER_BY_ID = "getOrderById",
 }

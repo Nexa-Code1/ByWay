@@ -86,3 +86,10 @@ export const generateObjectId = (): string => {
 
     return id;
 };
+
+// Calc price after discount
+export const calcPriceAfterDiscount = (price: number, discount?: number) => {
+    return discount && discount !== 0
+        ? (price - price * (discount / 100)).toFixed(2)
+        : price.toFixed(2);
+};

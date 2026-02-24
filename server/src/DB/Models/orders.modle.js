@@ -2,26 +2,33 @@ import mongoose from "mongoose";
 import { ORDER_STATUS, PAYMENT_METHODS } from "../../Constants/constants.js";
 
 const orderSchema = new mongoose.Schema(
-  {
-    student_ID: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-    course_ID: { type: mongoose.Schema.Types.ObjectId, ref: "Course" },
+    {
+        student_ID: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User",
+            required: true,
+        },
+        course_IDs: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "Course",
+                required: true,
+            },
+        ],
 
-    amount: Number,
+        amount: { type: Number, required: true },
 
-    status: {
-      type: String,
-      enum: Object.values(ORDER_STATUS),
-      default: ORDER_STATUS.PENDING,
+        status: {
+            type: String,
+            enum: Object.values(ORDER_STATUS),
+            default: ORDER_STATUS.PENDING,
+        },
+
+        payment_intent_id: { type: String, required: true },
+
+        coupon_ID: { type: mongoose.Schema.Types.ObjectId, ref: "Coupon" },
     },
-
-    paymentMethod: {
-      type: String,
-      enum: Object.values(PAYMENT_METHODS),
-    },
-
-    coupon_ID: { type: mongoose.Schema.Types.ObjectId, ref: "Coupon" },
-  },
-  { timestamps: true }
+    { timestamps: true },
 );
 
 export default mongoose.models.Order || mongoose.model("Order", orderSchema);

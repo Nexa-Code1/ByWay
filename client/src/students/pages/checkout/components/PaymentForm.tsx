@@ -9,32 +9,46 @@ import { useState, type FormEvent } from "react";
 import AppSubmitBtn from "@/components/shared/AppSubmitBtn";
 import PaymentMethods from "./PaymentMethods";
 import { useBuyCourseIntent } from "@/hooks/payment/useBuyCourseIntent";
-import PageSpinner from "@/components/shared/PageSpinner";
+import { useCreateOrder } from "@/hooks/orders/useCreateOrder";
 
 type PaymentFormProps = {
     cartTotalPrice: number;
     customerId: string;
+    coursesIds: string[];
+    studentId: string;
 };
 
-function PaymentForm({ cartTotalPrice, customerId }: PaymentFormProps) {
+function PaymentForm({
+    cartTotalPrice,
+    customerId,
+    coursesIds,
+    studentId,
+}: PaymentFormProps) {
     const stripe = useStripe();
     const elements = useElements();
 
     const [selectedCardId, setSelectedCardId] = useState<string>("");
-    const [isAddingNewCard, setIsAddingNewCard] = useState(true);
+    const [isAddingNewCard, setIsAddingNewCard] = useState(false);
 
+    const { createOrder, isCreatingOrder } = useCreateOrder();
     const { buyCourseIntent, isCreatingIntent } = useBuyCourseIntent();
 
     async function handleSubmitPayment(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
         if (!stripe || !elements) return;
 
+        // Order Data
+        const orderData = {
+            student_ID: studentId,
+            course_IDs: coursesIds,
+        };
+
         // if user selected saved card
         if (!isAddingNewCard && !selectedCardId) {
             message.error("Please select payment method or add new one.");
         } else if (selectedCardId) {
             const res = await buyCourseIntent({
-                coursesIds: [],
+                coursesIds,
                 options: {
                     amount: Math.round(cartTotalPrice * 100),
                     currency: "egp",
@@ -44,7 +58,15 @@ function PaymentForm({ cartTotalPrice, customerId }: PaymentFormProps) {
                     confirm: true,
                 },
             });
-            // Purchase courses API
+            // Create Order API
+            await createOrder({
+                orderData: {
+                    ...orderData,
+                    payment_intent_id: res.paymentIntent.id,
+                    amount: res.paymentIntent.amount / 100,
+                    status: res.paymentIntent.status,
+                },
+            });
         } else {
             const { error, paymentIntent } = await stripe.confirmPayment({
                 elements,
@@ -53,7 +75,15 @@ function PaymentForm({ cartTotalPrice, customerId }: PaymentFormProps) {
             if (error) {
                 return message.error(error.message as string);
             } else {
-                // Purchase courses API
+                // Create Order API
+                await createOrder({
+                    orderData: {
+                        ...orderData,
+                        payment_intent_id: paymentIntent.id,
+                        amount: paymentIntent.amount / 100,
+                        status: paymentIntent.status,
+                    },
+                });
             }
         }
     }
@@ -64,8 +94,6 @@ function PaymentForm({ cartTotalPrice, customerId }: PaymentFormProps) {
             return !prev;
         });
     }
-
-    if (isCreatingIntent) return <PageSpinner />;
 
     return (
         <form onSubmit={handleSubmitPayment}>
@@ -84,7 +112,7 @@ function PaymentForm({ cartTotalPrice, customerId }: PaymentFormProps) {
 
             {isAddingNewCard && <PaymentElement className="mb-4!" />}
             <AppSubmitBtn
-                isLoading={false}
+                isLoading={isCreatingOrder || isCreatingIntent}
                 type="primary"
                 className="bg-orange-100!"
             >

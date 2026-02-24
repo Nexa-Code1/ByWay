@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { Button } from "antd";
 
 import VerificationResult from "./VerificationResult";
@@ -8,18 +8,31 @@ import PageSpinner from "@/components/shared/PageSpinner";
 import RegisterBtns from "@/components/layout/navbar/RegisterBtns";
 import emailVerifiedImg from "@/assets/images/email-verified.png";
 import emailUnverifiedImg from "@/assets/images/email-unverified.png";
+import { useUserProfile } from "@/hooks/user/useUserProfile";
+import defaultRoutes from "@/utils/defaultRoutes";
 
 function AuthVerification() {
+    const navigate = useNavigate();
     const params = useParams();
     const { verifyEmailToken } = params;
     const { verifyEmail, isVerifyingEmail, data, error } = useVerifyEmail();
+    const {
+        userProfile,
+        isLoading: isLoadingUser,
+        error: userProfileError,
+    } = useUserProfile();
 
     useEffect(() => {
         if (!verifyEmailToken) return;
         verifyEmail(verifyEmailToken);
     }, [verifyEmail, verifyEmailToken]);
 
-    if (isVerifyingEmail) return <PageSpinner />;
+    useEffect(() => {
+        if ((!isLoadingUser && userProfile) || userProfileError)
+            navigate(defaultRoutes[userProfile.user.role]);
+    }, [isLoadingUser, userProfile, userProfileError]);
+
+    if (isVerifyingEmail || isLoadingUser) return <PageSpinner />;
 
     return (
         <div className="flex flex-col items-center justify-center gap-2">

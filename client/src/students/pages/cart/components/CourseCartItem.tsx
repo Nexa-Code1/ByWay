@@ -3,6 +3,7 @@ import type { ICourseCart } from "@/types";
 import CourseCartItemsActions from "./CourseCartItemsActions";
 import ListItemImg from "@/components/shared/ListItemImg";
 import { Link } from "react-router";
+import { calcPriceAfterDiscount } from "@/utils/helper";
 
 type CourseCartItemProps = {
     course: ICourseCart;
@@ -33,7 +34,7 @@ function CourseCartItem({ course }: CourseCartItemProps) {
             </div>
 
             <p className="font-semibold text-primary-500 text-xl">
-                {course.price.toFixed(2)} EGP
+                {calcPriceAfterDiscount(course.price, course.discount)} EGP
             </p>
         </li>
     );

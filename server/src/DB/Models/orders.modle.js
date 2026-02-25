@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { ORDER_STATUS, PAYMENT_METHODS } from "../../Constants/constants.js";
+import { ORDER_STATUS } from "../../Constants/constants.js";
 
 const orderSchema = new mongoose.Schema(
     {
@@ -25,6 +25,10 @@ const orderSchema = new mongoose.Schema(
         },
 
         payment_intent_id: { type: String, required: true },
+        payment_method: {
+            type: String,
+            default: "card",
+        },
 
         coupon_ID: { type: mongoose.Schema.Types.ObjectId, ref: "Coupon" },
     },

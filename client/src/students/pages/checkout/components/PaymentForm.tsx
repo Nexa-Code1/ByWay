@@ -65,6 +65,7 @@ function PaymentForm({
                     payment_intent_id: res.paymentIntent.id,
                     amount: res.paymentIntent.amount / 100,
                     status: res.paymentIntent.status,
+                    payment_method: res.paymentMethod.card.brand,
                 },
             });
         } else {
@@ -82,6 +83,7 @@ function PaymentForm({
                         payment_intent_id: paymentIntent.id,
                         amount: paymentIntent.amount / 100,
                         status: paymentIntent.status,
+                        payment_method: paymentIntent.payment_method_types[0],
                     },
                 });
             }

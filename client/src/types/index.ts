@@ -395,9 +395,10 @@ export type NewCourseAction =
 
 export interface OrderData {
     student_ID: string;
-    course_IDs: string[];
+    course_IDs: IPurchaseItemCourse[];
     amount: number;
     payment_intent_id: string;
+    payment_method: string;
     status: string;
     coupon_ID?: string;
 }
@@ -407,4 +408,16 @@ export interface Order extends OrderData {
     createdAt: Date;
     updatedAt: Date;
     __v: number;
+}
+
+export interface IPurchaseItemCourse {
+    _id: string;
+    title: string;
+    rate: number;
+    price: number;
+    image: string;
+    instructor: {
+        firstName: string;
+        lastName: string;
+    };
 }

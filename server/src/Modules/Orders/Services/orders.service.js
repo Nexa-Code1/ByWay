@@ -5,8 +5,14 @@ import { ORDER_STATUS } from "../../../Constants/constants.js";
 export const createOrder = async (req, res) => {
     try {
         console.log(req.body);
-        const { student_ID, course_IDs, amount, currency, payment_intent_id } =
-            req.body;
+        const {
+            student_ID,
+            course_IDs,
+            amount,
+            status,
+            payment_method,
+            payment_intent_id,
+        } = req.body;
         const userId = req.user.id;
 
         // Validate that the student_ID matches the authenticated user
@@ -35,7 +41,13 @@ export const createOrder = async (req, res) => {
         const existingOrders = await ordersModel.findOne({
             student_ID: userId,
             course_IDs: { $in: course_IDs },
-            status: { $in: [ORDER_STATUS.PENDING, ORDER_STATUS.COMPLETED] },
+            status: {
+                $in: [
+                    ORDER_STATUS.PENDING,
+                    ORDER_STATUS.COMPLETED,
+                    ORDER_STATUS.PROCESSING,
+                ],
+            },
         });
 
         if (existingOrders) {
@@ -66,9 +78,10 @@ export const createOrder = async (req, res) => {
         const order = await ordersModel.create({
             student_ID: userId,
             course_IDs: course_IDs,
-            amount: amount,
+            amount,
+            status,
+            payment_method,
             payment_intent_id: payment_intent_id,
-            status: ORDER_STATUS.PENDING,
         });
 
         // Populate the order with course and student details
@@ -103,7 +116,14 @@ export const getOrdersByStudent = async (req, res) => {
 
         const orders = await ordersModel
             .find(query)
-            .populate("course_IDs", "title subTitle image price")
+            .populate({
+                path: "course_IDs",
+                populate: {
+                    path: "instructor",
+                    select: "firstName lastName",
+                },
+                select: "_id title image price rate",
+            })
             .sort({ createdAt: -1 })
             .limit(limit * 1)
             .skip((page - 1) * limit);
@@ -114,11 +134,11 @@ export const getOrdersByStudent = async (req, res) => {
             message: "Orders fetched successfully",
             orders,
             pagination: {
-                currentPage: page,
-                totalPages: Math.ceil(total / limit),
-                totalOrders: total,
-                hasNext: page < Math.ceil(total / limit),
-                hasPrev: page > 1,
+                currentPage: +page,
+                totalPages: Math.ceil(total / +limit),
+                total,
+                nextPage: +page * +limit < total ? +page + 1 : null,
+                prevPage: +page > 1 ? +page - 1 : null,
             },
         });
     } catch (error) {

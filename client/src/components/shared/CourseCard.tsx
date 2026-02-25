@@ -7,6 +7,7 @@ import TextDescription from "./TextDescription";
 import courseImgPlaceholder from "@/assets/images/placeholder_view.svg";
 import UserAvatar from "../layout/navbar/UserAvatar";
 import type { ICourseDetails } from "@/types";
+import { calcPriceAfterDiscount } from "@/utils/helper";
 
 type CourseCardProps = {
     course: ICourseDetails;
@@ -63,7 +64,7 @@ function CourseCard({ course }: CourseCardProps) {
                         </p>
                     )}
                     <p className="text-primary-700 font-bold">
-                        {course.price - (course.price * course.discount) / 100}{" "}
+                        {calcPriceAfterDiscount(course.price, course.discount)}{" "}
                         EGP
                     </p>
                 </div>

@@ -9,17 +9,25 @@ import CourseContentSummary from "./components/CourseContentSummary";
 import CourseImagePreview from "./components/CourseImagePreview";
 import CourseDataEle from "./components/CourseDataEle";
 import { useGetCourseDetails } from "@/hooks/courses/useGetCourseDetails";
+import { useEffect } from "react";
 
 function CreateCoursePublish() {
     const navigate = useNavigate();
 
-    const { state, resetCourse, canPublish, hasCourseContent } =
+    const { state, resetCourse, canPublish, hasCourseContent, hasBasicInfo } =
         useNewCourseContext();
 
     const { courseDetails, isLoading, error } = useGetCourseDetails(
         state.draftCourseId || "",
     );
     const { publishCourse, isPublishingCourse } = usePublishCourse();
+
+    useEffect(() => {
+        if (!hasBasicInfo) {
+            navigate("/instructor/create-course/basic-information");
+            return;
+        }
+    }, [hasBasicInfo]);
 
     const handlePublish = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -53,9 +61,9 @@ function CreateCoursePublish() {
             <div className="mb-8 p-6 bg-gray-50 rounded-lg">
                 <h2 className="text-xl font-semibold text-gray-800 mb-4">
                     Course Preview
-                    {!isLoading && !error && courseDetails.course?.status && (
+                    {!isLoading && !error && courseDetails?.status && (
                         <span className="mx-4 px-4 py-1 text-sm bg-orange-100 rounded-full text-gray-100">
-                            {courseDetails.course.status}
+                            {courseDetails?.status}
                         </span>
                     )}
                 </h2>
@@ -118,7 +126,7 @@ function CreateCoursePublish() {
                     disabled={
                         !isLoading &&
                         !error &&
-                        courseDetails.course?.status === "published"
+                        courseDetails?.status === "published"
                     }
                 />
             </div>

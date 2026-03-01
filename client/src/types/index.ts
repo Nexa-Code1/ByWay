@@ -274,11 +274,15 @@ export interface ICourseLessonUpdatedData {
     description?: string;
 }
 
-export interface ICourseSectionLesson extends ICourseLessonData {
+export interface ICourseSectionLesson {
     _id: string;
     section_ID: string;
     duration: number;
     isCompleted: boolean;
+    link: string;
+    title: string;
+    description: string;
+    videoFile?: File; // Store original File object for upload
 }
 
 export interface IBuyCourseIntentOptions {
@@ -343,7 +347,7 @@ export interface NewCourseContextType {
     updateLesson: (
         sectionId: string,
         lessonId: string,
-        lesson: Partial<ICourseSectionLesson>,
+        lesson: ICourseLessonUpdatedData,
     ) => void;
     deleteLesson: (sectionId: string, lessonId: string) => void;
     setEditMode: (isEdit: boolean, draftId?: string) => void;
@@ -378,7 +382,7 @@ export type NewCourseAction =
           payload: {
               sectionId: string;
               lessonId: string;
-              lesson: Partial<ICourseSectionLesson>;
+              lesson: ICourseLessonUpdatedData;
           };
       }
     | {
@@ -420,4 +424,13 @@ export interface IPurchaseItemCourse {
         firstName: string;
         lastName: string;
     };
+}
+
+export interface IStudentCourseItem {
+    _id: string;
+    image: string;
+    title: string;
+    category: ICategory;
+    progress: number;
+    enrolledAt: Date;
 }

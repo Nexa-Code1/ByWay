@@ -29,8 +29,7 @@ import InputModal from "./InputModal";
 import IconBtn from "@/components/shared/IconBtn";
 import type { ICourseContent } from "@/types";
 import ConfirmationModal from "@/components/shared/ConfirmationModal";
-import placeholderVideo from "@/assets/videos/placeholder-video.mp4";
-import { generateObjectId, videoUrlToFile } from "@/utils/helper";
+import { generateObjectId } from "@/utils/helper";
 import { useNewCourseContext } from "@/instructor/context/NewCourseContext";
 
 type SortableCourseSectionProps = {
@@ -96,14 +95,13 @@ function SortableCourseSection({ item, index }: SortableCourseSectionProps) {
     }
 
     async function handleAddNewLesson() {
-        const videoFile = await videoUrlToFile(placeholderVideo);
         addLesson(item._id, {
             _id: generateObjectId(),
             section_ID: item._id,
             title: "New Lesson",
             description: "",
             isCompleted: false,
-            link: videoFile,
+            link: "",
             duration: 0,
         });
     }

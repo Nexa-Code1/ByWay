@@ -21,7 +21,7 @@ blogsRouter.post(
     "/create-blog",
     authenticationMiddleware,
     authorizationMiddleware(USER_ROLES.INSTRUCTOR),
-    Multer("Blogs/Images", IMAGE_TYPES).single("image"),
+    Multer("Byway/Blogs/Images", IMAGE_TYPES).single("image"),
     errorHandlerMiddleware(createBlog),
 );
 
@@ -30,7 +30,7 @@ blogsRouter.put(
     "/update-blog/:id",
     authenticationMiddleware,
     authorizationMiddleware(USER_ROLES.INSTRUCTOR),
-    Multer("Blogs/Images", IMAGE_TYPES).single("image"),
+    Multer("Byway/Blogs/Images", IMAGE_TYPES).single("image"),
     errorHandlerMiddleware(updateBlog),
 );
 

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { Button } from "antd";
 import {
@@ -17,7 +18,7 @@ import {
 } from "@dnd-kit/sortable";
 
 import SortableCourseSection from "./components/SortableCourseSection";
-import type { ICourseContent } from "@/types";
+import type { ICourseContent, ICourseSectionLesson } from "@/types";
 import { useNewCourseContext } from "@/instructor/context/NewCourseContext";
 import FormActions from "@/instructor/components/common/FormActions";
 import { useCreateNewCourse } from "@/hooks/courses/useCreateNewCourse";
@@ -31,6 +32,7 @@ function CreateCourseCurriculum() {
         hasBasicInfo,
         reorderCourseContent,
         setEditMode,
+        resetCourse,
     } = useNewCourseContext();
 
     const { createNewCourse, isCreatingNewCourse } = useCreateNewCourse();
@@ -43,6 +45,13 @@ function CreateCourseCurriculum() {
             coordinateGetter: sortableKeyboardCoordinates,
         }),
     );
+
+    useEffect(() => {
+        if (!hasBasicInfo) {
+            navigate("/instructor/create-course/basic-information");
+            return;
+        }
+    }, [hasBasicInfo]);
 
     // Handle drag end event
     function handleDragEnd(event: DragEndEvent) {
@@ -67,32 +76,51 @@ function CreateCourseCurriculum() {
         }
     }
 
-    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-        e.preventDefault();
+    // Function to process lesson data
+    function processLesson(lesson: ICourseSectionLesson, sectionId: string) {
+        return {
+            _id: lesson._id || "",
+            section_ID: sectionId,
+            title: lesson.title,
+            description: lesson.description || "",
+            videoUrl: lesson.videoFile
+                ? lesson.videoFile.name
+                : lesson.link || "",
+            duration: lesson.duration || 0,
+            isCompleted: false,
+        };
+    }
 
-        // Process course content to match expected structure
-        const processedContent = state.courseContent.map((section) => ({
+    // Process course content to match expected structure
+    function processCourseContent(content: ICourseContent[]) {
+        return content.map((section) => ({
             section: section.section,
             _id: section._id,
             lessons:
-                section.lessons && section.lessons.length > 0
-                    ? section.lessons.map((lesson) => ({
-                          _id: lesson._id || "",
-                          section_ID: section._id,
-                          title: lesson.title,
-                          description: lesson.description || "",
-                          videoUrl: lesson.link
-                              ? typeof lesson.link === "string"
-                                  ? lesson.link
-                                  : lesson.link instanceof File
-                                    ? lesson.link.name
-                                    : ""
-                              : "",
-                          duration: lesson.duration || 0,
-                          isCompleted: false,
-                      }))
+                section.lessons?.length > 0
+                    ? section.lessons.map((lesson) =>
+                          processLesson(lesson, section._id),
+                      )
                     : [],
         }));
+    }
+
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+
+        const processedContent = processCourseContent(state.courseContent);
+
+        // Collect all video files
+        const videoFiles: File[] = [];
+        state.courseContent.forEach((section) => {
+            if (section.lessons) {
+                section.lessons.forEach((lesson) => {
+                    if (lesson.videoFile) {
+                        videoFiles.push(lesson.videoFile);
+                    }
+                });
+            }
+        });
 
         // Course Data
         const data = new FormData();
@@ -103,7 +131,14 @@ function CreateCourseCurriculum() {
         data.append("description", state.description);
         data.append("requirements", JSON.stringify(state.requirements));
         data.append("category", state.category);
-        if (state.image) data.append("image", state.image);
+        if (state.image) {
+            data.append("image", state.image);
+        }
+
+        // Add all video files to FormData
+        videoFiles.forEach((file) => {
+            data.append("videos", file);
+        });
 
         if (state.isEditMode && state.draftCourseId) {
             await updateCourse({
@@ -116,12 +151,6 @@ function CreateCourseCurriculum() {
         }
 
         navigate("/instructor/create-course/publish");
-    }
-
-    // Redirect to basic info if basic course data is missing
-    if (!hasBasicInfo) {
-        navigate("/instructor/create-course/basic-information");
-        return null;
     }
 
     return (
@@ -148,6 +177,7 @@ function CreateCourseCurriculum() {
                     <Button
                         className="w-full! bg-amber-50! text-orange-100! font-medium! border-0! mb-6 hover:bg-amber-100! hover:translate-y-0"
                         onClick={addSection}
+                        disabled={isCreatingNewCourse || isUpdatingCourse}
                     >
                         Add Sections
                     </Button>
@@ -159,7 +189,7 @@ function CreateCourseCurriculum() {
                                 ? isUpdatingCourse
                                 : isCreatingNewCourse
                         }
-                        onCancel={() => navigate("/instructor/my-courses")}
+                        onCancel={resetCourse}
                         submitLabel={
                             state.isEditMode
                                 ? "Update & Continue"

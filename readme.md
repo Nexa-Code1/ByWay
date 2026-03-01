@@ -44,7 +44,7 @@ A modern MERN stack application with video processing capabilities, user authent
 ## 📁 Project Structure
 
 ```
-ByWay/
+Byway/
 ├── client/                 # React frontend application
 │   ├── src/
 │   │   ├── components/     # Reusable UI components

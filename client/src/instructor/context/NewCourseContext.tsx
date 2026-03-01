@@ -7,6 +7,7 @@ import type {
     NewCourseContextType,
     NewCourseState,
     NewCourseAction,
+    ICourseLessonUpdatedData,
 } from "@/types";
 import { generateObjectId } from "@/utils/helper";
 
@@ -110,7 +111,26 @@ function newCourseReducer(
                               ...section,
                               lessons: section.lessons.map((l) =>
                                   l._id === action.payload.lessonId
-                                      ? { ...l, ...action.payload.lesson }
+                                      ? {
+                                            ...l,
+                                            ...action.payload.lesson,
+                                            // Convert File to string if link is a File, but preserve the File object
+                                            link:
+                                                action.payload.lesson
+                                                    .link instanceof File
+                                                    ? URL.createObjectURL(
+                                                          action.payload.lesson
+                                                              .link,
+                                                      )
+                                                    : (action.payload.lesson
+                                                          .link ?? l.link),
+                                            // Store the original File object for upload
+                                            videoFile:
+                                                action.payload.lesson
+                                                    .link instanceof File
+                                                    ? action.payload.lesson.link
+                                                    : l.videoFile,
+                                        }
                                       : l,
                               ),
                           }
@@ -219,7 +239,7 @@ function NewCourseProvider({ children }: { children: React.ReactNode }) {
     const updateLesson = (
         sectionId: string,
         lessonId: string,
-        lesson: Partial<ICourseSectionLesson>,
+        lesson: ICourseLessonUpdatedData,
     ) => {
         dispatch({
             type: "UPDATE_LESSON",

@@ -1,9 +1,8 @@
 import { Collapse } from "antd";
-import { PlaySquareOutlined } from "@ant-design/icons";
 
 import CourseDetailWrapper from "./CourseDetailWrapper";
 import type { ICourseContent } from "@/types";
-import { formatDuration } from "@/utils/helper";
+import LessonItem from "./LessonItem";
 
 type CourseContentProps = {
     content: ICourseContent[];
@@ -11,12 +10,12 @@ type CourseContentProps = {
 
 function CourseContent({ content }: CourseContentProps) {
     const items = content.map((el) => {
-        const totalDuration = (
+        const totalDuration = Math.round(
             el.lessons.reduce(
                 (totalDuration, lesson) => (totalDuration += lesson.duration),
-                0
-            ) / 60
-        ).toFixed(1);
+                0,
+            ) / 60,
+        );
 
         return {
             key: el._id,
@@ -30,15 +29,12 @@ function CourseContent({ content }: CourseContentProps) {
             ),
             children: (
                 <ol className="flex flex-col gap-4 text-gray-600">
-                    {el.lessons.map((lesson) => (
-                        <li
+                    {el.lessons.map((lesson, index) => (
+                        <LessonItem
                             key={lesson._id}
-                            className="flex items-center justify-between gap-2"
-                        >
-                            <PlaySquareOutlined />
-                            <p className="flex-1">{lesson.title}</p>
-                            <p>{formatDuration(lesson.duration)}</p>
-                        </li>
+                            lesson={lesson}
+                            index={index}
+                        />
                     ))}
                 </ol>
             ),

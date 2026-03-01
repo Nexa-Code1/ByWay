@@ -9,6 +9,8 @@ import InstructorCourseCard from "./components/InstructorCourseCard";
 import type { CourseStatusType, ICourse } from "@/types";
 import NoContent from "@/components/shared/NoContent";
 import emptyFolderImg from "@/assets/images/empty-folder.png";
+import ItemsPagination from "@/components/shared/ItemsPagination";
+import { ITEMS_PER_PAGE } from "@/utils/constants";
 
 function MyCourses() {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -27,6 +29,8 @@ function MyCourses() {
     } = useGetInstructorCourses({
         instructorId: userProfile?.user._id,
         status,
+        page: Number(searchParams.get("page")) || 1,
+        limit: ITEMS_PER_PAGE,
     });
 
     if (
@@ -34,14 +38,14 @@ function MyCourses() {
         !isLoadingUser &&
         (userProfileError || coursesError || !instructorCourses)
     )
-        <Error />;
+        return <Error />;
 
     const onChange: CheckboxProps["onChange"] = (e) => {
         setSearchParams({ status: e.target.value });
     };
 
     return (
-        <div>
+        <div className="mb-10">
             <div className="mb-6">
                 <label className="font-medium text-sm mr-2">
                     Course Status:{" "}
@@ -62,14 +66,19 @@ function MyCourses() {
                     subTitle="Empty courses list. Start creating one."
                 />
             ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-                    {instructorCourses.courses.map((course: ICourse) => (
-                        <InstructorCourseCard
-                            course={course}
-                            key={course._id}
-                        />
-                    ))}
-                </div>
+                <>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 mb-20">
+                        {instructorCourses.courses.map((course: ICourse) => (
+                            <InstructorCourseCard
+                                course={course}
+                                key={course._id}
+                            />
+                        ))}
+                    </div>
+                    <ItemsPagination
+                        pagination={instructorCourses.pagination}
+                    />
+                </>
             )}
         </div>
     );

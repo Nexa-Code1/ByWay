@@ -10,6 +10,7 @@ export enum QUERY_KEYS {
     GET_ALL_COURSES = "getAllCourses",
     GET_COURSE_DETAILS = "getCourseDetails",
     GET_INSTRUCTOR_COURSES = "getInstructorCourses",
+    GET_STUDENT_COURSES = "getStudentCourses",
 
     // BLOGS KEYS
     GET_ALL_BLOGS = "getAllBlogs",

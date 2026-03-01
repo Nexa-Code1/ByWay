@@ -15,7 +15,10 @@ type SortableLessonElementProps = {
     sectionId: string;
 };
 
-function SortableLessonElement({ lesson, sectionId }: SortableLessonElementProps) {
+function SortableLessonElement({
+    lesson,
+    sectionId,
+}: SortableLessonElementProps) {
     const { deleteLesson, updateLesson } = useNewCourseContext();
 
     const {
@@ -39,7 +42,13 @@ function SortableLessonElement({ lesson, sectionId }: SortableLessonElementProps
 
     const items: MenuProps["items"] = [
         {
-            label: <UploadLessonVideo onOk={handleOk} />,
+            label: (
+                <UploadLessonVideo
+                    onOk={handleOk}
+                    sectionId={sectionId}
+                    lessonId={lesson._id}
+                />
+            ),
             key: "0",
         },
         {
@@ -75,7 +84,7 @@ function SortableLessonElement({ lesson, sectionId }: SortableLessonElementProps
                 </a>
             </Dropdown>
 
-            <UpdateLessonTitle onOk={handleOk} />
+            <UpdateLessonTitle onOk={handleOk} lessonTitle={lesson.title} />
 
             <ConfirmationModal
                 triggerBtnType="text"

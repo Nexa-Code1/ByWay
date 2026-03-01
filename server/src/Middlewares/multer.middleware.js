@@ -1,86 +1,98 @@
 import multer from "multer";
-import fs from "fs";
-import path from "path";
 import { CloudinaryStorage } from "multer-storage-cloudinary";
-import cloudinary from "../Config/cloudinary.js";
-import { getLocalVideoDuration } from "../Utils/video.helper.js";
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+import cloudinary from "../Config/cloudinary.js";
+import { getVideoDuration } from "../Utils/video.helper.js";
 
 const attachFileMeta = async (file, req) => {
     const isCloudinaryFile =
-        typeof file.path === "string" && file.path.startsWith("http");
+        typeof file.path === "string" && file.path.startsWith("https");
 
     if (isCloudinaryFile) {
         file.fullUrl = file.path;
 
-        if (file.mimetype?.startsWith("video/") && file.public_id) {
+        // Only process video duration for video files
+        if (file.mimetype?.startsWith("video/")) {
             try {
-                await sleep(1500);
-                const result = await cloudinary.api.resource(file.public_id, {
-                    resource_type: "video",
-                });
-                file.duration = Math.round(result.duration || 0);
-            } catch {
+                file.duration = await getVideoDuration(file.path);
+            } catch (error) {
+                console.error(" Error getting video duration:", error);
                 file.duration = 0;
             }
+        } else {
+            // For images, set duration to null
+            file.duration = null;
         }
+
+        // Return the modified file object
+        return file;
     } else {
         file.fullUrl = `${req.protocol}://${req.get("host")}/${file.path.replace(/\\/g, "/")}`;
         if (file.mimetype?.startsWith("video/")) {
-            file.duration = await getLocalVideoDuration(file.path);
+            try {
+                file.duration = await getVideoDuration(file.path);
+            } catch (error) {
+                file.duration = 0;
+            }
         } else {
             file.duration = null;
+            console.log(file);
         }
     }
+
+    // Return the modified file object
+    return file;
 };
 
 export const Multer = (destinationPath, allowedExtensions = []) => {
-    const isServerless =
-        process.env.VERCEL === "1" ||
-        process.env.VERCEL_ENV ||
-        process.env.AWS_LAMBDA_FUNCTION_NAME;
+    // Getting file types (e.g. jpeg, ... from image/jpeg, ...)
+    const extractedFormats = allowedExtensions.length
+        ? allowedExtensions.map((m) => {
+              const format = m.split("/")[1];
+              return format;
+          })
+        : [];
 
-    const useCloudinary = isServerless || process.env.NODE_ENV === "production";
+    const storage = new CloudinaryStorage({
+        cloudinary,
+        params: (req, file) => {
+            // Dynamic folder routing based on file type
+            let folder = destinationPath.replace(/^\//, "");
 
-    let storage;
+            if (file.mimetype?.startsWith("image/")) {
+                folder = `${folder}/Images`;
+            } else if (file.mimetype?.startsWith("video/")) {
+                folder = `${folder}/Videos`;
+            }
 
-    if (useCloudinary) {
-        storage = new CloudinaryStorage({
-            cloudinary,
-            params: {
-                folder: destinationPath.replace(/^\//, ""),
+            return {
+                folder,
                 resource_type: "auto",
                 ...(allowedExtensions.length && {
-                    allowed_formats: allowedExtensions.map(
-                        (m) => m.split("/")[1],
-                    ),
+                    allowed_formats: extractedFormats,
                 }),
-            },
-        });
-    } else {
-        const destinationFolder = path.join("Media", destinationPath);
-        fs.mkdirSync(destinationFolder, { recursive: true });
-
-        storage = multer.diskStorage({
-            destination: (_, __, cb) => cb(null, destinationFolder),
-            filename: (_, file, cb) => {
-                const safeName = file.originalname
-                    .replace(/\s+/g, "-")
-                    .replace(/[^a-zA-Z0-9.-]/g, "");
-                cb(null, `${Date.now()}-${safeName}`);
-            },
-        });
-    }
+            };
+        },
+    });
 
     const fileFilter = (_, file, cb) => {
-        if (
-            !allowedExtensions.length ||
-            allowedExtensions.includes(file.mimetype)
-        ) {
+        // If no allowed extensions specified, allow all files
+        if (!allowedExtensions.length) {
+            cb(null, true);
+            return;
+        }
+
+        // Check if the file's MIME type is in the allowed extensions
+        const isAllowed = allowedExtensions.includes(file.mimetype);
+
+        if (isAllowed) {
             cb(null, true);
         } else {
-            cb(new Error(`Invalid file type: ${file.mimetype}`));
+            cb(
+                new Error(
+                    `Invalid file type: ${file.mimetype}. Allowed types: ${allowedExtensions.join(", ")}`,
+                ),
+            );
         }
     };
 
@@ -89,14 +101,19 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
     return {
         single: (name) => (req, res, next) =>
             upload.single(name)(req, res, async (err) => {
-                if (err) return next(err);
+                if (err) {
+                    return next(err);
+                }
                 if (req.file) await attachFileMeta(req.file, req);
+
                 next();
             }),
 
         array: (name, max) => (req, res, next) =>
             upload.array(name, max)(req, res, async (err) => {
-                if (err) return next(err);
+                if (err) {
+                    return next(err);
+                }
                 if (req.files) {
                     for (const file of req.files)
                         await attachFileMeta(file, req);

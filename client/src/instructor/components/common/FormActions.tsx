@@ -27,7 +27,7 @@ function FormActions({
             </Button>
             <AppSubmitBtn
                 type="primary"
-                className="w-34! bg-orange-100!"
+                className="w-34! bg-orange-100! disabled:bg-gray-300!"
                 isLoading={isLoading}
                 disabled={disabled}
             >

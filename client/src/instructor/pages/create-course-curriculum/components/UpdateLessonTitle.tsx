@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Input from "antd/es/input/Input";
 import { EditOutlined } from "@ant-design/icons";
 
@@ -7,10 +7,15 @@ import type { ICourseLessonUpdatedData } from "@/types";
 
 type UpdateLessonTitleProps = {
     onOk(updatedProp: ICourseLessonUpdatedData): void;
+    lessonTitle: string;
 };
 
-function UpdateLessonTitle({ onOk }: UpdateLessonTitleProps) {
-    const [newLessonName, setNewLessonName] = useState("");
+function UpdateLessonTitle({ onOk, lessonTitle }: UpdateLessonTitleProps) {
+    const [newLessonName, setNewLessonName] = useState(lessonTitle);
+
+    useEffect(() => {
+        setNewLessonName(lessonTitle);
+    }, [lessonTitle]);
 
     return (
         <InputModal
@@ -22,6 +27,7 @@ function UpdateLessonTitle({ onOk }: UpdateLessonTitleProps) {
             <Input
                 placeholder="Write Your Lesson Name Here..."
                 onChange={(e) => setNewLessonName(e.target.value)}
+                value={newLessonName}
             />
         </InputModal>
     );

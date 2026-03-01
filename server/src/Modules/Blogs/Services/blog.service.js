@@ -2,7 +2,7 @@ import DOMPurify from "dompurify";
 
 import blogsModel from "../../../DB/Models/blogs.model.js";
 import categoryModel from "../../../DB/Models/categories.model.js";
-import cloudinary from "../../../Config/cloudinary.js";
+import { deleteFileFromCloudinary } from "../../../Utils/fileUtils.js";
 
 // Create a new blog
 export const createBlog = async (req, res) => {
@@ -98,7 +98,7 @@ export const updateBlog = async (req, res) => {
 
         // Delete old image from Cloudinary after successful update
         if (oldImageUrl && oldImageUrl !== req.file.fullUrl) {
-            deleteImageFromCloudinary(oldImageUrl);
+            deleteFileFromCloudinary(oldImageUrl, "image");
         }
     }
 
@@ -112,50 +112,6 @@ export const updateBlog = async (req, res) => {
         message: "Blog updated successfully",
         data: updatedBlog,
     });
-};
-
-// Extract public_id from Cloudinary URL
-const extractPublicIdFromUrl = (url) => {
-    if (!url || !url.includes("cloudinary.com")) {
-        return null;
-    }
-
-    try {
-        // Cloudinary URL format: https://res.cloudinary.com/{cloud_name}/image/upload/{transformations}/{public_id}.{format}
-        const urlParts = url.split("/");
-        const uploadIndex = urlParts.findIndex((part) => part === "upload");
-
-        if (uploadIndex === -1) return null;
-
-        // Get everything after 'upload/' and remove the file extension
-        const publicIdWithExtension = urlParts.slice(uploadIndex + 1).join("/");
-        const publicId = publicIdWithExtension.replace(/\.[^/.]+$/, ""); // Remove file extension
-
-        return publicId;
-    } catch (error) {
-        console.error("Error extracting public_id from URL:", error);
-        return null;
-    }
-};
-
-// Delete image from Cloudinary
-const deleteImageFromCloudinary = async (imageUrl) => {
-    try {
-        const publicId = extractPublicIdFromUrl(imageUrl);
-
-        if (!publicId) {
-            console.log(
-                "Not a Cloudinary URL or unable to extract public_id:",
-                imageUrl,
-            );
-            return;
-        }
-
-        const result = await cloudinary.uploader.destroy(publicId);
-        return result;
-    } catch (error) {
-        console.error("Error deleting image from Cloudinary:", error);
-    }
 };
 
 // Delete blog
@@ -185,9 +141,9 @@ export const deleteBlog = async (req, res) => {
     // Delete the blog from database
     await blogsModel.findByIdAndDelete(id);
 
-    // Delete image from Cloudinary (async, don't wait for completion)
+    // Delete image from Cloudinary using centralized utility
     if (imageUrl) {
-        deleteImageFromCloudinary(imageUrl);
+        deleteFileFromCloudinary(imageUrl, "image");
     }
 
     res.status(200).json({

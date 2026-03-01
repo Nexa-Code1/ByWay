@@ -7,7 +7,7 @@ import {
 import { authenticationMiddleware } from "./../../Middlewares/authentication.middleware.js";
 import { errorHandlerMiddleware } from "./../../Middlewares/error.handler.middleware.js";
 import { authorizationMiddleware } from "./../../Middlewares/authorization.middleware.js";
-import { USER_ROLES, USER_ROLES_TYPES } from "./../../Constants/constants.js";
+import { USER_ROLES } from "./../../Constants/constants.js";
 
 const categoriesRouter = Router();
 
@@ -15,19 +15,19 @@ categoriesRouter.post(
     "/create-category",
     authenticationMiddleware,
     authorizationMiddleware(USER_ROLES.ADMIN),
-    errorHandlerMiddleware(createCategory)
+    errorHandlerMiddleware(createCategory),
 );
 
 categoriesRouter.get(
     "/get-all-categories",
-    errorHandlerMiddleware(getAllCategories)
+    errorHandlerMiddleware(getAllCategories),
 );
 
 categoriesRouter.delete(
     "/delete-category/:id",
     authenticationMiddleware,
     authorizationMiddleware(USER_ROLES.ADMIN),
-    errorHandlerMiddleware(deleteCategory)
+    errorHandlerMiddleware(deleteCategory),
 );
 
 export default categoriesRouter;

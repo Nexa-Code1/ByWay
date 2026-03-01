@@ -2,18 +2,22 @@ import imgPlaceholder from "@/assets/images/placeholder_view.svg";
 import type { ICourse } from "@/types";
 import { StarFilled, UserOutlined } from "@ant-design/icons";
 import CourseControlMenu from "./CourseControlMenu";
+import { useState } from "react";
 
 type InstructorCourseCardProps = {
     course: ICourse;
 };
 
 function InstructorCourseCard({ course }: InstructorCourseCardProps) {
+    const [image, setImage] = useState(course.image);
+
     return (
         <div className="flex flex-col shadow-lg overflow-hidden">
             <div className="w-full h-30 overflow-hidden">
                 <img
-                    src={course.image || imgPlaceholder}
+                    src={image}
                     alt={course.title}
+                    onError={() => setImage(imgPlaceholder)}
                     className="w-full h-full object-cover object-center"
                 />
             </div>

@@ -101,3 +101,27 @@ export async function handleGetInstructorCourses({
         catchError(err);
     }
 }
+
+export async function handleGetStudentCourses({
+    limit,
+    page,
+}: {
+    limit: number;
+    page: number;
+}) {
+    try {
+        let url = `courses/get-student-courses`;
+        const filterArr = Object.entries({ limit, page });
+        if (filterArr.length > 0) {
+            const joinedFilterArr = filterArr
+                .map((el) => `${el[0]}=${el[1]}`)
+                .join("&");
+            url += `?${joinedFilterArr}`;
+        }
+
+        const res = await api.get(url);
+        return res.data;
+    } catch (err) {
+        catchError(err);
+    }
+}

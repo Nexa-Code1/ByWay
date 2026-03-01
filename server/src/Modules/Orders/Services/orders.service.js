@@ -1,10 +1,10 @@
 import ordersModel from "../../../DB/Models/orders.modle.js";
 import coursesModel from "../../../DB/Models/courses.model.js";
+import enrollmentModel from "../../../DB/Models/enrollments.modle.js";
 import { ORDER_STATUS } from "../../../Constants/constants.js";
 
 export const createOrder = async (req, res) => {
     try {
-        console.log(req.body);
         const {
             student_ID,
             course_IDs,
@@ -83,6 +83,25 @@ export const createOrder = async (req, res) => {
             payment_method,
             payment_intent_id: payment_intent_id,
         });
+
+        // If order status is COMPLETED, create enrollment records
+        if (status === ORDER_STATUS.COMPLETED) {
+            const enrollmentPromises = course_IDs.map((courseId) =>
+                enrollmentModel.findOneAndUpdate(
+                    { student_ID: userId, course_ID: courseId },
+                    { student_ID: userId, course_ID: courseId },
+                    { upsert: true, new: true },
+                ),
+            );
+
+            await Promise.all(enrollmentPromises);
+
+            // Also update courses to add student to students array
+            await coursesModel.updateMany(
+                { _id: { $in: course_IDs } },
+                { $addToSet: { students: userId } },
+            );
+        }
 
         // Populate the order with course and student details
         const populatedOrder = await ordersModel

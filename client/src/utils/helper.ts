@@ -38,12 +38,6 @@ export function imageValidation({
     }
 }
 
-export async function videoUrlToFile(url: string) {
-    const res = await fetch(url); // fetch the video
-    const blob = await res.blob(); // convert to Blob
-    return new File([blob], "placeholder-video.mp4", { type: blob.type });
-}
-
 export const brandLogoSrc = (brand?: string) => {
     if (!brand) return;
     switch (brand) {

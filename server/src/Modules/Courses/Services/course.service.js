@@ -3,165 +3,20 @@ import categoryModel from "../../../DB/Models/categories.model.js";
 import { COURSE_STATUS } from "../../../Constants/constants.js";
 import cartModel from "../../../DB/Models/cart.model.js";
 import wishlistModel from "../../../DB/Models/wishlist.model.js";
+import enrollmentModel from "../../../DB/Models/enrollments.modle.js";
+import {
+    validateCourseImage,
+    parseCourseData,
+    validateCourseContent,
+    processCourseContent,
+    updateLessonSectionIds,
+    getPopulatedCourse,
+} from "../Helpers/course.helpers.js";
 import lessonsModel from "../../../DB/Models/lessons.model.js";
-
-// START: Helper functions for create and udpate courses
-const validateCourseImage = (req, isUpdate = false) => {
-    if (!isUpdate && !req.file) {
-        return { isValid: false, message: "Course image is required" };
-    }
-    return { isValid: true, imageUrl: req.file?.fullUrl };
-};
-
-const parseCourseData = (requirements, courseContent) => {
-    let parsedRequirements = requirements;
-    let parsedCourseContent = courseContent;
-
-    try {
-        if (typeof requirements === "string") {
-            parsedRequirements = JSON.parse(requirements);
-        }
-        if (typeof courseContent === "string") {
-            parsedCourseContent = JSON.parse(courseContent);
-        }
-    } catch (error) {
-        return {
-            isValid: false,
-            message: "Invalid data format for requirements or courseContent",
-        };
-    }
-
-    return { isValid: true, parsedRequirements, parsedCourseContent };
-};
-
-const validateCourseContent = (parsedCourseContent) => {
-    if (!parsedCourseContent || !Array.isArray(parsedCourseContent)) {
-        return {
-            isValid: false,
-            message: "Course content must be an array of sections",
-        };
-    }
-    return { isValid: true };
-};
-
-const validateSectionAndLessons = (sectionData) => {
-    if (!sectionData.section) {
-        return {
-            isValid: false,
-            message: "Each section must have a section name",
-        };
-    }
-
-    if (sectionData.lessons && Array.isArray(sectionData.lessons)) {
-        for (const lessonData of sectionData.lessons) {
-            if (!lessonData.title) {
-                return {
-                    isValid: false,
-                    message: "Each lesson must have a title",
-                };
-            }
-        }
-    }
-
-    return { isValid: true };
-};
-
-const processLesson = async (lessonData, courseId) => {
-    let lesson;
-
-    // If lesson has an ID, try to find existing lesson first
-    if (lessonData._id) {
-        lesson = await lessonsModel.findById(lessonData._id);
-
-        if (lesson && lesson.course_Id.toString() === courseId.toString()) {
-            lesson.title = lessonData.title;
-            lesson.description = lessonData.description || "";
-            lesson.link = lessonData.videoUrl || lesson.link;
-            lesson.duration = lessonData.duration || lesson.duration;
-            await lesson.save();
-            return lesson;
-        } else {
-            // Create new lesson with the provided ID
-            lesson = await lessonsModel.create({
-                _id: lessonData._id, // Use the client-provided ID
-                course_Id: courseId,
-                section_ID: null, // Will be set after section is created
-                title: lessonData.title,
-                description: lessonData.description || "",
-                link: lessonData.videoUrl || "",
-                duration: lessonData.duration || 0,
-            });
-            return lesson;
-        }
-    } else {
-        // Create new lesson without ID (generate new one)
-        lesson = await lessonsModel.create({
-            course_Id: courseId,
-            section_ID: null, // Will be set after section is created
-            title: lessonData.title,
-            description: lessonData.description || "",
-            link: lessonData.videoUrl || "",
-            duration: lessonData.duration || 0,
-        });
-        return lesson;
-    }
-};
-
-const processCourseContent = async (courseContent, courseId) => {
-    const processedContent = [];
-    const newLessonIds = [];
-
-    for (const sectionData of courseContent) {
-        const validation = validateSectionAndLessons(sectionData);
-        if (!validation.isValid) {
-            return { isValid: false, message: validation.message };
-        }
-
-        const sectionLessons = [];
-
-        // Process lessons for this section
-        if (sectionData.lessons && Array.isArray(sectionData.lessons)) {
-            for (const lessonData of sectionData.lessons) {
-                const lesson = await processLesson(lessonData, courseId);
-                if (lesson) {
-                    sectionLessons.push(lesson._id);
-                    newLessonIds.push(lesson._id);
-                }
-            }
-        }
-
-        // Add section to course content
-        processedContent.push({
-            section: sectionData.section,
-            _id: sectionData._id,
-            lessons: sectionLessons,
-        });
-    }
-
-    return { isValid: true, processedContent, newLessonIds };
-};
-
-const updateLessonSectionIds = async (courseContent) => {
-    for (let i = 0; i < courseContent.length; i++) {
-        const section = courseContent[i];
-        await lessonsModel.updateMany(
-            { _id: { $in: section.lessons } },
-            { section_ID: section._id },
-        );
-    }
-};
-
-const getPopulatedCourse = async (courseId) => {
-    return await coursesModel.findById(courseId).populate([
-        { path: "category", select: "name slug" },
-        { path: "instructor", select: "firstName lastName headLine bio image" },
-        {
-            path: "content.lessons",
-            select: "section_ID title description link duration isCompleted",
-        },
-    ]);
-};
-// END:Helper functions for create and udpate courses
+import {
+    deleteFileFromCloudinary,
+    deleteMultipleFilesFromCloudinary,
+} from "../../../Utils/fileUtils.js";
 
 export const createCourseWithContent = async (req, res) => {
     const { id } = req.user;
@@ -208,10 +63,12 @@ export const createCourseWithContent = async (req, res) => {
         status: COURSE_STATUS.DRAFT,
     });
 
-    // Process course content
+    // Process course content with video files
+    const videoFiles = req.files?.videos || [];
     const contentResult = await processCourseContent(
         parsedData.parsedCourseContent,
         course._id,
+        videoFiles,
     );
     if (!contentResult.isValid) {
         return res.status(400).json({ message: contentResult.message });
@@ -289,16 +146,18 @@ export const updateCourseWithContent = async (req, res) => {
             currentLessonIds.push(...section.lessons);
         });
 
-        // Process new content
+        // Process new content with video files
+        const videoFiles = req.files?.videos || [];
         const contentResult = await processCourseContent(
             parsedData.parsedCourseContent,
             course._id,
+            videoFiles,
         );
         if (!contentResult.isValid) {
             return res.status(400).json({ message: contentResult.message });
         }
 
-        // Delete lessons that are no longer in the content
+        // Delete lessons that are no longer in the content and their associated assets
         const lessonsToDelete = currentLessonIds.filter(
             (lessonId) =>
                 !contentResult.newLessonIds.some(
@@ -306,8 +165,26 @@ export const updateCourseWithContent = async (req, res) => {
                 ),
         );
 
+        // Collect asset URLs for deletion
+        const assetUrlsToDelete = [];
+
         for (const lessonId of lessonsToDelete) {
+            const lesson = await lessonsModel.findById(lessonId);
+            if (lesson && lesson.link) {
+                assetUrlsToDelete.push(lesson.link);
+            }
             await lessonsModel.findByIdAndDelete(lessonId);
+        }
+
+        // Delete assets from Cloudinary with logging
+        if (assetUrlsToDelete.length > 0) {
+            console.log(
+                "Attempting to delete video assets:",
+                assetUrlsToDelete,
+            );
+            const deletionResult =
+                await deleteMultipleFilesFromCloudinary(assetUrlsToDelete);
+            console.log("Video deletion result:", deletionResult);
         }
 
         updateData.content = contentResult.processedContent;
@@ -349,7 +226,47 @@ export const deleteCourse = async (req, res) => {
         });
     }
 
+    // Collect all asset URLs for deletion
+    const assetUrlsToDelete = [];
+
+    // Add course image if it exists
+    if (course.image) {
+        assetUrlsToDelete.push(course.image);
+    }
+
+    // Get all lessons and collect their video URLs
+    const allLessonIds = [];
+    course.content.forEach((section) => {
+        allLessonIds.push(...section.lessons);
+    });
+
+    if (allLessonIds.length > 0) {
+        const lessons = await lessonsModel.find({ _id: { $in: allLessonIds } });
+        lessons.forEach((lesson) => {
+            if (lesson.link) {
+                assetUrlsToDelete.push(lesson.link);
+            }
+        });
+    }
+
+    // Delete the course from database
     await coursesModel.findByIdAndDelete(id);
+
+    // Delete all lessons
+    if (allLessonIds.length > 0) {
+        await lessonsModel.deleteMany({ _id: { $in: allLessonIds } });
+    }
+
+    // Delete assets from Cloudinary with logging
+    if (assetUrlsToDelete.length > 0) {
+        console.log("Attempting to delete course assets:", assetUrlsToDelete);
+
+        const deletionResult =
+            await deleteMultipleFilesFromCloudinary(assetUrlsToDelete);
+        console.log("Asset deletion result:", deletionResult);
+    } else {
+        console.log("No assets found to delete for course:", id);
+    }
 
     res.status(200).json({
         message: "Course deleted successfully",
@@ -606,4 +523,93 @@ export const getInstructorCourses = async (req, res) => {
             prevPage: pageNumber > 1 ? pageNumber - 1 : null,
         },
     });
+};
+
+export const getStudentCourses = async (req, res) => {
+    const { page = 1, limit = 10 } = req.query;
+    const studentId = req.user.id;
+
+    const pageNumber = Number(page);
+    const limitNumber = Number(limit);
+    const skip = (pageNumber - 1) * limitNumber;
+
+    try {
+        // Get all enrollments for this student to verify course purchases
+        const enrollments = await enrollmentModel
+            .find({
+                student_ID: studentId,
+            })
+            .populate("course_ID");
+
+        if (!enrollments || enrollments.length === 0) {
+            return res.status(200).json({
+                message: "No purchased courses found",
+                courses: [],
+                pagination: {
+                    total: 0,
+                    totalPages: 0,
+                    currentPage: pageNumber,
+                    nextPage: null,
+                    prevPage: null,
+                },
+            });
+        }
+
+        // Extract course IDs from enrollments
+        const courseIds = enrollments.map(
+            (enrollment) => enrollment.course_ID._id,
+        );
+
+        // Get total count for pagination
+        const totalCourses = await coursesModel.countDocuments({
+            _id: { $in: courseIds },
+            status: COURSE_STATUS.PUBLISHED,
+        });
+
+        // Get paginated courses
+        const courses = await coursesModel
+            .find({
+                _id: { $in: courseIds },
+                status: COURSE_STATUS.PUBLISHED,
+            })
+            .populate([{ path: "category", select: "name slug" }])
+            .select("image title category progress")
+            .skip(skip)
+            .limit(limitNumber)
+            .sort({ createdAt: -1 });
+
+        // Add enrollment date to each course
+        const coursesWithEnrollmentDate = courses.map((course) => {
+            const enrollment = enrollments.find(
+                (e) => e.course_ID._id.toString() === course._id.toString(),
+            );
+
+            return {
+                ...course.toObject(),
+                enrolledAt: enrollment.createdAt,
+                progress: course.progress || 0,
+            };
+        });
+
+        res.status(200).json({
+            message: "Student courses fetched successfully",
+            courses: coursesWithEnrollmentDate,
+            pagination: {
+                total: totalCourses,
+                totalPages: Math.ceil(totalCourses / limitNumber),
+                currentPage: pageNumber,
+                nextPage:
+                    pageNumber * limitNumber < totalCourses
+                        ? pageNumber + 1
+                        : null,
+                prevPage: pageNumber > 1 ? pageNumber - 1 : null,
+            },
+        });
+    } catch (error) {
+        console.error("Error fetching student courses:", error);
+        res.status(500).json({
+            message: "Internal server error while fetching student courses",
+            error: error.message,
+        });
+    }
 };

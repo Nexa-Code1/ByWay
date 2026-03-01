@@ -22,7 +22,13 @@ function LessonElement({ lesson, sectionId }: LessonElementProps) {
 
     const items: MenuProps["items"] = [
         {
-            label: <UploadLessonVideo onOk={handleOk} />,
+            label: (
+                <UploadLessonVideo
+                    onOk={handleOk}
+                    sectionId={sectionId}
+                    lessonId={lesson._id}
+                />
+            ),
             key: "0",
         },
         {
@@ -48,7 +54,7 @@ function LessonElement({ lesson, sectionId }: LessonElementProps) {
                 </a>
             </Dropdown>
 
-            <UpdateLessonTitle onOk={handleOk} />
+            <UpdateLessonTitle onOk={handleOk} lessonTitle={lesson.title} />
 
             <ConfirmationModal
                 triggerBtnType="text"

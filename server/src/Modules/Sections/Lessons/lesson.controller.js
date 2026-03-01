@@ -4,35 +4,35 @@ import { authenticationMiddleware } from "../../../Middlewares/authentication.mi
 import { errorHandlerMiddleware } from "../../../Middlewares/error.handler.middleware.js";
 import { USER_ROLES, VIDEO_TYPES } from "../../../Constants/constants.js";
 import {
-  createLesson,
-  deleteLesson,
-  updateLesson,
+    createLesson,
+    deleteLesson,
+    updateLesson,
 } from "./Services/lesson.service.js";
 import { Multer } from "../../../Middlewares/multer.middleware.js";
 
 const lessonsRouter = Router();
 
 lessonsRouter.post(
-  "/create-lesson/:courseId/:sectionId",
-  authenticationMiddleware,
-  authorizationMiddleware(USER_ROLES.INSTRUCTOR),
-  Multer("/Lessons/Videos", VIDEO_TYPES).single("link"),
-  errorHandlerMiddleware(createLesson),
+    "/create-lesson/:courseId/:sectionId",
+    authenticationMiddleware,
+    authorizationMiddleware(USER_ROLES.INSTRUCTOR),
+    Multer("Byway/Courses/Videos", VIDEO_TYPES).single("link"),
+    errorHandlerMiddleware(createLesson),
 );
 
 lessonsRouter.put(
-  "/update-lesson/:courseId/:sectionId/:lessonId",
-  authenticationMiddleware,
-  authorizationMiddleware(USER_ROLES.INSTRUCTOR),
-  Multer("/Lessons/Videos", VIDEO_TYPES).single("link"),
-  errorHandlerMiddleware(updateLesson),
+    "/update-lesson/:courseId/:sectionId/:lessonId",
+    authenticationMiddleware,
+    authorizationMiddleware(USER_ROLES.INSTRUCTOR),
+    Multer("Byway/Courses/Videos", VIDEO_TYPES).single("link"),
+    errorHandlerMiddleware(updateLesson),
 );
 
 lessonsRouter.delete(
-  "/delete-lesson/:lessonId",
-  authenticationMiddleware,
-  authorizationMiddleware(USER_ROLES.INSTRUCTOR),
-  errorHandlerMiddleware(deleteLesson),
+    "/delete-lesson/:lessonId",
+    authenticationMiddleware,
+    authorizationMiddleware(USER_ROLES.INSTRUCTOR),
+    errorHandlerMiddleware(deleteLesson),
 );
 
 export default lessonsRouter;

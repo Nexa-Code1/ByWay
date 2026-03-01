@@ -21,6 +21,7 @@ export function useUpdateCourse() {
             onSuccess: () => {
                 queryClient.invalidateQueries({
                     queryKey: [QUERY_KEYS.GET_INSTRUCTOR_COURSES],
+                    exact: false,
                 });
                 message.success("Course updated successfully!");
             },

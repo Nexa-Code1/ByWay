@@ -5,29 +5,39 @@ import { DeleteOutlined, UploadOutlined } from "@ant-design/icons";
 import InputModal from "./InputModal";
 import IconBtn from "@/components/shared/IconBtn";
 import type { ICourseLessonUpdatedData } from "@/types";
+import { useNewCourseContext } from "@/instructor/context/NewCourseContext";
 
 type UploadLessonVideoProps = {
     onOk(updatedProp: ICourseLessonUpdatedData): void;
+    sectionId: string;
+    lessonId: string;
 };
 
-function UploadLessonVideo({ onOk }: UploadLessonVideoProps) {
+function UploadLessonVideo({
+    onOk,
+    sectionId,
+    lessonId,
+}: UploadLessonVideoProps) {
     const [file, setFile] = useState<File | null>(null);
+    const { updateLesson } = useNewCourseContext();
 
     async function handleBeforeUpload(file: File) {
-        // validate type => jpg or png only
-        const valid = file.type === "video/mp4";
+        // validate type => mp4 only
+        const valid = ["video/mp4"].includes(file.type);
         if (!valid) {
-            message.error("Only mp4 video is allowed.");
+            message.error("Only mp4 format only is allowed.");
             return;
         }
 
-        // validate size max 2MB
+        // validate size max 4GB
         const isUnder4GB = file.size && file.size / 1024 ** 3 < 4;
         if (!isUnder4GB) {
-            message.error("Image must be smaller than 4GB.");
+            message.error("Video must be smaller than 4GB.");
             return;
         }
 
+        // Automatically add video's name as lesson's default title
+        updateLesson(sectionId, lessonId, { title: file.name });
         // hold file for later upload
         setFile(file);
 

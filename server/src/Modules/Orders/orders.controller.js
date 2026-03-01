@@ -15,21 +15,21 @@ ordersRouter.post(
     "/create-order",
     authenticationMiddleware,
     authorizationMiddleware(USER_ROLES.STUDENT),
-    errorHandlerMiddleware(createOrder)
+    errorHandlerMiddleware(createOrder),
 );
 
 ordersRouter.get(
     "/student-orders",
     authenticationMiddleware,
     authorizationMiddleware(USER_ROLES.STUDENT),
-    errorHandlerMiddleware(getOrdersByStudent)
+    errorHandlerMiddleware(getOrdersByStudent),
 );
 
 ordersRouter.get(
     "/:orderId",
     authenticationMiddleware,
     authorizationMiddleware(USER_ROLES.STUDENT),
-    errorHandlerMiddleware(getOrderById)
+    errorHandlerMiddleware(getOrderById),
 );
 
 export default ordersRouter;

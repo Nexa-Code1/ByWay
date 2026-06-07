@@ -1,5 +1,4 @@
 import multer from "multer";
-import { CloudinaryStorage } from "multer-storage-cloudinary";
 
 import cloudinary from "../Config/cloudinary.js";
 import { getVideoDuration } from "../Utils/video.helper.js";
@@ -44,36 +43,36 @@ const attachFileMeta = async (file, req) => {
     return file;
 };
 
-export const Multer = (destinationPath, allowedExtensions = []) => {
-    // Getting file types (e.g. jpeg, ... from image/jpeg, ...)
-    const extractedFormats = allowedExtensions.length
-        ? allowedExtensions.map((m) => {
-              const format = m.split("/")[1];
-              return format;
-          })
-        : [];
+const uploadToCloudinary = async (file, destinationPath) => {
+    return new Promise((resolve, reject) => {
+        // Dynamic folder routing based on file type
+        let folder = destinationPath.replace(/^\//, "");
 
-    const storage = new CloudinaryStorage({
-        cloudinary,
-        params: (req, file) => {
-            // Dynamic folder routing based on file type
-            let folder = destinationPath.replace(/^\//, "");
+        if (file.mimetype?.startsWith("image/")) {
+            folder = `${folder}/Images`;
+        } else if (file.mimetype?.startsWith("video/")) {
+            folder = `${folder}/Videos`;
+        }
 
-            if (file.mimetype?.startsWith("image/")) {
-                folder = `${folder}/Images`;
-            } else if (file.mimetype?.startsWith("video/")) {
-                folder = `${folder}/Videos`;
-            }
+        const uploadOptions = {
+            folder,
+            resource_type: "auto",
+        };
 
-            return {
-                folder,
-                resource_type: "auto",
-                ...(allowedExtensions.length && {
-                    allowed_formats: extractedFormats,
-                }),
-            };
-        },
+        cloudinary.uploader
+            .upload_stream(uploadOptions, (error, result) => {
+                if (error) {
+                    reject(error);
+                } else {
+                    resolve(result);
+                }
+            })
+            .end(file.buffer);
     });
+};
+
+export const Multer = (destinationPath, allowedExtensions = []) => {
+    const storage = multer.memoryStorage();
 
     const fileFilter = (_, file, cb) => {
         // If no allowed extensions specified, allow all files
@@ -104,7 +103,19 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
                 if (err) {
                     return next(err);
                 }
-                if (req.file) await attachFileMeta(req.file, req);
+                if (req.file) {
+                    try {
+                        const result = await uploadToCloudinary(
+                            req.file,
+                            destinationPath,
+                        );
+                        req.file.path = result.secure_url;
+                        req.file.cloudinaryId = result.public_id;
+                        await attachFileMeta(req.file, req);
+                    } catch (error) {
+                        return next(error);
+                    }
+                }
 
                 next();
             }),
@@ -115,8 +126,19 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
                     return next(err);
                 }
                 if (req.files) {
-                    for (const file of req.files)
-                        await attachFileMeta(file, req);
+                    try {
+                        for (const file of req.files) {
+                            const result = await uploadToCloudinary(
+                                file,
+                                destinationPath,
+                            );
+                            file.path = result.secure_url;
+                            file.cloudinaryId = result.public_id;
+                            await attachFileMeta(file, req);
+                        }
+                    } catch (error) {
+                        return next(error);
+                    }
                 }
                 next();
             }),
@@ -125,9 +147,20 @@ export const Multer = (destinationPath, allowedExtensions = []) => {
             upload.fields(fields)(req, res, async (err) => {
                 if (err) return next(err);
                 if (req.files) {
-                    for (const key of Object.keys(req.files)) {
-                        for (const file of req.files[key])
-                            await attachFileMeta(file, req);
+                    try {
+                        for (const key of Object.keys(req.files)) {
+                            for (const file of req.files[key]) {
+                                const result = await uploadToCloudinary(
+                                    file,
+                                    destinationPath,
+                                );
+                                file.path = result.secure_url;
+                                file.cloudinaryId = result.public_id;
+                                await attachFileMeta(file, req);
+                            }
+                        }
+                    } catch (error) {
+                        return next(error);
                     }
                 }
                 next();

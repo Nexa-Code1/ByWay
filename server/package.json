@@ -15,7 +15,7 @@
     "dependencies": {
         "bcrypt": "^6.0.0",
         "byway-mern-root": "file:..",
-        "cloudinary": "^1.41.3",
+        "cloudinary": "^2.10.0",
         "cors": "^2.8.5",
         "crypto-js": "^4.2.0",
         "dompurify": "^3.3.1",
@@ -29,8 +29,7 @@
         "mongodb": "^7.0.0",
         "mongoose": "^8.19.4",
         "multer": "^2.0.2",
-        "multer-storage-cloudinary": "^4.0.0",
-        "nodemailer": "^7.0.10",
+        "nodemailer": "^8.0.10",
         "stripe": "^20.0.0",
         "uuid": "^13.0.0"
     },

@@ -1,0 +1,5752 @@
+[
+  {
+    "_id": {
+      "$oid": "ba8b64629b0ed70a65bbcf5b"
+    },
+    "course_Id": {
+      "$oid": "696640001a791e23a9d53601"
+    },
+    "section_ID": {
+      "$oid": "cefbfaa6d5fc8658f85571a6"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "dc512cdc9ec98181df870620"
+    },
+    "course_Id": {
+      "$oid": "696640001a791e23a9d53601"
+    },
+    "section_ID": {
+      "$oid": "cefbfaa6d5fc8658f85571a6"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "b254db3653db14794c279e7b"
+    },
+    "course_Id": {
+      "$oid": "696640001a791e23a9d53601"
+    },
+    "section_ID": {
+      "$oid": "4662240937ba70800b8be6fd"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "68224141d5b91ecc1089663b"
+    },
+    "course_Id": {
+      "$oid": "696640001a791e23a9d53601"
+    },
+    "section_ID": {
+      "$oid": "4662240937ba70800b8be6fd"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "49d0bdf869502fef47e11792"
+    },
+    "course_Id": {
+      "$oid": "696640001a791e23a9d53601"
+    },
+    "section_ID": {
+      "$oid": "4662240937ba70800b8be6fd"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "ca28bd1d88d3d5cb0823991d"
+    },
+    "course_Id": {
+      "$oid": "696640025a791e23a9d53619"
+    },
+    "section_ID": {
+      "$oid": "218da71b59fad27b64815bff"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "15b0f37a7f6faa34253ee83b"
+    },
+    "course_Id": {
+      "$oid": "696640025a791e23a9d53619"
+    },
+    "section_ID": {
+      "$oid": "218da71b59fad27b64815bff"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "10376af399ac3b13dbe3a128"
+    },
+    "course_Id": {
+      "$oid": "696640025a791e23a9d53619"
+    },
+    "section_ID": {
+      "$oid": "5c1726b6a97b020f40ab4216"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6f575da6a4f40fc39bdf69e5"
+    },
+    "course_Id": {
+      "$oid": "696640025a791e23a9d53619"
+    },
+    "section_ID": {
+      "$oid": "5c1726b6a97b020f40ab4216"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5fab1ec62362c51f46b8ce02"
+    },
+    "course_Id": {
+      "$oid": "696640025a791e23a9d53619"
+    },
+    "section_ID": {
+      "$oid": "5c1726b6a97b020f40ab4216"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "55c77d0dc947b835fc34f7d2"
+    },
+    "course_Id": {
+      "$oid": "696640026a791e23a9d5361a"
+    },
+    "section_ID": {
+      "$oid": "1c76615bc94ac0464f299467"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "a8c591396b2f4b94709f71d6"
+    },
+    "course_Id": {
+      "$oid": "696640026a791e23a9d5361a"
+    },
+    "section_ID": {
+      "$oid": "1c76615bc94ac0464f299467"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "c598f2ee0f916dd56f0f53fc"
+    },
+    "course_Id": {
+      "$oid": "696640026a791e23a9d5361a"
+    },
+    "section_ID": {
+      "$oid": "bee2a206cc5228dfd40f6600"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "30e9a8629f7b387072e1419d"
+    },
+    "course_Id": {
+      "$oid": "696640026a791e23a9d5361a"
+    },
+    "section_ID": {
+      "$oid": "bee2a206cc5228dfd40f6600"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "3e0491d41ab8542fc773d6a9"
+    },
+    "course_Id": {
+      "$oid": "696640026a791e23a9d5361a"
+    },
+    "section_ID": {
+      "$oid": "bee2a206cc5228dfd40f6600"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "f15b9049770adfd1a5d80a9b"
+    },
+    "course_Id": {
+      "$oid": "696640027a791e23a9d5361b"
+    },
+    "section_ID": {
+      "$oid": "00bbf71a66d8f6f5cbfaca46"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "8e2d86c9a53ea6fd3becd033"
+    },
+    "course_Id": {
+      "$oid": "696640027a791e23a9d5361b"
+    },
+    "section_ID": {
+      "$oid": "00bbf71a66d8f6f5cbfaca46"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "133507064fa8c949804bfbd7"
+    },
+    "course_Id": {
+      "$oid": "696640027a791e23a9d5361b"
+    },
+    "section_ID": {
+      "$oid": "b7bb7ea60999c407cf94052c"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "a3e9840a8c7de2d47f18ca77"
+    },
+    "course_Id": {
+      "$oid": "696640027a791e23a9d5361b"
+    },
+    "section_ID": {
+      "$oid": "b7bb7ea60999c407cf94052c"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "9cb32a076cc4d4ed54c7a0cd"
+    },
+    "course_Id": {
+      "$oid": "696640027a791e23a9d5361b"
+    },
+    "section_ID": {
+      "$oid": "b7bb7ea60999c407cf94052c"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "dc7e6c68b25eaeb3456cb57d"
+    },
+    "course_Id": {
+      "$oid": "696640028a791e23a9d5361c"
+    },
+    "section_ID": {
+      "$oid": "47b3b375e684cabbcc779ece"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "42c6b5ac23527cb6d528477c"
+    },
+    "course_Id": {
+      "$oid": "696640028a791e23a9d5361c"
+    },
+    "section_ID": {
+      "$oid": "47b3b375e684cabbcc779ece"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "342d6fa13eaef4ee07c2f3be"
+    },
+    "course_Id": {
+      "$oid": "696640028a791e23a9d5361c"
+    },
+    "section_ID": {
+      "$oid": "ec9a69d86f65d449eae2979f"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "a5354782ed16d09c55243022"
+    },
+    "course_Id": {
+      "$oid": "696640028a791e23a9d5361c"
+    },
+    "section_ID": {
+      "$oid": "ec9a69d86f65d449eae2979f"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "a103e583d9c1e0a1ab3ce65f"
+    },
+    "course_Id": {
+      "$oid": "696640028a791e23a9d5361c"
+    },
+    "section_ID": {
+      "$oid": "ec9a69d86f65d449eae2979f"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "301ac0f753141a7287fb2fc3"
+    },
+    "course_Id": {
+      "$oid": "696640029a791e23a9d5361d"
+    },
+    "section_ID": {
+      "$oid": "7947e437023449d363b7fca8"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "e18665d668cc4e1351cc95fe"
+    },
+    "course_Id": {
+      "$oid": "696640029a791e23a9d5361d"
+    },
+    "section_ID": {
+      "$oid": "7947e437023449d363b7fca8"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "c2ff7dbc55a286926329f832"
+    },
+    "course_Id": {
+      "$oid": "696640029a791e23a9d5361d"
+    },
+    "section_ID": {
+      "$oid": "fc5f6a4cc57178bb0aa903da"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "72c0e1f229f8d3fdccad2015"
+    },
+    "course_Id": {
+      "$oid": "696640029a791e23a9d5361d"
+    },
+    "section_ID": {
+      "$oid": "fc5f6a4cc57178bb0aa903da"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "e2d4d150f6ff540998125c77"
+    },
+    "course_Id": {
+      "$oid": "696640029a791e23a9d5361d"
+    },
+    "section_ID": {
+      "$oid": "fc5f6a4cc57178bb0aa903da"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "2d5af0857c42583f0ac0fc84"
+    },
+    "course_Id": {
+      "$oid": "696640030a791e23a9d5361e"
+    },
+    "section_ID": {
+      "$oid": "3aeb96c5206e74233450d710"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "2f1dc0d524d70bfd388bad3e"
+    },
+    "course_Id": {
+      "$oid": "696640030a791e23a9d5361e"
+    },
+    "section_ID": {
+      "$oid": "3aeb96c5206e74233450d710"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6e5e2915371d9ccc8f15298b"
+    },
+    "course_Id": {
+      "$oid": "696640030a791e23a9d5361e"
+    },
+    "section_ID": {
+      "$oid": "c74e97f77abc8ad5035fc2c3"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "f2fb864ba4f3601c10b5d47d"
+    },
+    "course_Id": {
+      "$oid": "696640030a791e23a9d5361e"
+    },
+    "section_ID": {
+      "$oid": "c74e97f77abc8ad5035fc2c3"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "ae3964478e73686f0065110b"
+    },
+    "course_Id": {
+      "$oid": "696640030a791e23a9d5361e"
+    },
+    "section_ID": {
+      "$oid": "c74e97f77abc8ad5035fc2c3"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "89bc2f7e0b1832cac7247828"
+    },
+    "course_Id": {
+      "$oid": "696640031a791e23a9d5361f"
+    },
+    "section_ID": {
+      "$oid": "549f0c646088570bd3ef9e3f"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "10c86245ecb344411f5ada51"
+    },
+    "course_Id": {
+      "$oid": "696640031a791e23a9d5361f"
+    },
+    "section_ID": {
+      "$oid": "549f0c646088570bd3ef9e3f"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5285f473f8761f72b412bf51"
+    },
+    "course_Id": {
+      "$oid": "696640031a791e23a9d5361f"
+    },
+    "section_ID": {
+      "$oid": "87200100c9a93474c221d151"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "c28e6840d91ca9870baee586"
+    },
+    "course_Id": {
+      "$oid": "696640031a791e23a9d5361f"
+    },
+    "section_ID": {
+      "$oid": "87200100c9a93474c221d151"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "9a855df1bae66603f38d68c8"
+    },
+    "course_Id": {
+      "$oid": "696640031a791e23a9d5361f"
+    },
+    "section_ID": {
+      "$oid": "87200100c9a93474c221d151"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "82858ad22639816c299c93e9"
+    },
+    "course_Id": {
+      "$oid": "696640032a791e23a9d53620"
+    },
+    "section_ID": {
+      "$oid": "491cc6d9172642f65229b6c6"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "044761aea87d6c6d8fdf087c"
+    },
+    "course_Id": {
+      "$oid": "696640032a791e23a9d53620"
+    },
+    "section_ID": {
+      "$oid": "491cc6d9172642f65229b6c6"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "c0437194c91320ec547c321d"
+    },
+    "course_Id": {
+      "$oid": "696640032a791e23a9d53620"
+    },
+    "section_ID": {
+      "$oid": "e327258fb7af4cfa5ce5ae58"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "12f432727bdba0d6fb3580de"
+    },
+    "course_Id": {
+      "$oid": "696640032a791e23a9d53620"
+    },
+    "section_ID": {
+      "$oid": "e327258fb7af4cfa5ce5ae58"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "94c563d435c99cab8f8b29fd"
+    },
+    "course_Id": {
+      "$oid": "696640032a791e23a9d53620"
+    },
+    "section_ID": {
+      "$oid": "e327258fb7af4cfa5ce5ae58"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "414ab3153759450ecf9462a6"
+    },
+    "course_Id": {
+      "$oid": "696640033a791e23a9d53621"
+    },
+    "section_ID": {
+      "$oid": "809fccefa8f825767398898f"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "50fa2ea9c4fc2c14985ecd2c"
+    },
+    "course_Id": {
+      "$oid": "696640033a791e23a9d53621"
+    },
+    "section_ID": {
+      "$oid": "809fccefa8f825767398898f"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "b12d759ebccc8502391674c6"
+    },
+    "course_Id": {
+      "$oid": "696640033a791e23a9d53621"
+    },
+    "section_ID": {
+      "$oid": "96e14ac53385ddcb6d53729e"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "9ee923d6c09544f0fc9649b5"
+    },
+    "course_Id": {
+      "$oid": "696640033a791e23a9d53621"
+    },
+    "section_ID": {
+      "$oid": "96e14ac53385ddcb6d53729e"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "3ac6de548d5e3f380e17096e"
+    },
+    "course_Id": {
+      "$oid": "696640033a791e23a9d53621"
+    },
+    "section_ID": {
+      "$oid": "96e14ac53385ddcb6d53729e"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "e40356869048a30897ccc759"
+    },
+    "course_Id": {
+      "$oid": "696640034a791e23a9d53622"
+    },
+    "section_ID": {
+      "$oid": "bb63c5a77bfeaf7bb936aa73"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "0743f34103a76a6767874b9d"
+    },
+    "course_Id": {
+      "$oid": "696640034a791e23a9d53622"
+    },
+    "section_ID": {
+      "$oid": "bb63c5a77bfeaf7bb936aa73"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "caf859321f3ecded935b9a51"
+    },
+    "course_Id": {
+      "$oid": "696640034a791e23a9d53622"
+    },
+    "section_ID": {
+      "$oid": "c3706a848c286ac611a6d126"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "80531af18acc401a0b4d9120"
+    },
+    "course_Id": {
+      "$oid": "696640034a791e23a9d53622"
+    },
+    "section_ID": {
+      "$oid": "c3706a848c286ac611a6d126"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "80c80e892fe66bf64ed92fcd"
+    },
+    "course_Id": {
+      "$oid": "696640034a791e23a9d53622"
+    },
+    "section_ID": {
+      "$oid": "c3706a848c286ac611a6d126"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "637e4bd07b365eeae8c31018"
+    },
+    "course_Id": {
+      "$oid": "696640035a791e23a9d53623"
+    },
+    "section_ID": {
+      "$oid": "a3fe0f07dbacdfb44eaefc89"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "cf3d8714589767140e6b430c"
+    },
+    "course_Id": {
+      "$oid": "696640035a791e23a9d53623"
+    },
+    "section_ID": {
+      "$oid": "a3fe0f07dbacdfb44eaefc89"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "e74de17ac98b77e7834937a4"
+    },
+    "course_Id": {
+      "$oid": "696640035a791e23a9d53623"
+    },
+    "section_ID": {
+      "$oid": "2b2bc24f85899285e196394d"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "329e498cca7ddee0e58da2de"
+    },
+    "course_Id": {
+      "$oid": "696640035a791e23a9d53623"
+    },
+    "section_ID": {
+      "$oid": "2b2bc24f85899285e196394d"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "4c299c026cf476533f0d1659"
+    },
+    "course_Id": {
+      "$oid": "696640035a791e23a9d53623"
+    },
+    "section_ID": {
+      "$oid": "2b2bc24f85899285e196394d"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "7f77641e69c80469359ac2ff"
+    },
+    "course_Id": {
+      "$oid": "696640036a791e23a9d53624"
+    },
+    "section_ID": {
+      "$oid": "00598696edd35f312fc416d7"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "98e2c07b64f699f231cafbe2"
+    },
+    "course_Id": {
+      "$oid": "696640036a791e23a9d53624"
+    },
+    "section_ID": {
+      "$oid": "00598696edd35f312fc416d7"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "74bf5b239ac963a2138f6f73"
+    },
+    "course_Id": {
+      "$oid": "696640036a791e23a9d53624"
+    },
+    "section_ID": {
+      "$oid": "6c40a78a4f20f44f46ef95e9"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "c76921e899e6a7528811134b"
+    },
+    "course_Id": {
+      "$oid": "696640036a791e23a9d53624"
+    },
+    "section_ID": {
+      "$oid": "6c40a78a4f20f44f46ef95e9"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "45df2a691377df493f484104"
+    },
+    "course_Id": {
+      "$oid": "696640036a791e23a9d53624"
+    },
+    "section_ID": {
+      "$oid": "6c40a78a4f20f44f46ef95e9"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "955234e7498d36dd74429b67"
+    },
+    "course_Id": {
+      "$oid": "696640037a791e23a9d53625"
+    },
+    "section_ID": {
+      "$oid": "0e3b315c04ff3e2786454930"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "78c7ac67811e0ef90a60832c"
+    },
+    "course_Id": {
+      "$oid": "696640037a791e23a9d53625"
+    },
+    "section_ID": {
+      "$oid": "0e3b315c04ff3e2786454930"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "d9cc9df8e9f26b3b62bafbf8"
+    },
+    "course_Id": {
+      "$oid": "696640037a791e23a9d53625"
+    },
+    "section_ID": {
+      "$oid": "93b95989aa6c14463370adbb"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "f4c857a352845819bf471eca"
+    },
+    "course_Id": {
+      "$oid": "696640037a791e23a9d53625"
+    },
+    "section_ID": {
+      "$oid": "93b95989aa6c14463370adbb"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "b9e49216d6343930f2985e87"
+    },
+    "course_Id": {
+      "$oid": "696640037a791e23a9d53625"
+    },
+    "section_ID": {
+      "$oid": "93b95989aa6c14463370adbb"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "958dce7d2e4b044462239e47"
+    },
+    "course_Id": {
+      "$oid": "696640038a791e23a9d53626"
+    },
+    "section_ID": {
+      "$oid": "0fcf4d0b23cdeb5318d20361"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "70a3153c932edba34b91ed6a"
+    },
+    "course_Id": {
+      "$oid": "696640038a791e23a9d53626"
+    },
+    "section_ID": {
+      "$oid": "0fcf4d0b23cdeb5318d20361"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "8344dbfd4455cdee24f96a71"
+    },
+    "course_Id": {
+      "$oid": "696640038a791e23a9d53626"
+    },
+    "section_ID": {
+      "$oid": "656c4543d305040ab9906f77"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "4389680a5ac2284ecd7ab230"
+    },
+    "course_Id": {
+      "$oid": "696640038a791e23a9d53626"
+    },
+    "section_ID": {
+      "$oid": "656c4543d305040ab9906f77"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "ab6441e672d1fba20a2c11ae"
+    },
+    "course_Id": {
+      "$oid": "696640038a791e23a9d53626"
+    },
+    "section_ID": {
+      "$oid": "656c4543d305040ab9906f77"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "7a91afae8ff84b9979678da1"
+    },
+    "course_Id": {
+      "$oid": "696640039a791e23a9d53627"
+    },
+    "section_ID": {
+      "$oid": "59229d87b85f16e63697f63f"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "7b6b1a93b5b01e2c1723c978"
+    },
+    "course_Id": {
+      "$oid": "696640039a791e23a9d53627"
+    },
+    "section_ID": {
+      "$oid": "59229d87b85f16e63697f63f"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "50a2aab2b78ee98550b56c24"
+    },
+    "course_Id": {
+      "$oid": "696640039a791e23a9d53627"
+    },
+    "section_ID": {
+      "$oid": "665d10b772498514bdf0918c"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "d3b73b1597e543db024b3701"
+    },
+    "course_Id": {
+      "$oid": "696640039a791e23a9d53627"
+    },
+    "section_ID": {
+      "$oid": "665d10b772498514bdf0918c"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "39d28f178bf1d29112298b75"
+    },
+    "course_Id": {
+      "$oid": "696640039a791e23a9d53627"
+    },
+    "section_ID": {
+      "$oid": "665d10b772498514bdf0918c"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5900b79467cf97a2c35db1c7"
+    },
+    "course_Id": {
+      "$oid": "696640040a791e23a9d53628"
+    },
+    "section_ID": {
+      "$oid": "dcdf441c1543e4d361feef60"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "ef50424db76c746d582d8857"
+    },
+    "course_Id": {
+      "$oid": "696640040a791e23a9d53628"
+    },
+    "section_ID": {
+      "$oid": "dcdf441c1543e4d361feef60"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "f943a66e52f61312f2baa63e"
+    },
+    "course_Id": {
+      "$oid": "696640040a791e23a9d53628"
+    },
+    "section_ID": {
+      "$oid": "1a0bff74467b9d3343566966"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "c2c10ce8b009c8f76570d79f"
+    },
+    "course_Id": {
+      "$oid": "696640040a791e23a9d53628"
+    },
+    "section_ID": {
+      "$oid": "1a0bff74467b9d3343566966"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "acadf49590a695f2c4e92d35"
+    },
+    "course_Id": {
+      "$oid": "696640040a791e23a9d53628"
+    },
+    "section_ID": {
+      "$oid": "1a0bff74467b9d3343566966"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6d3d85bb2a116dad44b549aa"
+    },
+    "course_Id": {
+      "$oid": "696640041a791e23a9d53629"
+    },
+    "section_ID": {
+      "$oid": "b4e536c96070c481e2e7379a"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "ccee45b9fa60e21e77857c46"
+    },
+    "course_Id": {
+      "$oid": "696640041a791e23a9d53629"
+    },
+    "section_ID": {
+      "$oid": "b4e536c96070c481e2e7379a"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "a60871da330f68632ac2b2dc"
+    },
+    "course_Id": {
+      "$oid": "696640041a791e23a9d53629"
+    },
+    "section_ID": {
+      "$oid": "4169c703b61631ad3a5b57aa"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "ac60f6a4f2b612cbc3f7b7ad"
+    },
+    "course_Id": {
+      "$oid": "696640041a791e23a9d53629"
+    },
+    "section_ID": {
+      "$oid": "4169c703b61631ad3a5b57aa"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "08675e99673c9e8b384b813d"
+    },
+    "course_Id": {
+      "$oid": "696640041a791e23a9d53629"
+    },
+    "section_ID": {
+      "$oid": "4169c703b61631ad3a5b57aa"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "023b124ad478a69195e227ce"
+    },
+    "course_Id": {
+      "$oid": "696640042a791e23a9d5362a"
+    },
+    "section_ID": {
+      "$oid": "bcfaf61d54d0f5c71ec15d5e"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "ed5c294f3d4006357d1e0512"
+    },
+    "course_Id": {
+      "$oid": "696640042a791e23a9d5362a"
+    },
+    "section_ID": {
+      "$oid": "bcfaf61d54d0f5c71ec15d5e"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "328b6f785f6ac3ce2b9c0dcf"
+    },
+    "course_Id": {
+      "$oid": "696640042a791e23a9d5362a"
+    },
+    "section_ID": {
+      "$oid": "d3241222045a0a1604e6dcc3"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "d2faffeeac3b55d74d204cf1"
+    },
+    "course_Id": {
+      "$oid": "696640042a791e23a9d5362a"
+    },
+    "section_ID": {
+      "$oid": "d3241222045a0a1604e6dcc3"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "607bc65e2cde3851624d96b4"
+    },
+    "course_Id": {
+      "$oid": "696640042a791e23a9d5362a"
+    },
+    "section_ID": {
+      "$oid": "d3241222045a0a1604e6dcc3"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "3658c09fd83835751107d01c"
+    },
+    "course_Id": {
+      "$oid": "696640043a791e23a9d5362b"
+    },
+    "section_ID": {
+      "$oid": "c39e96956b12852ee61a341e"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "1be564eaf606cb184b5d0919"
+    },
+    "course_Id": {
+      "$oid": "696640043a791e23a9d5362b"
+    },
+    "section_ID": {
+      "$oid": "c39e96956b12852ee61a341e"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "065b8af37dd369b6275c088f"
+    },
+    "course_Id": {
+      "$oid": "696640043a791e23a9d5362b"
+    },
+    "section_ID": {
+      "$oid": "fca69e48ed81d06d3f5014da"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "4a65bd18767cb71653dbe592"
+    },
+    "course_Id": {
+      "$oid": "696640043a791e23a9d5362b"
+    },
+    "section_ID": {
+      "$oid": "fca69e48ed81d06d3f5014da"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "b120625d3c2eb634cf755430"
+    },
+    "course_Id": {
+      "$oid": "696640043a791e23a9d5362b"
+    },
+    "section_ID": {
+      "$oid": "fca69e48ed81d06d3f5014da"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "c57029f3c557a9a2b4c80e4f"
+    },
+    "course_Id": {
+      "$oid": "696640044a791e23a9d5362c"
+    },
+    "section_ID": {
+      "$oid": "010f0c6228e21dce1be46cf5"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "e0b8b4797bc42a5ef9811708"
+    },
+    "course_Id": {
+      "$oid": "696640044a791e23a9d5362c"
+    },
+    "section_ID": {
+      "$oid": "010f0c6228e21dce1be46cf5"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "934e9741583ae689d234b134"
+    },
+    "course_Id": {
+      "$oid": "696640044a791e23a9d5362c"
+    },
+    "section_ID": {
+      "$oid": "2673148433a479c36678a46a"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "bc9e3b535d77073d38fc23be"
+    },
+    "course_Id": {
+      "$oid": "696640044a791e23a9d5362c"
+    },
+    "section_ID": {
+      "$oid": "2673148433a479c36678a46a"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "081871c5639c42f7dcc466e3"
+    },
+    "course_Id": {
+      "$oid": "696640044a791e23a9d5362c"
+    },
+    "section_ID": {
+      "$oid": "2673148433a479c36678a46a"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "81265ef11966ab8d5b6d2449"
+    },
+    "course_Id": {
+      "$oid": "696640045a791e23a9d5362d"
+    },
+    "section_ID": {
+      "$oid": "dc6b32f59da287d07ff7a215"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "3aeb42ce0f766777eab036af"
+    },
+    "course_Id": {
+      "$oid": "696640045a791e23a9d5362d"
+    },
+    "section_ID": {
+      "$oid": "dc6b32f59da287d07ff7a215"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "82deb2f64212f5664651a1f3"
+    },
+    "course_Id": {
+      "$oid": "696640045a791e23a9d5362d"
+    },
+    "section_ID": {
+      "$oid": "fcea614b1e894991fb643636"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "4bcefbcbb0c1dfa593aeca98"
+    },
+    "course_Id": {
+      "$oid": "696640045a791e23a9d5362d"
+    },
+    "section_ID": {
+      "$oid": "fcea614b1e894991fb643636"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "4245c01b2a873a2ebc3b286b"
+    },
+    "course_Id": {
+      "$oid": "696640045a791e23a9d5362d"
+    },
+    "section_ID": {
+      "$oid": "fcea614b1e894991fb643636"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5e5927cc53397b392e0a6244"
+    },
+    "course_Id": {
+      "$oid": "696640046a791e23a9d5362e"
+    },
+    "section_ID": {
+      "$oid": "1fd0017944833c52b15f48b6"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "bc51247112e8603ed80fa315"
+    },
+    "course_Id": {
+      "$oid": "696640046a791e23a9d5362e"
+    },
+    "section_ID": {
+      "$oid": "1fd0017944833c52b15f48b6"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "3c035f5f2b4fbf324ffdc716"
+    },
+    "course_Id": {
+      "$oid": "696640046a791e23a9d5362e"
+    },
+    "section_ID": {
+      "$oid": "350e695e964f524be1a34903"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "c630ad0cafeadc42bf921306"
+    },
+    "course_Id": {
+      "$oid": "696640046a791e23a9d5362e"
+    },
+    "section_ID": {
+      "$oid": "350e695e964f524be1a34903"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "57ddc16d327237adcc3a4e88"
+    },
+    "course_Id": {
+      "$oid": "696640046a791e23a9d5362e"
+    },
+    "section_ID": {
+      "$oid": "350e695e964f524be1a34903"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6a6dbfebfdfd6c22b4e09764"
+    },
+    "course_Id": {
+      "$oid": "696640047a791e23a9d5362f"
+    },
+    "section_ID": {
+      "$oid": "8d432ef706717207563cf1e2"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "1a82f8b325af2b8d01d504b5"
+    },
+    "course_Id": {
+      "$oid": "696640047a791e23a9d5362f"
+    },
+    "section_ID": {
+      "$oid": "8d432ef706717207563cf1e2"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "2448e2d4b1ef064675aba586"
+    },
+    "course_Id": {
+      "$oid": "696640047a791e23a9d5362f"
+    },
+    "section_ID": {
+      "$oid": "ca4df5b2959dd17b100f8d3d"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "8407c4a5d034fcceac8637b8"
+    },
+    "course_Id": {
+      "$oid": "696640047a791e23a9d5362f"
+    },
+    "section_ID": {
+      "$oid": "ca4df5b2959dd17b100f8d3d"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "522d6d3ab5d47ca277bd7387"
+    },
+    "course_Id": {
+      "$oid": "696640047a791e23a9d5362f"
+    },
+    "section_ID": {
+      "$oid": "ca4df5b2959dd17b100f8d3d"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "b1081ea09b690471a10e2ff4"
+    },
+    "course_Id": {
+      "$oid": "696640048a791e23a9d53630"
+    },
+    "section_ID": {
+      "$oid": "6340cc45d66fd20a75d88d47"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6146cd828bbac8fcee8fdd1d"
+    },
+    "course_Id": {
+      "$oid": "696640048a791e23a9d53630"
+    },
+    "section_ID": {
+      "$oid": "6340cc45d66fd20a75d88d47"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "da2f0e0807d86935caf6473c"
+    },
+    "course_Id": {
+      "$oid": "696640048a791e23a9d53630"
+    },
+    "section_ID": {
+      "$oid": "543a44f14e959e4ddfd1da73"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "d7599a2a5de4d740a52ac67a"
+    },
+    "course_Id": {
+      "$oid": "696640048a791e23a9d53630"
+    },
+    "section_ID": {
+      "$oid": "543a44f14e959e4ddfd1da73"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "97ce97fc752155a9aae08c14"
+    },
+    "course_Id": {
+      "$oid": "696640048a791e23a9d53630"
+    },
+    "section_ID": {
+      "$oid": "543a44f14e959e4ddfd1da73"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "c46d168f95ce4f6250a20460"
+    },
+    "course_Id": {
+      "$oid": "696640002a791e23a9d53602"
+    },
+    "section_ID": {
+      "$oid": "6540dc8d22a08229da80e1f1"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "d3ca3fd05feeb14eb6e7790a"
+    },
+    "course_Id": {
+      "$oid": "696640002a791e23a9d53602"
+    },
+    "section_ID": {
+      "$oid": "6540dc8d22a08229da80e1f1"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "135f686627683602a327bf07"
+    },
+    "course_Id": {
+      "$oid": "696640002a791e23a9d53602"
+    },
+    "section_ID": {
+      "$oid": "31fc572b572aea7437bf6819"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "1e2f3e3631ed85db56d02f79"
+    },
+    "course_Id": {
+      "$oid": "696640002a791e23a9d53602"
+    },
+    "section_ID": {
+      "$oid": "31fc572b572aea7437bf6819"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "35abf6cb68cf15c291dbf6f8"
+    },
+    "course_Id": {
+      "$oid": "696640002a791e23a9d53602"
+    },
+    "section_ID": {
+      "$oid": "31fc572b572aea7437bf6819"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "624d1a6110759938b6a0eab8"
+    },
+    "course_Id": {
+      "$oid": "696640003a791e23a9d53603"
+    },
+    "section_ID": {
+      "$oid": "c744210dd3ef05514faf51b3"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "a8e1beb27ed126bd467aaea5"
+    },
+    "course_Id": {
+      "$oid": "696640003a791e23a9d53603"
+    },
+    "section_ID": {
+      "$oid": "c744210dd3ef05514faf51b3"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "64d0750a221e976df27107ab"
+    },
+    "course_Id": {
+      "$oid": "696640003a791e23a9d53603"
+    },
+    "section_ID": {
+      "$oid": "ee4ab305915ab3aa768bce87"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "a17b966af3d98e3ec42ca4c7"
+    },
+    "course_Id": {
+      "$oid": "696640003a791e23a9d53603"
+    },
+    "section_ID": {
+      "$oid": "ee4ab305915ab3aa768bce87"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6256ee4f92e03894628df844"
+    },
+    "course_Id": {
+      "$oid": "696640003a791e23a9d53603"
+    },
+    "section_ID": {
+      "$oid": "ee4ab305915ab3aa768bce87"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "ef573250ac707d739e92547a"
+    },
+    "course_Id": {
+      "$oid": "696640004a791e23a9d53604"
+    },
+    "section_ID": {
+      "$oid": "a47a74b323b4495fc504949b"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "f17874a4567fd0a9e7a9e302"
+    },
+    "course_Id": {
+      "$oid": "696640004a791e23a9d53604"
+    },
+    "section_ID": {
+      "$oid": "a47a74b323b4495fc504949b"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "71f3e1be4552f8e6e3f6efc8"
+    },
+    "course_Id": {
+      "$oid": "696640004a791e23a9d53604"
+    },
+    "section_ID": {
+      "$oid": "e33ea1d326bcaf5ca93ce414"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "d5ed9cfda3494c3771e602a3"
+    },
+    "course_Id": {
+      "$oid": "696640004a791e23a9d53604"
+    },
+    "section_ID": {
+      "$oid": "e33ea1d326bcaf5ca93ce414"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "1d6abb9fedc3cceb51548bad"
+    },
+    "course_Id": {
+      "$oid": "696640004a791e23a9d53604"
+    },
+    "section_ID": {
+      "$oid": "e33ea1d326bcaf5ca93ce414"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "74cb46d6f84b16830b7b94ce"
+    },
+    "course_Id": {
+      "$oid": "696640005a791e23a9d53605"
+    },
+    "section_ID": {
+      "$oid": "38e43015fc28f81b60608fa6"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "650babda1fe8ece4dd9c11ed"
+    },
+    "course_Id": {
+      "$oid": "696640005a791e23a9d53605"
+    },
+    "section_ID": {
+      "$oid": "38e43015fc28f81b60608fa6"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "e73f5472a9a8baa0bda8337b"
+    },
+    "course_Id": {
+      "$oid": "696640005a791e23a9d53605"
+    },
+    "section_ID": {
+      "$oid": "232488e8bfa6bf80e9865390"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "030dc98322da6e6a5b966cbf"
+    },
+    "course_Id": {
+      "$oid": "696640005a791e23a9d53605"
+    },
+    "section_ID": {
+      "$oid": "232488e8bfa6bf80e9865390"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "4d9708863f6bc84dac29b34e"
+    },
+    "course_Id": {
+      "$oid": "696640005a791e23a9d53605"
+    },
+    "section_ID": {
+      "$oid": "232488e8bfa6bf80e9865390"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "4e2f62c4e140f02c519e8448"
+    },
+    "course_Id": {
+      "$oid": "696640006a791e23a9d53606"
+    },
+    "section_ID": {
+      "$oid": "294cd982b97ac3f6a88708f8"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "d503c5b5350e9408fb408807"
+    },
+    "course_Id": {
+      "$oid": "696640006a791e23a9d53606"
+    },
+    "section_ID": {
+      "$oid": "294cd982b97ac3f6a88708f8"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "9f28a19144ecb551cc00d6b5"
+    },
+    "course_Id": {
+      "$oid": "696640006a791e23a9d53606"
+    },
+    "section_ID": {
+      "$oid": "7805d87a247b44979f57115e"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "e95065a4b3ae581f55eb2017"
+    },
+    "course_Id": {
+      "$oid": "696640006a791e23a9d53606"
+    },
+    "section_ID": {
+      "$oid": "7805d87a247b44979f57115e"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "9437bf8bbe8a3a11be19af35"
+    },
+    "course_Id": {
+      "$oid": "696640006a791e23a9d53606"
+    },
+    "section_ID": {
+      "$oid": "7805d87a247b44979f57115e"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "c6bf920a1a61294c6e700a61"
+    },
+    "course_Id": {
+      "$oid": "696640007a791e23a9d53607"
+    },
+    "section_ID": {
+      "$oid": "ec47096d008666f57e12702b"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "15f1ca28cf9b62dd4b107dc1"
+    },
+    "course_Id": {
+      "$oid": "696640007a791e23a9d53607"
+    },
+    "section_ID": {
+      "$oid": "ec47096d008666f57e12702b"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "3e28f58adadb970833cbaa27"
+    },
+    "course_Id": {
+      "$oid": "696640007a791e23a9d53607"
+    },
+    "section_ID": {
+      "$oid": "b2e38cf2b5cde78682c92564"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "0437240e9dd1fb8c50810d51"
+    },
+    "course_Id": {
+      "$oid": "696640007a791e23a9d53607"
+    },
+    "section_ID": {
+      "$oid": "b2e38cf2b5cde78682c92564"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "12a422408b92323a25f25596"
+    },
+    "course_Id": {
+      "$oid": "696640007a791e23a9d53607"
+    },
+    "section_ID": {
+      "$oid": "b2e38cf2b5cde78682c92564"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "104ffed615c62eb8be11bed5"
+    },
+    "course_Id": {
+      "$oid": "696640008a791e23a9d53608"
+    },
+    "section_ID": {
+      "$oid": "f77c148e26c91b359a406d38"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "81c87e6136befcffcac39845"
+    },
+    "course_Id": {
+      "$oid": "696640008a791e23a9d53608"
+    },
+    "section_ID": {
+      "$oid": "f77c148e26c91b359a406d38"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "89dd91e653c8942d53643e8f"
+    },
+    "course_Id": {
+      "$oid": "696640008a791e23a9d53608"
+    },
+    "section_ID": {
+      "$oid": "da7a4bd17250ad1003fc18e1"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "c2967c700d9d8dda487c9960"
+    },
+    "course_Id": {
+      "$oid": "696640008a791e23a9d53608"
+    },
+    "section_ID": {
+      "$oid": "da7a4bd17250ad1003fc18e1"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65f42418a441fdb7fc358ad9"
+    },
+    "course_Id": {
+      "$oid": "696640008a791e23a9d53608"
+    },
+    "section_ID": {
+      "$oid": "da7a4bd17250ad1003fc18e1"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6c872b90760a3b3c2bec846f"
+    },
+    "course_Id": {
+      "$oid": "696640009a791e23a9d53609"
+    },
+    "section_ID": {
+      "$oid": "7b9611678a93b4dbf3457a66"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "98f1a9e4da798d3484e25c0f"
+    },
+    "course_Id": {
+      "$oid": "696640009a791e23a9d53609"
+    },
+    "section_ID": {
+      "$oid": "7b9611678a93b4dbf3457a66"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "69ea2d1c82e27ec8b0f767d2"
+    },
+    "course_Id": {
+      "$oid": "696640009a791e23a9d53609"
+    },
+    "section_ID": {
+      "$oid": "e86f2a2c2efd7fdac25640a8"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "15b288159836c871c5e43e8e"
+    },
+    "course_Id": {
+      "$oid": "696640009a791e23a9d53609"
+    },
+    "section_ID": {
+      "$oid": "e86f2a2c2efd7fdac25640a8"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "82b7796e688e9d255ada1450"
+    },
+    "course_Id": {
+      "$oid": "696640009a791e23a9d53609"
+    },
+    "section_ID": {
+      "$oid": "e86f2a2c2efd7fdac25640a8"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "bb29dbabb723a84456cf6ceb"
+    },
+    "course_Id": {
+      "$oid": "696640010a791e23a9d5360a"
+    },
+    "section_ID": {
+      "$oid": "d106e2f55fba0f5f9bf8810a"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "bdb346695e86d7201806557d"
+    },
+    "course_Id": {
+      "$oid": "696640010a791e23a9d5360a"
+    },
+    "section_ID": {
+      "$oid": "d106e2f55fba0f5f9bf8810a"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "3d20c3e435f1fb77cdffefef"
+    },
+    "course_Id": {
+      "$oid": "696640010a791e23a9d5360a"
+    },
+    "section_ID": {
+      "$oid": "6e2e3b75cdc3da1493212a58"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "75c181b4f5cdc0cd7767c539"
+    },
+    "course_Id": {
+      "$oid": "696640010a791e23a9d5360a"
+    },
+    "section_ID": {
+      "$oid": "6e2e3b75cdc3da1493212a58"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "a56d0a3e7b8a9041bcc98599"
+    },
+    "course_Id": {
+      "$oid": "696640010a791e23a9d5360a"
+    },
+    "section_ID": {
+      "$oid": "6e2e3b75cdc3da1493212a58"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "aa70caf56430f29c85a97fbf"
+    },
+    "course_Id": {
+      "$oid": "696640011a791e23a9d5360b"
+    },
+    "section_ID": {
+      "$oid": "690e7967f2443eeee12851b6"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "80f35fe5cda8f573b4eeb67a"
+    },
+    "course_Id": {
+      "$oid": "696640011a791e23a9d5360b"
+    },
+    "section_ID": {
+      "$oid": "690e7967f2443eeee12851b6"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "b9eac111fd28fbe4a45dc666"
+    },
+    "course_Id": {
+      "$oid": "696640011a791e23a9d5360b"
+    },
+    "section_ID": {
+      "$oid": "30f0d347527405f09a9aaae8"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "9c42094f93457a5412e9e52c"
+    },
+    "course_Id": {
+      "$oid": "696640011a791e23a9d5360b"
+    },
+    "section_ID": {
+      "$oid": "30f0d347527405f09a9aaae8"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "e6cadc6a45be46e131e6997a"
+    },
+    "course_Id": {
+      "$oid": "696640011a791e23a9d5360b"
+    },
+    "section_ID": {
+      "$oid": "30f0d347527405f09a9aaae8"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "a0e997ca6d3cc9ac760f4737"
+    },
+    "course_Id": {
+      "$oid": "696640012a791e23a9d5360c"
+    },
+    "section_ID": {
+      "$oid": "9da031f0fbc95ef55a7e9131"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "adc08bba6dd6943f0a06f643"
+    },
+    "course_Id": {
+      "$oid": "696640012a791e23a9d5360c"
+    },
+    "section_ID": {
+      "$oid": "9da031f0fbc95ef55a7e9131"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "100c690a355d18f2108a5b88"
+    },
+    "course_Id": {
+      "$oid": "696640012a791e23a9d5360c"
+    },
+    "section_ID": {
+      "$oid": "bf9875cb1e1f78b76c589f93"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "d4e90bbf08ac1eee082fc748"
+    },
+    "course_Id": {
+      "$oid": "696640012a791e23a9d5360c"
+    },
+    "section_ID": {
+      "$oid": "bf9875cb1e1f78b76c589f93"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5c8894dcbedac76019cf59ae"
+    },
+    "course_Id": {
+      "$oid": "696640012a791e23a9d5360c"
+    },
+    "section_ID": {
+      "$oid": "bf9875cb1e1f78b76c589f93"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "89a02b936f0c4485be5599ba"
+    },
+    "course_Id": {
+      "$oid": "696640013a791e23a9d5360d"
+    },
+    "section_ID": {
+      "$oid": "35fa58054b4a9921c685a34a"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "09fe8b1e14cb0183d459d932"
+    },
+    "course_Id": {
+      "$oid": "696640013a791e23a9d5360d"
+    },
+    "section_ID": {
+      "$oid": "35fa58054b4a9921c685a34a"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "f262613040be1ffe7e15ef40"
+    },
+    "course_Id": {
+      "$oid": "696640013a791e23a9d5360d"
+    },
+    "section_ID": {
+      "$oid": "3daf757f338820955cd370d5"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "e157692c421a0d3bc7804086"
+    },
+    "course_Id": {
+      "$oid": "696640013a791e23a9d5360d"
+    },
+    "section_ID": {
+      "$oid": "3daf757f338820955cd370d5"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "2485f606e47ad1f96b632a7e"
+    },
+    "course_Id": {
+      "$oid": "696640013a791e23a9d5360d"
+    },
+    "section_ID": {
+      "$oid": "3daf757f338820955cd370d5"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "bcf96e2bcdcf2b8aa1d94702"
+    },
+    "course_Id": {
+      "$oid": "696640014a791e23a9d5360e"
+    },
+    "section_ID": {
+      "$oid": "6f7cafa9fab45ca5ee15a449"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "e3f5ec4cea2ce25d3c5644a0"
+    },
+    "course_Id": {
+      "$oid": "696640014a791e23a9d5360e"
+    },
+    "section_ID": {
+      "$oid": "6f7cafa9fab45ca5ee15a449"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "289799174a0267657aa2fb22"
+    },
+    "course_Id": {
+      "$oid": "696640014a791e23a9d5360e"
+    },
+    "section_ID": {
+      "$oid": "f22d772685ec91699372be1d"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "dd61604778098c3150561783"
+    },
+    "course_Id": {
+      "$oid": "696640014a791e23a9d5360e"
+    },
+    "section_ID": {
+      "$oid": "f22d772685ec91699372be1d"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "0f1610c9f5f4fd13bda4abb0"
+    },
+    "course_Id": {
+      "$oid": "696640014a791e23a9d5360e"
+    },
+    "section_ID": {
+      "$oid": "f22d772685ec91699372be1d"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "fe903bf4d86ad0e379a6d85a"
+    },
+    "course_Id": {
+      "$oid": "696640015a791e23a9d5360f"
+    },
+    "section_ID": {
+      "$oid": "426dd96858f268cf234119a6"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "de9ad14407529021109b1abf"
+    },
+    "course_Id": {
+      "$oid": "696640015a791e23a9d5360f"
+    },
+    "section_ID": {
+      "$oid": "426dd96858f268cf234119a6"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "3e04e841e9c6e59cc1242fc2"
+    },
+    "course_Id": {
+      "$oid": "696640015a791e23a9d5360f"
+    },
+    "section_ID": {
+      "$oid": "1aae4b9f661eb01c1fdc5e4b"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "964fe9bec831f70b6c894edd"
+    },
+    "course_Id": {
+      "$oid": "696640015a791e23a9d5360f"
+    },
+    "section_ID": {
+      "$oid": "1aae4b9f661eb01c1fdc5e4b"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "f459711fb13350122f6fdb01"
+    },
+    "course_Id": {
+      "$oid": "696640015a791e23a9d5360f"
+    },
+    "section_ID": {
+      "$oid": "1aae4b9f661eb01c1fdc5e4b"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "b4327a68f0cc4bb8a977f54c"
+    },
+    "course_Id": {
+      "$oid": "696640016a791e23a9d53610"
+    },
+    "section_ID": {
+      "$oid": "a7d1360e59ecc169352d0f4d"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "c131743649b642ed674a3c13"
+    },
+    "course_Id": {
+      "$oid": "696640016a791e23a9d53610"
+    },
+    "section_ID": {
+      "$oid": "a7d1360e59ecc169352d0f4d"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "e50434a699c5931e10446c5b"
+    },
+    "course_Id": {
+      "$oid": "696640016a791e23a9d53610"
+    },
+    "section_ID": {
+      "$oid": "cfdd432b026a4c6ef4814a74"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "fab8e0402cd066f498994596"
+    },
+    "course_Id": {
+      "$oid": "696640016a791e23a9d53610"
+    },
+    "section_ID": {
+      "$oid": "cfdd432b026a4c6ef4814a74"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "060fa68d58989a72b9661ad7"
+    },
+    "course_Id": {
+      "$oid": "696640016a791e23a9d53610"
+    },
+    "section_ID": {
+      "$oid": "cfdd432b026a4c6ef4814a74"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "306e0c26f7a9e972966a75a2"
+    },
+    "course_Id": {
+      "$oid": "696640017a791e23a9d53611"
+    },
+    "section_ID": {
+      "$oid": "6b9e1d5b4eb972f2f0f7f57f"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "708ce3d5605cf9de3841f1a2"
+    },
+    "course_Id": {
+      "$oid": "696640017a791e23a9d53611"
+    },
+    "section_ID": {
+      "$oid": "6b9e1d5b4eb972f2f0f7f57f"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "f8c3f08fde3c7820f0825ff1"
+    },
+    "course_Id": {
+      "$oid": "696640017a791e23a9d53611"
+    },
+    "section_ID": {
+      "$oid": "116696a0399f3b772b5d278f"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "c28ab8b57204d782393d58bc"
+    },
+    "course_Id": {
+      "$oid": "696640017a791e23a9d53611"
+    },
+    "section_ID": {
+      "$oid": "116696a0399f3b772b5d278f"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5c2a88545f3cfba9f2da60de"
+    },
+    "course_Id": {
+      "$oid": "696640017a791e23a9d53611"
+    },
+    "section_ID": {
+      "$oid": "116696a0399f3b772b5d278f"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "cc6ca4bf9231db3366383e9e"
+    },
+    "course_Id": {
+      "$oid": "696640018a791e23a9d53612"
+    },
+    "section_ID": {
+      "$oid": "ebe5959029677c59f2e9bb6d"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "1efb2223e8f0365acb875414"
+    },
+    "course_Id": {
+      "$oid": "696640018a791e23a9d53612"
+    },
+    "section_ID": {
+      "$oid": "ebe5959029677c59f2e9bb6d"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "b516c0b8926572871d8297ca"
+    },
+    "course_Id": {
+      "$oid": "696640018a791e23a9d53612"
+    },
+    "section_ID": {
+      "$oid": "baa0cc5b54be757bc91443d4"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "ca8c3233643558ecf9a5578f"
+    },
+    "course_Id": {
+      "$oid": "696640018a791e23a9d53612"
+    },
+    "section_ID": {
+      "$oid": "baa0cc5b54be757bc91443d4"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "441e98675e5fe6b777751732"
+    },
+    "course_Id": {
+      "$oid": "696640018a791e23a9d53612"
+    },
+    "section_ID": {
+      "$oid": "baa0cc5b54be757bc91443d4"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6f1411d3b4bffca746caf01c"
+    },
+    "course_Id": {
+      "$oid": "696640019a791e23a9d53613"
+    },
+    "section_ID": {
+      "$oid": "55e7ae0fac20c1b690fb9d88"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "36dcac205194214f1d334520"
+    },
+    "course_Id": {
+      "$oid": "696640019a791e23a9d53613"
+    },
+    "section_ID": {
+      "$oid": "55e7ae0fac20c1b690fb9d88"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "be28e0ea7dda4f5622828a1e"
+    },
+    "course_Id": {
+      "$oid": "696640019a791e23a9d53613"
+    },
+    "section_ID": {
+      "$oid": "80354c8ace89744d590ce560"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "ca5613c66020b47417b33d70"
+    },
+    "course_Id": {
+      "$oid": "696640019a791e23a9d53613"
+    },
+    "section_ID": {
+      "$oid": "80354c8ace89744d590ce560"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5d38fa005dc3b07018c715b9"
+    },
+    "course_Id": {
+      "$oid": "696640019a791e23a9d53613"
+    },
+    "section_ID": {
+      "$oid": "80354c8ace89744d590ce560"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "29cf7bbebeac2b51a9ba28cd"
+    },
+    "course_Id": {
+      "$oid": "696640020a791e23a9d53614"
+    },
+    "section_ID": {
+      "$oid": "99f2f20a8ba63f46e22a16f1"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "df0b9bc2ad832bba2360d39b"
+    },
+    "course_Id": {
+      "$oid": "696640020a791e23a9d53614"
+    },
+    "section_ID": {
+      "$oid": "99f2f20a8ba63f46e22a16f1"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "0e03f152a026a09305a9f241"
+    },
+    "course_Id": {
+      "$oid": "696640020a791e23a9d53614"
+    },
+    "section_ID": {
+      "$oid": "cfb8d8fc2a49c4cab92eee03"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "861a6d27a4d47ee608244104"
+    },
+    "course_Id": {
+      "$oid": "696640020a791e23a9d53614"
+    },
+    "section_ID": {
+      "$oid": "cfb8d8fc2a49c4cab92eee03"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "1643749ee58cff2c22afe180"
+    },
+    "course_Id": {
+      "$oid": "696640020a791e23a9d53614"
+    },
+    "section_ID": {
+      "$oid": "cfb8d8fc2a49c4cab92eee03"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "0d03036d6bdfbd84d3203ae5"
+    },
+    "course_Id": {
+      "$oid": "696640021a791e23a9d53615"
+    },
+    "section_ID": {
+      "$oid": "b7f64454d44b8dec66d720e3"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "2cb8bbe18ba6f58227a37bb4"
+    },
+    "course_Id": {
+      "$oid": "696640021a791e23a9d53615"
+    },
+    "section_ID": {
+      "$oid": "b7f64454d44b8dec66d720e3"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "7a52dde888fc0197a17f6b53"
+    },
+    "course_Id": {
+      "$oid": "696640021a791e23a9d53615"
+    },
+    "section_ID": {
+      "$oid": "e76c0c48206c2022f4cde793"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "f191e8d0b6518a6304c70882"
+    },
+    "course_Id": {
+      "$oid": "696640021a791e23a9d53615"
+    },
+    "section_ID": {
+      "$oid": "e76c0c48206c2022f4cde793"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "2bac6424540e3b7250295955"
+    },
+    "course_Id": {
+      "$oid": "696640021a791e23a9d53615"
+    },
+    "section_ID": {
+      "$oid": "e76c0c48206c2022f4cde793"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "201e9556b940fac8a762e63c"
+    },
+    "course_Id": {
+      "$oid": "696640022a791e23a9d53616"
+    },
+    "section_ID": {
+      "$oid": "2f463795844c08c7516f3ee3"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "927cde6f5be0936f63f29141"
+    },
+    "course_Id": {
+      "$oid": "696640022a791e23a9d53616"
+    },
+    "section_ID": {
+      "$oid": "2f463795844c08c7516f3ee3"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "3941345c4afe938132ffc660"
+    },
+    "course_Id": {
+      "$oid": "696640022a791e23a9d53616"
+    },
+    "section_ID": {
+      "$oid": "64c20331c1d8ae755ebf0983"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "987f7a4483cf4b45f7271ee3"
+    },
+    "course_Id": {
+      "$oid": "696640022a791e23a9d53616"
+    },
+    "section_ID": {
+      "$oid": "64c20331c1d8ae755ebf0983"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "e8eb995369af99136ab1f518"
+    },
+    "course_Id": {
+      "$oid": "696640022a791e23a9d53616"
+    },
+    "section_ID": {
+      "$oid": "64c20331c1d8ae755ebf0983"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "0b0494401faa811858e05dda"
+    },
+    "course_Id": {
+      "$oid": "696640023a791e23a9d53617"
+    },
+    "section_ID": {
+      "$oid": "68e7149d61f07bd4bb49dca0"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "3e82cfb4c165efd7874610db"
+    },
+    "course_Id": {
+      "$oid": "696640023a791e23a9d53617"
+    },
+    "section_ID": {
+      "$oid": "68e7149d61f07bd4bb49dca0"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "7d8174c56fefaed0d64acc99"
+    },
+    "course_Id": {
+      "$oid": "696640023a791e23a9d53617"
+    },
+    "section_ID": {
+      "$oid": "247bd27a11f98ad620cedf4b"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "785d1782f82d5d44ae45ed62"
+    },
+    "course_Id": {
+      "$oid": "696640023a791e23a9d53617"
+    },
+    "section_ID": {
+      "$oid": "247bd27a11f98ad620cedf4b"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "3960a14f38dcbb331ac691d4"
+    },
+    "course_Id": {
+      "$oid": "696640023a791e23a9d53617"
+    },
+    "section_ID": {
+      "$oid": "247bd27a11f98ad620cedf4b"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "779bdd3ef677f78ab7c90718"
+    },
+    "course_Id": {
+      "$oid": "696640024a791e23a9d53618"
+    },
+    "section_ID": {
+      "$oid": "7d9bfa38e04140b2f5f3ed2f"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f73e8ee5fed16cea5bc631d"
+    },
+    "course_Id": {
+      "$oid": "696640024a791e23a9d53618"
+    },
+    "section_ID": {
+      "$oid": "7d9bfa38e04140b2f5f3ed2f"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "fd04783818a9599ccbce7a19"
+    },
+    "course_Id": {
+      "$oid": "696640024a791e23a9d53618"
+    },
+    "section_ID": {
+      "$oid": "35f81cc7c84cad3c3f6343b7"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5de53ee4a59b8a8b2fbe447f"
+    },
+    "course_Id": {
+      "$oid": "696640024a791e23a9d53618"
+    },
+    "section_ID": {
+      "$oid": "35f81cc7c84cad3c3f6343b7"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "2981e189cb2bc3add3b54efd"
+    },
+    "course_Id": {
+      "$oid": "696640024a791e23a9d53618"
+    },
+    "section_ID": {
+      "$oid": "35f81cc7c84cad3c3f6343b7"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "8ec278623c3bcfba8c47a4c7"
+    },
+    "course_Id": {
+      "$oid": "6966a0fd735cc5b19d9a8e2d"
+    },
+    "section_ID": {
+      "$oid": "d17aad14d9574af8565cd0d4"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "787fa97f00959043f93c5ffb"
+    },
+    "course_Id": {
+      "$oid": "6966a0fd735cc5b19d9a8e2d"
+    },
+    "section_ID": {
+      "$oid": "d17aad14d9574af8565cd0d4"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "83cc9a3dd56557c8f00be2cb"
+    },
+    "course_Id": {
+      "$oid": "6966a0fd735cc5b19d9a8e2d"
+    },
+    "section_ID": {
+      "$oid": "4a5af17a589fdb705edac92a"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "baa44251e7e2c76c03e5894e"
+    },
+    "course_Id": {
+      "$oid": "6966a0fd735cc5b19d9a8e2d"
+    },
+    "section_ID": {
+      "$oid": "4a5af17a589fdb705edac92a"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "0d14a997996f0fd054adfbc5"
+    },
+    "course_Id": {
+      "$oid": "6966a0fd735cc5b19d9a8e2d"
+    },
+    "section_ID": {
+      "$oid": "4a5af17a589fdb705edac92a"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "a54a6f03a814814b4c2a79f3"
+    },
+    "course_Id": {
+      "$oid": "6966a1c8735cc5b19d9a8e2f"
+    },
+    "section_ID": {
+      "$oid": "700e0d3868d4f969a225a3de"
+    },
+    "title": "Welcome and course overview",
+    "description": "A short placeholder lesson introducing the course goals and learning path.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0,du_3/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "2293e3d04a01cb8cbb12ab6e"
+    },
+    "course_Id": {
+      "$oid": "6966a1c8735cc5b19d9a8e2f"
+    },
+    "section_ID": {
+      "$oid": "700e0d3868d4f969a225a3de"
+    },
+    "title": "Tools and setup checklist",
+    "description": "A short placeholder lesson for preparing the tools, files, and workspace used in the course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "ce2124e6146b32bd0c8ea704"
+    },
+    "course_Id": {
+      "$oid": "6966a1c8735cc5b19d9a8e2f"
+    },
+    "section_ID": {
+      "$oid": "cc4d4ffe678a8da26fb123fe"
+    },
+    "title": "Key concepts walkthrough",
+    "description": "A short placeholder lesson covering the main concepts learners will see in this course.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_0.5,du_2.5/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2.5,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "f7f6845051df1ae40035f4b9"
+    },
+    "course_Id": {
+      "$oid": "6966a1c8735cc5b19d9a8e2f"
+    },
+    "section_ID": {
+      "$oid": "cc4d4ffe678a8da26fb123fe"
+    },
+    "title": "Guided practice demo",
+    "description": "A short placeholder lesson showing a practical example for the course topic.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/so_1,du_2/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 2,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "4d587e18e1ef2c1ac68d91ff"
+    },
+    "course_Id": {
+      "$oid": "6966a1c8735cc5b19d9a8e2f"
+    },
+    "section_ID": {
+      "$oid": "cc4d4ffe678a8da26fb123fe"
+    },
+    "title": "Recap and next steps",
+    "description": "A short placeholder lesson that summarizes the section and points learners to the next activity.",
+    "link": "https://res.cloudinary.com/dcvmaegwn/video/upload/v1780592604/Byway/Courses/Videos/ykjloosz1xxo1x6334b4.mp4",
+    "duration": 3.366667,
+    "isCompleted": false,
+    "createdAt": {
+      "$date": "2026-06-04T17:03:28.182Z"
+    },
+    "updatedAt": {
+      "$date": "2026-06-04T17:04:02.266Z"
+    },
+    "__v": 0
+  }
+]

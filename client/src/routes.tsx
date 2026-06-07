@@ -20,11 +20,10 @@ import {
 import {
     Cart,
     Checkout,
-    CourseLesson,
     PaymentMethods,
     Profile,
     PurchaseHistory,
-    StudentCourseDetails,
+    StudentCourseLessons,
     StudentCourses,
     Success,
     Wishlist,
@@ -145,22 +144,7 @@ export const router = createBrowserRouter([
                 children: [
                     {
                         path: "student-courses",
-                        children: [
-                            { index: true, Component: StudentCourses },
-                            {
-                                path: ":courseId",
-                                children: [
-                                    {
-                                        index: true,
-                                        Component: StudentCourseDetails,
-                                    },
-                                    {
-                                        path: ":lessonId",
-                                        Component: CourseLesson,
-                                    },
-                                ],
-                            },
-                        ],
+                        Component: StudentCourses,
                     },
                     {
                         path: "wishlist",
@@ -179,6 +163,14 @@ export const router = createBrowserRouter([
                         Component: StudentSettings,
                     },
                 ],
+            },
+            {
+                path: "continue-learning/:courseId",
+                element: (
+                    <ProtectedRoute roles={["student"]}>
+                        <StudentCourseLessons />
+                    </ProtectedRoute>
+                ),
             },
         ],
     },

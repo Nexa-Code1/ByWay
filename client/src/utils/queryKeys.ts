@@ -28,4 +28,8 @@ export enum QUERY_KEYS {
     // ORDERS
     GET_STUDENT_ORDERS = "getStudentOrders",
     GET_ORDER_BY_ID = "getOrderById",
+
+    // LESSONS
+    GET_LESSON_BY_ID = "getLessonById",
+    GET_FIRST_INCOMPLETE_LESSON = "getFirstIncompleteLesson",
 }

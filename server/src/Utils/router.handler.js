@@ -3,7 +3,7 @@ import userRouter from "../Modules/Users/user.controller.js";
 import categoriesRouter from "../Modules/Categories/categories.controller.js";
 import coursesRouter from "../Modules/Courses/course.controller.js";
 import sectionsRouter from "../Modules/Sections/section.controller.js";
-import lessonsRouter from "../Modules/Sections/Lessons/lesson.controller.js";
+import lessonsRouter from "../Modules/Lessons/lesson.controller.js";
 import cartRouter from "../Modules/Cart/cart.controller.js";
 import paymentRouter from "../Modules/Payment/payment.controller.js";
 import wishlistRouter from "../Modules/Wishlist/wishlist.controller.js";

@@ -20,7 +20,7 @@ lessonsRouter.post(
     errorHandlerMiddleware(createLesson),
 );
 
-lessonsRouter.put(
+lessonsRouter.patch(
     "/update-lesson/:courseId/:sectionId/:lessonId",
     authenticationMiddleware,
     authorizationMiddleware(USER_ROLES.INSTRUCTOR),

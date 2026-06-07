@@ -272,11 +272,13 @@ export interface ICourseLessonUpdatedData {
     link?: File;
     title?: string;
     description?: string;
+    isCompleted?: boolean;
 }
 
 export interface ICourseSectionLesson {
     _id: string;
     section_ID: string;
+    course_Id: string;
     duration: number;
     isCompleted: boolean;
     link: string;

@@ -67,10 +67,12 @@ export const updateLesson = async (req, res) => {
         durationInSeconds = await getVideoDuration(req.file.path);
     }
 
-    lesson.title = title;
-    lesson.description = description;
-    lesson.link = videoURL;
-    lesson.duration = durationInSeconds;
+    if (title !== undefined) lesson.title = title;
+    if (description !== undefined) lesson.description = description;
+    if (req.file) {
+        lesson.link = videoURL;
+        lesson.duration = durationInSeconds;
+    }
 
     await lesson.save();
 

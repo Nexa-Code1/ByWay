@@ -1,11 +1,17 @@
-import { getVideoDurationInSeconds } from "get-video-duration";
+import ffmpeg from "fluent-ffmpeg";
+import ffprobe from "ffprobe-static";
 
-export const getVideoDuration = async (videoPath) => {
-    try {
-        const duration = await getVideoDurationInSeconds(videoPath);
-        return duration;
-    } catch (error) {
-        console.error("Error getting video duration:", error);
-        return 0;
-    }
+ffmpeg.setFfprobePath(ffprobe.path);
+
+export const getVideoDuration = (videoPath) => {
+    return new Promise((resolve) => {
+        ffmpeg.ffprobe(videoPath, (err, metadata) => {
+            if (err) {
+                console.error("Error getting video duration:", err);
+                return resolve(0);
+            }
+
+            resolve(metadata?.format?.duration || 0);
+        });
+    });
 };

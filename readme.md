@@ -364,6 +364,15 @@ For development and testing purposes, you can use the following pre-configured a
 - **Role**: Instructor
 - **Access**: Create and manage courses, view analytics, manage students
 
+### Test Cards
+For development and testing:
+
+| Card Number | Type | CVC | Expiry |
+|-------------|------|-----|--------|
+| 4242 4242 4242 4242 | Visa | Any 3 digits | Any future date |
+| 5555 5555 5555 4444 | MasterCard | Any 3 digits | Any future date |
+| 3782 822463 10005 | American Express | Any 4 digits | Any future date |
+
 ## 📋 Available Scripts
 
 ### Backend Scripts

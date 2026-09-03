@@ -49,9 +49,7 @@ ByWay is a full-featured e-learning platform built with the MERN stack (MongoDB,
 ### 👨‍🏫 For Instructors
 - **Course Creation**: Comprehensive course builder with video uploads
 - **Content Management**: Organize courses into sections and lessons
-- **Analytics Dashboard**: Track course performance and student engagement
-- **Revenue Tracking**: Monitor earnings and payment processing
-- **Student Management**: View enrolled students and their progress
+- **Blogs Creation**: Blog text editor for publishing articles
 
 ### ⚙️ Platform Features
 - **Advanced Video Processing**: FFmpeg integration for video optimization and format conversion

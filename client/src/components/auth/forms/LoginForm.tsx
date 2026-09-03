@@ -8,8 +8,8 @@ import { useLogin } from "@/hooks/auth/useLogin";
 import type { ILogin } from "@/types";
 
 const initialValues: ILogin = {
-    email: "",
-    password: "",
+    email: "tawin78709@meikeya.com",
+    password: "12345678",
 };
 
 type LoginFormProps = {
